@@ -11,9 +11,9 @@ from metric_name import Metric
 
 Metrics = List[Metric]
 
-topology = "linear-three"
+topology = "square"
 deadReckoning = False
-node = "nodeA"
+node = "nodeB"
 histogramFile = "histogram_values.json"
 
 directory = os.path.join("data", topology, "dr" if deadReckoning else "no_dr", node)
@@ -36,19 +36,23 @@ for playerMetric in metrics:
 
 print(metricsByObjectType)
 
-
 for objectType, metricsByMetricType in metricsByObjectType.items():
     f, (ax1, ax2) = plt.subplots(1, 2)
     f.suptitle(objectType)
     rttMetrics = metricsByMetricType["rtt"]
-    for playerMetric in rttMetrics:
-        ax1.hist(playerMetric.histogramValues, label=playerMetric.playerName)
+
+    # TODO: Make absolutely sure iteration order is constant
+    values = [m.histogramValues for m in rttMetrics]
+    labels = [m.playerName for m in rttMetrics]
+    ax1.hist(values, label=labels)
     ax1.set_title("Round Trip Times")
     ax1.legend()
 
     latencyMetrics = metricsByMetricType["latency"]
-    for playerMetric in latencyMetrics:
-        ax2.hist(playerMetric.histogramValues, label=playerMetric.playerName)
-    ax2.set_title("Latency")
+    values = [m.histogramValues for m in latencyMetrics]
+    labels = [m.playerName for m in latencyMetrics]
+    ax2.hist(values, label=labels)
+    ax2.set_title("Latencies")
     ax2.legend()
+
     plt.show()
