@@ -23,10 +23,20 @@ class InterestRatesForNode:
             except FileNotFoundError as e:
                 print("Could not find file %s, skipping" % fileName)
 
-    def printRates(self):
+    def getInterestRatesByType(self):
+        return self.interestRatesByType
+
+    def getInterestRateForType(self, objectType='status'):
+        return self.interestRatesByType[objectType]
+
+    def plotInterestRateForType(self, ax, objectType='status'):
         print("\n\nInterest rates for %s" % self.nodeName)
-        for type, rate in self.interestRatesByType.items():
-            rate.print(type)
+        ax.bar(self.nodeName, self.interestRatesByType[objectType].meanRate)
+
+    def plotInterestRates(self, ax):
+        for obj, rate in self.interestRatesByType.items():
+            print("\n\nInterest rates for %s, %s" % (self.nodeName, obj))
+            ax.bar(self.nodeName, rate.meanRate)
 
 
 class Rate:
@@ -34,7 +44,7 @@ class Rate:
     def __init__(self, time, count, meanRate):
         self.time: int = time
         self.count: int = count
-        self.meanRate: float = meanRate
+        self.meanRate: float = round(float(meanRate), 2)
 
     def print(self, type):
         print(rateFormatString.format(type=type, count=self.count, meanRate=self.meanRate))
