@@ -3,12 +3,15 @@ import sys
 
 from typing import List
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 from interest_rate import InterestRatesForNode
 from packet_time_histograms import PacketTimeHistograms
 from status_deltas import StatusDeltasHistograms
 
 
-class SingleNodeAnalyser:
+class AnalysisByNode:
 
     def __init__(self, dir, nodes: List[str] = None):
         self.dir = dir
@@ -24,16 +27,21 @@ class SingleNodeAnalyser:
             interestRate = InterestRatesForNode(self.getNodeDir(node), node)
             interestRate.printRates()
 
-    def plotPacketTimes(self, nodes=None):
+    def plotPacketTimes(self, nodes=None, objectType="status", metricType="rtt"):
         nodes = self.nodes if nodes is None else nodes
-        for node in nodes:
-            packetTimeHistograms: PacketTimeHistograms = PacketTimeHistograms(self.getNodeDir(node))
-            packetTimeHistograms.showHistograms()
+        nodes.sort()
+        f, ax = plt.subplots(2, 2)
+        ax = ax.flatten()
+        f.suptitle("%s - %s" % (objectType, metricType))
+        for i, node in enumerate(nodes):
+            packetTimeHistograms: PacketTimeHistograms = PacketTimeHistograms(self.getNodeDir(node), node)
+            packetTimeHistograms.showHistograms(ax[i], objectType=objectType, metricType=metricType)
+        plt.show()
 
     def plotStatusDeltas(self, nodes=None):
         nodes = self.nodes if nodes is None else nodes
         for node in nodes:
-            statusDeltaHistograms: StatusDeltasHistograms  = StatusDeltasHistograms(node, self.getNodeDir(node))
+            statusDeltaHistograms: StatusDeltasHistograms = StatusDeltasHistograms(node, self.getNodeDir(node))
             statusDeltaHistograms.plotStatusDeltas()
 
 
@@ -44,7 +52,7 @@ if __name__ == "__main__":
     else:
         dir = sys.argv[1]
 
-    singleNodeAnalyser = SingleNodeAnalyser(dir)
-    singleNodeAnalyser.printInterestRates()
-    singleNodeAnalyser.plotStatusDeltas()
-    singleNodeAnalyser.plotPacketTimes()
+    analysisByNode = AnalysisByNode(dir)
+    analysisByNode.printInterestRates()
+    analysisByNode.plotStatusDeltas()
+    analysisByNode.plotPacketTimes()
