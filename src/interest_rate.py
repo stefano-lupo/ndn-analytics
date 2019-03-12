@@ -1,6 +1,6 @@
 import os
 import csv
-from typing import Dict
+from typing import Dict, List
 
 fileNameFormat = "pub-interest-rate-{nodeName}-{objectType}-sync.csv"
 rateFormatString: str = "{type}\tcount: {count}\t rate: {meanRate} / sec"
@@ -18,8 +18,7 @@ class InterestRatesForNode:
             try:
                 with open(fileName) as f:
                     csvData = list(csv.reader(f))
-                    lastRow = csvData[-1]
-                    self.interestRatesByType[objectType] = Rate(lastRow[0], lastRow[1], lastRow[2])
+                    self.interestRatesByType[objectType] = Rate(csvData, objectType)
             except FileNotFoundError as e:
                 print("Could not find file %s, skipping" % fileName)
 
@@ -31,21 +30,34 @@ class InterestRatesForNode:
 
     def plotInterestRateForType(self, ax, objectType='status'):
         print("\n\nInterest rates for %s" % self.nodeName)
-        ax.bar(self.nodeName, self.interestRatesByType[objectType].meanRate)
+        ax.bar(self.nodeName, self.interestRatesByType[objectType].finalMeanRate)
 
     def plotInterestRates(self, ax):
         for obj, rate in self.interestRatesByType.items():
             print("\n\nInterest rates for %s, %s" % (self.nodeName, obj))
-            ax.bar(self.nodeName, rate.meanRate)
+            ax.bar(self.nodeName, rate.finalMeanRate)
+
+    def plotInterestRateOverTime(self, ax, objectType='status'):
+        self.getInterestRateForType(objectType).plotOverTime(ax, self.nodeName)
+
+    def getMeanRateOverTime(self, objectType='status'):
+        return self.interestRatesByType[objectType].getMeanRateOverTime()
 
 
 class Rate:
 
-    def __init__(self, time, count, meanRate):
-        self.time: int = time
-        self.count: int = count
-        self.meanRate: float = round(float(meanRate), 2)
+    def __init__(self, csvData: List[List], objectType: str):
+        csvData = csvData[1:]
+        self.finalMeanRate: float = round(float(csvData[-1][2]), 2)
+        self.meanRateOverTime: Dict[int, float] = {int(row[0]): float(row[2]) for row in csvData}
+        self.objectType = objectType
 
-    def print(self, type):
-        print(rateFormatString.format(type=type, count=self.count, meanRate=self.meanRate))
+    def getFinalMeanRate(self, type):
+        print(rateFormatString.format(type=type, meanRate=self.finalMeanRate))
+        return self.finalMeanRate
 
+    def getMeanRateOverTime(self):
+        return self.meanRateOverTime
+
+    def plotOverTime(self, ax, nodeName: str):
+        ax.plot(self.meanRateOverTime.keys(), self.meanRateOverTime.values(), label=nodeName)

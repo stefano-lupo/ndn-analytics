@@ -39,20 +39,19 @@ class AnalysisByNode:
 
     def getNodeDir(self, nodeName: str, subDir: str = None) -> str:
         subDir = self.subDirs[0] if subDir is None else subDir
+        print("Using sub dir: %s" % subDir)
         fullSubDirPath = self.getSubDir(subDir)
         return os.path.join(fullSubDirPath, nodeName)
 
     def plotInterestRates(self, nodes=None, objectType="status"):
         nodes = self.nodes if nodes is None else nodes
         f, ax = plt.subplots(1)
-        # ax = ax.flatten()
         f.suptitle("Interest Rates- %s" % objectType)
         ax.set_xlabel("Node")
         ax.set_ylabel("Interests received per second")
         for node in nodes:
             interestRate = InterestRatesForNode(self.getNodeDir(node), node)
             interestRate.plotInterestRateForType(ax, objectType)
-
 
     def plotPacketTimes(self, nodes=None, objectType="status", metricType="rtt"):
         nodes = self.nodes if nodes is None else nodes
@@ -97,7 +96,7 @@ class AnalysisByNode:
                 nodeDir = self.getNodeDir(node, subDir)
                 print(nodeDir)
                 interestRateForNode = InterestRatesForNode(nodeDir, node)
-                ratesByNode[node] = interestRateForNode.getInterestRateForType(objectType).meanRate
+                ratesByNode[node] = interestRateForNode.getInterestRateForType(objectType).finalMeanRate
             ratesByDir[subDir] = ratesByNode
 
         fig, ax = plt.subplots()
@@ -105,6 +104,14 @@ class AnalysisByNode:
         ax.set_ylabel("Interests Received per Second")
         fig.suptitle("Impact of caching on Interest rate")
 
+    def plotInterestRatesOverTime(self, objectType='status'):
+        f, ax = plt.subplots()
+        f.suptitle("Interest rates over time for %s" % objectType)
+        for node in self.nodes:
+            InterestRatesForNode(self.getNodeDir(node), node).plotInterestRateOverTime(ax)
+        ax.legend()
+        ax.set_xlabel("Elapsed Time (s)")
+        ax.set_ylabel("Interests received per second")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -121,4 +128,5 @@ if __name__ == "__main__":
     analysisByNode.plotPacketTimes()
     analysisByNode.plotCacheRates()
     analysisByNode.compareProducerRatesByCaching()
+    analysisByNode.plotInterestRatesOverTime()
     plt.show()
