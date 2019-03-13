@@ -1,6 +1,7 @@
 import os
 import sys
 from typing import List, Dict
+from collections import defaultdict
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,6 +11,7 @@ from interest_rate import InterestRatesForNode
 from packet_time_histograms import PacketTimeHistograms
 from status_deltas import StatusDeltasHistograms
 from cache_rate import CacheRates
+from interest_aggregation import InterestAggregation
 
 def plotMulticategoryBar(ax, valuesDict: Dict[str, Dict[str, float]]):
     xCategories = next(iter(valuesDict.values())).keys()
@@ -34,12 +36,12 @@ class AnalysisByNode:
         self.nodes = os.listdir(self.getSubDir(subDirs[0])) if nodes is None else nodes
         self.nodes.sort()
 
-    def getSubDir(self, subDir: str) -> str:
+    def getSubDir(self, subDir: str = None) -> str:
+        subDir = self.subDirs[0] if subDir is None else subDir
+        # print("Using sub dir: %s" % subDir)
         return os.path.join(self.dataDir, subDir)
 
     def getNodeDir(self, nodeName: str, subDir: str = None) -> str:
-        subDir = self.subDirs[0] if subDir is None else subDir
-        print("Using sub dir: %s" % subDir)
         fullSubDirPath = self.getSubDir(subDir)
         return os.path.join(fullSubDirPath, nodeName)
 
@@ -113,6 +115,19 @@ class AnalysisByNode:
         ax.set_xlabel("Elapsed Time (s)")
         ax.set_ylabel("Interests received per second")
 
+    def plotInterestAggregations(self, objectType='status'):
+        f, ax = plt.subplots()
+        interests: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
+        for node in self.nodes:
+            interestAgg = InterestAggregation(node, self.getNodeDir(node), self.nodes, self.getSubDir(), objectType)
+            pubInterests, subInterests = interestAgg.getDifference()
+            interests["pub"][node] = pubInterests
+            interests["sub"][node] = subInterests
+        plotMulticategoryBar(ax, interests)
+        ax.set_ylabel("Number of Interests")
+        f.suptitle("Publisher Interests seen vs total subscriber interests expressed")
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         dataDir = "./data/local"
@@ -123,10 +138,11 @@ if __name__ == "__main__":
         subDirs = sys.argv[2:]
 
     analysisByNode = AnalysisByNode(dataDir, subDirs)
-    analysisByNode.plotInterestRates()
-    analysisByNode.plotStatusDeltas()
-    analysisByNode.plotPacketTimes()
-    analysisByNode.plotCacheRates()
-    analysisByNode.compareProducerRatesByCaching()
-    analysisByNode.plotInterestRatesOverTime()
+    # analysisByNode.plotInterestRates()
+    # analysisByNode.plotStatusDeltas()
+    # analysisByNode.plotPacketTimes()
+    # analysisByNode.plotCacheRates()
+    # analysisByNode.compareProducerRatesByCaching()
+    # analysisByNode.plotInterestRatesOverTime()
+    analysisByNode.plotInterestAggregations()
     plt.show()
