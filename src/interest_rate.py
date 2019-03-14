@@ -2,7 +2,7 @@ import os
 import csv
 from typing import Dict, List
 
-from csv_reader import readCsvSafe
+from reading_utils import readCsvSafe
 
 fileNameFormat = "pub-interest-rate-{nodeName}-{objectType}-sync.csv"
 rateFormatString: str = "{type}\tcount: {count}\t rate: {meanRate} / sec"
@@ -18,14 +18,6 @@ class InterestRatesForNode:
         for objectType in objectTypes:
             fileName = os.path.join(directory, fileNameFormat.format(nodeName=nodeName, objectType=objectType))
             self.interestRatesByType[objectType] = Rate(readCsvSafe(fileName), objectType)
-
-            # try:
-            #     with open(fileName) as f:
-            #         print("Reading %s " % f.name)
-            #         csvData = list(csv.reader(x.replace('\0', '') for x in f))
-            #         self.interestRatesByType[objectType] = Rate(csvData, objectType)
-            # except FileNotFoundError as e:
-            #     print("Could not find file %s, skipping" % fileName)
 
     def getInterestRatesByType(self):
         return self.interestRatesByType

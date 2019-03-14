@@ -2,18 +2,18 @@ import os
 from typing import List, Dict
 
 from interest_rate import InterestRatesForNode
-from csv_reader import readCsvSafe
+from reading_utils import readCsvSafe
 
 fileNameFormat = "sub-{objectType}-interestscounter-{nodeName}.csv"
 
 class InterestAggregation:
 
-    def __init__(self, myNode: str, myNodeDir: str, nodes: List[str], dataDir: str, objectType: str = 'status'):
+    def __init__(self, myNode: str, myNodeDir: str, nodes: List[str], dataDir: str, routers: List[str] = None, objectType: str = 'status'):
         self.myNode = myNode
         self.pubInterestRate = InterestRatesForNode(myNodeDir, myNode)
         self.subInterestsCounterByNode: Dict[str, int] = dict()
         self.objectType = objectType
-        for node in [n for n in nodes if n != myNode]:
+        for node in [n for n in nodes if n != myNode and n not in ([] if routers == None else routers)]:
             fileName = fileNameFormat.format(objectType=objectType, nodeName=myNode)
             fullFile = os.path.join(dataDir, node, fileName)
             csvData = readCsvSafe(fullFile)
