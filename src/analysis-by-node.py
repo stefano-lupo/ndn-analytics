@@ -13,7 +13,8 @@ from interest_aggregation import InterestAggregation
 from nfd_log_parser import NfdLogParser, CacheRate
 
 ROUTERS = {
-    "tree": ["nodeE", "nodeF", "nodeG"]
+    "tree": ["nodeE", "nodeF", "nodeG"],
+    "dumbbell": ["nodeE", "nodeF"]
 }
 
 def plotMulticategoryBar(ax, valuesDict: Dict[str, Dict[str, float]]):
@@ -38,7 +39,7 @@ class AnalysisByNode:
         self.subDirs = subDirs
         self.nodes = os.listdir(self.getSubDir(subDirs[0])) if nodes is None else nodes
         self.nodes.sort()
-        self.gameNodes = [node for node in self.nodes if node not in ROUTERS[topology]]
+        self.gameNodes = self.nodes if topology not in ROUTERS.keys() else [node for node in self.nodes if node not in ROUTERS[topology]]
         self.routerNodes = [node for node in self.nodes if node not in self.gameNodes]
 
     def getSubDir(self, subDir: str = None) -> str:
@@ -91,7 +92,7 @@ class AnalysisByNode:
     #         cacheRates: CacheRates = CacheRates(self.getNodeDir(myNode), myNode, otherNodes)
     #         cacheRates.plotCacheRates(ax[i])
 
-    def compareProducerRatesByCaching(self, objectType='status'):
+    def compareProducerRates(self, objectType='status'):
 
         RatesByNode = Dict[str, float]
         ratesByDir: Dict[str, RatesByNode] = {}
@@ -108,7 +109,7 @@ class AnalysisByNode:
         fig, ax = plt.subplots()
         plotMulticategoryBar(ax, ratesByDir)
         ax.set_ylabel("Interests Received per Second")
-        fig.suptitle("Impact of caching on Interest rate")
+        fig.suptitle("Impact on Interest Rates")
 
     def plotInterestRatesOverTime(self, objectType='status'):
         f, ax = plt.subplots()
@@ -131,10 +132,12 @@ class AnalysisByNode:
         ax.set_ylabel("Number of Interests")
         f.suptitle("Publisher Interests seen vs total subscriber interests expressed")
 
-    def analyseCaches(self):
+    def analyseCaches(self, objectType="status"):
         nfdParsers = [NfdLogParser(node, self.getNodeDir(node)) for node in self.nodes]
         nfdParsers.sort(key=lambda nfdP: nfdP.nodeName)
-        self.getRouterCacheRates(nfdParsers)
+        for i in ["status", "blocks"]:
+            self.getRouterCacheRates(nfdParsers, objectType=i)
+        self.getTotalCacheRateByNode(nfdParsers)
 
     def getTotalCacheRateByNode(self, nfdParsers):
         f, ax = plt.subplots()
@@ -143,17 +146,19 @@ class AnalysisByNode:
         for nfdParser in nfdParsers:
             nfdParser.plotCacheRate(ax)
 
-    def getRouterCacheRates(self, nfdParsers: List[NfdLogParser]):
+    def getRouterCacheRates(self, nfdParsers: List[NfdLogParser], objectType="blocks"):
+        print(self.routerNodes)
         nfdParsers = [nfdP for nfdP in nfdParsers if nfdP.nodeName in self.routerNodes]
         f, ax = plt.subplots()
         routerCacheRateForNodes: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
         for i, routerNodeParser in enumerate(nfdParsers):
-            statusCacheRatesByPlayer: Dict[str, CacheRate] = routerNodeParser.getCacheRatesForObjectType(objectType="status")
+            statusCacheRatesByPlayer: Dict[str, CacheRate] = routerNodeParser.getCacheRatesForObjectType(objectType=objectType)
             for player, cacheRate in statusCacheRatesByPlayer.items():
                 routerCacheRateForNodes[player][routerNodeParser.nodeName] = cacheRate.getCacheRate()
         plotMulticategoryBar(ax, routerCacheRateForNodes)
-        ax.set_ylabel("Cache Rate")
+        ax.set_ylabel("Cache Rate %")
         f.suptitle("Router Cache Rates by Node")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -167,12 +172,12 @@ if __name__ == "__main__":
         subDirs = sys.argv[3:]
 
     analysisByNode = AnalysisByNode(dataDir, topology, subDirs)
-    # analysisByNode.plotInterestRates()
-    # analysisByNode.plotStatusDeltas()
-    # analysisByNode.plotPacketTimes()
-    # # analysisByNode.plotCacheRates()
-    # analysisByNode.compareProducerRatesByCaching()
-    # analysisByNode.plotInterestRatesOverTime()
-    # analysisByNode.plotInterestAggregations()
-    analysisByNode.analyseCaches()
+    objectType ="status"
+    analysisByNode.plotInterestRates(objectType=objectType)
+    analysisByNode.plotStatusDeltas()
+    analysisByNode.plotPacketTimes(objectType=objectType)
+    analysisByNode.compareProducerRates(objectType=objectType)
+    analysisByNode.plotInterestRatesOverTime(objectType=objectType)
+    analysisByNode.plotInterestAggregations(objectType=objectType)
+    analysisByNode.analyseCaches(objectType=objectType)
     plt.show()

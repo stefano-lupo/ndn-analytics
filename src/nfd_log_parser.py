@@ -27,7 +27,7 @@ class CacheRate:
         self.hits += other.hits
 
     def getCacheRate(self) -> float:
-        return self.hits / self.lookups
+        return 100 * self.hits / self.lookups
 
 
 class NfdLogParser:
@@ -45,7 +45,7 @@ class NfdLogParser:
 
     def getTotalCacheRate(self, playerName: str = None, objectType: str = None) -> float:
         if playerName is None and objectType is None:
-            return self.totalHits / self.totalLookups
+            return 100 * self.totalHits / self.totalLookups
 
         lookups = 0
         hits = 0
@@ -53,7 +53,7 @@ class NfdLogParser:
         for cacheRate in dictToUse.values():
             lookups += cacheRate.lookups
             hits += cacheRate.hits
-        return hits / lookups
+        return 100 * hits / lookups
 
 
     def getCacheRatesForPlayer(self, playerName: str) -> Dict[str, CacheRate]:
