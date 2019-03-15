@@ -17,6 +17,11 @@ ROUTERS = {
     "dumbbell": ["nodeE", "nodeF"]
 }
 
+# TODO: Find out enums
+STATUS = "status"
+BLOCKS = "blocks"
+PROJECTILES = "projectiles"
+
 def plotMulticategoryBar(ax, valuesDict: Dict[str, Dict[str, float]]):
     xCategories = next(iter(valuesDict.values())).keys()
     ind = np.arange(len(xCategories))
@@ -41,6 +46,7 @@ class AnalysisByNode:
         self.nodes.sort()
         self.gameNodes = self.nodes if topology not in ROUTERS.keys() else [node for node in self.nodes if node not in ROUTERS[topology]]
         self.routerNodes = [node for node in self.nodes if node not in self.gameNodes]
+        self.topology = topology
 
     def getSubDir(self, subDir: str = None) -> str:
         subDir = self.subDirs[0] if subDir is None else subDir
@@ -50,7 +56,7 @@ class AnalysisByNode:
         fullSubDirPath = self.getSubDir(subDir)
         return os.path.join(fullSubDirPath, nodeName)
 
-    def plotInterestRates(self, nodes=None, objectType="status"):
+    def plotInterestRates(self, nodes=None, objectType=STATUS):
         nodes = self.gameNodes if nodes is None else nodes
         f, ax = plt.subplots(1)
         f.suptitle("Interest Rates- %s" % objectType)
@@ -60,7 +66,7 @@ class AnalysisByNode:
             interestRate = InterestRatesForNode(self.getNodeDir(node), node)
             interestRate.plotInterestRateForType(ax, objectType)
 
-    def plotPacketTimes(self, nodes=None, objectType="status", metricType="rtt"):
+    def plotPacketTimes(self, nodes=None, objectType=STATUS, metricType="rtt"):
         nodes = self.gameNodes if nodes is None else nodes
         nodes.sort()
         f, ax = plt.subplots(2, 2)
@@ -92,7 +98,7 @@ class AnalysisByNode:
     #         cacheRates: CacheRates = CacheRates(self.getNodeDir(myNode), myNode, otherNodes)
     #         cacheRates.plotCacheRates(ax[i])
 
-    def compareProducerRates(self, objectType='status'):
+    def compareProducerRates(self, objectType=STATUS):
 
         RatesByNode = Dict[str, float]
         ratesByDir: Dict[str, RatesByNode] = {}
@@ -111,7 +117,7 @@ class AnalysisByNode:
         ax.set_ylabel("Interests Received per Second")
         fig.suptitle("Impact on Interest Rates")
 
-    def plotInterestRatesOverTime(self, objectType='status'):
+    def plotInterestRatesOverTime(self, objectType=STATUS):
         f, ax = plt.subplots()
         f.suptitle("Interest rates over time for %s" % objectType)
         for node in self.gameNodes:
@@ -120,7 +126,7 @@ class AnalysisByNode:
         ax.set_xlabel("Elapsed Time (s)")
         ax.set_ylabel("Interests received per second")
 
-    def plotInterestAggregations(self, objectType='status'):
+    def plotInterestAggregations(self, objectType=STATUS):
         f, ax = plt.subplots()
         interests: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
         for node in self.gameNodes:
@@ -132,11 +138,10 @@ class AnalysisByNode:
         ax.set_ylabel("Number of Interests")
         f.suptitle("Publisher Interests seen vs total subscriber interests expressed")
 
-    def analyseCaches(self, objectType="status"):
+    def analyseCaches(self, objectType=STATUS):
         nfdParsers = [NfdLogParser(node, self.getNodeDir(node)) for node in self.nodes]
         nfdParsers.sort(key=lambda nfdP: nfdP.nodeName)
-        for i in ["status", "blocks"]:
-            self.getRouterCacheRates(nfdParsers, objectType=i)
+        self.getRouterCacheRates(nfdParsers, objectType=objectType)
         self.getTotalCacheRateByNode(nfdParsers)
 
     def getTotalCacheRateByNode(self, nfdParsers):
@@ -146,9 +151,9 @@ class AnalysisByNode:
         for nfdParser in nfdParsers:
             nfdParser.plotCacheRate(ax)
 
-    def getRouterCacheRates(self, nfdParsers: List[NfdLogParser], objectType="blocks"):
+    def getRouterCacheRates(self, nfdParsers: List[NfdLogParser], objectType=STATUS):
         print(self.routerNodes)
-        nfdParsers = [nfdP for nfdP in nfdParsers if nfdP.nodeName in self.routerNodes]
+        nfdParsers = nfdParsers if len(self.routerNodes) == 0 else  [nfdP for nfdP in nfdParsers if nfdP.nodeName in self.routerNodes]
         f, ax = plt.subplots()
         routerCacheRateForNodes: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
         for i, routerNodeParser in enumerate(nfdParsers):
@@ -172,7 +177,7 @@ if __name__ == "__main__":
         subDirs = sys.argv[3:]
 
     analysisByNode = AnalysisByNode(dataDir, topology, subDirs)
-    objectType ="status"
+    objectType = STATUS
     analysisByNode.plotInterestRates(objectType=objectType)
     analysisByNode.plotStatusDeltas()
     analysisByNode.plotPacketTimes(objectType=objectType)

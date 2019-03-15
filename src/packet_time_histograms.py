@@ -32,7 +32,7 @@ class PacketTimeHistograms:
             histograms = json.load(f)
             metrics: Metrics = [PacketTimeMetric(name, values) for name, values in histograms.items()]
 
-        self.metricsByObjectType: MetricsByObjectType = {"status": {}, "block": {}, "projectile": {}}
+        self.metricsByObjectType: MetricsByObjectType = {"status": {}, "blocks": {}, "projectiles": {}}
         for playerMetric in metrics:
             metricsForObjectType = self.metricsByObjectType[playerMetric.objectType]
             if playerMetric.metricType in metricsForObjectType:
