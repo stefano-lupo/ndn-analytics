@@ -15,10 +15,6 @@ class CacheRates:
                 lastRow = csvData[-1]
                 self.cacheRates[node] = round(float(lastRow[1]) * 100, 2)
 
-        print("Cache rates for %s: %s" % (self.myName, self.cacheRates))
-
-
     def plotCacheRates(self, ax):
         ax.set_title(self.myName)
-
         ax.bar(self.cacheRates.keys(), self.cacheRates.values())

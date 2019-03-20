@@ -89,8 +89,6 @@ class NfdLogParser:
                 cacheRates[playerName][objectType].addHitWithoutLookup()
                 continue
 
-        cacheRate = 0 if numLookups is 0 else numCacheHits / numLookups
-        print("Cache rate of %s: %f / %f = %f" % (self.nodeName, numCacheHits, numLookups, cacheRate))
         cacheRates = sorted(cacheRates.items(), key=lambda kv: kv[0])
         cacheRates = OrderedDict(cacheRates)
 

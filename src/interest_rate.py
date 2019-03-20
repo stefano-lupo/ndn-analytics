@@ -1,5 +1,4 @@
 import os
-import csv
 from typing import Dict, List
 
 from reading_utils import readCsvSafe
@@ -26,12 +25,10 @@ class InterestRatesForNode:
         return self.interestRatesByType[objectType]
 
     def plotInterestRateForType(self, ax, objectType='status'):
-        print("\n\nInterest rates for %s" % self.nodeName)
         ax.bar(self.nodeName, self.interestRatesByType[objectType].finalMeanRate)
 
     def plotInterestRates(self, ax):
         for obj, rate in self.interestRatesByType.items():
-            print("\n\nInterest rates for %s, %s" % (self.nodeName, obj))
             ax.bar(self.nodeName, rate.finalMeanRate)
 
     def plotInterestRateOverTime(self, ax, objectType='status'):

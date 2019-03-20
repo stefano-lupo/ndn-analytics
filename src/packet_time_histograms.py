@@ -50,6 +50,6 @@ class PacketTimeHistograms:
             values = [m.histogramValues for m in metrics]
             labels = [m.playerName for m in metrics]
             # ax.hist(values, label=labels, bins=np.linspace(0, 100, 6), density=True)
-            ax.hist(values, label=labels, density=True)
+            ax.hist(values, label=labels)
             ax.legend()
 
