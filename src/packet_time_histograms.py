@@ -2,8 +2,6 @@ import json
 import os
 from typing import List, Dict
 
-import numpy as np
-
 HISTOGRAM_VALUES_FILE = "histogram_values.json"
 
 HistogramValues = List[int]
@@ -45,9 +43,13 @@ class PacketTimeHistograms:
             ax.set_title("%s - RTT" % self.nodeName)
 
             # TODO: Make absolutely sure iteration order is constant
+            if metricType not in metricsByMetricType.keys():
+                print("Skipping for %s" % self.nodeName)
+                return
             metrics: Metrics = metricsByMetricType[metricType]
             values = [m.histogramValues for m in metrics]
             labels = [m.playerName for m in metrics]
-            ax.hist(values, label=labels, bins=np.linspace(0, 100, 6), density=True)
+            # ax.hist(values, label=labels, bins=np.linspace(0, 100, 6), density=True)
+            ax.hist(values, label=labels, density=True)
             ax.legend()
 

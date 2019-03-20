@@ -1,6 +1,6 @@
-from typing import List, Dict
-from collections import defaultdict, OrderedDict
 import re
+from collections import defaultdict, OrderedDict
+from typing import List, Dict
 
 from reading_utils import readFileSafe
 
@@ -45,7 +45,7 @@ class NfdLogParser:
 
     def getTotalCacheRate(self, playerName: str = None, objectType: str = None) -> float:
         if playerName is None and objectType is None:
-            return 100 * self.totalHits / self.totalLookups
+            return 0 if self.totalLookups is 0 else 100 * self.totalHits / self.totalLookups
 
         lookups = 0
         hits = 0
@@ -88,7 +88,9 @@ class NfdLogParser:
                 objectType: str = cacheHitMatch.group(2)
                 cacheRates[playerName][objectType].addHitWithoutLookup()
                 continue
-        print("Cache rate of %s: %f / %f = %f" % (self.nodeName, numCacheHits, numLookups, numCacheHits / numLookups))
+
+        cacheRate = 0 if numLookups is 0 else numCacheHits / numLookups
+        print("Cache rate of %s: %f / %f = %f" % (self.nodeName, numCacheHits, numLookups, cacheRate))
         cacheRates = sorted(cacheRates.items(), key=lambda kv: kv[0])
         cacheRates = OrderedDict(cacheRates)
 

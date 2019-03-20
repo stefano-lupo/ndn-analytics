@@ -17,7 +17,10 @@ class InterestAggregation:
             fileName = fileNameFormat.format(objectType=objectType, nodeName=myNode)
             fullFile = os.path.join(dataDir, node, fileName)
             csvData = readCsvSafe(fullFile)
-            self.subInterestsCounterByNode[node] = int(csvData[-1][1])
+            if csvData == None:
+                self.subInterestsCounterByNode[node] = 0
+            else:
+                self.subInterestsCounterByNode[node] = int(csvData[-1][1])
 
     def getDifference(self) -> (int, int):
         totalInterestsExpressed: int = sum(self.subInterestsCounterByNode.values())

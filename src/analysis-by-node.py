@@ -1,21 +1,25 @@
 import os
 import sys
-from typing import List, Dict
 from collections import defaultdict
+from typing import List, Dict
 
 import matplotlib.pyplot as plt
 import numpy as np
 
+from interest_aggregation import InterestAggregation
 from interest_rate import InterestRatesForNode
+from log_reader import LogReader
+from nfd_log_parser import NfdLogParser, CacheRate
 from packet_time_histograms import PacketTimeHistograms
 from status_deltas import StatusDeltasHistograms
-from interest_aggregation import InterestAggregation
-from nfd_log_parser import NfdLogParser, CacheRate
 
 ROUTERS = {
     "tree": ["nodeE", "nodeF", "nodeG"],
-    "dumbbell": ["nodeE", "nodeF"]
+    "dumbbell": ["nodeE", "nodeF"],
+    "scalability": ["nodeQ", "nodeR", "nodeS", "nodeT"]
 }
+
+nodesToSkip = []
 
 # TODO: Find out enums
 STATUS = "status"
@@ -44,9 +48,11 @@ class AnalysisByNode:
         self.subDirs = subDirs
         self.nodes = os.listdir(self.getSubDir(subDirs[0])) if nodes is None else nodes
         self.nodes.sort()
+        for remove in nodesToSkip: self.nodes.remove(remove)
         self.gameNodes = self.nodes if topology not in ROUTERS.keys() else [node for node in self.nodes if node not in ROUTERS[topology]]
         self.routerNodes = [node for node in self.nodes if node not in self.gameNodes]
         self.topology = topology
+        self.plotDims = (2,2)
 
     def getSubDir(self, subDir: str = None) -> str:
         subDir = self.subDirs[0] if subDir is None else subDir
@@ -55,6 +61,14 @@ class AnalysisByNode:
     def getNodeDir(self, nodeName: str, subDir: str = None) -> str:
         fullSubDirPath = self.getSubDir(subDir)
         return os.path.join(fullSubDirPath, nodeName)
+
+    def checkForExceptions(self, nodes=None):
+        nodes = self.gameNodes if nodes is None else nodes
+        for node in nodes:
+            logReader = LogReader(node, self.getNodeDir(node))
+
+    def getAxis(self, nodes):
+        return plt.subplots(*self.plotDims)
 
     def plotInterestRates(self, nodes=None, objectType=STATUS):
         nodes = self.gameNodes if nodes is None else nodes
@@ -69,7 +83,7 @@ class AnalysisByNode:
     def plotPacketTimes(self, nodes=None, objectType=STATUS, metricType="rtt"):
         nodes = self.gameNodes if nodes is None else nodes
         nodes.sort()
-        f, ax = plt.subplots(2, 2)
+        f, ax = self.getAxis(nodes)
         ax = ax.flatten()
         f.suptitle("%s - %s" % (objectType, metricType))
         for i, node in enumerate(nodes):
@@ -77,7 +91,7 @@ class AnalysisByNode:
             packetTimeHistograms.showHistograms(ax[i], objectType=objectType, metricType=metricType)
 
     def plotStatusDeltas(self, nodes=None):
-        f, ax = plt.subplots(2, 2)
+        f, ax = self.getAxis(nodes)
         ax = ax.flatten()
         nodes = self.gameNodes if nodes is None else nodes
         for i, node in enumerate(nodes):
@@ -177,6 +191,7 @@ if __name__ == "__main__":
         subDirs = sys.argv[3:]
 
     analysisByNode = AnalysisByNode(dataDir, topology, subDirs)
+    analysisByNode.checkForExceptions()
     objectType = STATUS
     analysisByNode.plotInterestRates(objectType=objectType)
     analysisByNode.plotStatusDeltas()

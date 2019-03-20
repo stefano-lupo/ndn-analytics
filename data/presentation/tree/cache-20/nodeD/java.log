@@ -1,0 +1,891 @@
+DEBUG [main] (ConfigManager.java:33) - Initialized with properties: {local.player.status.updates.per.sec=30, facemanager.num.sub.threads.per.face=10, linear.interest.zone.filter.inner.radius=100, projectile.cache.size=20, local.player.status.use.dead.reckoning=false, block.publisher.freshness.period.ms=20, player.status.publisher.freshness.period.ms=20, base.publisher.queue.process.per.sec=60, projectile.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.outer.radius=200, local.player.dead.reckoning.max.error=1, projectile.publisher.queue.process.multithread=true, statistics.logger.log.rate.sec=30, facemanager.max.num.pub.faces=1, facemanager.num.pub.threads.per.face=10, facemanager.max.num.sub.faces=1, block.sub.inter.interest.max.wait.time.ms=2000, projectile.publisher.queue.process.per.sec=60, base.publisher.queue.process.multithread=true, player.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.enabled=false, projectile.publisher.freshness.period.ms=20}
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/NdnGame/NdnGameLibGdxDesktop-1.0-SNAPSHOT.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+DEBUG [main] (BackendModule.java:123) - Writing metrics to /metrics/nodeD
+ INFO [main] (DesktopLauncher.java:49) - Launching headless game
+ INFO [main] (DesktopLauncher.java:50) - LocalConfig{playerName='nodeD', isMasterView=false, isAutomated=true, automationType='wsp', isHeadless=true, gameId=0, screenWidth=600, screenHeight=600, targetFrameRate=60}
+DEBUG [main] (AutomatedInputController.java:52) - Starting with automation type: wsp
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeD/blocks/sync
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeD/status/sync
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/blocks/sync
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/projectiles/interact
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-2] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/projectiles/sync, retrying..
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-0] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/status/sync, retrying..
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-5] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/blocks/interact, retrying..
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/projectiles/sync
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/status/sync
+Mar 20, 2019 1:28:47 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/blocks/interact
+Mar 20, 2019 1:28:50 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/broadcast
+Mar 20, 2019 1:28:50 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/nodeD
+ INFO [cs-/com/stefanolupo/ndngame/0/config/nodeD-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/config/nodeD
+Mar 20, 2019 1:28:51 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/broadcast
+Mar 20, 2019 1:28:51 AM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/nodeD
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/discovery/nodeD
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+3/20/19, 1:29:16 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0
+pub-update-percentage-nodeD-status-sync
+             value = 0.49511213341000576
+
+
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+3/20/19, 1:29:46 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0011296243998870376
+pub-update-percentage-nodeD-status-sync
+             value = 0.4973156258830178
+
+
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeA
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeB
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/projectiles/sync/0/0/0
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeC
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/projectiles/sync/0/0/0
+ INFO [fm-pub-0-3] (ProjectilePublisher.java:133) - Creating interest meter
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [20=2, 19=4]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [2214=2]
+3/20/19, 1:30:16 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003744617112900206
+pub-update-percentage-nodeD-status-sync
+             value = 0.498314606741573
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 18
+sub-blocks-interestscounter-nodeB
+             count = 17
+sub-blocks-interestscounter-nodeC
+             count = 17
+sub-projectiles-interestscounter-nodeA
+             count = 24
+sub-projectiles-interestscounter-nodeB
+             count = 24
+sub-projectiles-interestscounter-nodeC
+             count = 24
+sub-status-interestscounter-nodeA
+             count = 508
+sub-status-interestscounter-nodeB
+             count = 510
+sub-status-interestscounter-nodeC
+             count = 477
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 505
+               min = 0
+               max = 122
+              mean = 4.71
+            stddev = 16.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 30.00
+              98% <= 84.00
+              99% <= 93.00
+            99.9% <= 122.00
+eng-status-delta-nodeB
+             count = 506
+               min = 0
+               max = 194
+              mean = 6.15
+            stddev = 20.73
+            median = 0.00
+              75% <= 0.00
+              95% <= 41.00
+              98% <= 100.00
+              99% <= 122.00
+            99.9% <= 194.00
+eng-status-delta-nodeC
+             count = 473
+               min = 0
+               max = 126
+              mean = 4.84
+            stddev = 16.40
+            median = 0.00
+              75% <= 0.00
+              95% <= 31.00
+              98% <= 63.00
+              99% <= 99.00
+            99.9% <= 126.00
+sub-blocks-rtt-nodeA
+             count = 1
+               min = 16
+               max = 16
+              mean = 16.00
+            stddev = 0.00
+            median = 16.00
+              75% <= 16.00
+              95% <= 16.00
+              98% <= 16.00
+              99% <= 16.00
+            99.9% <= 16.00
+sub-blocks-rtt-nodeB
+             count = 2
+               min = 145
+               max = 707
+              mean = 455.40
+            stddev = 279.46
+            median = 707.00
+              75% <= 707.00
+              95% <= 707.00
+              98% <= 707.00
+              99% <= 707.00
+            99.9% <= 707.00
+sub-blocks-rtt-nodeC
+             count = 1
+               min = 917
+               max = 917
+              mean = 917.00
+            stddev = 0.00
+            median = 917.00
+              75% <= 917.00
+              95% <= 917.00
+              98% <= 917.00
+              99% <= 917.00
+            99.9% <= 917.00
+sub-projectiles-rtt-nodeA
+             count = 12
+               min = 22
+               max = 1000
+              mean = 575.28
+            stddev = 302.67
+            median = 600.00
+              75% <= 800.00
+              95% <= 1000.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeB
+             count = 12
+               min = 36
+               max = 999
+              mean = 522.02
+            stddev = 339.94
+            median = 600.00
+              75% <= 799.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeC
+             count = 10
+               min = 16
+               max = 799
+              mean = 376.36
+            stddev = 312.84
+            median = 336.00
+              75% <= 683.00
+              95% <= 799.00
+              98% <= 799.00
+              99% <= 799.00
+            99.9% <= 799.00
+sub-status-rtt-nodeA
+             count = 509
+               min = 14
+               max = 83
+              mean = 36.00
+            stddev = 10.79
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 70.00
+            99.9% <= 83.00
+sub-status-rtt-nodeB
+             count = 511
+               min = 9
+               max = 112
+              mean = 35.67
+            stddev = 9.86
+            median = 33.00
+              75% <= 34.00
+              95% <= 54.00
+              98% <= 67.00
+              99% <= 68.00
+            99.9% <= 112.00
+sub-status-rtt-nodeC
+             count = 478
+               min = 6
+               max = 104
+              mean = 36.28
+            stddev = 11.26
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 83.00
+            99.9% <= 104.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 20
+         mean rate = 1.16 events/second
+     1-minute rate = 0.72 events/second
+     5-minute rate = 0.63 events/second
+    15-minute rate = 0.61 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 22
+         mean rate = 1.27 events/second
+     1-minute rate = 1.52 events/second
+     5-minute rate = 1.58 events/second
+    15-minute rate = 1.59 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 499
+         mean rate = 28.82 events/second
+     1-minute rate = 29.43 events/second
+     5-minute rate = 29.56 events/second
+    15-minute rate = 29.59 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [20=16, 26=3, 19=8, 22=9]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [2214=2, 2599=2]
+3/20/19, 1:30:46 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003500910236661532
+pub-update-percentage-nodeD-status-sync
+             value = 0.4986692814119625
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 45
+sub-blocks-interestscounter-nodeB
+             count = 46
+sub-blocks-interestscounter-nodeC
+             count = 46
+sub-projectiles-interestscounter-nodeA
+             count = 63
+sub-projectiles-interestscounter-nodeB
+             count = 63
+sub-projectiles-interestscounter-nodeC
+             count = 63
+sub-status-interestscounter-nodeA
+             count = 1349
+sub-status-interestscounter-nodeB
+             count = 1348
+sub-status-interestscounter-nodeC
+             count = 1332
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 1345
+               min = 0
+               max = 237
+              mean = 10.80
+            stddev = 26.04
+            median = 0.00
+              75% <= 11.00
+              95% <= 74.00
+              98% <= 95.00
+              99% <= 122.00
+            99.9% <= 228.00
+eng-status-delta-nodeB
+             count = 1344
+               min = 0
+               max = 253
+              mean = 3.99
+            stddev = 15.71
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 89.00
+            99.9% <= 194.00
+eng-status-delta-nodeC
+             count = 1328
+               min = 0
+               max = 126
+              mean = 3.44
+            stddev = 11.64
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 39.00
+              99% <= 63.00
+            99.9% <= 122.00
+sub-blocks-rtt-nodeA
+             count = 4
+               min = 16
+               max = 726
+              mean = 273.42
+            stddev = 270.74
+            median = 175.00
+              75% <= 726.00
+              95% <= 726.00
+              98% <= 726.00
+              99% <= 726.00
+            99.9% <= 726.00
+sub-blocks-rtt-nodeB
+             count = 3
+               min = 145
+               max = 707
+              mean = 352.92
+            stddev = 234.36
+            median = 231.00
+              75% <= 707.00
+              95% <= 707.00
+              98% <= 707.00
+              99% <= 707.00
+            99.9% <= 707.00
+sub-blocks-rtt-nodeC
+             count = 2
+               min = 343
+               max = 917
+              mean = 564.45
+            stddev = 279.41
+            median = 343.00
+              75% <= 917.00
+              95% <= 917.00
+              98% <= 917.00
+              99% <= 917.00
+            99.9% <= 917.00
+sub-projectiles-rtt-nodeA
+             count = 27
+               min = 22
+               max = 1000
+              mean = 459.24
+            stddev = 325.70
+            median = 517.00
+              75% <= 601.00
+              95% <= 998.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeB
+             count = 27
+               min = 15
+               max = 999
+              mean = 457.31
+            stddev = 356.21
+            median = 517.00
+              75% <= 769.00
+              95% <= 981.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeC
+             count = 25
+               min = 15
+               max = 799
+              mean = 381.67
+            stddev = 285.66
+            median = 517.00
+              75% <= 600.00
+              95% <= 784.00
+              98% <= 799.00
+              99% <= 799.00
+            99.9% <= 799.00
+sub-status-rtt-nodeA
+             count = 1350
+               min = 11
+               max = 100
+              mean = 35.44
+            stddev = 9.74
+            median = 33.00
+              75% <= 34.00
+              95% <= 55.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 100.00
+sub-status-rtt-nodeB
+             count = 1348
+               min = 9
+               max = 91
+              mean = 35.55
+            stddev = 9.95
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 91.00
+sub-status-rtt-nodeC
+             count = 1333
+               min = 4
+               max = 100
+              mean = 35.23
+            stddev = 9.52
+            median = 33.00
+              75% <= 34.00
+              95% <= 60.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 84.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 75
+         mean rate = 1.59 events/second
+     1-minute rate = 1.16 events/second
+     5-minute rate = 0.74 events/second
+    15-minute rate = 0.65 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 63
+         mean rate = 1.33 events/second
+     1-minute rate = 1.46 events/second
+     5-minute rate = 1.56 events/second
+    15-minute rate = 1.59 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 1349
+         mean rate = 28.51 events/second
+     1-minute rate = 29.01 events/second
+     5-minute rate = 29.45 events/second
+    15-minute rate = 29.55 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [26=15, 27=14, 20=30, 19=8, 22=9]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [2214=2, 2599=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [27=27, 26=31, 19=8, 20=42, 22=9]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [3985=2, 2214=2, 2599=2]
+3/20/19, 1:31:16 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.002796107817917459
+pub-update-percentage-nodeD-status-sync
+             value = 0.4988253719655442
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 74
+sub-blocks-interestscounter-nodeB
+             count = 76
+sub-blocks-interestscounter-nodeC
+             count = 74
+sub-projectiles-interestscounter-nodeA
+             count = 101
+sub-projectiles-interestscounter-nodeB
+             count = 100
+sub-projectiles-interestscounter-nodeC
+             count = 103
+sub-status-interestscounter-nodeA
+             count = 2177
+sub-status-interestscounter-nodeB
+             count = 2164
+sub-status-interestscounter-nodeC
+             count = 2172
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 2174
+               min = 0
+               max = 237
+              mean = 8.92
+            stddev = 22.81
+            median = 0.00
+              75% <= 11.00
+              95% <= 41.00
+              98% <= 101.00
+              99% <= 122.00
+            99.9% <= 215.00
+eng-status-delta-nodeB
+             count = 2159
+               min = 0
+               max = 253
+              mean = 3.90
+            stddev = 12.03
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 38.00
+              99% <= 47.00
+            99.9% <= 122.00
+eng-status-delta-nodeC
+             count = 2167
+               min = 0
+               max = 122
+              mean = 3.04
+            stddev = 9.06
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 31.00
+              99% <= 33.00
+            99.9% <= 102.00
+sub-blocks-rtt-nodeA
+             count = 5
+               min = 16
+               max = 726
+              mean = 236.76
+            stddev = 232.97
+            median = 152.00
+              75% <= 175.00
+              95% <= 726.00
+              98% <= 726.00
+              99% <= 726.00
+            99.9% <= 726.00
+sub-blocks-rtt-nodeB
+             count = 3
+               min = 145
+               max = 707
+              mean = 352.92
+            stddev = 234.36
+            median = 231.00
+              75% <= 707.00
+              95% <= 707.00
+              98% <= 707.00
+              99% <= 707.00
+            99.9% <= 707.00
+sub-blocks-rtt-nodeC
+             count = 4
+               min = 46
+               max = 917
+              mean = 368.84
+            stddev = 292.41
+            median = 343.00
+              75% <= 515.00
+              95% <= 917.00
+              98% <= 917.00
+              99% <= 917.00
+            99.9% <= 917.00
+sub-projectiles-rtt-nodeA
+             count = 42
+               min = 15
+               max = 1000
+              mean = 491.88
+            stddev = 300.66
+            median = 517.00
+              75% <= 683.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeB
+             count = 39
+               min = 15
+               max = 1000
+              mean = 460.02
+            stddev = 353.87
+            median = 532.00
+              75% <= 799.00
+              95% <= 999.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 40
+               min = 15
+               max = 799
+              mean = 377.78
+            stddev = 273.14
+            median = 516.00
+              75% <= 534.00
+              95% <= 781.00
+              98% <= 784.00
+              99% <= 799.00
+            99.9% <= 799.00
+sub-status-rtt-nodeA
+             count = 2177
+               min = 11
+               max = 100
+              mean = 35.89
+            stddev = 10.49
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 83.00
+sub-status-rtt-nodeB
+             count = 2164
+               min = 9
+               max = 91
+              mean = 36.43
+            stddev = 10.58
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 89.00
+sub-status-rtt-nodeC
+             count = 2173
+               min = 4
+               max = 100
+              mean = 35.32
+            stddev = 10.57
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 67.00
+            99.9% <= 100.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 136
+         mean rate = 1.76 events/second
+     1-minute rate = 1.51 events/second
+     5-minute rate = 0.87 events/second
+    15-minute rate = 0.69 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 102
+         mean rate = 1.32 events/second
+     1-minute rate = 1.36 events/second
+     5-minute rate = 1.53 events/second
+    15-minute rate = 1.57 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 2183
+         mean rate = 28.24 events/second
+     1-minute rate = 28.56 events/second
+     5-minute rate = 29.30 events/second
+    15-minute rate = 29.49 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [27=41, 20=55, 26=45, 19=8, 22=9]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [3985=2, 2214=2, 2599=2]
+ERROR [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+3/20/19, 1:31:46 AM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.002979238432175775
+pub-update-percentage-nodeD-status-sync
+             value = 0.49860335195530725
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 104
+sub-blocks-interestscounter-nodeB
+             count = 106
+sub-blocks-interestscounter-nodeC
+             count = 101
+sub-projectiles-interestscounter-nodeA
+             count = 140
+sub-projectiles-interestscounter-nodeB
+             count = 138
+sub-projectiles-interestscounter-nodeC
+             count = 144
+sub-status-interestscounter-nodeA
+             count = 3000
+sub-status-interestscounter-nodeB
+             count = 2987
+sub-status-interestscounter-nodeC
+             count = 3005
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 2994
+               min = 0
+               max = 237
+              mean = 5.61
+            stddev = 16.40
+            median = 0.00
+              75% <= 0.00
+              95% <= 27.00
+              98% <= 46.00
+              99% <= 84.00
+            99.9% <= 208.00
+eng-status-delta-nodeB
+             count = 2982
+               min = 0
+               max = 253
+              mean = 4.13
+            stddev = 14.49
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 39.00
+              99% <= 56.00
+            99.9% <= 189.00
+eng-status-delta-nodeC
+             count = 2995
+               min = 0
+               max = 255
+              mean = 4.72
+            stddev = 15.13
+            median = 0.00
+              75% <= 0.00
+              95% <= 27.00
+              98% <= 39.00
+              99% <= 60.00
+            99.9% <= 255.00
+sub-blocks-rtt-nodeA
+             count = 5
+               min = 16
+               max = 726
+              mean = 236.76
+            stddev = 232.97
+            median = 152.00
+              75% <= 175.00
+              95% <= 726.00
+              98% <= 726.00
+              99% <= 726.00
+            99.9% <= 726.00
+sub-blocks-rtt-nodeB
+             count = 3
+               min = 145
+               max = 707
+              mean = 352.92
+            stddev = 234.36
+            median = 231.00
+              75% <= 707.00
+              95% <= 707.00
+              98% <= 707.00
+              99% <= 707.00
+            99.9% <= 707.00
+sub-blocks-rtt-nodeC
+             count = 7
+               min = 46
+               max = 917
+              mean = 312.27
+            stddev = 232.24
+            median = 162.00
+              75% <= 491.00
+              95% <= 917.00
+              98% <= 917.00
+              99% <= 917.00
+            99.9% <= 917.00
+sub-projectiles-rtt-nodeA
+             count = 58
+               min = 2
+               max = 1000
+              mean = 444.40
+            stddev = 295.99
+            median = 517.00
+              75% <= 599.00
+              95% <= 959.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeB
+             count = 56
+               min = 15
+               max = 1000
+              mean = 475.32
+            stddev = 312.48
+            median = 517.00
+              75% <= 700.00
+              95% <= 1000.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 58
+               min = 15
+               max = 999
+              mean = 369.46
+            stddev = 290.48
+            median = 467.00
+              75% <= 534.00
+              95% <= 850.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-status-rtt-nodeA
+             count = 3000
+               min = 4
+               max = 168
+              mean = 36.52
+            stddev = 13.36
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 68.00
+              99% <= 80.00
+            99.9% <= 168.00
+sub-status-rtt-nodeB
+             count = 2988
+               min = 9
+               max = 243
+              mean = 36.38
+            stddev = 13.34
+            median = 33.00
+              75% <= 34.00
+              95% <= 66.00
+              98% <= 67.00
+              99% <= 71.00
+            99.9% <= 243.00
+sub-status-rtt-nodeC
+             count = 3005
+               min = 1
+               max = 100
+              mean = 35.65
+            stddev = 10.40
+            median = 33.00
+              75% <= 34.00
+              95% <= 62.00
+              98% <= 67.00
+              99% <= 68.00
+            99.9% <= 100.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 194
+         mean rate = 1.81 events/second
+     1-minute rate = 1.66 events/second
+     5-minute rate = 0.96 events/second
+    15-minute rate = 0.73 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 144
+         mean rate = 1.34 events/second
+     1-minute rate = 1.40 events/second
+     5-minute rate = 1.52 events/second
+    15-minute rate = 1.57 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 3012
+         mean rate = 28.07 events/second
+     1-minute rate = 28.29 events/second
+     5-minute rate = 29.16 events/second
+    15-minute rate = 29.44 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [34=2, 33=3, 36=3, 37=2, 20=67, 27=49, 19=8, 26=49, 31=2, 22=9]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [5315=3, 3985=2, 2214=2, 2599=2, 5240=2]
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
