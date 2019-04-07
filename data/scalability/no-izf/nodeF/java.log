@@ -1,0 +1,2677 @@
+DEBUG [main] (ConfigManager.java:33) - Initialized with properties: {local.player.status.updates.per.sec=30, facemanager.num.sub.threads.per.face=10, linear.interest.zone.filter.inner.radius=50, projectile.cache.size=100, local.player.status.use.dead.reckoning=false, block.publisher.freshness.period.ms=300, player.status.publisher.freshness.period.ms=300, base.publisher.queue.process.per.sec=60, projectile.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.outer.radius=100, local.player.dead.reckoning.max.error=1, projectile.publisher.queue.process.multithread=true, statistics.logger.log.rate.sec=30, facemanager.max.num.pub.faces=1, facemanager.num.pub.threads.per.face=10, facemanager.max.num.sub.faces=1, block.sub.inter.interest.max.wait.time.ms=2000, projectile.publisher.queue.process.per.sec=60, base.publisher.queue.process.multithread=true, player.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.enabled=false, projectile.publisher.freshness.period.ms=300}
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/NdnGame/NdnGameLibGdxDesktop-1.0-SNAPSHOT.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+DEBUG [main] (BackendModule.java:123) - Writing metrics to /metrics/nodeF
+ INFO [main] (DesktopLauncher.java:49) - Launching headless game
+ INFO [main] (DesktopLauncher.java:50) - LocalConfig{playerName='nodeF', isMasterView=false, isAutomated=true, automationType='wsp', isHeadless=true, gameId=0, screenWidth=600, screenHeight=600, targetFrameRate=60}
+DEBUG [main] (AutomatedInputController.java:52) - Starting with automation type: wsp
+DEBUG [main] (BasePublisher.java:70) - Registering /com/stefanolupo/ndngame/0/nodeF/blocks/sync
+DEBUG [main] (BasePublisher.java:70) - Registering /com/stefanolupo/ndngame/0/nodeF/status/sync
+Mar 16, 2019 6:16:23 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeF/blocks/sync
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeF/projectiles/sync
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-4] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeF/blocks/interact, retrying..
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-9] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeF/status/sync, retrying..
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeF/projectiles/interact
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeF/blocks/interact
+Mar 16, 2019 6:16:24 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeF/status/sync
+Mar 16, 2019 6:16:27 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/broadcast
+Mar 16, 2019 6:16:27 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/nodeF
+ INFO [cs-/com/stefanolupo/ndngame/0/config/nodeF-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/config/nodeF
+Mar 16, 2019 6:16:28 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/broadcast
+Mar 16, 2019 6:16:28 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/nodeF
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/discovery/nodeF
+3/16/19, 6:17:23 PM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeF-blocks-sync
+             value = 0.0011229646266142617
+pub-update-percentage-nodeF-status-sync
+             value = 0.4967705700645886
+
+-- Timers ----------------------------------------------------------------------
+pub-queue-time-nodeF-blocks-sync
+             count = 0
+         mean rate = 0.00 calls/second
+     1-minute rate = 0.00 calls/second
+     5-minute rate = 0.00 calls/second
+    15-minute rate = 0.00 calls/second
+               min = 0.00 milliseconds
+               max = 0.00 milliseconds
+              mean = 0.00 milliseconds
+            stddev = 0.00 milliseconds
+            median = 0.00 milliseconds
+              75% <= 0.00 milliseconds
+              95% <= 0.00 milliseconds
+              98% <= 0.00 milliseconds
+              99% <= 0.00 milliseconds
+            99.9% <= 0.00 milliseconds
+pub-queue-time-nodeF-status-sync
+             count = 0
+         mean rate = 0.00 calls/second
+     1-minute rate = 0.00 calls/second
+     5-minute rate = 0.00 calls/second
+    15-minute rate = 0.00 calls/second
+               min = 0.00 milliseconds
+               max = 0.00 milliseconds
+              mean = 0.00 milliseconds
+            stddev = 0.00 milliseconds
+            median = 0.00 milliseconds
+              75% <= 0.00 milliseconds
+              95% <= 0.00 milliseconds
+              98% <= 0.00 milliseconds
+              99% <= 0.00 milliseconds
+            99.9% <= 0.00 milliseconds
+
+
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeL
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeG
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeI
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeH
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeE
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeK
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeL/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeG/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeI/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeH/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeE/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (BlockSubscriber.java:51) - Adding subscription for /com/stefanolupo/ndngame/0/nodeK/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeL/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeG/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeI/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeH/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeE/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeK/projectiles/sync/0/0/0
+ INFO [fm-pub-0-3] (ProjectilePublisher.java:131) - Creating interest meter
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeF/status/sync-0] (BasePublisher.java:144) - Had Update but /com/stefanolupo/ndngame/0/nodeF/status/sync/3081/0/0 already had sn 3081
+ WARN [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery/nodeF/1?ndn.MustBeFresh=1&ndn.Nonce=%87%DA%27%93
+ WARN [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery/nodeF/1?ndn.MustBeFresh=1&ndn.Nonce=%B3P%C5%85
+ WARN [cs-/com/stefanolupo/ndngame/0/discovery/nodeF-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery/nodeF/1?ndn.MustBeFresh=1&ndn.Nonce=%CD%AD%FF%0D
+3/16/19, 6:18:23 PM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeF-blocks-sync
+             value = 0.0013962580284836638
+pub-update-percentage-nodeF-status-sync
+             value = 0.49783549783549785
+sub-blocks-cacherate-nodeE
+             value = NaN
+sub-blocks-cacherate-nodeG
+             value = NaN
+sub-blocks-cacherate-nodeH
+             value = NaN
+sub-blocks-cacherate-nodeI
+             value = NaN
+sub-blocks-cacherate-nodeK
+             value = 0.0
+sub-blocks-cacherate-nodeL
+             value = 0.0
+sub-projectiles-cacherate-nodeE
+             value = NaN
+sub-projectiles-cacherate-nodeG
+             value = NaN
+sub-projectiles-cacherate-nodeH
+             value = 0.0
+sub-projectiles-cacherate-nodeI
+             value = NaN
+sub-projectiles-cacherate-nodeK
+             value = 0.0
+sub-projectiles-cacherate-nodeL
+             value = 0.0
+sub-status-cacherate-nodeE
+             value = 0.22641509433962265
+sub-status-cacherate-nodeG
+             value = 0.03508771929824561
+sub-status-cacherate-nodeH
+             value = 0.014084507042253521
+sub-status-cacherate-nodeI
+             value = 0.0
+sub-status-cacherate-nodeK
+             value = 0.0
+sub-status-cacherate-nodeL
+             value = 0.02112676056338028
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeE
+             count = 20
+sub-blocks-interestscounter-nodeG
+             count = 20
+sub-blocks-interestscounter-nodeH
+             count = 20
+sub-blocks-interestscounter-nodeI
+             count = 20
+sub-blocks-interestscounter-nodeK
+             count = 19
+sub-blocks-interestscounter-nodeL
+             count = 19
+sub-projectiles-interestscounter-nodeE
+             count = 20
+sub-projectiles-interestscounter-nodeG
+             count = 20
+sub-projectiles-interestscounter-nodeH
+             count = 22
+sub-projectiles-interestscounter-nodeI
+             count = 20
+sub-projectiles-interestscounter-nodeK
+             count = 22
+sub-projectiles-interestscounter-nodeL
+             count = 21
+sub-status-interestscounter-nodeE
+             count = 121
+sub-status-interestscounter-nodeG
+             count = 238
+sub-status-interestscounter-nodeH
+             count = 88
+sub-status-interestscounter-nodeI
+             count = 114
+sub-status-interestscounter-nodeK
+             count = 98
+sub-status-interestscounter-nodeL
+             count = 156
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeE
+             count = 101
+               min = 0
+               max = 1515
+              mean = 75.34
+            stddev = 217.05
+            median = 19.00
+              75% <= 52.00
+              95% <= 313.00
+              98% <= 651.00
+              99% <= 1331.00
+            99.9% <= 1515.00
+eng-status-delta-nodeG
+             count = 225
+               min = 0
+               max = 1117
+              mean = 14.78
+            stddev = 82.20
+            median = 0.00
+              75% <= 11.00
+              95% <= 42.00
+              98% <= 122.00
+              99% <= 134.00
+            99.9% <= 1117.00
+eng-status-delta-nodeH
+             count = 70
+               min = 0
+               max = 2033
+              mean = 100.94
+            stddev = 372.35
+            median = 0.00
+              75% <= 11.00
+              95% <= 577.00
+              98% <= 1715.00
+              99% <= 2033.00
+            99.9% <= 2033.00
+eng-status-delta-nodeI
+             count = 97
+               min = 0
+               max = 3515
+              mean = 91.70
+            stddev = 419.28
+            median = 0.00
+              75% <= 22.00
+              95% <= 449.00
+              98% <= 1648.00
+              99% <= 3515.00
+            99.9% <= 3515.00
+eng-status-delta-nodeK
+             count = 80
+               min = 0
+               max = 2004
+              mean = 63.39
+            stddev = 260.73
+            median = 0.00
+              75% <= 22.00
+              95% <= 327.00
+              98% <= 678.00
+              99% <= 2004.00
+            99.9% <= 2004.00
+eng-status-delta-nodeL
+             count = 139
+               min = 0
+               max = 1097
+              mean = 41.67
+            stddev = 143.51
+            median = 0.00
+              75% <= 22.00
+              95% <= 331.00
+              98% <= 626.00
+              99% <= 720.00
+            99.9% <= 1097.00
+sub-blocks-latency-nodeE
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-latency-nodeG
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-latency-nodeH
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-latency-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-latency-nodeK
+             count = 1
+               min = 42
+               max = 42
+              mean = 42.00
+            stddev = 0.00
+            median = 42.00
+              75% <= 42.00
+              95% <= 42.00
+              98% <= 42.00
+              99% <= 42.00
+            99.9% <= 42.00
+sub-blocks-latency-nodeL
+             count = 1
+               min = 19
+               max = 19
+              mean = 19.00
+            stddev = 0.00
+            median = 19.00
+              75% <= 19.00
+              95% <= 19.00
+              98% <= 19.00
+              99% <= 19.00
+            99.9% <= 19.00
+sub-blocks-rtt-nodeE
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeG
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeH
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeK
+             count = 1
+               min = 234
+               max = 234
+              mean = 234.00
+            stddev = 0.00
+            median = 234.00
+              75% <= 234.00
+              95% <= 234.00
+              98% <= 234.00
+              99% <= 234.00
+            99.9% <= 234.00
+sub-blocks-rtt-nodeL
+             count = 1
+               min = 410
+               max = 410
+              mean = 410.00
+            stddev = 0.00
+            median = 410.00
+              75% <= 410.00
+              95% <= 410.00
+              98% <= 410.00
+              99% <= 410.00
+            99.9% <= 410.00
+sub-projectiles-latency-nodeE
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-latency-nodeG
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-latency-nodeH
+             count = 3
+               min = 10
+               max = 12
+              mean = 11.31
+            stddev = 0.95
+            median = 12.00
+              75% <= 12.00
+              95% <= 12.00
+              98% <= 12.00
+              99% <= 12.00
+            99.9% <= 12.00
+sub-projectiles-latency-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-latency-nodeK
+             count = 2
+               min = 1
+               max = 5
+              mean = 3.09
+            stddev = 2.00
+            median = 5.00
+              75% <= 5.00
+              95% <= 5.00
+              98% <= 5.00
+              99% <= 5.00
+            99.9% <= 5.00
+sub-projectiles-latency-nodeL
+             count = 1
+               min = 8
+               max = 8
+              mean = 8.00
+            stddev = 0.00
+            median = 8.00
+              75% <= 8.00
+              95% <= 8.00
+              98% <= 8.00
+              99% <= 8.00
+            99.9% <= 8.00
+sub-projectiles-rtt-nodeE
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-rtt-nodeG
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-rtt-nodeH
+             count = 3
+               min = 196
+               max = 649
+              mean = 435.93
+            stddev = 188.42
+            median = 475.00
+              75% <= 649.00
+              95% <= 649.00
+              98% <= 649.00
+              99% <= 649.00
+            99.9% <= 649.00
+sub-projectiles-rtt-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-rtt-nodeK
+             count = 2
+               min = 68
+               max = 145
+              mean = 104.77
+            stddev = 38.46
+            median = 68.00
+              75% <= 145.00
+              95% <= 145.00
+              98% <= 145.00
+              99% <= 145.00
+            99.9% <= 145.00
+sub-projectiles-rtt-nodeL
+             count = 1
+               min = 53
+               max = 53
+              mean = 53.00
+            stddev = 0.00
+            median = 53.00
+              75% <= 53.00
+              95% <= 53.00
+              98% <= 53.00
+              99% <= 53.00
+            99.9% <= 53.00
+sub-status-latency-nodeE
+             count = 106
+               min = 22
+               max = 57
+              mean = 32.30
+            stddev = 7.14
+            median = 31.00
+              75% <= 36.00
+              95% <= 48.00
+              98% <= 52.00
+              99% <= 54.00
+            99.9% <= 57.00
+sub-status-latency-nodeG
+             count = 228
+               min = 10
+               max = 57
+              mean = 19.41
+            stddev = 7.59
+            median = 19.00
+              75% <= 24.00
+              95% <= 29.00
+              98% <= 44.00
+              99% <= 53.00
+            99.9% <= 57.00
+sub-status-latency-nodeH
+             count = 73
+               min = 10
+               max = 36
+              mean = 19.20
+            stddev = 5.09
+            median = 18.00
+              75% <= 23.00
+              95% <= 27.00
+              98% <= 30.00
+              99% <= 36.00
+            99.9% <= 36.00
+sub-status-latency-nodeI
+             count = 100
+               min = 8
+               max = 51
+              mean = 17.27
+            stddev = 6.32
+            median = 17.00
+              75% <= 20.00
+              95% <= 25.00
+              98% <= 39.00
+              99% <= 39.00
+            99.9% <= 51.00
+sub-status-latency-nodeK
+             count = 84
+               min = 2
+               max = 55
+              mean = 11.57
+            stddev = 7.41
+            median = 12.00
+              75% <= 16.00
+              95% <= 19.00
+              98% <= 30.00
+              99% <= 55.00
+            99.9% <= 55.00
+sub-status-latency-nodeL
+             count = 142
+               min = 8
+               max = 57
+              mean = 16.89
+            stddev = 6.35
+            median = 15.00
+              75% <= 21.00
+              95% <= 25.00
+              98% <= 31.00
+              99% <= 35.00
+            99.9% <= 57.00
+sub-status-rtt-nodeE
+             count = 106
+               min = 8
+               max = 112
+              mean = 48.53
+            stddev = 22.33
+            median = 43.00
+              75% <= 66.00
+              95% <= 86.00
+              98% <= 101.00
+              99% <= 112.00
+            99.9% <= 112.00
+sub-status-rtt-nodeG
+             count = 228
+               min = 4
+               max = 104
+              mean = 43.25
+            stddev = 19.13
+            median = 34.00
+              75% <= 55.00
+              95% <= 83.00
+              98% <= 93.00
+              99% <= 99.00
+            99.9% <= 104.00
+sub-status-rtt-nodeH
+             count = 73
+               min = 16
+               max = 83
+              mean = 49.13
+            stddev = 17.30
+            median = 50.00
+              75% <= 67.00
+              95% <= 70.00
+              98% <= 79.00
+              99% <= 83.00
+            99.9% <= 83.00
+sub-status-rtt-nodeI
+             count = 101
+               min = 15
+               max = 121
+              mean = 55.94
+            stddev = 18.24
+            median = 64.00
+              75% <= 67.00
+              95% <= 76.00
+              98% <= 101.00
+              99% <= 103.00
+            99.9% <= 121.00
+sub-status-rtt-nodeK
+             count = 84
+               min = 13
+               max = 132
+              mean = 54.79
+            stddev = 20.25
+            median = 63.00
+              75% <= 67.00
+              95% <= 83.00
+              98% <= 104.00
+              99% <= 132.00
+            99.9% <= 132.00
+sub-status-rtt-nodeL
+             count = 142
+               min = 12
+               max = 123
+              mean = 45.37
+            stddev = 19.25
+            median = 37.00
+              75% <= 66.00
+              95% <= 72.00
+              98% <= 83.00
+              99% <= 88.00
+            99.9% <= 123.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeF-blocks-sync
+             count = 15
+         mean rate = 0.77 events/second
+     1-minute rate = 0.82 events/second
+     5-minute rate = 0.80 events/second
+    15-minute rate = 0.80 events/second
+pub-interest-rate-nodeF-projectiles-sync
+             count = 37
+         mean rate = 1.89 events/second
+     1-minute rate = 1.62 events/second
+     5-minute rate = 1.60 events/second
+    15-minute rate = 1.60 events/second
+pub-interest-rate-nodeF-status-sync
+             count = 562
+         mean rate = 28.76 events/second
+     1-minute rate = 27.87 events/second
+     5-minute rate = 27.66 events/second
+    15-minute rate = 27.62 events/second
+
+-- Timers ----------------------------------------------------------------------
+pub-queue-time-nodeF-blocks-sync
+             count = 2
+         mean rate = 0.02 calls/second
+     1-minute rate = 0.00 calls/second
+     5-minute rate = 0.00 calls/second
+    15-minute rate = 0.00 calls/second
+               min = 0.16 milliseconds
+               max = 0.25 milliseconds
+              mean = 0.20 milliseconds
+            stddev = 0.04 milliseconds
+            median = 0.16 milliseconds
+              75% <= 0.25 milliseconds
+              95% <= 0.25 milliseconds
+              98% <= 0.25 milliseconds
+              99% <= 0.25 milliseconds
+            99.9% <= 0.25 milliseconds
+pub-queue-time-nodeF-status-sync
+             count = 531
+         mean rate = 4.45 calls/second
+     1-minute rate = 6.10 calls/second
+     5-minute rate = 1.35 calls/second
+    15-minute rate = 0.46 calls/second
+               min = 0.05 milliseconds
+               max = 23.70 milliseconds
+              mean = 0.21 milliseconds
+            stddev = 0.98 milliseconds
+            median = 0.15 milliseconds
+              75% <= 0.19 milliseconds
+              95% <= 0.27 milliseconds
+              98% <= 0.40 milliseconds
+              99% <= 0.54 milliseconds
+            99.9% <= 23.70 milliseconds
+
+
+3/16/19, 6:19:23 PM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeF-blocks-sync
+             value = 0.0028805054822523693
+pub-update-percentage-nodeF-status-sync
+             value = 0.4981879007527181
+sub-blocks-cacherate-nodeE
+             value = 0.0
+sub-blocks-cacherate-nodeG
+             value = 0.0
+sub-blocks-cacherate-nodeH
+             value = 0.0
+sub-blocks-cacherate-nodeI
+             value = 0.0
+sub-blocks-cacherate-nodeK
+             value = 0.0
+sub-blocks-cacherate-nodeL
+             value = 0.0
+sub-projectiles-cacherate-nodeE
+             value = 0.15384615384615385
+sub-projectiles-cacherate-nodeG
+             value = 0.0625
+sub-projectiles-cacherate-nodeH
+             value = 0.03333333333333333
+sub-projectiles-cacherate-nodeI
+             value = NaN
+sub-projectiles-cacherate-nodeK
+             value = 0.05555555555555555
+sub-projectiles-cacherate-nodeL
+             value = 0.0
+sub-status-cacherate-nodeE
+             value = 0.19435736677115986
+sub-status-cacherate-nodeG
+             value = 0.04789272030651341
+sub-status-cacherate-nodeH
+             value = 0.045576407506702415
+sub-status-cacherate-nodeI
+             value = 0.013029315960912053
+sub-status-cacherate-nodeK
+             value = 0.005154639175257732
+sub-status-cacherate-nodeL
+             value = 0.031331592689295036
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeE
+             count = 79
+sub-blocks-interestscounter-nodeG
+             count = 79
+sub-blocks-interestscounter-nodeH
+             count = 78
+sub-blocks-interestscounter-nodeI
+             count = 78
+sub-blocks-interestscounter-nodeK
+             count = 77
+sub-blocks-interestscounter-nodeL
+             count = 78
+sub-projectiles-interestscounter-nodeE
+             count = 88
+sub-projectiles-interestscounter-nodeG
+             count = 89
+sub-projectiles-interestscounter-nodeH
+             count = 95
+sub-projectiles-interestscounter-nodeI
+             count = 80
+sub-projectiles-interestscounter-nodeK
+             count = 91
+sub-projectiles-interestscounter-nodeL
+             count = 84
+sub-status-interestscounter-nodeE
+             count = 383
+sub-status-interestscounter-nodeG
+             count = 578
+sub-status-interestscounter-nodeH
+             count = 435
+sub-status-interestscounter-nodeI
+             count = 371
+sub-status-interestscounter-nodeK
+             count = 449
+sub-status-interestscounter-nodeL
+             count = 446
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeE
+             count = 314
+               min = 0
+               max = 2952
+              mean = 54.51
+            stddev = 249.49
+            median = 0.00
+              75% <= 21.00
+              95% <= 171.00
+              98% <= 929.00
+              99% <= 1515.00
+            99.9% <= 2952.00
+eng-status-delta-nodeG
+             count = 519
+               min = 0
+               max = 2132
+              mean = 29.74
+            stddev = 133.80
+            median = 0.00
+              75% <= 11.00
+              95% <= 91.00
+              98% <= 444.00
+              99% <= 590.00
+            99.9% <= 2132.00
+eng-status-delta-nodeH
+             count = 368
+               min = 0
+               max = 4817
+              mean = 74.13
+            stddev = 397.33
+            median = 0.00
+              75% <= 11.00
+              95% <= 342.00
+              98% <= 1266.00
+              99% <= 2076.00
+            99.9% <= 4817.00
+eng-status-delta-nodeI
+             count = 304
+               min = 0
+               max = 3651
+              mean = 85.89
+            stddev = 408.61
+            median = 0.00
+              75% <= 11.00
+              95% <= 286.00
+              98% <= 1425.00
+              99% <= 2625.00
+            99.9% <= 3651.00
+eng-status-delta-nodeK
+             count = 385
+               min = 0
+               max = 3500
+              mean = 64.12
+            stddev = 322.06
+            median = 0.00
+              75% <= 11.00
+              95% <= 156.00
+              98% <= 1400.00
+              99% <= 1705.00
+            99.9% <= 3500.00
+eng-status-delta-nodeL
+             count = 379
+               min = 0
+               max = 1999
+              mean = 57.91
+            stddev = 234.16
+            median = 0.00
+              75% <= 0.00
+              95% <= 354.00
+              98% <= 932.00
+              99% <= 1500.00
+            99.9% <= 1999.00
+sub-blocks-latency-nodeE
+             count = 1
+               min = 29
+               max = 29
+              mean = 29.00
+            stddev = 0.00
+            median = 29.00
+              75% <= 29.00
+              95% <= 29.00
+              98% <= 29.00
+              99% <= 29.00
+            99.9% <= 29.00
+sub-blocks-latency-nodeG
+             count = 1
+               min = 23
+               max = 23
+              mean = 23.00
+            stddev = 0.00
+            median = 23.00
+              75% <= 23.00
+              95% <= 23.00
+              98% <= 23.00
+              99% <= 23.00
+            99.9% <= 23.00
+sub-blocks-latency-nodeH
+             count = 2
+               min = 11
+               max = 24
+              mean = 16.25
+            stddev = 6.38
+            median = 11.00
+              75% <= 24.00
+              95% <= 24.00
+              98% <= 24.00
+              99% <= 24.00
+            99.9% <= 24.00
+sub-blocks-latency-nodeI
+             count = 2
+               min = 11
+               max = 18
+              mean = 14.94
+            stddev = 3.47
+            median = 18.00
+              75% <= 18.00
+              95% <= 18.00
+              98% <= 18.00
+              99% <= 18.00
+            99.9% <= 18.00
+sub-blocks-latency-nodeK
+             count = 3
+               min = 3
+               max = 42
+              mean = 15.26
+            stddev = 15.35
+            median = 3.00
+              75% <= 17.00
+              95% <= 42.00
+              98% <= 42.00
+              99% <= 42.00
+            99.9% <= 42.00
+sub-blocks-latency-nodeL
+             count = 2
+               min = 14
+               max = 19
+              mean = 15.74
+            stddev = 2.38
+            median = 14.00
+              75% <= 19.00
+              95% <= 19.00
+              98% <= 19.00
+              99% <= 19.00
+            99.9% <= 19.00
+sub-blocks-rtt-nodeE
+             count = 1
+               min = 587
+               max = 587
+              mean = 587.00
+            stddev = 0.00
+            median = 587.00
+              75% <= 587.00
+              95% <= 587.00
+              98% <= 587.00
+              99% <= 587.00
+            99.9% <= 587.00
+sub-blocks-rtt-nodeG
+             count = 1
+               min = 52
+               max = 52
+              mean = 52.00
+            stddev = 0.00
+            median = 52.00
+              75% <= 52.00
+              95% <= 52.00
+              98% <= 52.00
+              99% <= 52.00
+            99.9% <= 52.00
+sub-blocks-rtt-nodeH
+             count = 2
+               min = 48
+               max = 814
+              mean = 357.25
+            stddev = 375.83
+            median = 48.00
+              75% <= 814.00
+              95% <= 814.00
+              98% <= 814.00
+              99% <= 814.00
+            99.9% <= 814.00
+sub-blocks-rtt-nodeI
+             count = 2
+               min = 23
+               max = 294
+              mean = 141.32
+            stddev = 134.41
+            median = 23.00
+              75% <= 294.00
+              95% <= 294.00
+              98% <= 294.00
+              99% <= 294.00
+            99.9% <= 294.00
+sub-blocks-rtt-nodeK
+             count = 3
+               min = 30
+               max = 984
+              mean = 568.02
+            stddev = 436.08
+            median = 984.00
+              75% <= 984.00
+              95% <= 984.00
+              98% <= 984.00
+              99% <= 984.00
+            99.9% <= 984.00
+sub-blocks-rtt-nodeL
+             count = 2
+               min = 410
+               max = 868
+              mean = 708.84
+            stddev = 218.09
+            median = 868.00
+              75% <= 868.00
+              95% <= 868.00
+              98% <= 868.00
+              99% <= 868.00
+            99.9% <= 868.00
+sub-projectiles-latency-nodeE
+             count = 13
+               min = 20
+               max = 31
+              mean = 23.25
+            stddev = 3.27
+            median = 21.00
+              75% <= 26.00
+              95% <= 31.00
+              98% <= 31.00
+              99% <= 31.00
+            99.9% <= 31.00
+sub-projectiles-latency-nodeG
+             count = 16
+               min = 9
+               max = 15
+              mean = 10.31
+            stddev = 1.68
+            median = 10.00
+              75% <= 10.00
+              95% <= 15.00
+              98% <= 15.00
+              99% <= 15.00
+            99.9% <= 15.00
+sub-projectiles-latency-nodeH
+             count = 30
+               min = 9
+               max = 303
+              mean = 20.39
+            stddev = 46.64
+            median = 10.00
+              75% <= 14.00
+              95% <= 37.00
+              98% <= 303.00
+              99% <= 303.00
+            99.9% <= 303.00
+sub-projectiles-latency-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-latency-nodeK
+             count = 18
+               min = 1
+               max = 61
+              mean = 8.42
+            stddev = 14.95
+            median = 2.00
+              75% <= 5.00
+              95% <= 39.00
+              98% <= 61.00
+              99% <= 61.00
+            99.9% <= 61.00
+sub-projectiles-latency-nodeL
+             count = 7
+               min = 7
+               max = 8
+              mean = 7.84
+            stddev = 0.36
+            median = 8.00
+              75% <= 8.00
+              95% <= 8.00
+              98% <= 8.00
+              99% <= 8.00
+            99.9% <= 8.00
+sub-projectiles-rtt-nodeE
+             count = 13
+               min = 16
+               max = 992
+              mean = 357.99
+            stddev = 287.81
+            median = 455.00
+              75% <= 574.00
+              95% <= 992.00
+              98% <= 992.00
+              99% <= 992.00
+            99.9% <= 992.00
+sub-projectiles-rtt-nodeG
+             count = 16
+               min = 1
+               max = 817
+              mean = 469.77
+            stddev = 263.69
+            median = 517.00
+              75% <= 614.00
+              95% <= 817.00
+              98% <= 817.00
+              99% <= 817.00
+            99.9% <= 817.00
+sub-projectiles-rtt-nodeH
+             count = 30
+               min = 13
+               max = 1000
+              mean = 498.96
+            stddev = 287.07
+            median = 517.00
+              75% <= 761.00
+              95% <= 909.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeI
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-rtt-nodeK
+             count = 18
+               min = 12
+               max = 998
+              mean = 425.91
+            stddev = 285.09
+            median = 501.00
+              75% <= 548.00
+              95% <= 800.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-projectiles-rtt-nodeL
+             count = 7
+               min = 24
+               max = 881
+              mean = 444.61
+            stddev = 348.18
+            median = 495.00
+              75% <= 850.00
+              95% <= 881.00
+              98% <= 881.00
+              99% <= 881.00
+            99.9% <= 881.00
+sub-status-latency-nodeE
+             count = 319
+               min = 21
+               max = 96
+              mean = 30.90
+            stddev = 6.57
+            median = 30.00
+              75% <= 35.00
+              95% <= 38.00
+              98% <= 44.00
+              99% <= 50.00
+            99.9% <= 96.00
+sub-status-latency-nodeG
+             count = 522
+               min = 10
+               max = 57
+              mean = 19.50
+            stddev = 6.72
+            median = 19.00
+              75% <= 24.00
+              95% <= 29.00
+              98% <= 37.00
+              99% <= 44.00
+            99.9% <= 57.00
+sub-status-latency-nodeH
+             count = 373
+               min = 9
+               max = 85
+              mean = 19.96
+            stddev = 8.13
+            median = 19.00
+              75% <= 24.00
+              95% <= 31.00
+              98% <= 38.00
+              99% <= 52.00
+            99.9% <= 85.00
+sub-status-latency-nodeI
+             count = 307
+               min = 7
+               max = 51
+              mean = 16.99
+            stddev = 5.26
+            median = 17.00
+              75% <= 21.00
+              95% <= 25.00
+              98% <= 26.00
+              99% <= 30.00
+            99.9% <= 51.00
+sub-status-latency-nodeK
+             count = 388
+               min = 2
+               max = 63
+              mean = 10.84
+            stddev = 6.58
+            median = 11.00
+              75% <= 14.00
+              95% <= 19.00
+              98% <= 24.00
+              99% <= 36.00
+            99.9% <= 63.00
+sub-status-latency-nodeL
+             count = 383
+               min = 8
+               max = 57
+              mean = 16.63
+            stddev = 5.56
+            median = 16.00
+              75% <= 21.00
+              95% <= 25.00
+              98% <= 26.00
+              99% <= 31.00
+            99.9% <= 57.00
+sub-status-rtt-nodeE
+             count = 319
+               min = 8
+               max = 129
+              mean = 50.28
+            stddev = 21.80
+            median = 50.00
+              75% <= 67.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 111.00
+            99.9% <= 129.00
+sub-status-rtt-nodeG
+             count = 522
+               min = 4
+               max = 159
+              mean = 46.94
+            stddev = 21.26
+            median = 40.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 100.00
+              99% <= 105.00
+            99.9% <= 159.00
+sub-status-rtt-nodeH
+             count = 373
+               min = 4
+               max = 222
+              mean = 48.88
+            stddev = 22.47
+            median = 45.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 100.00
+              99% <= 110.00
+            99.9% <= 222.00
+sub-status-rtt-nodeI
+             count = 307
+               min = 7
+               max = 121
+              mean = 51.89
+            stddev = 18.65
+            median = 56.00
+              75% <= 67.00
+              95% <= 76.00
+              98% <= 84.00
+              99% <= 100.00
+            99.9% <= 121.00
+sub-status-rtt-nodeK
+             count = 388
+               min = 11
+               max = 132
+              mean = 48.37
+            stddev = 20.93
+            median = 36.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 100.00
+              99% <= 110.00
+            99.9% <= 132.00
+sub-status-rtt-nodeL
+             count = 383
+               min = 8
+               max = 123
+              mean = 45.84
+            stddev = 19.33
+            median = 37.00
+              75% <= 66.00
+              95% <= 76.00
+              98% <= 84.00
+              99% <= 99.00
+            99.9% <= 123.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeF-blocks-sync
+             count = 145
+         mean rate = 1.82 events/second
+     1-minute rate = 1.66 events/second
+     5-minute rate = 1.02 events/second
+    15-minute rate = 0.88 events/second
+pub-interest-rate-nodeF-projectiles-sync
+             count = 212
+         mean rate = 2.67 events/second
+     1-minute rate = 2.49 events/second
+     5-minute rate = 1.83 events/second
+    15-minute rate = 1.68 events/second
+pub-interest-rate-nodeF-status-sync
+             count = 2296
+         mean rate = 28.88 events/second
+     1-minute rate = 28.56 events/second
+     5-minute rate = 27.89 events/second
+    15-minute rate = 27.70 events/second
+
+-- Timers ----------------------------------------------------------------------
+pub-queue-time-nodeF-blocks-sync
+             count = 21
+         mean rate = 0.12 calls/second
+     1-minute rate = 0.21 calls/second
+     5-minute rate = 0.06 calls/second
+    15-minute rate = 0.02 calls/second
+               min = 0.07 milliseconds
+               max = 0.28 milliseconds
+              mean = 0.12 milliseconds
+            stddev = 0.05 milliseconds
+            median = 0.12 milliseconds
+              75% <= 0.13 milliseconds
+              95% <= 0.25 milliseconds
+              98% <= 0.28 milliseconds
+              99% <= 0.28 milliseconds
+            99.9% <= 0.28 milliseconds
+pub-queue-time-nodeF-status-sync
+             count = 2075
+         mean rate = 11.57 calls/second
+     1-minute rate = 18.53 calls/second
+     5-minute rate = 5.78 calls/second
+    15-minute rate = 2.09 calls/second
+               min = 0.05 milliseconds
+               max = 23.70 milliseconds
+              mean = 0.15 milliseconds
+            stddev = 0.59 milliseconds
+            median = 0.12 milliseconds
+              75% <= 0.13 milliseconds
+              95% <= 0.18 milliseconds
+              98% <= 0.24 milliseconds
+              99% <= 0.45 milliseconds
+            99.9% <= 6.87 milliseconds
+
+
+3/16/19, 6:20:23 PM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeF-blocks-sync
+             value = 0.00299380352294089
+pub-update-percentage-nodeF-status-sync
+             value = 0.4985725228048186
+sub-blocks-cacherate-nodeE
+             value = 0.0
+sub-blocks-cacherate-nodeG
+             value = 0.0
+sub-blocks-cacherate-nodeH
+             value = 0.0
+sub-blocks-cacherate-nodeI
+             value = 0.0
+sub-blocks-cacherate-nodeK
+             value = 0.0
+sub-blocks-cacherate-nodeL
+             value = 0.0
+sub-projectiles-cacherate-nodeE
+             value = 0.125
+sub-projectiles-cacherate-nodeG
+             value = 0.05
+sub-projectiles-cacherate-nodeH
+             value = 0.017241379310344827
+sub-projectiles-cacherate-nodeI
+             value = 0.0
+sub-projectiles-cacherate-nodeK
+             value = 0.03225806451612903
+sub-projectiles-cacherate-nodeL
+             value = 0.0
+sub-status-cacherate-nodeE
+             value = 0.166383701188455
+sub-status-cacherate-nodeG
+             value = 0.037082818294190356
+sub-status-cacherate-nodeH
+             value = 0.04361370716510903
+sub-status-cacherate-nodeI
+             value = 0.015463917525773196
+sub-status-cacherate-nodeK
+             value = 0.0028011204481792717
+sub-status-cacherate-nodeL
+             value = 0.018518518518518517
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeE
+             count = 137
+sub-blocks-interestscounter-nodeG
+             count = 138
+sub-blocks-interestscounter-nodeH
+             count = 137
+sub-blocks-interestscounter-nodeI
+             count = 136
+sub-blocks-interestscounter-nodeK
+             count = 136
+sub-blocks-interestscounter-nodeL
+             count = 138
+sub-projectiles-interestscounter-nodeE
+             count = 158
+sub-projectiles-interestscounter-nodeG
+             count = 151
+sub-projectiles-interestscounter-nodeH
+             count = 172
+sub-projectiles-interestscounter-nodeI
+             count = 141
+sub-projectiles-interestscounter-nodeK
+             count = 157
+sub-projectiles-interestscounter-nodeL
+             count = 149
+sub-status-interestscounter-nodeE
+             count = 700
+sub-status-interestscounter-nodeG
+             count = 910
+sub-status-interestscounter-nodeH
+             count = 750
+sub-status-interestscounter-nodeI
+             count = 691
+sub-status-interestscounter-nodeK
+             count = 818
+sub-status-interestscounter-nodeL
+             count = 859
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeE
+             count = 584
+               min = 0
+               max = 2952
+              mean = 41.05
+            stddev = 154.32
+            median = 1.00
+              75% <= 46.00
+              95% <= 69.00
+              98% <= 543.00
+              99% <= 692.00
+            99.9% <= 2952.00
+eng-status-delta-nodeG
+             count = 806
+               min = 0
+               max = 2132
+              mean = 45.48
+            stddev = 194.56
+            median = 0.00
+              75% <= 22.00
+              95% <= 134.00
+              98% <= 656.00
+              99% <= 1117.00
+            99.9% <= 2015.00
+eng-status-delta-nodeH
+             count = 636
+               min = 0
+               max = 4817
+              mean = 61.32
+            stddev = 322.29
+            median = 0.00
+              75% <= 11.00
+              95% <= 223.00
+              98% <= 728.00
+              99% <= 1943.00
+            99.9% <= 4817.00
+eng-status-delta-nodeI
+             count = 579
+               min = 0
+               max = 3651
+              mean = 61.58
+            stddev = 317.49
+            median = 0.00
+              75% <= 11.00
+              95% <= 189.00
+              98% <= 888.00
+              99% <= 1555.00
+            99.9% <= 3651.00
+eng-status-delta-nodeK
+             count = 710
+               min = 0
+               max = 3500
+              mean = 69.74
+            stddev = 325.97
+            median = 0.00
+              75% <= 11.00
+              95% <= 276.00
+              98% <= 1467.00
+              99% <= 1926.00
+            99.9% <= 2708.00
+eng-status-delta-nodeL
+             count = 752
+               min = 0
+               max = 2955
+              mean = 51.62
+            stddev = 252.13
+            median = 0.00
+              75% <= 0.00
+              95% <= 260.00
+              98% <= 916.00
+              99% <= 1500.00
+            99.9% <= 2955.00
+sub-blocks-latency-nodeE
+             count = 3
+               min = 27
+               max = 36
+              mean = 32.45
+            stddev = 4.19
+            median = 36.00
+              75% <= 36.00
+              95% <= 36.00
+              98% <= 36.00
+              99% <= 36.00
+            99.9% <= 36.00
+sub-blocks-latency-nodeG
+             count = 2
+               min = 22
+               max = 23
+              mean = 22.28
+            stddev = 0.45
+            median = 22.00
+              75% <= 23.00
+              95% <= 23.00
+              98% <= 23.00
+              99% <= 23.00
+            99.9% <= 23.00
+sub-blocks-latency-nodeH
+             count = 3
+               min = 11
+               max = 24
+              mean = 19.73
+            stddev = 4.89
+            median = 22.00
+              75% <= 22.00
+              95% <= 24.00
+              98% <= 24.00
+              99% <= 24.00
+            99.9% <= 24.00
+sub-blocks-latency-nodeI
+             count = 4
+               min = 11
+               max = 21
+              mean = 17.25
+            stddev = 3.56
+            median = 18.00
+              75% <= 21.00
+              95% <= 21.00
+              98% <= 21.00
+              99% <= 21.00
+            99.9% <= 21.00
+sub-blocks-latency-nodeK
+             count = 4
+               min = 3
+               max = 42
+              mean = 15.99
+            stddev = 11.70
+            median = 17.00
+              75% <= 17.00
+              95% <= 42.00
+              98% <= 42.00
+              99% <= 42.00
+            99.9% <= 42.00
+sub-blocks-latency-nodeL
+             count = 2
+               min = 14
+               max = 19
+              mean = 15.74
+            stddev = 2.38
+            median = 14.00
+              75% <= 19.00
+              95% <= 19.00
+              98% <= 19.00
+              99% <= 19.00
+            99.9% <= 19.00
+sub-blocks-rtt-nodeE
+             count = 3
+               min = 564
+               max = 950
+              mean = 789.40
+            stddev = 187.38
+            median = 950.00
+              75% <= 950.00
+              95% <= 950.00
+              98% <= 950.00
+              99% <= 950.00
+            99.9% <= 950.00
+sub-blocks-rtt-nodeG
+             count = 2
+               min = 52
+               max = 222
+              mean = 174.93
+            stddev = 76.07
+            median = 222.00
+              75% <= 222.00
+              95% <= 222.00
+              98% <= 222.00
+              99% <= 222.00
+            99.9% <= 222.00
+sub-blocks-rtt-nodeH
+             count = 3
+               min = 48
+               max = 814
+              mean = 401.90
+            stddev = 238.83
+            median = 431.00
+              75% <= 431.00
+              95% <= 814.00
+              98% <= 814.00
+              99% <= 814.00
+            99.9% <= 814.00
+sub-blocks-rtt-nodeI
+             count = 4
+               min = 23
+               max = 967
+              mean = 424.30
+            stddev = 352.33
+            median = 278.00
+              75% <= 967.00
+              95% <= 967.00
+              98% <= 967.00
+              99% <= 967.00
+            99.9% <= 967.00
+sub-blocks-rtt-nodeK
+             count = 4
+               min = 30
+               max = 984
+              mean = 567.16
+            stddev = 331.56
+            median = 566.00
+              75% <= 984.00
+              95% <= 984.00
+              98% <= 984.00
+              99% <= 984.00
+            99.9% <= 984.00
+sub-blocks-rtt-nodeL
+             count = 2
+               min = 410
+               max = 868
+              mean = 708.84
+            stddev = 218.09
+            median = 868.00
+              75% <= 868.00
+              95% <= 868.00
+              98% <= 868.00
+              99% <= 868.00
+            99.9% <= 868.00
+sub-projectiles-latency-nodeE
+             count = 32
+               min = 19
+               max = 47
+              mean = 21.90
+            stddev = 5.53
+            median = 20.00
+              75% <= 21.00
+              95% <= 33.00
+              98% <= 47.00
+              99% <= 47.00
+            99.9% <= 47.00
+sub-projectiles-latency-nodeG
+             count = 20
+               min = 9
+               max = 44
+              mean = 12.76
+            stddev = 8.86
+            median = 10.00
+              75% <= 11.00
+              95% <= 44.00
+              98% <= 44.00
+              99% <= 44.00
+            99.9% <= 44.00
+sub-projectiles-latency-nodeH
+             count = 58
+               min = 9
+               max = 303
+              mean = 13.97
+            stddev = 24.97
+            median = 10.00
+              75% <= 10.00
+              95% <= 28.00
+              98% <= 32.00
+              99% <= 37.00
+            99.9% <= 303.00
+sub-projectiles-latency-nodeI
+             count = 1
+               min = 8
+               max = 8
+              mean = 8.00
+            stddev = 0.00
+            median = 8.00
+              75% <= 8.00
+              95% <= 8.00
+              98% <= 8.00
+              99% <= 8.00
+            99.9% <= 8.00
+sub-projectiles-latency-nodeK
+             count = 31
+               min = 1
+               max = 73
+              mean = 9.37
+            stddev = 17.52
+            median = 2.00
+              75% <= 5.00
+              95% <= 61.00
+              98% <= 73.00
+              99% <= 73.00
+            99.9% <= 73.00
+sub-projectiles-latency-nodeL
+             count = 16
+               min = 7
+               max = 43
+              mean = 10.78
+            stddev = 9.05
+            median = 8.00
+              75% <= 8.00
+              95% <= 43.00
+              98% <= 43.00
+              99% <= 43.00
+            99.9% <= 43.00
+sub-projectiles-rtt-nodeE
+             count = 32
+               min = 15
+               max = 992
+              mean = 418.99
+            stddev = 279.23
+            median = 516.00
+              75% <= 597.00
+              95% <= 933.00
+              98% <= 933.00
+              99% <= 992.00
+            99.9% <= 992.00
+sub-projectiles-rtt-nodeG
+             count = 20
+               min = 1
+               max = 849
+              mean = 419.82
+            stddev = 293.28
+            median = 516.00
+              75% <= 614.00
+              95% <= 849.00
+              98% <= 849.00
+              99% <= 849.00
+            99.9% <= 849.00
+sub-projectiles-rtt-nodeH
+             count = 58
+               min = 13
+               max = 1000
+              mean = 440.95
+            stddev = 278.15
+            median = 513.00
+              75% <= 629.00
+              95% <= 883.00
+              98% <= 908.00
+              99% <= 909.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeI
+             count = 1
+               min = 50
+               max = 50
+              mean = 50.00
+            stddev = 0.00
+            median = 50.00
+              75% <= 50.00
+              95% <= 50.00
+              98% <= 50.00
+              99% <= 50.00
+            99.9% <= 50.00
+sub-projectiles-rtt-nodeK
+             count = 31
+               min = 12
+               max = 998
+              mean = 470.11
+            stddev = 272.08
+            median = 517.00
+              75% <= 683.00
+              95% <= 856.00
+              98% <= 856.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-projectiles-rtt-nodeL
+             count = 16
+               min = 24
+               max = 881
+              mean = 448.08
+            stddev = 322.15
+            median = 516.00
+              75% <= 816.00
+              95% <= 881.00
+              98% <= 881.00
+              99% <= 881.00
+            99.9% <= 881.00
+sub-status-latency-nodeE
+             count = 590
+               min = 19
+               max = 96
+              mean = 29.14
+            stddev = 5.93
+            median = 29.00
+              75% <= 33.00
+              95% <= 37.00
+              98% <= 38.00
+              99% <= 43.00
+            99.9% <= 66.00
+sub-status-latency-nodeG
+             count = 809
+               min = 9
+               max = 62
+              mean = 18.77
+            stddev = 5.94
+            median = 18.00
+              75% <= 22.00
+              95% <= 26.00
+              98% <= 31.00
+              99% <= 37.00
+            99.9% <= 62.00
+sub-status-latency-nodeH
+             count = 642
+               min = 9
+               max = 85
+              mean = 19.10
+            stddev = 6.56
+            median = 19.00
+              75% <= 23.00
+              95% <= 27.00
+              98% <= 32.00
+              99% <= 38.00
+            99.9% <= 74.00
+sub-status-latency-nodeI
+             count = 582
+               min = 7
+               max = 51
+              mean = 17.14
+            stddev = 5.32
+            median = 18.00
+              75% <= 21.00
+              95% <= 24.00
+              98% <= 26.00
+              99% <= 29.00
+            99.9% <= 39.00
+sub-status-latency-nodeK
+             count = 714
+               min = 1
+               max = 63
+              mean = 11.20
+            stddev = 6.28
+            median = 11.00
+              75% <= 15.00
+              95% <= 21.00
+              98% <= 24.00
+              99% <= 30.00
+            99.9% <= 55.00
+sub-status-latency-nodeL
+             count = 756
+               min = 8
+               max = 57
+              mean = 16.99
+            stddev = 5.60
+            median = 17.00
+              75% <= 21.00
+              95% <= 25.00
+              98% <= 30.00
+              99% <= 34.00
+            99.9% <= 38.00
+sub-status-rtt-nodeE
+             count = 590
+               min = 8
+               max = 129
+              mean = 49.61
+            stddev = 20.67
+            median = 49.00
+              75% <= 67.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 102.00
+            99.9% <= 119.00
+sub-status-rtt-nodeG
+             count = 809
+               min = 4
+               max = 159
+              mean = 49.51
+            stddev = 20.65
+            median = 50.00
+              75% <= 66.00
+              95% <= 84.00
+              98% <= 99.00
+              99% <= 100.00
+            99.9% <= 126.00
+sub-status-rtt-nodeH
+             count = 642
+               min = 4
+               max = 222
+              mean = 50.94
+            stddev = 21.66
+            median = 50.00
+              75% <= 67.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 106.00
+            99.9% <= 133.00
+sub-status-rtt-nodeI
+             count = 582
+               min = 7
+               max = 121
+              mean = 52.85
+            stddev = 19.87
+            median = 61.00
+              75% <= 67.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 101.00
+            99.9% <= 118.00
+sub-status-rtt-nodeK
+             count = 714
+               min = 11
+               max = 132
+              mean = 49.33
+            stddev = 20.69
+            median = 46.00
+              75% <= 66.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 104.00
+            99.9% <= 123.00
+sub-status-rtt-nodeL
+             count = 756
+               min = 8
+               max = 140
+              mean = 51.47
+            stddev = 21.28
+            median = 50.00
+              75% <= 67.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 112.00
+            99.9% <= 140.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeF-blocks-sync
+             count = 380
+         mean rate = 2.72 events/second
+     1-minute rate = 3.11 events/second
+     5-minute rate = 1.54 events/second
+    15-minute rate = 1.07 events/second
+pub-interest-rate-nodeF-projectiles-sync
+             count = 427
+         mean rate = 3.06 events/second
+     1-minute rate = 3.22 events/second
+     5-minute rate = 2.15 events/second
+    15-minute rate = 1.80 events/second
+pub-interest-rate-nodeF-status-sync
+             count = 4024
+         mean rate = 28.85 events/second
+     1-minute rate = 28.69 events/second
+     5-minute rate = 28.05 events/second
+    15-minute rate = 27.77 events/second
+
+-- Timers ----------------------------------------------------------------------
+pub-queue-time-nodeF-blocks-sync
+             count = 32
+         mean rate = 0.13 calls/second
+     1-minute rate = 0.20 calls/second
+     5-minute rate = 0.08 calls/second
+    15-minute rate = 0.03 calls/second
+               min = 0.07 milliseconds
+               max = 0.28 milliseconds
+              mean = 0.10 milliseconds
+            stddev = 0.04 milliseconds
+            median = 0.09 milliseconds
+              75% <= 0.12 milliseconds
+              95% <= 0.16 milliseconds
+              98% <= 0.25 milliseconds
+              99% <= 0.28 milliseconds
+            99.9% <= 0.28 milliseconds
+pub-queue-time-nodeF-status-sync
+             count = 3611
+         mean rate = 15.08 calls/second
+     1-minute rate = 23.01 calls/second
+     5-minute rate = 9.37 calls/second
+    15-minute rate = 3.61 calls/second
+               min = 0.05 milliseconds
+               max = 23.70 milliseconds
+              mean = 0.14 milliseconds
+            stddev = 0.46 milliseconds
+            median = 0.10 milliseconds
+              75% <= 0.12 milliseconds
+              95% <= 0.15 milliseconds
+              98% <= 0.19 milliseconds
+              99% <= 0.50 milliseconds
+            99.9% <= 4.26 milliseconds
+
+
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+3/16/19, 6:21:23 PM ============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeF-blocks-sync
+             value = 0.00317318933363024
+pub-update-percentage-nodeF-status-sync
+             value = 0.49774511441456487
+sub-blocks-cacherate-nodeE
+             value = 0.0
+sub-blocks-cacherate-nodeG
+             value = 0.0
+sub-blocks-cacherate-nodeH
+             value = 0.0
+sub-blocks-cacherate-nodeI
+             value = 0.0
+sub-blocks-cacherate-nodeK
+             value = 0.0
+sub-blocks-cacherate-nodeL
+             value = 0.0
+sub-projectiles-cacherate-nodeE
+             value = 0.11627906976744186
+sub-projectiles-cacherate-nodeG
+             value = 0.045454545454545456
+sub-projectiles-cacherate-nodeH
+             value = 0.03225806451612903
+sub-projectiles-cacherate-nodeI
+             value = 0.0
+sub-projectiles-cacherate-nodeK
+             value = 0.029411764705882353
+sub-projectiles-cacherate-nodeL
+             value = 0.0
+sub-status-cacherate-nodeE
+             value = 0.1531413612565445
+sub-status-cacherate-nodeG
+             value = 0.0311284046692607
+sub-status-cacherate-nodeH
+             value = 0.049358341559723594
+sub-status-cacherate-nodeI
+             value = 0.025274725274725275
+sub-status-cacherate-nodeK
+             value = 0.003134796238244514
+sub-status-cacherate-nodeL
+             value = 0.015763546798029555
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeE
+             count = 195
+sub-blocks-interestscounter-nodeG
+             count = 195
+sub-blocks-interestscounter-nodeH
+             count = 194
+sub-blocks-interestscounter-nodeI
+             count = 193
+sub-blocks-interestscounter-nodeK
+             count = 194
+sub-blocks-interestscounter-nodeL
+             count = 195
+sub-projectiles-interestscounter-nodeE
+             count = 225
+sub-projectiles-interestscounter-nodeG
+             count = 224
+sub-projectiles-interestscounter-nodeH
+             count = 233
+sub-projectiles-interestscounter-nodeI
+             count = 205
+sub-projectiles-interestscounter-nodeK
+             count = 219
+sub-projectiles-interestscounter-nodeL
+             count = 211
+sub-status-interestscounter-nodeE
+             count = 926
+sub-status-interestscounter-nodeG
+             count = 1178
+sub-status-interestscounter-nodeH
+             count = 1164
+sub-status-interestscounter-nodeI
+             count = 1062
+sub-status-interestscounter-nodeK
+             count = 1110
+sub-status-interestscounter-nodeL
+             count = 1165
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeE
+             count = 759
+               min = 0
+               max = 3404
+              mean = 70.98
+            stddev = 329.05
+            median = 0.00
+              75% <= 33.00
+              95% <= 267.00
+              98% <= 692.00
+              99% <= 2217.00
+            99.9% <= 3404.00
+eng-status-delta-nodeG
+             count = 1025
+               min = 0
+               max = 5265
+              mean = 76.76
+            stddev = 384.56
+            median = 0.00
+              75% <= 16.00
+              95% <= 283.00
+              98% <= 1208.00
+              99% <= 1542.00
+            99.9% <= 5265.00
+eng-status-delta-nodeH
+             count = 1003
+               min = 0
+               max = 5610
+              mean = 57.02
+            stddev = 348.41
+            median = 0.00
+              75% <= 11.00
+              95% <= 100.00
+              98% <= 692.00
+              99% <= 1937.00
+            99.9% <= 5610.00
+eng-status-delta-nodeI
+             count = 904
+               min = 0
+               max = 3651
+              mean = 69.09
+            stddev = 341.04
+            median = 0.00
+              75% <= 11.00
+              95% <= 288.00
+              98% <= 1025.00
+              99% <= 1581.00
+            99.9% <= 3481.00
+eng-status-delta-nodeK
+             count = 953
+               min = 0
+               max = 3500
+              mean = 55.93
+            stddev = 247.72
+            median = 0.00
+              75% <= 11.00
+              95% <= 314.00
+              98% <= 785.00
+              99% <= 1412.00
+            99.9% <= 2708.00
+eng-status-delta-nodeL
+             count = 1011
+               min = 0
+               max = 5365
+              mean = 80.77
+            stddev = 407.53
+            median = 0.00
+              75% <= 11.00
+              95% <= 281.00
+              98% <= 1312.00
+              99% <= 2235.00
+            99.9% <= 5365.00
+sub-blocks-latency-nodeE
+             count = 5
+               min = 27
+               max = 36
+              mean = 29.08
+            stddev = 3.19
+            median = 28.00
+              75% <= 28.00
+              95% <= 36.00
+              98% <= 36.00
+              99% <= 36.00
+            99.9% <= 36.00
+sub-blocks-latency-nodeG
+             count = 5
+               min = 16
+               max = 24
+              mean = 20.05
+            stddev = 2.88
+            median = 19.00
+              75% <= 23.00
+              95% <= 24.00
+              98% <= 24.00
+              99% <= 24.00
+            99.9% <= 24.00
+sub-blocks-latency-nodeH
+             count = 6
+               min = 10
+               max = 24
+              mean = 18.40
+            stddev = 5.87
+            median = 20.00
+              75% <= 24.00
+              95% <= 24.00
+              98% <= 24.00
+              99% <= 24.00
+            99.9% <= 24.00
+sub-blocks-latency-nodeI
+             count = 7
+               min = 9
+               max = 21
+              mean = 16.11
+            stddev = 4.92
+            median = 16.00
+              75% <= 21.00
+              95% <= 21.00
+              98% <= 21.00
+              99% <= 21.00
+            99.9% <= 21.00
+sub-blocks-latency-nodeK
+             count = 6
+               min = 3
+               max = 42
+              mean = 18.55
+            stddev = 7.06
+            median = 17.00
+              75% <= 24.00
+              95% <= 24.00
+              98% <= 42.00
+              99% <= 42.00
+            99.9% <= 42.00
+sub-blocks-latency-nodeL
+             count = 5
+               min = 14
+               max = 28
+              mean = 24.17
+            stddev = 3.64
+            median = 23.00
+              75% <= 28.00
+              95% <= 28.00
+              98% <= 28.00
+              99% <= 28.00
+            99.9% <= 28.00
+sub-blocks-rtt-nodeE
+             count = 5
+               min = 564
+               max = 950
+              mean = 771.53
+            stddev = 105.74
+            median = 785.00
+              75% <= 785.00
+              95% <= 950.00
+              98% <= 950.00
+              99% <= 950.00
+            99.9% <= 950.00
+sub-blocks-rtt-nodeG
+             count = 5
+               min = 52
+               max = 626
+              mean = 478.01
+            stddev = 176.93
+            median = 563.00
+              75% <= 563.00
+              95% <= 626.00
+              98% <= 626.00
+              99% <= 626.00
+            99.9% <= 626.00
+sub-blocks-rtt-nodeH
+             count = 6
+               min = 48
+               max = 814
+              mean = 320.50
+            stddev = 166.82
+            median = 295.00
+              75% <= 483.00
+              95% <= 483.00
+              98% <= 814.00
+              99% <= 814.00
+            99.9% <= 814.00
+sub-blocks-rtt-nodeI
+             count = 7
+               min = 23
+               max = 967
+              mean = 432.54
+            stddev = 210.88
+            median = 427.00
+              75% <= 553.00
+              95% <= 967.00
+              98% <= 967.00
+              99% <= 967.00
+            99.9% <= 967.00
+sub-blocks-rtt-nodeK
+             count = 6
+               min = 30
+               max = 984
+              mean = 385.27
+            stddev = 224.48
+            median = 381.00
+              75% <= 381.00
+              95% <= 984.00
+              98% <= 984.00
+              99% <= 984.00
+            99.9% <= 984.00
+sub-blocks-rtt-nodeL
+             count = 5
+               min = 410
+               max = 868
+              mean = 592.72
+            stddev = 127.97
+            median = 657.00
+              75% <= 692.00
+              95% <= 868.00
+              98% <= 868.00
+              99% <= 868.00
+            99.9% <= 868.00
+sub-projectiles-latency-nodeE
+             count = 43
+               min = 18
+               max = 47
+              mean = 20.27
+            stddev = 4.28
+            median = 19.00
+              75% <= 20.00
+              95% <= 29.00
+              98% <= 33.00
+              99% <= 47.00
+            99.9% <= 47.00
+sub-projectiles-latency-nodeG
+             count = 44
+               min = 9
+               max = 51
+              mean = 12.05
+            stddev = 8.08
+            median = 10.00
+              75% <= 10.00
+              95% <= 16.00
+              98% <= 51.00
+              99% <= 51.00
+            99.9% <= 51.00
+sub-projectiles-latency-nodeH
+             count = 62
+               min = 9
+               max = 303
+              mean = 17.74
+            stddev = 32.79
+            median = 10.00
+              75% <= 10.00
+              95% <= 32.00
+              98% <= 144.00
+              99% <= 144.00
+            99.9% <= 303.00
+sub-projectiles-latency-nodeI
+             count = 9
+               min = 8
+               max = 10
+              mean = 8.26
+            stddev = 0.67
+            median = 8.00
+              75% <= 8.00
+              95% <= 10.00
+              98% <= 10.00
+              99% <= 10.00
+            99.9% <= 10.00
+sub-projectiles-latency-nodeK
+             count = 34
+               min = 1
+               max = 73
+              mean = 7.46
+            stddev = 15.52
+            median = 2.00
+              75% <= 3.00
+              95% <= 39.00
+              98% <= 73.00
+              99% <= 73.00
+            99.9% <= 73.00
+sub-projectiles-latency-nodeL
+             count = 21
+               min = 7
+               max = 43
+              mean = 9.19
+            stddev = 6.60
+            median = 8.00
+              75% <= 8.00
+              95% <= 17.00
+              98% <= 43.00
+              99% <= 43.00
+            99.9% <= 43.00
+sub-projectiles-rtt-nodeE
+             count = 43
+               min = 11
+               max = 992
+              mean = 399.55
+            stddev = 286.63
+            median = 500.00
+              75% <= 603.00
+              95% <= 816.00
+              98% <= 933.00
+              99% <= 933.00
+            99.9% <= 992.00
+sub-projectiles-rtt-nodeG
+             count = 44
+               min = 0
+               max = 997
+              mean = 477.47
+            stddev = 310.13
+            median = 526.00
+              75% <= 769.00
+              95% <= 891.00
+              98% <= 997.00
+              99% <= 997.00
+            99.9% <= 997.00
+sub-projectiles-rtt-nodeH
+             count = 62
+               min = 1
+               max = 1000
+              mean = 454.79
+            stddev = 289.50
+            median = 516.00
+              75% <= 775.00
+              95% <= 883.00
+              98% <= 908.00
+              99% <= 909.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeI
+             count = 9
+               min = 28
+               max = 783
+              mean = 436.21
+            stddev = 251.36
+            median = 534.00
+              75% <= 536.00
+              95% <= 783.00
+              98% <= 783.00
+              99% <= 783.00
+            99.9% <= 783.00
+sub-projectiles-rtt-nodeK
+             count = 34
+               min = 12
+               max = 998
+              mean = 520.32
+            stddev = 311.13
+            median = 517.00
+              75% <= 778.00
+              95% <= 990.00
+              98% <= 990.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-projectiles-rtt-nodeL
+             count = 21
+               min = 24
+               max = 962
+              mean = 505.55
+            stddev = 312.47
+            median = 583.00
+              75% <= 697.00
+              95% <= 962.00
+              98% <= 962.00
+              99% <= 962.00
+            99.9% <= 962.00
+sub-status-latency-nodeE
+             count = 764
+               min = 18
+               max = 96
+              mean = 28.01
+            stddev = 5.69
+            median = 28.00
+              75% <= 32.00
+              95% <= 36.00
+              98% <= 37.00
+              99% <= 41.00
+            99.9% <= 66.00
+sub-status-latency-nodeG
+             count = 1028
+               min = 9
+               max = 67
+              mean = 19.18
+            stddev = 6.80
+            median = 19.00
+              75% <= 23.00
+              95% <= 27.00
+              98% <= 33.00
+              99% <= 51.00
+            99.9% <= 67.00
+sub-status-latency-nodeH
+             count = 1014
+               min = 9
+               max = 85
+              mean = 19.57
+            stddev = 6.00
+            median = 20.00
+              75% <= 23.00
+              95% <= 27.00
+              98% <= 30.00
+              99% <= 37.00
+            99.9% <= 61.00
+sub-status-latency-nodeI
+             count = 910
+               min = 7
+               max = 51
+              mean = 17.16
+            stddev = 5.40
+            median = 17.00
+              75% <= 21.00
+              95% <= 25.00
+              98% <= 29.00
+              99% <= 30.00
+            99.9% <= 39.00
+sub-status-latency-nodeK
+             count = 957
+               min = 1
+               max = 63
+              mean = 10.96
+            stddev = 5.74
+            median = 11.00
+              75% <= 15.00
+              95% <= 19.00
+              98% <= 23.00
+              99% <= 25.00
+            99.9% <= 40.00
+sub-status-latency-nodeL
+             count = 1015
+               min = 8
+               max = 57
+              mean = 16.69
+            stddev = 5.59
+            median = 16.00
+              75% <= 21.00
+              95% <= 24.00
+              98% <= 26.00
+              99% <= 31.00
+            99.9% <= 46.00
+sub-status-rtt-nodeE
+             count = 764
+               min = 8
+               max = 129
+              mean = 49.18
+            stddev = 19.84
+            median = 50.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 89.00
+              99% <= 99.00
+            99.9% <= 116.00
+sub-status-rtt-nodeG
+             count = 1028
+               min = 4
+               max = 159
+              mean = 51.41
+            stddev = 20.95
+            median = 50.00
+              75% <= 67.00
+              95% <= 86.00
+              98% <= 100.00
+              99% <= 101.00
+            99.9% <= 141.00
+sub-status-rtt-nodeH
+             count = 1015
+               min = 4
+               max = 222
+              mean = 47.20
+            stddev = 21.16
+            median = 41.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 100.00
+            99.9% <= 117.00
+sub-status-rtt-nodeI
+             count = 910
+               min = 7
+               max = 121
+              mean = 51.58
+            stddev = 20.48
+            median = 50.00
+              75% <= 67.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 100.00
+            99.9% <= 118.00
+sub-status-rtt-nodeK
+             count = 957
+               min = 11
+               max = 132
+              mean = 47.11
+            stddev = 20.63
+            median = 36.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 97.00
+              99% <= 100.00
+            99.9% <= 116.00
+sub-status-rtt-nodeL
+             count = 1015
+               min = 8
+               max = 140
+              mean = 50.09
+            stddev = 20.26
+            median = 50.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 100.00
+              99% <= 111.00
+            99.9% <= 140.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeF-blocks-sync
+             count = 620
+         mean rate = 3.11 events/second
+     1-minute rate = 3.68 events/second
+     5-minute rate = 1.98 events/second
+    15-minute rate = 1.26 events/second
+pub-interest-rate-nodeF-projectiles-sync
+             count = 646
+         mean rate = 3.24 events/second
+     1-minute rate = 3.50 events/second
+     5-minute rate = 2.43 events/second
+    15-minute rate = 1.93 events/second
+pub-interest-rate-nodeF-status-sync
+             count = 5740
+         mean rate = 28.77 events/second
+     1-minute rate = 28.73 events/second
+     5-minute rate = 28.17 events/second
+    15-minute rate = 27.83 events/second
+
+-- Timers ----------------------------------------------------------------------
+pub-queue-time-nodeF-blocks-sync
+             count = 44
+         mean rate = 0.15 calls/second
+     1-minute rate = 0.21 calls/second
+     5-minute rate = 0.11 calls/second
+    15-minute rate = 0.04 calls/second
+               min = 0.07 milliseconds
+               max = 0.28 milliseconds
+              mean = 0.11 milliseconds
+            stddev = 0.03 milliseconds
+            median = 0.10 milliseconds
+              75% <= 0.12 milliseconds
+              95% <= 0.13 milliseconds
+              98% <= 0.16 milliseconds
+              99% <= 0.25 milliseconds
+            99.9% <= 0.28 milliseconds
+pub-queue-time-nodeF-status-sync
+             count = 5134
+         mean rate = 17.14 calls/second
+     1-minute rate = 24.59 calls/second
+     5-minute rate = 12.30 calls/second
+    15-minute rate = 5.02 calls/second
+               min = 0.04 milliseconds
+               max = 3.57 milliseconds
+              mean = 0.11 milliseconds
+            stddev = 0.19 milliseconds
+            median = 0.10 milliseconds
+              75% <= 0.11 milliseconds
+              95% <= 0.13 milliseconds
+              98% <= 0.16 milliseconds
+              99% <= 0.29 milliseconds
+            99.9% <= 3.14 milliseconds
+
+

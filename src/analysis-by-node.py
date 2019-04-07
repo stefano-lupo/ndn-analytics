@@ -6,6 +6,7 @@ from typing import List, Dict
 
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 import numpy as np
 
 from interest_aggregation import InterestAggregation
@@ -98,7 +99,7 @@ class AnalysisByNode:
     def plotInterestRates(self, nodes=None, objectType=STATUS):
         nodes = self.gameNodes if nodes is None else nodes
         f, ax = plt.subplots(1)
-        f.suptitle("Interest Rates- %s" % objectType)
+        f.suptitle("Interest Rates for %s" % objectType)
         ax.set_xlabel("Node")
         ax.set_ylabel("Interests received per second")
         for node in nodes:
@@ -109,21 +110,33 @@ class AnalysisByNode:
     def plotPacketTimes(self, nodes=None, objectType=STATUS, metricType="rtt"):
         nodes = self.gameNodes if nodes is None else nodes
         nodes.sort()
-        f, ax = self.getAxis()
-        ax = ax.flatten()
-        f.suptitle("%s - %s" % (objectType, metricType))
+        # f, ax = self.getAxis()
+        f = plt.figure()
+        f.suptitle("Round trip times for %s" % objectType)
+        gridSpecs = gridspec.GridSpec(nrows=2, ncols=2, figure=f)
+        ax = [f.add_subplot(gs) for gs in gridSpecs]
+        # ax = ax.flatten()
+
         for i, node in enumerate(nodes):
             packetTimeHistograms: PacketTimeHistograms = PacketTimeHistograms(self.getNodeDir(node), node)
             packetTimeHistograms.showHistograms(ax[i], objectType=objectType, metricType=metricType)
+        gridSpecs.tight_layout(f)
         self.saveFig(f, "rtt")
 
     def plotStatusDeltas(self, nodes=None):
-        f, ax = self.getAxis()
-        ax = ax.flatten()
+        f = plt.figure()
+        f.suptitle("PlayerStatus deltas")
+        gridSpecs = gridspec.GridSpec(nrows=2, ncols=2, figure=f)
+        ax = [f.add_subplot(gs) for gs in gridSpecs]
+
+        # f, ax = self.getAxis()
+        # f.suptitle("PlayerStatus deltas")
+        # ax = ax.flatten()
         nodes = self.gameNodes if nodes is None else nodes
         for i, node in enumerate(nodes):
             statusDeltaHistograms: StatusDeltasHistograms = StatusDeltasHistograms(node, self.getNodeDir(node))
             statusDeltaHistograms.plotStatusDeltas(ax[i])
+        gridSpecs.tight_layout(f)
         self.saveFig(f, "status-deltas")
 
     def compareProducerRates(self, objectType=STATUS):
@@ -143,7 +156,8 @@ class AnalysisByNode:
         f, ax = plt.subplots()
         plotMulticategoryBar(ax, ratesByDir)
         ax.set_ylabel("Interests Received per Second")
-        f.suptitle("Impact on Interest Rates")
+        ax.legend(loc='lower center')
+        f.suptitle("Impact on Interest rates")
         self.saveFig(f, "interest-rate-impacts")
 
     def plotInterestRatesOverTime(self, objectType=STATUS):
@@ -166,7 +180,7 @@ class AnalysisByNode:
             interests["sub"][node] = subInterests
         plotMulticategoryBar(ax, interests)
         ax.set_ylabel("Number of Interests")
-        f.suptitle("Publisher Interests seen vs total subscriber interests expressed")
+        f.suptitle("Publisher Interests seen vs Subscriber Interests expressed")
         self.saveFig(f, "interest-aggregations")
 
     def analyseCaches(self, objectType=STATUS):
@@ -177,8 +191,8 @@ class AnalysisByNode:
 
     def getTotalCacheRateByNode(self, nfdParsers):
         f, ax = plt.subplots()
-        f.suptitle("Total Cache Hit Rate by Node")
-        ax.set_ylabel("Hit Rate")
+        f.suptitle("Total cache hit rate by node")
+        ax.set_ylabel("Hit Rate %")
         for nfdParser in nfdParsers:
             nfdParser.plotCacheRate(ax)
         self.saveFig(f, "cache-rates-by-node")
@@ -215,7 +229,8 @@ if __name__ == "__main__":
     dataDir = sys.argv[1]
     topology = sys.argv[2]
     subDirs = os.listdir(dataDir)
-    if FIGURE_DIR in subDirs: subDirs.remove(FIGURE_DIR)
+    if FIGURE_DIR in subDirs:
+        subDirs.remove(FIGURE_DIR)
     for mainDir in subDirs:
         otherDirs = [otherDir for otherDir in subDirs if otherDir != mainDir]
         print("\n\nMain dir: %s, otherDirs: %s\n" % (mainDir, otherDirs))

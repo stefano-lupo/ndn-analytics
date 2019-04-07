@@ -1,0 +1,612 @@
+NFD version 0.6.5 starting
+Built with GNU C++ version 7.3.0, with GNU libstdc++ version 20180720, with Boost version 1.65.1, with libpcap version 1.8.1, with WebSocket++ version 0.8.1, with ndn-cxx version 0.6.5
+1552760068.208831 DEBUG: [nfd.ContentStore] set-policy lru
+1552760068.208858 INFO: [nfd.CsPolicy] setLimit 10
+1552760068.208927 INFO: [nfd.StrategyChoice] setDefaultStrategy /localhost/nfd/strategy/best-route/%FD%05
+1552760068.209739 INFO: [nfd.InternalForwarderTransport] [id=0,local=null://,remote=null://] Creating transport
+1552760068.209756 INFO: [nfd.FaceTable] Added face id=255 remote=null:// local=null://
+1552760068.209766 INFO: [nfd.InternalForwarderTransport] [id=0,local=contentstore://,remote=contentstore://] Creating transport
+1552760068.209771 INFO: [nfd.FaceTable] Added face id=254 remote=contentstore:// local=contentstore://
+1552760068.209804 INFO: [nfd.InternalForwarderTransport] [id=0,local=internal://,remote=internal://] Creating transport
+1552760068.209895 INFO: [nfd.FaceTable] Added face id=1 remote=internal:// local=internal://
+1552760068.210481 WARNING: [nfd.CommandAuthenticator] 'certfile any' is intended for demo purposes only and SHOULD NOT be used in production environments
+1552760068.210781 INFO: [nfd.StrategyChoice] changeStrategy(/ndn/broadcast) /localhost/nfd/strategy/best-route/%FD%05 -> /localhost/nfd/strategy/multicast/%FD%03
+1552760068.210814 INFO: [nfd.StrategyChoice] changeStrategy(/localhost) /localhost/nfd/strategy/best-route/%FD%05 -> /localhost/nfd/strategy/multicast/%FD%03
+1552760068.210835 INFO: [nfd.StrategyChoice] changeStrategy(/localhost/nfd) /localhost/nfd/strategy/multicast/%FD%03 -> /localhost/nfd/strategy/best-route/%FD%05
+1552760068.210844 INFO: [nfd.CsPolicy] setLimit 65536
+1552760068.210848 DEBUG: [nfd.ContentStore] set-policy lru
+1552760068.210851 INFO: [nfd.CsPolicy] setLimit 65536
+1552760068.210866 INFO: [nfd.EthernetFactory] enabling multicast on 01:00:5e:00:17:aa
+1552760068.210900 INFO: [nfd.TcpChannel] [tcp4://0.0.0.0:6363] Creating channel
+1552760068.211022 INFO: [nfd.TcpChannel] [tcp6://[::]:6363] Creating channel
+1552760068.211107 INFO: [nfd.UdpChannel] [udp4://0.0.0.0:6363] Creating channel
+1552760068.211165 INFO: [nfd.UdpChannel] [udp6://[::]:6363] Creating channel
+1552760068.211216 INFO: [nfd.UdpFactory] enabling multicast on 224.0.23.170:56363
+1552760068.211232 INFO: [nfd.UdpFactory] enabling multicast on [ff02::1234]:56363
+1552760068.211341 INFO: [nfd.UnixStreamChannel] [unix:///run/nfd.sock] Creating channel
+1552760068.211533 INFO: [nfd.WebSocketChannel] [ws://0.0.0.0:9696] Creating channel
+1552760068.211634 INFO: [nfd.WebSocketChannel] [ws://[::]:9696] Creating channel
+1552760068.211703 INFO: [nfd.CommandAuthenticator] clear-authorizations
+1552760068.211768 WARNING: [nfd.CommandAuthenticator] 'certfile any' is intended for demo purposes only and SHOULD NOT be used in production environments
+1552760068.211781 INFO: [nfd.CommandAuthenticator] authorize module=faces signer=any
+1552760068.211787 INFO: [nfd.CommandAuthenticator] authorize module=fib signer=any
+1552760068.211845 INFO: [nfd.CommandAuthenticator] authorize module=cs signer=any
+1552760068.211887 INFO: [nfd.CommandAuthenticator] authorize module=strategy-choice signer=any
+1552760068.212234 INFO: [nfd.EthernetChannel] [dev://eth0] Creating channel
+1552760068.216272 INFO: [nfd.RibManager] Start monitoring face create/destroy events
+1552760068.282096 INFO: [nfd.MulticastEthernetTransport] [id=0,local=dev://eth0,remote=ether://[01:00:5e:00:17:aa]] Creating transport
+1552760068.282273 INFO: [nfd.FaceTable] Added face id=256 remote=ether://[01:00:5e:00:17:aa] local=dev://eth0
+1552760068.284160 INFO: [nfd.EthernetChannel] [dev://eth1] Creating channel
+1552760068.350090 INFO: [nfd.MulticastEthernetTransport] [id=0,local=dev://eth1,remote=ether://[01:00:5e:00:17:aa]] Creating transport
+1552760068.350347 INFO: [nfd.FaceTable] Added face id=257 remote=ether://[01:00:5e:00:17:aa] local=dev://eth1
+1552760068.351340 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://30] Creating transport
+1552760068.351359 INFO: [nfd.FaceTable] Added face id=258 remote=fd://30 local=unix:///run/nfd.sock
+1552760068.352300 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01i%87%B6Xu/%D6%0Ey%C7%96%D5%F3%D2/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%5D%C0%CC%B3%81%D88%BC%89%95%C3%0B%0B%FA%1Er%0A%0D%111%B8%02%23%3E%05%D6%11%D4%23EF%03I%08%C5%AFy%A3%0Bi%B3%93%5C%D4%9C%DA%AAr%AEPf%85%D7%00%1B%9E%B54%83%F1%7F%AB%80v%28%08%12%EA%B1%0C%DC%BDa%87%0BBL%EAep%15%EC%F7%0E%CF%93O%DB%AE3%C8M%A0%C6%CB%C86C%A05%92%FE%0E%F0%16%5B%FC%27%15%3B%0DfG%0Bjb%DA%16%F5%B8%F0B%B3%82%EF%E1F3Q4%5E%1Cu%F6%13%A9%DC%B6%A0%BA%DE%94%83%B1%99%FD%C9%BB%18%ACX%2BJ%AC%82%E5%F0%F5%9E%B3%3As%25%236%5Et%F2%C7%E98%C6%AD%98n%AAq%9C%88%84%8C%81G%DC%FAk%5D%F2%F3%AC%5C%18%96%90r%F7%AB%12%DD%7B%8C%01%1B%D9%88%18%C7%7C%19%25R57%AA%F9%E7%BDs%09g%87%3A%92%5D0%A2%10%25%C3%22%AD%25%23%D46%B8%3E%A7%D5%D2%13%85%0F%12w%9F%86%86%93%F1%C7%AB%B3%B1%AC%8A L
+1552760068.352342 DEBUG: [nfd.ContentStore]   no-match
+1552760068.352374 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760068.352548 DEBUG: [nfd.ContentStore]   no-match
+1552760068.352615 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01i%87%B6Xx/%D8%5Bof%D2%C7R%FD/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%00%3B%CE%06V%CA3%91q%F5%89%FB%1D%0C%C8i%B0y%BE%B6%E9m%FD%99%CD%D2%CF%A2%7D%C5%A9%CD1%0A%3D%AD%7DJi%03%89e%3B%90%1C%FB%C4%83%FB%17%18G4B%D7%FA1%DB%AA%7D%C3%1A%D1%3F%FB%E8%CDjb%CA%8A%B4%15%CAds%20ua%0D%2B%21%8BOT%B8.%14%DE%24%AE%14%7DS%13%3C%18%81Uy%BF%DC%DCO%40%E6%81%10V%C6y%A8%EEb%1A%F7C%C6%E1%B6xX%93%0A%AD%89%10%1C%DBc%F6%C8%8F%8Adp%96%3B%5B%9B%10%92%BCl%3B%16~%9D%AE%40C%FD%8E%2A%FCOb%D7%08%CE%DA%23F%FA%FC%FA%9Ag%99%EErX7%A2%E0%DF%A8i3Y%3E%C5e%FEF%EF%E7%93%2AAA%06Y%E1g%2C6%C2%FF%29Xd%0B%D5%F9%F1%D9%A3%10Vx%01%CF%60%3B%7FW2%0F%C3%FB%E45F%9Bb%A3u-A%B1P%B7%FF%8D%AD%CE%D1uKx%0E%9C%9D4%2Cd%97h%99%D9%B8r%D4I%FA L
+1552760068.352644 DEBUG: [nfd.ContentStore]   no-match
+1552760068.352810 INFO: [nfd.MulticastUdpTransport] [id=0,local=udp4://10.0.26.18:49264,remote=udp4://224.0.23.170:56363] Creating transport
+1552760068.352823 INFO: [nfd.FaceTable] Added face id=259 remote=udp4://224.0.23.170:56363 local=udp4://10.0.26.18:49264
+1552760068.353659 INFO: [nfd.MulticastUdpTransport] [id=0,local=udp4://172.18.0.3:56012,remote=udp4://224.0.23.170:56363] Creating transport
+1552760068.353677 INFO: [nfd.FaceTable] Added face id=260 remote=udp4://224.0.23.170:56363 local=udp4://172.18.0.3:56012
+1552760068.356200 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%02
+1552760068.356393 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%03
+1552760068.356426 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%04
+1552760068.356551 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%03 L
+1552760068.356558 DEBUG: [nfd.ContentStore]   no-match
+1552760068.356646 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01i%87%B6Xu/%D6%0Ey%C7%96%D5%F3%D2/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%5D%C0%CC%B3%81%D88%BC%89%95%C3%0B%0B%FA%1Er%0A%0D%111%B8%02%23%3E%05%D6%11%D4%23EF%03I%08%C5%AFy%A3%0Bi%B3%93%5C%D4%9C%DA%AAr%AEPf%85%D7%00%1B%9E%B54%83%F1%7F%AB%80v%28%08%12%EA%B1%0C%DC%BDa%87%0BBL%EAep%15%EC%F7%0E%CF%93O%DB%AE3%C8M%A0%C6%CB%C86C%A05%92%FE%0E%F0%16%5B%FC%27%15%3B%0DfG%0Bjb%DA%16%F5%B8%F0B%B3%82%EF%E1F3Q4%5E%1Cu%F6%13%A9%DC%B6%A0%BA%DE%94%83%B1%99%FD%C9%BB%18%ACX%2BJ%AC%82%E5%F0%F5%9E%B3%3As%25%236%5Et%F2%C7%E98%C6%AD%98n%AAq%9C%88%84%8C%81G%DC%FAk%5D%F2%F3%AC%5C%18%96%90r%F7%AB%12%DD%7B%8C%01%1B%D9%88%18%C7%7C%19%25R57%AA%F9%E7%BDs%09g%87%3A%92%5D0%A2%10%25%C3%22%AD%25%23%D46%B8%3E%A7%D5%D2%13%85%0F%12w%9F%86%86%93%F1%C7%AB%B3%B1%AC%8A
+1552760068.356805 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01i%87%B6Xx/%D8%5Bof%D2%C7R%FD/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%00%3B%CE%06V%CA3%91q%F5%89%FB%1D%0C%C8i%B0y%BE%B6%E9m%FD%99%CD%D2%CF%A2%7D%C5%A9%CD1%0A%3D%AD%7DJi%03%89e%3B%90%1C%FB%C4%83%FB%17%18G4B%D7%FA1%DB%AA%7D%C3%1A%D1%3F%FB%E8%CDjb%CA%8A%B4%15%CAds%20ua%0D%2B%21%8BOT%B8.%14%DE%24%AE%14%7DS%13%3C%18%81Uy%BF%DC%DCO%40%E6%81%10V%C6y%A8%EEb%1A%F7C%C6%E1%B6xX%93%0A%AD%89%10%1C%DBc%F6%C8%8F%8Adp%96%3B%5B%9B%10%92%BCl%3B%16~%9D%AE%40C%FD%8E%2A%FCOb%D7%08%CE%DA%23F%FA%FC%FA%9Ag%99%EErX7%A2%E0%DF%A8i3Y%3E%C5e%FEF%EF%E7%93%2AAA%06Y%E1g%2C6%C2%FF%29Xd%0B%D5%F9%F1%D9%A3%10Vx%01%CF%60%3B%7FW2%0F%C3%FB%E45F%9Bb%A3u-A%B1P%B7%FF%8D%AD%CE%D1uKx%0E%9C%9D4%2Cd%97h%99%D9%B8r%D4I%FA
+1552760068.356950 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%03
+1552760068.357041 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%04 L
+1552760068.357056 DEBUG: [nfd.ContentStore]   no-match
+1552760068.357103 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%04
+1552760068.357183 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%05 L
+1552760068.357193 DEBUG: [nfd.ContentStore]   no-match
+1552760128.357293 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760128.357322 DEBUG: [nfd.ContentStore]   no-match
+1552760188.203194 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552760188.203215 INFO: [nfd.FaceTable] Added face id=261 remote=fd://35 local=unix:///run/nfd.sock
+1552760188.204625 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%05
+1552760188.205145 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%06 L
+1552760188.205163 DEBUG: [nfd.ContentStore]   no-match
+1552760188.205401 DEBUG: [nfd.ContentStore] find /localhost/nfd/strategy-choice/set/hK%07%1B%08%03com%08%0Bstefanolupo%08%07ndngamek%2C%07%2A%08%09localhost%08%03nfd%08%08strategy%08%0Abest-route%08%02%FD%01/%00%00%01i%87%B8-%26/%24%CA%DC%F0%E4B%CE%89/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%007%F40%8B%F3%267%E03%DB3%C0%F7f%F2%27%D5%FA%F6r%C0%F9t%D3%5C%DEG%D8%F1Z%F8_%29%C0%FA2Q%92%86%98%FA%CBR8w%D5%02%C6%242%E3%83%16%C8%86%C8c%DD%A4x%03%2B%A9%E1c%D4%D2%95u0%0C%CA%9F%84%F5%A6%A4%289%2F%BDj8s%27J%13%2B%92v%7D%B9%F3w%7D%7D%BA8%CC%B93%40%D7%CC%D0%2F%EB%8F%D3-%17%F8%96%CB%3E%DB%BE%BB%AA%8DuG%A8Cp%C0%19D%0E%3Eb%CB%8Fw1%1D%E7%E2%E7%5C%DA%D1%CA3%97_M%AF%3E%21%91%C4%EB%12%0A%7B%99m%BD4%AB%9E%85%A6%E7%ABcI%FE%16%3A%91d%D1T%9B%1D%3FiR%86l%FFy%81%01%2C%85%FA%AE%99%FA%3AO8n%03%DF%FA%A5%F1%9A%B8%0A%B0%D3%B5%DBJ%E5%1C%EBDZ%9F%C7%93%12%E7c%D8l8%D6%40%3A%CD5k%94%80%23%D0D%97%F0%B5j%C4%A6%D7SMnv%B5%28%99%9AH%DB%D1%B2%D5%07%0A L
+1552760188.205446 DEBUG: [nfd.ContentStore]   no-match
+1552760188.205534 INFO: [nfd.StrategyChoice] changeStrategy(/com/stefanolupo/ndngame) /localhost/nfd/strategy/best-route/%FD%05 -> /localhost/nfd/strategy/best-route/%FD%01
+1552760188.207161 DEBUG: [nfd.ContentStore] insert /localhost/nfd/strategy-choice/set/hK%07%1B%08%03com%08%0Bstefanolupo%08%07ndngamek%2C%07%2A%08%09localhost%08%03nfd%08%08strategy%08%0Abest-route%08%02%FD%01/%00%00%01i%87%B8-%26/%24%CA%DC%F0%E4B%CE%89/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%007%F40%8B%F3%267%E03%DB3%C0%F7f%F2%27%D5%FA%F6r%C0%F9t%D3%5C%DEG%D8%F1Z%F8_%29%C0%FA2Q%92%86%98%FA%CBR8w%D5%02%C6%242%E3%83%16%C8%86%C8c%DD%A4x%03%2B%A9%E1c%D4%D2%95u0%0C%CA%9F%84%F5%A6%A4%289%2F%BDj8s%27J%13%2B%92v%7D%B9%F3w%7D%7D%BA8%CC%B93%40%D7%CC%D0%2F%EB%8F%D3-%17%F8%96%CB%3E%DB%BE%BB%AA%8DuG%A8Cp%C0%19D%0E%3Eb%CB%8Fw1%1D%E7%E2%E7%5C%DA%D1%CA3%97_M%AF%3E%21%91%C4%EB%12%0A%7B%99m%BD4%AB%9E%85%A6%E7%ABcI%FE%16%3A%91d%D1T%9B%1D%3FiR%86l%FFy%81%01%2C%85%FA%AE%99%FA%3AO8n%03%DF%FA%A5%F1%9A%B8%0A%B0%D3%B5%DBJ%E5%1C%EBDZ%9F%C7%93%12%E7c%D8l8%D6%40%3A%CD5k%94%80%23%D0D%97%F0%B5j%C4%A6%D7SMnv%B5%28%99%9AH%DB%D1%B2%D5%07%0A
+1552760188.207622 INFO: [nfd.Transport] [id=261,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552760188.207711 INFO: [nfd.Transport] [id=261,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552760188.209204 INFO: [nfd.FaceTable] Removed face id=261 remote=fd://35 local=unix:///run/nfd.sock
+1552760188.209325 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%06
+1552760188.209507 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%07 L
+1552760188.209568 DEBUG: [nfd.ContentStore]   no-match
+1552760188.210815 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552760188.210905 INFO: [nfd.FaceTable] Added face id=262 remote=fd://35 local=unix:///run/nfd.sock
+1552760188.211843 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h1%07%2C%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%04pingl%01%01/%00%00%01i%87%B8--/%3A%DC%8E%DD%02%F4%C7%A2/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00I%DApi%BFm%27%FE%DBx%F1%22O%C1%21%19S1%5B%BF%F6%09x%9F%B1%23%00%EF%C4cn%E3%A4%DF8%03%B4%5D~U.%9F%09UJ%5E%239J%C7%C4%E2%B1%3C6%FC%E2O5%D6%24%15%5E%FD%1F%9B%FA%EEC%EC%F8%5C%A5%21%20%88%99o%EA%0Ad%D8%91%7C%A9%AE%AC%88%DB%81%9B%D4%28%AA%8C%1E%BE%3DC%2F%D1%13%CB%E5%FB%E6%8DT_%AC%BF%A5%FF%91d%12%9F%94%BF%E4%81%15%D22%27_%CC%B4%95%86%F7%3F%F4%C6b%CFe%B4%93%87F%C5%AD%F1%CB%9F%1C%F2%18_1%5C%1As%CE%B7%1B%CA3%99b%7C%ECJ%93%E0%CA%3B%A9Q%FD%E2a%C9%A7.%E0%1B%AF%03F%94%BD%DA%C8%EF%DB%8D%FD%DAQ%F1%11%A1%82%05%24i%27%96%B1%92%C8%A7%15%95r%E6%22GS%EE%AEEw%F0%B9~%88%3D%B5%89%B0%D1%3F%9F%0Fo%DEE2%2A%87%FEJ%02%F8%D2%E6x%12%B5qA%95A%08%C6%896%FBSJ%17%7B%E8 L
+1552760188.211881 DEBUG: [nfd.ContentStore]   no-match
+1552760188.212535 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%07
+1552760188.213276 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/ping nexthop=262 origin=app cost=0
+1552760188.215172 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h1%07%2C%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%04pingl%01%01/%00%00%01i%87%B8--/%3A%DC%8E%DD%02%F4%C7%A2/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00I%DApi%BFm%27%FE%DBx%F1%22O%C1%21%19S1%5B%BF%F6%09x%9F%B1%23%00%EF%C4cn%E3%A4%DF8%03%B4%5D~U.%9F%09UJ%5E%239J%C7%C4%E2%B1%3C6%FC%E2O5%D6%24%15%5E%FD%1F%9B%FA%EEC%EC%F8%5C%A5%21%20%88%99o%EA%0Ad%D8%91%7C%A9%AE%AC%88%DB%81%9B%D4%28%AA%8C%1E%BE%3DC%2F%D1%13%CB%E5%FB%E6%8DT_%AC%BF%A5%FF%91d%12%9F%94%BF%E4%81%15%D22%27_%CC%B4%95%86%F7%3F%F4%C6b%CFe%B4%93%87F%C5%AD%F1%CB%9F%1C%F2%18_1%5C%1As%CE%B7%1B%CA3%99b%7C%ECJ%93%E0%CA%3B%A9Q%FD%E2a%C9%A7.%E0%1B%AF%03F%94%BD%DA%C8%EF%DB%8D%FD%DAQ%F1%11%A1%82%05%24i%27%96%B1%92%C8%A7%15%95r%E6%22GS%EE%AEEw%F0%B9~%88%3D%B5%89%B0%D1%3F%9F%0Fo%DEE2%2A%87%FEJ%02%F8%D2%E6x%12%B5qA%95A%08%C6%896%FBSJ%17%7B%E8
+1552760188.220321 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h5%07%2C%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%04pingi%02%01%06j%01%00/%00%00%01i%87%B8-5/%ABL%263%F5Z%9E%D7/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%26r%0D%5B%D8h%F1%21%DE%1AS%82%06%10a%FD%3D%7B%3A%FDJ%13s%01p%3D%FC%18%C6%E3%27%07%DB%E8%15%28%E0u%9A%E2-%3A%ED%B3H%8F%B1%B9w%24%A6%BD%B5%CD%9D%1A%9F%0Dy%EF%2C%04r%A0%CF%83%A0%18V%3F%E9%DE%1B%81x%1Ae%D9Y%1B-%8D%FD%F9%9A%FBj%10~%9C%3D%ACX%F9y%14A_%E1%C6%1E%B2%D5%0C%94%08%BB%A33%B4%A5H%EF%92yA%3C6%0B%0AZ%1C%03%A5Z%0E%AD%95T%07%F0f%85f%27y%F3%92%C6N%92Ah%5B%10%D0%07R%B3%0E%EAZ%D9%D2%E3%E3%CB%27pK%1Dis%EC%B1%02%8F%9E%1Bpm%AC.f%ED-%B1%85%7C%9B%16%8Di%A8%0A%D9%CF%DF%E7%90%D4%DB%A3%98%ABr%2FV4%11%E1%C5%19%DF8%10U%EF%E8%92%1E%0F%24%AD%7F%C3%01%DD%10%96%D1v%BA%FEp%8B%D6%14%DA%23H-%08%E66f%8Au%07%CBh%AB%EA%97%81%E0%A6%82ym%16%17%10%B9t%F1 L
+1552760188.220645 DEBUG: [nfd.ContentStore]   no-match
+1552760188.220761 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%08 L
+1552760188.220838 DEBUG: [nfd.ContentStore]   no-match
+1552760188.222852 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h5%07%2C%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%04pingi%02%01%06j%01%00/%00%00%01i%87%B8-5/%ABL%263%F5Z%9E%D7/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%26r%0D%5B%D8h%F1%21%DE%1AS%82%06%10a%FD%3D%7B%3A%FDJ%13s%01p%3D%FC%18%C6%E3%27%07%DB%E8%15%28%E0u%9A%E2-%3A%ED%B3H%8F%B1%B9w%24%A6%BD%B5%CD%9D%1A%9F%0Dy%EF%2C%04r%A0%CF%83%A0%18V%3F%E9%DE%1B%81x%1Ae%D9Y%1B-%8D%FD%F9%9A%FBj%10~%9C%3D%ACX%F9y%14A_%E1%C6%1E%B2%D5%0C%94%08%BB%A33%B4%A5H%EF%92yA%3C6%0B%0AZ%1C%03%A5Z%0E%AD%95T%07%F0f%85f%27y%F3%92%C6N%92Ah%5B%10%D0%07R%B3%0E%EAZ%D9%D2%E3%E3%CB%27pK%1Dis%EC%B1%02%8F%9E%1Bpm%AC.f%ED-%B1%85%7C%9B%16%8Di%A8%0A%D9%CF%DF%E7%90%D4%DB%A3%98%ABr%2FV4%11%E1%C5%19%DF8%10U%EF%E8%92%1E%0F%24%AD%7F%C3%01%DD%10%96%D1v%BA%FEp%8B%D6%14%DA%23H-%08%E66f%8Au%07%CBh%AB%EA%97%81%E0%A6%82ym%16%17%10%B9t%F1
+1552760188.225509 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.225586 INFO: [nfd.FaceTable] Added face id=263 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.227224 DEBUG: [nfd.ContentStore] find /localhost/nfd/strategy-choice/set/hc%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcastk%2B%07%29%08%09localhost%08%03nfd%08%08strategy%08%09multicast%08%02%FD%03/%00%00%01i%87%B8-%3D/%3AO%FF%AC%DC%13ZE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00u6%25%CD%D9R%B94%F3%B8%12%2C%3E%7C%5C%F6%C5%B4%8C%D3%5D%3B%ED%AF%BFg%AE6%00%B5%1E%B1%E5%02w%89D%19m%8FI%0E%27%D0%CE%D7%1B%60%D1%D3%96%A2%3C%5E%3C%E8%B5%FFT%C6%B0K%24%DA%3D%A3_b%14%89%98%FD8e%DC%98%1F%97%CE%D9%08C%3E%3EbdB%09%99%91%CA%08xe%12U%29g%84%F8g%EE%D0%D0%DC%CA%14H%FB_%F9%DB%A4%7C%05%99%96%B0%EB%BC%F09%A8Z%F1%5Cq%99%15R%20%2C%E0L%E92%A8E%E8%19%C1a%A4%05%FA%88%EB%E0%03%92%85%FF%BC%0D7%EF7u%D6e%3A%81%D8A%3B%11L%1F%C1%24%C1sd%AC%0C%BCR%0F%1F%BA%0Bx%03S0%F6%00%A2t%C1%A0%B3p%2B%14%DC%8B%ED%14%E8i%A6%9E%8B%F2%D0%AD%DAf%F6%D5%B2m%06%0E%9D%1A%11%87%C3T%9FK%1D-%3D%8E%AE%E3%DA%C7%97r%9D%5ED%0B%24k%28%FB%D1%812U%04Rm%D5_J%97%84%5C%A0%E8 L
+1552760188.227274 DEBUG: [nfd.ContentStore]   no-match
+1552760188.227311 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%08
+1552760188.227499 INFO: [nfd.StrategyChoice] changeStrategy(/com/stefanolupo/ndngame/0/discovery/broadcast) /localhost/nfd/strategy/best-route/%FD%01 -> /localhost/nfd/strategy/multicast/%FD%03
+1552760188.228586 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%09 L
+1552760188.228605 DEBUG: [nfd.ContentStore]   no-match
+1552760188.228644 DEBUG: [nfd.ContentStore] insert /localhost/nfd/strategy-choice/set/hc%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcastk%2B%07%29%08%09localhost%08%03nfd%08%08strategy%08%09multicast%08%02%FD%03/%00%00%01i%87%B8-%3D/%3AO%FF%AC%DC%13ZE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00u6%25%CD%D9R%B94%F3%B8%12%2C%3E%7C%5C%F6%C5%B4%8C%D3%5D%3B%ED%AF%BFg%AE6%00%B5%1E%B1%E5%02w%89D%19m%8FI%0E%27%D0%CE%D7%1B%60%D1%D3%96%A2%3C%5E%3C%E8%B5%FFT%C6%B0K%24%DA%3D%A3_b%14%89%98%FD8e%DC%98%1F%97%CE%D9%08C%3E%3EbdB%09%99%91%CA%08xe%12U%29g%84%F8g%EE%D0%D0%DC%CA%14H%FB_%F9%DB%A4%7C%05%99%96%B0%EB%BC%F09%A8Z%F1%5Cq%99%15R%20%2C%E0L%E92%A8E%E8%19%C1a%A4%05%FA%88%EB%E0%03%92%85%FF%BC%0D7%EF7u%D6e%3A%81%D8A%3B%11L%1F%C1%24%C1sd%AC%0C%BCR%0F%1F%BA%0Bx%03S0%F6%00%A2t%C1%A0%B3p%2B%14%DC%8B%ED%14%E8i%A6%9E%8B%F2%D0%AD%DAf%F6%D5%B2m%06%0E%9D%1A%11%87%C3T%9FK%1D-%3D%8E%AE%E3%DA%C7%97r%9D%5ED%0B%24k%28%FB%D1%812U%04Rm%D5_J%97%84%5C%A0%E8
+1552760188.229001 INFO: [nfd.Transport] [id=263,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.229093 INFO: [nfd.Transport] [id=263,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.230632 INFO: [nfd.FaceTable] Removed face id=263 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.230785 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%09
+1552760188.231013 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0A L
+1552760188.231110 DEBUG: [nfd.ContentStore]   no-match
+1552760188.237881 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.237902 INFO: [nfd.FaceTable] Added face id=264 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.238895 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0A
+1552760188.239040 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0B L
+1552760188.239055 DEBUG: [nfd.ContentStore]   no-match
+1552760188.243253 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.22%3A6363%85%01%00/%00%00%01i%87%B8-O/P7kbS%A9%22%DE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00oY%C8x.%3F%8C%9C3%27%E8%FC%80%CCo%A8%C0%AA%8B%94%A9%07%F5%F2%DEkw%EB%B7w%F6%F6%B0%D4%C7%FE%E9p%96Qp%16F%20%3D%20%9C%3C%60_N%91%3F%F1%B0%8B%C6%CBQq%91%FD%E6W%9D%E2%CE%84%1A8%C9%8B%E7%C0%FC%97%5B%D7%25%1D%26W1%D7%92N5%7Crn%16%CC%FC%A9R%9E%ED%E4.%3AaY%F0%84%E1%F7%90S%C4%FCJ8%E4L%9E%ED%CD%11%C3j%C6u%DF%E0%7F%D4G%F4%8B%FD%EAz%DA%CCW%872%00%3C%B2%27%06zp%3B%8B%F1%2B%A9X%A0%5C~%90%22XsY%7D%2C%23S%0D%EACZe%2C%82%24%C4%02%3D%00%EB%0B%90C%90%0C%24%21%19%5Dh%9A%D8%FD%92%CB%CF%D6%0D%04%24%A7%F4%9C%9F%81%20%8D%DF%3E%F6H%7B%23k%5D%88%03%D6%91%DCU%F4%01Uk%09U%B6%BFl%7C%A4%E7%9F%C7%D1%E3%FB%97%CC%FAN%2A%0Ci%24%90%06%D21%D0%B1%89%91%E9%1EHW5%B9%F1 L
+1552760188.243296 DEBUG: [nfd.ContentStore]   no-match
+1552760188.243505 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.22:6363] Creating transport
+1552760188.243525 INFO: [nfd.FaceTable] Added face id=265 remote=udp4://10.0.26.22:6363 local=udp4://10.0.26.18:6363
+1552760188.245487 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0B
+1552760188.245679 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.22%3A6363%85%01%00/%00%00%01i%87%B8-O/P7kbS%A9%22%DE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00oY%C8x.%3F%8C%9C3%27%E8%FC%80%CCo%A8%C0%AA%8B%94%A9%07%F5%F2%DEkw%EB%B7w%F6%F6%B0%D4%C7%FE%E9p%96Qp%16F%20%3D%20%9C%3C%60_N%91%3F%F1%B0%8B%C6%CBQq%91%FD%E6W%9D%E2%CE%84%1A8%C9%8B%E7%C0%FC%97%5B%D7%25%1D%26W1%D7%92N5%7Crn%16%CC%FC%A9R%9E%ED%E4.%3AaY%F0%84%E1%F7%90S%C4%FCJ8%E4L%9E%ED%CD%11%C3j%C6u%DF%E0%7F%D4G%F4%8B%FD%EAz%DA%CCW%872%00%3C%B2%27%06zp%3B%8B%F1%2B%A9X%A0%5C~%90%22XsY%7D%2C%23S%0D%EACZe%2C%82%24%C4%02%3D%00%EB%0B%90C%90%0C%24%21%19%5Dh%9A%D8%FD%92%CB%CF%D6%0D%04%24%A7%F4%9C%9F%81%20%8D%DF%3E%F6H%7B%23k%5D%88%03%D6%91%DCU%F4%01Uk%09U%B6%BFl%7C%A4%E7%9F%C7%D1%E3%FB%97%CC%FAN%2A%0Ci%24%90%06%D21%D0%B1%89%91%E9%1EHW5%B9%F1
+1552760188.245763 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0C L
+1552760188.245778 DEBUG: [nfd.ContentStore]   no-match
+1552760188.246086 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.246181 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.247774 INFO: [nfd.FaceTable] Removed face id=264 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.247903 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0C
+1552760188.248107 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0D L
+1552760188.248186 DEBUG: [nfd.ContentStore]   no-match
+1552760188.254940 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.254958 INFO: [nfd.FaceTable] Added face id=266 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.256274 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0D
+1552760188.256428 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0E L
+1552760188.256445 DEBUG: [nfd.ContentStore]   no-match
+1552760188.260436 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.16%3A6363%85%01%00/%00%00%01i%87%B8-a/T%F4%D8%E3X%10%BF%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00-%7C%12%14%D7%0B%8C%EE%BF%07%7FT%FF%19%1BF%F5%3E%CA%EB%DD%03%5B%2B%F4-%06%10%3C%EC%B3R%8C%0AWF%0B%F1%5C%DEj%C6Ki2%BF%E7%C6%DF%1E%1AV%5D%C6xCC%E6%D0%A5%99f%E0%7F%26y%5Cz%85%04F%CA%97%8Ax%15%DE%09%F3A5%FB%04E%FF%21%8D%27f%E4l%05%1B%17%97%A5L%13%CBh%0D%241%F9%2C%A3%C1%88%C9vL%3B%A1%AB%DB5%95%06%AA%E9K%97%E8%F7%23%15%90%3C%C6%ED%5D%B8%04U%F1%25%B1%CC%23%B0%AA%2B%B0%95%3C%3D%98%C9%23%A7%12%2C%C5%0E7~%22qI%0A%92%AD%E9a%C4%14Y9%96%174%C4%F4%13%E6%00%19%BC%5C%C3%5C%C7%F8R%17%D2%C2~%F8%EC%BAn%DD%925%20%0A%5B%A4%D6%24%19G%94%3B8%A7O%85%DD%2F%9CU%87ap%E7%84%9A%19%B2%F3%C6-%11%FF%B9%F8%EC%FC%15%B6%0E%C3B%85%DF8%FD%1B%9EY%C4%7F%90~2%10%00%E4%A0%CC%C1J%9F%91 L
+1552760188.260478 DEBUG: [nfd.ContentStore]   no-match
+1552760188.260694 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.16:6363] Creating transport
+1552760188.260711 INFO: [nfd.FaceTable] Added face id=267 remote=udp4://10.0.26.16:6363 local=udp4://10.0.26.18:6363
+1552760188.262701 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0E
+1552760188.262830 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.16%3A6363%85%01%00/%00%00%01i%87%B8-a/T%F4%D8%E3X%10%BF%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00-%7C%12%14%D7%0B%8C%EE%BF%07%7FT%FF%19%1BF%F5%3E%CA%EB%DD%03%5B%2B%F4-%06%10%3C%EC%B3R%8C%0AWF%0B%F1%5C%DEj%C6Ki2%BF%E7%C6%DF%1E%1AV%5D%C6xCC%E6%D0%A5%99f%E0%7F%26y%5Cz%85%04F%CA%97%8Ax%15%DE%09%F3A5%FB%04E%FF%21%8D%27f%E4l%05%1B%17%97%A5L%13%CBh%0D%241%F9%2C%A3%C1%88%C9vL%3B%A1%AB%DB5%95%06%AA%E9K%97%E8%F7%23%15%90%3C%C6%ED%5D%B8%04U%F1%25%B1%CC%23%B0%AA%2B%B0%95%3C%3D%98%C9%23%A7%12%2C%C5%0E7~%22qI%0A%92%AD%E9a%C4%14Y9%96%174%C4%F4%13%E6%00%19%BC%5C%C3%5C%C7%F8R%17%D2%C2~%F8%EC%BAn%DD%925%20%0A%5B%A4%D6%24%19G%94%3B8%A7O%85%DD%2F%9CU%87ap%E7%84%9A%19%B2%F3%C6-%11%FF%B9%F8%EC%FC%15%B6%0E%C3B%85%DF8%FD%1B%9EY%C4%7F%90~2%10%00%E4%A0%CC%C1J%9F%91
+1552760188.262911 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0F L
+1552760188.262925 DEBUG: [nfd.ContentStore]   no-match
+1552760188.263204 INFO: [nfd.Transport] [id=266,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.263293 INFO: [nfd.Transport] [id=266,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.265258 INFO: [nfd.FaceTable] Removed face id=266 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.265391 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0F
+1552760188.265655 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%10 L
+1552760188.265740 DEBUG: [nfd.ContentStore]   no-match
+1552760188.272102 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.272122 INFO: [nfd.FaceTable] Added face id=268 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.273241 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%10
+1552760188.273399 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%11 L
+1552760188.273417 DEBUG: [nfd.ContentStore]   no-match
+1552760188.277701 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.14%3A6363%85%01%00/%00%00%01i%87%B8-r/%C2%25%1F%EE%F6%BF%7C%F4/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00M%D2n%CDq%D0%029B%8A%0B%C3%0Dmq%03%99%CE%92%22%E5RX%CA%B3D%07%8C%B3%84k7%AA%06%D8%1C%14q%0F%D4M%B9%94%99%BF%D5y%D1%05%8E%FF%E9%25l%A5%90%EF%FE%60b%608%FE%C4%09%01%7C%C0%A6%3DHc%CC%E963%94%2F%A4f%97%89%3A%D9%FF%12%FA%09sY%81%DFS%0D%18%BFG4%A1P%16%AA%40%90%3Ba%08%C5P%03%04%F6%B3o%CB%5C%D2%83%17ai%92Y%01%1B%AB%2FRZ%92%AD%C4%D7%A8%C1y3%83%CB%07%27_%EAW%BAS%D0s%80%87%92%FAS%12P%B0%C9Nb%10%10%E8%15%0C%B7KR%80%E5%26%07%A1%0E%1E%B0d%99%91%D4%FF%04lx%84%1F%86%3D%A6G%B9%7F%A4%3E%F6%04%24%5E-%21%98%A0%BC%F7%ECuA%1DR%15m%0B%CD%9EO%1D%12s%E9%B7%F1W%14%B3%E7%E0o%CC%2F%CC%CE%E76%1C%E9.%3C%AE%D9YcwlJ%E4~L%3F%DF%16W%09%E8%260HU L
+1552760188.277744 DEBUG: [nfd.ContentStore]   no-match
+1552760188.278000 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.14:6363] Creating transport
+1552760188.278021 INFO: [nfd.FaceTable] Added face id=269 remote=udp4://10.0.26.14:6363 local=udp4://10.0.26.18:6363
+1552760188.279711 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%11
+1552760188.279771 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.14%3A6363%85%01%00/%00%00%01i%87%B8-r/%C2%25%1F%EE%F6%BF%7C%F4/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00M%D2n%CDq%D0%029B%8A%0B%C3%0Dmq%03%99%CE%92%22%E5RX%CA%B3D%07%8C%B3%84k7%AA%06%D8%1C%14q%0F%D4M%B9%94%99%BF%D5y%D1%05%8E%FF%E9%25l%A5%90%EF%FE%60b%608%FE%C4%09%01%7C%C0%A6%3DHc%CC%E963%94%2F%A4f%97%89%3A%D9%FF%12%FA%09sY%81%DFS%0D%18%BFG4%A1P%16%AA%40%90%3Ba%08%C5P%03%04%F6%B3o%CB%5C%D2%83%17ai%92Y%01%1B%AB%2FRZ%92%AD%C4%D7%A8%C1y3%83%CB%07%27_%EAW%BAS%D0s%80%87%92%FAS%12P%B0%C9Nb%10%10%E8%15%0C%B7KR%80%E5%26%07%A1%0E%1E%B0d%99%91%D4%FF%04lx%84%1F%86%3D%A6G%B9%7F%A4%3E%F6%04%24%5E-%21%98%A0%BC%F7%ECuA%1DR%15m%0B%CD%9EO%1D%12s%E9%B7%F1W%14%B3%E7%E0o%CC%2F%CC%CE%E76%1C%E9.%3C%AE%D9YcwlJ%E4~L%3F%DF%16W%09%E8%260HU
+1552760188.279853 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%12 L
+1552760188.279864 DEBUG: [nfd.ContentStore]   no-match
+1552760188.280149 INFO: [nfd.Transport] [id=268,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.280179 INFO: [nfd.Transport] [id=268,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.281221 INFO: [nfd.FaceTable] Removed face id=268 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.281313 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%12
+1552760188.281498 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%13 L
+1552760188.281516 DEBUG: [nfd.ContentStore]   no-match
+1552760188.289864 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.289887 INFO: [nfd.FaceTable] Added face id=270 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.291160 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%13
+1552760188.291311 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%14 L
+1552760188.291329 DEBUG: [nfd.ContentStore]   no-match
+1552760188.294819 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.24%3A6363%85%01%00/%00%00%01i%87%B8-%83/%18DX%5C%A7%7F%DC%5C/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00R%AB%BE%A7%05%0D%0F%19%E5Vk%F9%F2%1A%FF%06%CE%B1%C6%B7%AB%93%8C1%3C%CF%29K%28Jvj%A7%07%B8%B0%9E%B5%B2%A5T1K5Sn%BF%FF%E3%99%F7%F3-%B8%F3%60lP%28G%DF%ACd%AB%86%5D%7D%FC%B46%CC%21dN%C2%DD%18%9BU%BFuE%FDI%13%27j%A4%C0%A0%E8%D8%E8%5E%9BB%C5%F7%23%EF%C56%937%CE%3D%1E%D3M%8B%17%A4%BA%D0t%854%83%D0%B7%EC%20%60Y%AB%F5%CDQ%B4%BA%B4%94%07%20%96%ED%29%867L%BA%EA%09%FE%B5%91%25%AF~%13%2FxMqB%F3%FA%0A%24%98u%A5%8CxfT%2C%04t%851t%F6%17%D4%3C%CE0%B1J%DE0z%DC%B8%E9%D7%3AlM%A9%14%04%D8%C1%16%03%28%8B%0A%A1%D8%BE%0B%E09Lz%E5%99%DF%DD%CB%1Ama%C7%5C%C7D%F5%96Q%7B%E8%5BN%0E%28o%E0O%B9H%15%81%0C%A6%88%3F%16%8F%A0sD%E1%B8%1F7%CE%E8l%AC%F3%E1%8A L
+1552760188.294861 DEBUG: [nfd.ContentStore]   no-match
+1552760188.295023 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.24:6363] Creating transport
+1552760188.295042 INFO: [nfd.FaceTable] Added face id=271 remote=udp4://10.0.26.24:6363 local=udp4://10.0.26.18:6363
+1552760188.296924 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%14
+1552760188.297068 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.24%3A6363%85%01%00/%00%00%01i%87%B8-%83/%18DX%5C%A7%7F%DC%5C/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00R%AB%BE%A7%05%0D%0F%19%E5Vk%F9%F2%1A%FF%06%CE%B1%C6%B7%AB%93%8C1%3C%CF%29K%28Jvj%A7%07%B8%B0%9E%B5%B2%A5T1K5Sn%BF%FF%E3%99%F7%F3-%B8%F3%60lP%28G%DF%ACd%AB%86%5D%7D%FC%B46%CC%21dN%C2%DD%18%9BU%BFuE%FDI%13%27j%A4%C0%A0%E8%D8%E8%5E%9BB%C5%F7%23%EF%C56%937%CE%3D%1E%D3M%8B%17%A4%BA%D0t%854%83%D0%B7%EC%20%60Y%AB%F5%CDQ%B4%BA%B4%94%07%20%96%ED%29%867L%BA%EA%09%FE%B5%91%25%AF~%13%2FxMqB%F3%FA%0A%24%98u%A5%8CxfT%2C%04t%851t%F6%17%D4%3C%CE0%B1J%DE0z%DC%B8%E9%D7%3AlM%A9%14%04%D8%C1%16%03%28%8B%0A%A1%D8%BE%0B%E09Lz%E5%99%DF%DD%CB%1Ama%C7%5C%C7D%F5%96Q%7B%E8%5BN%0E%28o%E0O%B9H%15%81%0C%A6%88%3F%16%8F%A0sD%E1%B8%1F7%CE%E8l%AC%F3%E1%8A
+1552760188.297154 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%15 L
+1552760188.297167 DEBUG: [nfd.ContentStore]   no-match
+1552760188.297488 INFO: [nfd.Transport] [id=270,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.297579 INFO: [nfd.Transport] [id=270,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.299014 INFO: [nfd.FaceTable] Removed face id=270 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.299149 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%15
+1552760188.299368 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%16 L
+1552760188.299452 DEBUG: [nfd.ContentStore]   no-match
+1552760188.306498 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.306519 INFO: [nfd.FaceTable] Added face id=272 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.307603 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%16
+1552760188.307772 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%17 L
+1552760188.307793 DEBUG: [nfd.ContentStore]   no-match
+1552760188.311907 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.26%3A6363%85%01%00/%00%00%01i%87%B8-%94/l%85%22%2C%21%F4%0B%5E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%80%5C%1F%DF%87%85%CA%96%95%84%88%8E%FB%24%AAr%18%97%26F%CB%40%11%A5%92%B2B%EE%11%E6%CA%40%1B%15%EB%04%CBw%80%E8%E5%BB%CE7%8E%B6%EE%89QW%8D%9F%89%D6%E5x%05~%94%7C%B0E%08%D3%40l%EE%AF%25Eh%B1I%94%12%F0%25%82x%DF%7C%0Di%06%5B%10%EAq%DA%F1%3B%F4%BA%9A%FC%CE%CC%D4%83c%FD%87%88%D4%BEx%A6%C0%9Cg%07%28IF%8A%B0%A7%C8%F1%E7%82%B8~%B7%96%C1%AB%DF%5DH0%D8%E8%1B%DE%3A%1A2%3D%AEbM%25%D9%06x%E3%0F%8D%1Css%A0f%B6G%0Dw%24%D9%1A%BE%FB%BB%B2m%E9%3F5%7B%2B%AC%AA%DF%92%10%AA%D9w%B8%DC%E8%0B%D6%A2%E6%D3%BC%CF%F4%CC%7B%5D%FDw%D7%07%E1%8FQ%C0%A6%D3%9F%CB%3A%DFe.t%AA%BEE%0F%15%E5%87%8F%C2%AA%3Et%D2%7FR%9A%02%FC%5C%F2z%DE%CA%60%09%DDr%CC%EF%84%87Ki%F97%8A%14d%19%ED%5B%18%EB%D5%A4n L
+1552760188.311967 DEBUG: [nfd.ContentStore]   no-match
+1552760188.312307 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.26:6363] Creating transport
+1552760188.312332 INFO: [nfd.FaceTable] Added face id=273 remote=udp4://10.0.26.26:6363 local=udp4://10.0.26.18:6363
+1552760188.314888 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%17
+1552760188.315106 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.26%3A6363%85%01%00/%00%00%01i%87%B8-%94/l%85%22%2C%21%F4%0B%5E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%80%5C%1F%DF%87%85%CA%96%95%84%88%8E%FB%24%AAr%18%97%26F%CB%40%11%A5%92%B2B%EE%11%E6%CA%40%1B%15%EB%04%CBw%80%E8%E5%BB%CE7%8E%B6%EE%89QW%8D%9F%89%D6%E5x%05~%94%7C%B0E%08%D3%40l%EE%AF%25Eh%B1I%94%12%F0%25%82x%DF%7C%0Di%06%5B%10%EAq%DA%F1%3B%F4%BA%9A%FC%CE%CC%D4%83c%FD%87%88%D4%BEx%A6%C0%9Cg%07%28IF%8A%B0%A7%C8%F1%E7%82%B8~%B7%96%C1%AB%DF%5DH0%D8%E8%1B%DE%3A%1A2%3D%AEbM%25%D9%06x%E3%0F%8D%1Css%A0f%B6G%0Dw%24%D9%1A%BE%FB%BB%B2m%E9%3F5%7B%2B%AC%AA%DF%92%10%AA%D9w%B8%DC%E8%0B%D6%A2%E6%D3%BC%CF%F4%CC%7B%5D%FDw%D7%07%E1%8FQ%C0%A6%D3%9F%CB%3A%DFe.t%AA%BEE%0F%15%E5%87%8F%C2%AA%3Et%D2%7FR%9A%02%FC%5C%F2z%DE%CA%60%09%DDr%CC%EF%84%87Ki%F97%8A%14d%19%ED%5B%18%EB%D5%A4n
+1552760188.315205 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%18 L
+1552760188.315220 DEBUG: [nfd.ContentStore]   no-match
+1552760188.315522 INFO: [nfd.Transport] [id=272,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.315557 INFO: [nfd.Transport] [id=272,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.316469 INFO: [nfd.FaceTable] Removed face id=272 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.316605 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%18
+1552760188.316932 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%19 L
+1552760188.316951 DEBUG: [nfd.ContentStore]   no-match
+1552760188.325314 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.325335 INFO: [nfd.FaceTable] Added face id=274 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.326709 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%19
+1552760188.326853 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1A L
+1552760188.326873 DEBUG: [nfd.ContentStore]   no-match
+1552760188.331781 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.6%3A6363%85%01%00/%00%00%01i%87%B8-%A6/O%BC%1E%C0Up%9A%20/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%94GGY%2Ffd%B3%B7%1C%A8%04%E5Lp%E9%81%98%13%7Bs%AE%B4%5E%FD%CC11%3Ca%17%F5%F2%FF%1F%FB%C1F%C3%DA%D4%C4%DF%A2%F4s%B4%7B%02%E9%02%FA%5C%BA%C6%E7%83%FE%AD%0A%BA%E5%1E%AE3VY%22%E1%F7%98%7C%E4%3B%C7%5D%27%AE%8E%0F%E3%D4%DD%223m%DA%05e%91%2B3%0D%EA.%B0%F9%27%98%CC%A5G%C2va%A1%80%FB~%5C%C5%F2%E4%FAs%96%A4%B3%83%A8%21%C1%D0%91%82Sp%89Y%A8%1C%F2%92%AD%D1%8A%B78O%C3.%AC%01%21%CF%ED%D4z%03%FDz%0Ef%9D%D1iH%A8%14y%AA%05%88%D0%B5%1E%88%1B%95w%10%3AM%DE%97%87%DEHn%ACP%00%86%B2%A5%B9%1E%3E%D1%D7%E7%AE%14%E6%3D8%07%06%3B%7B%1A%3A%D9%7D%BE%02%92%01%3B%FF%EF%20%0C%17%0F%BF%20j%BE%0CE%B2%0A%3D%933%A2%D1%EB%EBZq%B3%80%FBds%9E%C1%29%93%DCR%9D%FA%3C%97m%B3A%0D%FC%A5%89%A1H L
+1552760188.331825 DEBUG: [nfd.ContentStore]   no-match
+1552760188.332006 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.6:6363] Creating transport
+1552760188.332030 INFO: [nfd.FaceTable] Added face id=275 remote=udp4://10.0.26.6:6363 local=udp4://10.0.26.18:6363
+1552760188.334082 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1A
+1552760188.334145 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.6%3A6363%85%01%00/%00%00%01i%87%B8-%A6/O%BC%1E%C0Up%9A%20/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%94GGY%2Ffd%B3%B7%1C%A8%04%E5Lp%E9%81%98%13%7Bs%AE%B4%5E%FD%CC11%3Ca%17%F5%F2%FF%1F%FB%C1F%C3%DA%D4%C4%DF%A2%F4s%B4%7B%02%E9%02%FA%5C%BA%C6%E7%83%FE%AD%0A%BA%E5%1E%AE3VY%22%E1%F7%98%7C%E4%3B%C7%5D%27%AE%8E%0F%E3%D4%DD%223m%DA%05e%91%2B3%0D%EA.%B0%F9%27%98%CC%A5G%C2va%A1%80%FB~%5C%C5%F2%E4%FAs%96%A4%B3%83%A8%21%C1%D0%91%82Sp%89Y%A8%1C%F2%92%AD%D1%8A%B78O%C3.%AC%01%21%CF%ED%D4z%03%FDz%0Ef%9D%D1iH%A8%14y%AA%05%88%D0%B5%1E%88%1B%95w%10%3AM%DE%97%87%DEHn%ACP%00%86%B2%A5%B9%1E%3E%D1%D7%E7%AE%14%E6%3D8%07%06%3B%7B%1A%3A%D9%7D%BE%02%92%01%3B%FF%EF%20%0C%17%0F%BF%20j%BE%0CE%B2%0A%3D%933%A2%D1%EB%EBZq%B3%80%FBds%9E%C1%29%93%DCR%9D%FA%3C%97m%B3A%0D%FC%A5%89%A1H
+1552760188.334229 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1B L
+1552760188.334243 DEBUG: [nfd.ContentStore]   no-match
+1552760188.334607 INFO: [nfd.Transport] [id=274,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.334707 INFO: [nfd.Transport] [id=274,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.336191 INFO: [nfd.FaceTable] Removed face id=274 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.336344 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1B
+1552760188.336578 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1C L
+1552760188.336662 DEBUG: [nfd.ContentStore]   no-match
+1552760188.346104 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.346172 INFO: [nfd.FaceTable] Added face id=276 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.347171 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1C
+1552760188.347335 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1D L
+1552760188.347358 DEBUG: [nfd.ContentStore]   no-match
+1552760188.374289 INFO: [nfd.Transport] [id=276,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.374421 INFO: [nfd.Transport] [id=276,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.375867 INFO: [nfd.FaceTable] Removed face id=276 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.375935 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1D
+1552760188.376101 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1E L
+1552760188.376181 DEBUG: [nfd.ContentStore]   no-match
+1552760188.384550 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.384571 INFO: [nfd.FaceTable] Added face id=277 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.385609 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1E
+1552760188.385765 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%1F L
+1552760188.385783 DEBUG: [nfd.ContentStore]   no-match
+1552760188.413992 INFO: [nfd.Transport] [id=277,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.414046 INFO: [nfd.Transport] [id=277,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.415562 INFO: [nfd.FaceTable] Removed face id=277 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.415719 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%1F
+1552760188.415909 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%20 L
+1552760188.415928 DEBUG: [nfd.ContentStore]   no-match
+1552760188.424021 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.424042 INFO: [nfd.FaceTable] Added face id=278 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.425063 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%20
+1552760188.425363 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%21 L
+1552760188.425388 DEBUG: [nfd.ContentStore]   no-match
+1552760188.440054 INFO: [nfd.Transport] [id=278,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.440090 INFO: [nfd.Transport] [id=278,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.441593 INFO: [nfd.FaceTable] Removed face id=278 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.441655 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%21
+1552760188.441820 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%22 L
+1552760188.441841 DEBUG: [nfd.ContentStore]   no-match
+1552760188.450231 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.450251 INFO: [nfd.FaceTable] Added face id=279 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.451129 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%22
+1552760188.451268 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%23 L
+1552760188.451287 DEBUG: [nfd.ContentStore]   no-match
+1552760188.455356 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.8%3A6363%85%01%00/%00%00%01i%87%B8.%23/%02%96%A1%2B%21a%ABX/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00M%C6%16%3F%A8%D5C%1B%F2o%97%0C%A7u%98i%3A%04%25-d%FD%AB%E1%CC%80t%BDMc%3C%EE%86%9C%2CK%C4%8Fb%0F%92%94Z%00%92T%C74%28i%2A%0C%E6%C3%E8%29%98%9Bww%CB0%2C%DB%26%3D%21I%E1%90%5EMj%F2%B7%18%97%089%17%1B%98N%E6l%1D%F8%2B%8B%C2%8C%150%40%27I%7F%8DJ%D6O%DA%BA%EC%C5%3C%EE%15R%95%FA%88%F2z%E4%02%E85%B1%1F%C9%FE~t%84%BF%EA%A2UF%8BU%F9.%F9%B8%BC%B5%2B%CDz%B5A%E6%AD%7DA%B6%80%BA%7C%EA%10%C6%5D%7D%C8%EBX%82%8F%A9k%90f%CB%9Ap%1D%EC%18%DC%DC%13_%D1%CC4%A3%DF%8C%A4%93%DA%C6V%D4%14%EF%B2%BEX%02%7D%BA%96%D1%DD5%25%D1%2B%D7%98%3F%06%27%F9%0D%C4%D9%3DE%97%BF%EFa%DD%60%081%0F%FF%ED%40%FC%E3%9BIQY%DB%8B.%60%B3%B2Mj%E1X%CEG%B7V%A7%06%08%E9%B4%2BH%85%FC%10r L
+1552760188.455397 DEBUG: [nfd.ContentStore]   no-match
+1552760188.455544 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.8:6363] Creating transport
+1552760188.455561 INFO: [nfd.FaceTable] Added face id=280 remote=udp4://10.0.26.8:6363 local=udp4://10.0.26.18:6363
+1552760188.457105 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%23
+1552760188.457217 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.8%3A6363%85%01%00/%00%00%01i%87%B8.%23/%02%96%A1%2B%21a%ABX/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00M%C6%16%3F%A8%D5C%1B%F2o%97%0C%A7u%98i%3A%04%25-d%FD%AB%E1%CC%80t%BDMc%3C%EE%86%9C%2CK%C4%8Fb%0F%92%94Z%00%92T%C74%28i%2A%0C%E6%C3%E8%29%98%9Bww%CB0%2C%DB%26%3D%21I%E1%90%5EMj%F2%B7%18%97%089%17%1B%98N%E6l%1D%F8%2B%8B%C2%8C%150%40%27I%7F%8DJ%D6O%DA%BA%EC%C5%3C%EE%15R%95%FA%88%F2z%E4%02%E85%B1%1F%C9%FE~t%84%BF%EA%A2UF%8BU%F9.%F9%B8%BC%B5%2B%CDz%B5A%E6%AD%7DA%B6%80%BA%7C%EA%10%C6%5D%7D%C8%EBX%82%8F%A9k%90f%CB%9Ap%1D%EC%18%DC%DC%13_%D1%CC4%A3%DF%8C%A4%93%DA%C6V%D4%14%EF%B2%BEX%02%7D%BA%96%D1%DD5%25%D1%2B%D7%98%3F%06%27%F9%0D%C4%D9%3DE%97%BF%EFa%DD%60%081%0F%FF%ED%40%FC%E3%9BIQY%DB%8B.%60%B3%B2Mj%E1X%CEG%B7V%A7%06%08%E9%B4%2BH%85%FC%10r
+1552760188.457295 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%24 L
+1552760188.457307 DEBUG: [nfd.ContentStore]   no-match
+1552760188.457593 INFO: [nfd.Transport] [id=279,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.457619 INFO: [nfd.Transport] [id=279,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.458924 INFO: [nfd.FaceTable] Removed face id=279 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.458973 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%24
+1552760188.459155 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%25 L
+1552760188.459218 DEBUG: [nfd.ContentStore]   no-match
+1552760188.466514 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.466532 INFO: [nfd.FaceTable] Added face id=281 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.467367 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%25
+1552760188.467501 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%26 L
+1552760188.467519 DEBUG: [nfd.ContentStore]   no-match
+1552760188.470982 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.25%3A6363%85%01%00/%00%00%01i%87%B8.4/%12%21H%03i%E9%0EF/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00Y%27%9B%CE%3F%B7%154Y%897%25%14%98PbvH%C5%A29%87%E7k%FA%FE%81%8Afn%E9%D3%93%E8%886%1C%A8%E0_%7C%FD%F5vpn%C6R%F3%1Dhj%18%3FY%17%93%99%F8%E7%DBFJ%CC%D1%D5zz%7C%B6%A2%A9%AEF%7B%E5%8CA%7C%CFp%EF%D8%B9%5E%CBs%60%F1%DD%D9%BB%B6~%CB%A7K%DBOa_%27%E8W%F2%06%25%8Ab%E6%02%19%07%DDd%3B%A1%896MC%89%3C%C9%9Ex%BB%9E%E5%E8%26%DCg%E5%DD%C3QvS%12%3A%91%F7%13%FF%15-%02%A1%91%E0c%C0%F9v%2B%DB9%9B%28%B5%E8%60e%94%17%D1%3BYG%AETc%A9%8C%EB%8B%27%99%F5%FE8F%E4%A3%7C%8EX%0D%94%9F%96%BF%CCd%3D%80%90%84%95%A8%DA%F4%D3hf%D2%3FIs%E08%87%02%C9F%94%7F%F8%F4%06%9Ed%FE%E6%BC%1F%20%0C%DF%5B%BB%D0%02%B8%FB%F1%05D%C9%FD%96%99%9E%09%F0%F3%03%B1%2F%12%CE%14%D3Q%60 L
+1552760188.471032 DEBUG: [nfd.ContentStore]   no-match
+1552760188.471181 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.25:6363] Creating transport
+1552760188.471196 INFO: [nfd.FaceTable] Added face id=282 remote=udp4://10.0.26.25:6363 local=udp4://10.0.26.18:6363
+1552760188.472953 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%26
+1552760188.473127 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.25%3A6363%85%01%00/%00%00%01i%87%B8.4/%12%21H%03i%E9%0EF/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00Y%27%9B%CE%3F%B7%154Y%897%25%14%98PbvH%C5%A29%87%E7k%FA%FE%81%8Afn%E9%D3%93%E8%886%1C%A8%E0_%7C%FD%F5vpn%C6R%F3%1Dhj%18%3FY%17%93%99%F8%E7%DBFJ%CC%D1%D5zz%7C%B6%A2%A9%AEF%7B%E5%8CA%7C%CFp%EF%D8%B9%5E%CBs%60%F1%DD%D9%BB%B6~%CB%A7K%DBOa_%27%E8W%F2%06%25%8Ab%E6%02%19%07%DDd%3B%A1%896MC%89%3C%C9%9Ex%BB%9E%E5%E8%26%DCg%E5%DD%C3QvS%12%3A%91%F7%13%FF%15-%02%A1%91%E0c%C0%F9v%2B%DB9%9B%28%B5%E8%60e%94%17%D1%3BYG%AETc%A9%8C%EB%8B%27%99%F5%FE8F%E4%A3%7C%8EX%0D%94%9F%96%BF%CCd%3D%80%90%84%95%A8%DA%F4%D3hf%D2%3FIs%E08%87%02%C9F%94%7F%F8%F4%06%9Ed%FE%E6%BC%1F%20%0C%DF%5B%BB%D0%02%B8%FB%F1%05D%C9%FD%96%99%9E%09%F0%F3%03%B1%2F%12%CE%14%D3Q%60
+1552760188.473200 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%27 L
+1552760188.473211 DEBUG: [nfd.ContentStore]   no-match
+1552760188.473535 INFO: [nfd.Transport] [id=281,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.473609 INFO: [nfd.Transport] [id=281,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.475258 INFO: [nfd.FaceTable] Removed face id=281 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.475354 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%27
+1552760188.475497 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%28 L
+1552760188.475518 DEBUG: [nfd.ContentStore]   no-match
+1552760188.483650 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.483675 INFO: [nfd.FaceTable] Added face id=283 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.484664 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%28
+1552760188.484812 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%29 L
+1552760188.484832 DEBUG: [nfd.ContentStore]   no-match
+1552760188.504294 INFO: [nfd.Transport] [id=283,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.504348 INFO: [nfd.Transport] [id=283,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.505901 INFO: [nfd.FaceTable] Removed face id=283 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.506032 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%29
+1552760188.506230 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%2A L
+1552760188.506250 DEBUG: [nfd.ContentStore]   no-match
+1552760188.515588 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.515613 INFO: [nfd.FaceTable] Added face id=284 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.516988 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%2A
+1552760188.517157 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%2B L
+1552760188.517178 DEBUG: [nfd.ContentStore]   no-match
+1552760188.520986 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.18%3A6363%85%01%00/%00%00%01i%87%B8.e/%BC%21%BCf%AD%A8S%23/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%8E%19%9C%27%7F_%3A%7B%EA%F2%1B%16%A6%E8%BA%CEP%F5%0D%AD%91%A6v%9A%2C%C0P%5CG-%E5%8Fy%C8o%A9%9Eo%3C%A2%9EE%A5%FA%1Bz%2C%C2%E3%AF%40v%3D%C6%5E%98%DE%0D%93%C6%B5%FA%8D%EE%9E%02%82u%D9%D2%16%F7%B6%D6fP%E1bV~%84%29%E5%16%01%98%FB%0D%A62HP%D8%40%E6%D7%EE%E1%90Z%F9%AFH%21sO%C4%92%BE%22c%06%10P%92%7F%CA5F%2C%04%C9%AA%CEI%07%CF%F7%25%C9K%1D%AD%F9%E2o%8E%E0%8AP%F6%16%22%9Ek%F0%88%B5%C1%2FG%0F%22f%FC%16%F4%19UvY%14LP%9B%F9R%BA%3B%F9%8A%A0%17%F7%1D%99%D4%1Ae%E5m%A7%C0BmM%BB%09%86%40Y%E66%A9%26%7DV%9F%DC%1F%92%E2e%0Ck%C9%E7%23%F9%2FX%FDp%F6%8C%0E%2A1%C6%86k%22Q9%F9%B1%85%A1O%CB%0E%04%E7%C9%22%C7%26d%B14%CC%C6%08B%0B%B43%C9%A6S%21%04%12%DE%BA%28 L
+1552760188.521046 DEBUG: [nfd.ContentStore]   no-match
+1552760188.521225 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.18:6363] Creating transport
+1552760188.521247 INFO: [nfd.FaceTable] Added face id=285 remote=udp4://10.0.26.18:6363 local=udp4://10.0.26.18:6363
+1552760188.523403 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%2B
+1552760188.523560 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.18%3A6363%85%01%00/%00%00%01i%87%B8.e/%BC%21%BCf%AD%A8S%23/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%8E%19%9C%27%7F_%3A%7B%EA%F2%1B%16%A6%E8%BA%CEP%F5%0D%AD%91%A6v%9A%2C%C0P%5CG-%E5%8Fy%C8o%A9%9Eo%3C%A2%9EE%A5%FA%1Bz%2C%C2%E3%AF%40v%3D%C6%5E%98%DE%0D%93%C6%B5%FA%8D%EE%9E%02%82u%D9%D2%16%F7%B6%D6fP%E1bV~%84%29%E5%16%01%98%FB%0D%A62HP%D8%40%E6%D7%EE%E1%90Z%F9%AFH%21sO%C4%92%BE%22c%06%10P%92%7F%CA5F%2C%04%C9%AA%CEI%07%CF%F7%25%C9K%1D%AD%F9%E2o%8E%E0%8AP%F6%16%22%9Ek%F0%88%B5%C1%2FG%0F%22f%FC%16%F4%19UvY%14LP%9B%F9R%BA%3B%F9%8A%A0%17%F7%1D%99%D4%1Ae%E5m%A7%C0BmM%BB%09%86%40Y%E66%A9%26%7DV%9F%DC%1F%92%E2e%0Ck%C9%E7%23%F9%2FX%FDp%F6%8C%0E%2A1%C6%86k%22Q9%F9%B1%85%A1O%CB%0E%04%E7%C9%22%C7%26d%B14%CC%C6%08B%0B%B43%C9%A6S%21%04%12%DE%BA%28
+1552760188.523696 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%2C L
+1552760188.523710 DEBUG: [nfd.ContentStore]   no-match
+1552760188.524248 INFO: [nfd.Transport] [id=284,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.524347 INFO: [nfd.Transport] [id=284,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.525857 INFO: [nfd.FaceTable] Removed face id=284 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.526035 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%2C
+1552760188.526254 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE- L
+1552760188.526338 DEBUG: [nfd.ContentStore]   no-match
+1552760188.533087 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.533175 INFO: [nfd.FaceTable] Added face id=286 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.534472 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE-
+1552760188.534812 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE. L
+1552760188.534834 DEBUG: [nfd.ContentStore]   no-match
+1552760188.555301 INFO: [nfd.Transport] [id=286,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.555342 INFO: [nfd.Transport] [id=286,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.557270 INFO: [nfd.FaceTable] Removed face id=286 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.557390 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE.
+1552760188.557595 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%2F L
+1552760188.557632 DEBUG: [nfd.ContentStore]   no-match
+1552760188.565556 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.565574 INFO: [nfd.FaceTable] Added face id=287 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.566742 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%2F
+1552760188.566895 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE0 L
+1552760188.566915 DEBUG: [nfd.ContentStore]   no-match
+1552760188.599529 INFO: [nfd.Transport] [id=287,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.599572 INFO: [nfd.Transport] [id=287,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.601104 INFO: [nfd.FaceTable] Removed face id=287 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.601271 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE0
+1552760188.601475 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE1 L
+1552760188.601513 DEBUG: [nfd.ContentStore]   no-match
+1552760188.609171 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.609193 INFO: [nfd.FaceTable] Added face id=288 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.610358 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE1
+1552760188.610626 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE2 L
+1552760188.610647 DEBUG: [nfd.ContentStore]   no-match
+1552760188.614807 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.12%3A6363%85%01%00/%00%00%01i%87%B8.%C2/VeUY%5C%5D%92%EF/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00Nd%82%0A%B4%D7%2C%0D%E6%89%01%DD%0A%2B%1A%20%F8%A4sBtL%E3%0DM%EE%88%82%A9k%DE%8A%D3%87QR%10ehzp%A6g%5E%9F%B5X%E1%02%F6%18D%A8%0F%0F_%1Ae%14%96%CA%01%219%EA%1D%D7~%A34P%09%D1%92%2AnF%81%E8%25%2B%09%10%95%E1%2Fm%86L%3B%14%3B2%1D%E7%5B%60%CEx%E9%FE%89%9F5%AAS%DD%21%A6%10%AA%FE%C9%2C%F2G%94%A1%9FJ%12u%06%29s%B3M%AD%AF%B9H%3F%F0%E9%3E%A0Z%C4%7DC%C4%BA%CE%ED2%FA%C50%0F%F5%7F%C9%BD%D1%DEM%85A%9E%D6%F0%C8%1B%D3%88%80%CC%10%BB%16%B7%BDN%E9%90jF%C4%DEL~%9D%89.%EA%2F%87o%E5%DA%C11%02xI%9F%D9P%B2%A8%9F%90%97%04%26%20%CB%CD%23%CA%3A%8B5k%B76PH~%B5%1B%0A%F5%0D%15%08%D2%FF%E7Eq%3FI%40%C4%CE%E9%FCv~%D7%CC%99M8%B0%E9%0D%16%F7%B4%D8Y%9CH5 L
+1552760188.614848 DEBUG: [nfd.ContentStore]   no-match
+1552760188.615008 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.12:6363] Creating transport
+1552760188.615024 INFO: [nfd.FaceTable] Added face id=289 remote=udp4://10.0.26.12:6363 local=udp4://10.0.26.18:6363
+1552760188.617340 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE2
+1552760188.617474 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.12%3A6363%85%01%00/%00%00%01i%87%B8.%C2/VeUY%5C%5D%92%EF/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00Nd%82%0A%B4%D7%2C%0D%E6%89%01%DD%0A%2B%1A%20%F8%A4sBtL%E3%0DM%EE%88%82%A9k%DE%8A%D3%87QR%10ehzp%A6g%5E%9F%B5X%E1%02%F6%18D%A8%0F%0F_%1Ae%14%96%CA%01%219%EA%1D%D7~%A34P%09%D1%92%2AnF%81%E8%25%2B%09%10%95%E1%2Fm%86L%3B%14%3B2%1D%E7%5B%60%CEx%E9%FE%89%9F5%AAS%DD%21%A6%10%AA%FE%C9%2C%F2G%94%A1%9FJ%12u%06%29s%B3M%AD%AF%B9H%3F%F0%E9%3E%A0Z%C4%7DC%C4%BA%CE%ED2%FA%C50%0F%F5%7F%C9%BD%D1%DEM%85A%9E%D6%F0%C8%1B%D3%88%80%CC%10%BB%16%B7%BDN%E9%90jF%C4%DEL~%9D%89.%EA%2F%87o%E5%DA%C11%02xI%9F%D9P%B2%A8%9F%90%97%04%26%20%CB%CD%23%CA%3A%8B5k%B76PH~%B5%1B%0A%F5%0D%15%08%D2%FF%E7Eq%3FI%40%C4%CE%E9%FCv~%D7%CC%99M8%B0%E9%0D%16%F7%B4%D8Y%9CH5
+1552760188.617554 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE3 L
+1552760188.617568 DEBUG: [nfd.ContentStore]   no-match
+1552760188.617899 INFO: [nfd.Transport] [id=288,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.618015 INFO: [nfd.Transport] [id=288,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.618794 INFO: [nfd.FaceTable] Removed face id=288 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.618841 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE3
+1552760188.618978 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE4 L
+1552760188.618995 DEBUG: [nfd.ContentStore]   no-match
+1552760188.628050 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.628071 INFO: [nfd.FaceTable] Added face id=290 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.629052 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE4
+1552760188.629261 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE5 L
+1552760188.629279 DEBUG: [nfd.ContentStore]   no-match
+1552760188.633410 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.2%3A6363%85%01%00/%00%00%01i%87%B8.%D5/%F5%C7%16%E7R%0D%9C%E6/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%001%1F%D7%0Bz%92A%A3%BB%8B%E6%D99%EF%2B%C6%E1%7B%AD%14%E4%0E%15%0B%AE%3AT%8Cq%C1%D0%94L%AD%0A6tL%A4%A0%9E%ED%17%0F%FD%0D%8E%28Q%00%AD%A9%EE7%29f%00d0%C32i%99%25%BF%9Fs%0C%3B%7C%D3%EA%7Bo%7C%86a%E6%DD%8ABB%B0%8C%1E%3B%C9a%8A%A5Q%AF%5D%E6%DB%ECn%EC%97%C0%DD%A9%25%E8%89V%FD%E8%CDz_9%8E%A9f%DC%12%0B%09O%ED%D9K-%7B%F0%8F%EF%A1gIKX%C6%5C%1BX%BC3%C4z%FB%F1%FA%EF%A9%26_%B4%BB%8C%BF%04l%91%04%91%0B%14nA%93%14%D7%F3l%7F%E9%C6-%CD%8E%8E%B2%9Ch%AE%0D%8B%F8%EA%98%ED%86%94%9F%40x%28%21%89%EA%2C%00b%09%23%3D%8D%7B%FCx%D4%13%E94Tc%9B%2CCvB%07%84f%DF%82%99%11%DB%5Ew%10C%DB%A9%5D.%A5%D3v%F8%EC%2F%1E%88%DB%1F7%EC%AD%F4S%C1Q%9A%1B%ACD%FD%EB%ED5%D8%83 L
+1552760188.633458 DEBUG: [nfd.ContentStore]   no-match
+1552760188.634222 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.2:6363] Creating transport
+1552760188.634241 INFO: [nfd.FaceTable] Added face id=291 remote=udp4://10.0.26.2:6363 local=udp4://10.0.26.18:6363
+1552760188.635873 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE5
+1552760188.635968 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.26.2%3A6363%85%01%00/%00%00%01i%87%B8.%D5/%F5%C7%16%E7R%0D%9C%E6/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%001%1F%D7%0Bz%92A%A3%BB%8B%E6%D99%EF%2B%C6%E1%7B%AD%14%E4%0E%15%0B%AE%3AT%8Cq%C1%D0%94L%AD%0A6tL%A4%A0%9E%ED%17%0F%FD%0D%8E%28Q%00%AD%A9%EE7%29f%00d0%C32i%99%25%BF%9Fs%0C%3B%7C%D3%EA%7Bo%7C%86a%E6%DD%8ABB%B0%8C%1E%3B%C9a%8A%A5Q%AF%5D%E6%DB%ECn%EC%97%C0%DD%A9%25%E8%89V%FD%E8%CDz_9%8E%A9f%DC%12%0B%09O%ED%D9K-%7B%F0%8F%EF%A1gIKX%C6%5C%1BX%BC3%C4z%FB%F1%FA%EF%A9%26_%B4%BB%8C%BF%04l%91%04%91%0B%14nA%93%14%D7%F3l%7F%E9%C6-%CD%8E%8E%B2%9Ch%AE%0D%8B%F8%EA%98%ED%86%94%9F%40x%28%21%89%EA%2C%00b%09%23%3D%8D%7B%FCx%D4%13%E94Tc%9B%2CCvB%07%84f%DF%82%99%11%DB%5Ew%10C%DB%A9%5D.%A5%D3v%F8%EC%2F%1E%88%DB%1F7%EC%AD%F4S%C1Q%9A%1B%ACD%FD%EB%ED5%D8%83
+1552760188.636121 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE6 L
+1552760188.636138 DEBUG: [nfd.ContentStore]   no-match
+1552760188.636360 INFO: [nfd.Transport] [id=290,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.636384 INFO: [nfd.Transport] [id=290,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.637397 INFO: [nfd.FaceTable] Removed face id=290 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.637478 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE6
+1552760188.637635 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE7 L
+1552760188.637652 DEBUG: [nfd.ContentStore]   no-match
+1552760188.645211 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.645232 INFO: [nfd.FaceTable] Added face id=292 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.646214 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE7
+1552760188.646365 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE8 L
+1552760188.646384 DEBUG: [nfd.ContentStore]   no-match
+1552760188.649864 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.17%3A6363%85%01%00/%00%00%01i%87%B8.%E6/%DF%A1%DF%FB%D8g%A4%DB/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%3B%0D%85%D9%02%8F%F4%601%B7%88%1D%2C%AE%9Cz%60X%ECd%99%FE%7D%83Ke%0E%BE%0F%B4O%C2%09%DB%91%99%C9%9A%DA%BA4%8E%EF%7D%A6%E7%BC%27T%BB%DC%E0%D3%FC%22%01%9C%BA%02w%A7j%9A%0089%B8%92%3F%19%F6%AD%9A%8C%FB%D9%D4%1Au%92%06%8E%2B%93%85%F5%E0%A29%E3%94%B4%DB%04%08%F4%9A%7F%F6W%EB%11c%C0%C1%B5%92b%90%E8%60%0B%CD%7BJ%E9%D8%9E%FA%F1%DEb%91%E5X%24ez%CB3%00%F2r%062%A94t%BB%972%8E%D7%92%1Bq%A4%DB%B5%A6%5De9%8A%95o%03%8F%E8%D17%2C%8Ct%85%D2%CC%3C%80%00%8F%F5%60%98%10%81%B7%AFtw%3FA%B0%9EN%EFj%0F%20%F6%A9%25%C3%01%12%E9%E3.%15%AB%90%BE%0F.4%0E%23%97%23%18%2B%40T%A5%10%ED%A4w%C8%28%85%87d%B6%FE..%E5%80%E8aAD%C5%3A%2FO%83%24%2B0x%B7%D1e%DA%5CB%04%B5%F6%13%BA%A5%25f L
+1552760188.649907 DEBUG: [nfd.ContentStore]   no-match
+1552760188.650078 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.17:6363] Creating transport
+1552760188.650093 INFO: [nfd.FaceTable] Added face id=293 remote=udp4://10.0.26.17:6363 local=udp4://10.0.26.18:6363
+1552760188.651813 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE8
+1552760188.651940 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.17%3A6363%85%01%00/%00%00%01i%87%B8.%E6/%DF%A1%DF%FB%D8g%A4%DB/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%3B%0D%85%D9%02%8F%F4%601%B7%88%1D%2C%AE%9Cz%60X%ECd%99%FE%7D%83Ke%0E%BE%0F%B4O%C2%09%DB%91%99%C9%9A%DA%BA4%8E%EF%7D%A6%E7%BC%27T%BB%DC%E0%D3%FC%22%01%9C%BA%02w%A7j%9A%0089%B8%92%3F%19%F6%AD%9A%8C%FB%D9%D4%1Au%92%06%8E%2B%93%85%F5%E0%A29%E3%94%B4%DB%04%08%F4%9A%7F%F6W%EB%11c%C0%C1%B5%92b%90%E8%60%0B%CD%7BJ%E9%D8%9E%FA%F1%DEb%91%E5X%24ez%CB3%00%F2r%062%A94t%BB%972%8E%D7%92%1Bq%A4%DB%B5%A6%5De9%8A%95o%03%8F%E8%D17%2C%8Ct%85%D2%CC%3C%80%00%8F%F5%60%98%10%81%B7%AFtw%3FA%B0%9EN%EFj%0F%20%F6%A9%25%C3%01%12%E9%E3.%15%AB%90%BE%0F.4%0E%23%97%23%18%2B%40T%A5%10%ED%A4w%C8%28%85%87d%B6%FE..%E5%80%E8aAD%C5%3A%2FO%83%24%2B0x%B7%D1e%DA%5CB%04%B5%F6%13%BA%A5%25f
+1552760188.652021 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE9 L
+1552760188.652034 DEBUG: [nfd.ContentStore]   no-match
+1552760188.652327 INFO: [nfd.Transport] [id=292,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.652374 INFO: [nfd.Transport] [id=292,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.654193 INFO: [nfd.FaceTable] Removed face id=292 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.654287 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE9
+1552760188.654455 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3A L
+1552760188.654475 DEBUG: [nfd.ContentStore]   no-match
+1552760188.661284 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.661305 INFO: [nfd.FaceTable] Added face id=294 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.662696 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3A
+1552760188.662901 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3B L
+1552760188.662923 DEBUG: [nfd.ContentStore]   no-match
+1552760188.714349 INFO: [nfd.Transport] [id=294,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.714387 INFO: [nfd.Transport] [id=294,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.715812 INFO: [nfd.FaceTable] Removed face id=294 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.715876 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3B
+1552760188.716040 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3C L
+1552760188.716062 DEBUG: [nfd.ContentStore]   no-match
+1552760188.724190 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.724210 INFO: [nfd.FaceTable] Added face id=295 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.725292 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3C
+1552760188.725458 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3D L
+1552760188.725477 DEBUG: [nfd.ContentStore]   no-match
+1552760188.741746 INFO: [nfd.Transport] [id=295,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.741781 INFO: [nfd.Transport] [id=295,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.743223 INFO: [nfd.FaceTable] Removed face id=295 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.743287 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3D
+1552760188.743651 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3E L
+1552760188.743671 DEBUG: [nfd.ContentStore]   no-match
+1552760188.751689 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.751709 INFO: [nfd.FaceTable] Added face id=296 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.752593 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3E
+1552760188.752750 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%3F L
+1552760188.752769 DEBUG: [nfd.ContentStore]   no-match
+1552760188.756452 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.21%3A6363%85%01%00/%00%00%01i%87%B8%2FQ/%8A%A6L%C6N.%FF8/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%95%81%C0%922%A0%02B%EF~%D9%29%EB%111%DE%DEB%FB%D1F%1Ea%B6%B6%5C%14%92K%07%F8%FB%C4%09%1C%AAW8w%8D%81B%EC%18g%80%CF%1D%91%04%B3%F5%3B%12C%DB%3EtC%F2%B8l%BBT%B9%C6%CB%09%7B%CBB%2C%1F%1F%2A%B1%E3%8BD%F3%FC%D3%DF%D7m%D6%1D%60%12%DB%3F%01Q%B5p%E0%83%91%ABH7%5B%23%01%80%03l%E3%F9%84hS%1Fy%19%BEN%E7%E7k%28%C0%3B%B6H%83%E8D%2F%AE%86%0CK%D4%DCu%AC%F6%0F.%24%22_5OB%2B%CF%04oA%40%03%AA%8D%C3%EF%06T%06dR%E3a%17%B01%A2%A4d%1B%FA%0F%25a%AD%84%92%F5%D1-%CD%A4%3D%9A%A9h%A6J%F4%EA%24%E0%C8%EC%F7%D0Oz%C9%25%2B%00c%E7%A5%D4%26%9AK%BD%7B%80%7Fi%E1%DA%40%F8%FC%5E%05_%B7%F0%E6y4%16ZWb%D44%E6S%91%199T%27%27%3D%DF%DD%CC%12%FF%60%E2%A4%22%29%8A%40%7C L
+1552760188.756501 DEBUG: [nfd.ContentStore]   no-match
+1552760188.756734 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.26.18:6363,remote=udp4://10.0.26.21:6363] Creating transport
+1552760188.756754 INFO: [nfd.FaceTable] Added face id=297 remote=udp4://10.0.26.21:6363 local=udp4://10.0.26.18:6363
+1552760188.758376 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%3F
+1552760188.758497 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Br%16udp4%3A%2F%2F10.0.26.21%3A6363%85%01%00/%00%00%01i%87%B8%2FQ/%8A%A6L%C6N.%FF8/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%95%81%C0%922%A0%02B%EF~%D9%29%EB%111%DE%DEB%FB%D1F%1Ea%B6%B6%5C%14%92K%07%F8%FB%C4%09%1C%AAW8w%8D%81B%EC%18g%80%CF%1D%91%04%B3%F5%3B%12C%DB%3EtC%F2%B8l%BBT%B9%C6%CB%09%7B%CBB%2C%1F%1F%2A%B1%E3%8BD%F3%FC%D3%DF%D7m%D6%1D%60%12%DB%3F%01Q%B5p%E0%83%91%ABH7%5B%23%01%80%03l%E3%F9%84hS%1Fy%19%BEN%E7%E7k%28%C0%3B%B6H%83%E8D%2F%AE%86%0CK%D4%DCu%AC%F6%0F.%24%22_5OB%2B%CF%04oA%40%03%AA%8D%C3%EF%06T%06dR%E3a%17%B01%A2%A4d%1B%FA%0F%25a%AD%84%92%F5%D1-%CD%A4%3D%9A%A9h%A6J%F4%EA%24%E0%C8%EC%F7%D0Oz%C9%25%2B%00c%E7%A5%D4%26%9AK%BD%7B%80%7Fi%E1%DA%40%F8%FC%5E%05_%B7%F0%E6y4%16ZWb%D44%E6S%91%199T%27%27%3D%DF%DD%CC%12%FF%60%E2%A4%22%29%8A%40%7C
+1552760188.758573 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%40 L
+1552760188.758586 DEBUG: [nfd.ContentStore]   no-match
+1552760188.758866 INFO: [nfd.Transport] [id=296,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.758946 INFO: [nfd.Transport] [id=296,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.760430 INFO: [nfd.FaceTable] Removed face id=296 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.760559 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%40
+1552760188.760900 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FEA L
+1552760188.760978 DEBUG: [nfd.ContentStore]   no-match
+1552760188.767710 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://36] Creating transport
+1552760188.767730 INFO: [nfd.FaceTable] Added face id=298 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.768549 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FEA
+1552760188.768678 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FEB L
+1552760188.768696 DEBUG: [nfd.ContentStore]   no-match
+1552760188.771221 INFO: [nfd.Transport] [id=298,local=unix:///run/nfd.sock,remote=fd://36] setState UP -> CLOSING
+1552760188.771254 INFO: [nfd.Transport] [id=298,local=unix:///run/nfd.sock,remote=fd://36] setState CLOSING -> CLOSED
+1552760188.772573 INFO: [nfd.FaceTable] Removed face id=298 remote=fd://36 local=unix:///run/nfd.sock
+1552760188.772632 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FEB
+1552760188.772778 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FEC L
+1552760188.772794 DEBUG: [nfd.ContentStore]   no-match
+1552760189.872016 INFO: [nfd.TcpTransport] [id=0,local=tcp4://127.0.0.1:6363,remote=tcp4://127.0.0.1:60028] Creating transport
+1552760189.872043 INFO: [nfd.FaceTable] Added face id=299 remote=tcp4://127.0.0.1:60028 local=tcp4://127.0.0.1:6363
+1552760189.873557 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FEC
+1552760189.873755 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FED L
+1552760189.873780 DEBUG: [nfd.ContentStore]   no-match
+1552760189.876151 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h3%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%09broadcast/%00%00%01i%87%B83%A7/Q%1A%2F%FAy%1B%1E%20/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760189.876189 DEBUG: [nfd.ContentStore]   no-match
+1552760189.877854 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/config/broadcast nexthop=299 origin=app cost=0
+1552760189.879949 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h3%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%09broadcast/%00%00%01i%87%B83%A7/Q%1A%2F%FAy%1B%1E%20/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760189.880217 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%3A%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%09broadcasti%02%01%2Bj%01%00/%00%00%01i%87%B83%B5/%2F%F8B8%BF%AE%13%EE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00f%BB-%40%D0%D8%92%EB%C5%3F%60%ED%DA%B4w%02%D8%13_%C3%D3%8F%3D%12%03%1F%5D%00h%19%E4%1B%83%AD%DF%D5%0E%B1c%25%89%B7P%DDB%3CF%CD~%98%B2%CB%12%08%B2%ABe%F3%F7%CEoI%C0%D4%E0%0D%9A%AE%3A%3D1%ED%BBh%CF%82%A0G%0E%AA%5D%F5i%A9%8Be%25%90%2C%AF3n%AC%7C%C2%95%E3RS%CF%EC%29%00%12%E4%EB%A0%F3%F3%CF%E5%B8%0AaJ%E0%85%10%2B%02%2B%9E%84R%91%94%F7%B9%EB%7F%A9%A7%D7%0F%C3%F0%B2R%1B%BA%8738%FB%EC%EA%B7%CDj%91h%B4%A5%F5%2F4%DF%F9%8F%07%A7P%95X%D9%BA%18%CEY%89-%C1%EE%2F%90_%9E%93E%26%ED%B5%EE%C7%B0N%D1%A1wu%8E%9DAm%0E%3DF%F3%94%03%04%E8t%B0vl%14%2B%98%C9%05%809%21%E9%DCN%3D%40%AE%26c%C7%D8%CAGO%F4%08%FA%1B%D5N%D8%22P%0C%83p%AE%8A%23%B3%AE%5Ev%E2%E8%FD%7D%3C%10%60%BBz%B2 L
+1552760189.880270 DEBUG: [nfd.ContentStore]   no-match
+1552760189.881904 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/00 L
+1552760189.881990 DEBUG: [nfd.ContentStore]   no-match
+1552760189.882073 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%3A%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%09broadcasti%02%01%2Bj%01%00/%00%00%01i%87%B83%B5/%2F%F8B8%BF%AE%13%EE/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00f%BB-%40%D0%D8%92%EB%C5%3F%60%ED%DA%B4w%02%D8%13_%C3%D3%8F%3D%12%03%1F%5D%00h%19%E4%1B%83%AD%DF%D5%0E%B1c%25%89%B7P%DDB%3CF%CD~%98%B2%CB%12%08%B2%ABe%F3%F7%CEoI%C0%D4%E0%0D%9A%AE%3A%3D1%ED%BBh%CF%82%A0G%0E%AA%5D%F5i%A9%8Be%25%90%2C%AF3n%AC%7C%C2%95%E3RS%CF%EC%29%00%12%E4%EB%A0%F3%F3%CF%E5%B8%0AaJ%E0%85%10%2B%02%2B%9E%84R%91%94%F7%B9%EB%7F%A9%A7%D7%0F%C3%F0%B2R%1B%BA%8738%FB%EC%EA%B7%CDj%91h%B4%A5%F5%2F4%DF%F9%8F%07%A7P%95X%D9%BA%18%CEY%89-%C1%EE%2F%90_%9E%93E%26%ED%B5%EE%C7%B0N%D1%A1wu%8E%9DAm%0E%3DF%F3%94%03%04%E8t%B0vl%14%2B%98%C9%05%809%21%E9%DCN%3D%40%AE%26c%C7%D8%CAGO%F4%08%FA%1B%D5N%D8%22P%0C%83p%AE%8A%23%B3%AE%5Ev%E2%E8%FD%7D%3C%10%60%BBz%B2
+1552760189.922165 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h0%07.%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%06nodeNN/%00%00%01i%87%B83%BA/%F9Y%B6%D22%18%0D%90/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760189.922210 DEBUG: [nfd.ContentStore]   no-match
+1552760189.923974 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/config/nodeNN nexthop=299 origin=app cost=0
+1552760189.928618 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h0%07.%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%06nodeNN/%00%00%01i%87%B83%BA/%F9Y%B6%D22%18%0D%90/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760189.931576 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h7%07.%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%06nodeNNi%02%01%2Bj%01%00/%00%00%01i%87%B83%E4/L%1D%9D%85-%87%CD%84/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%04%DB%E6%CAf%94%FA%C6%B2z%B9%D3%10%E2%A7%5D%D9%14%F8%07%A9a%E0%84%25%15%85%D3.%132%E5%2AT6o%08%9F%5B%FA%F3%07%B9%AC%12%F3~%16%BB%CA3%89%D2%CFo%CF%AE%28%5C%2A%D7%AD%24%FF%16%3AL%D0%23%CC%BFD%E7p%1D%F5u%0Dc%90N%1B%E0%11c%BC%16%BDgk%00%82%AC%25%90%0B%01%7Fr%E4~%F8%01e%07%60%9D%DC%81%8D%1A%B1%7F%40%0Fj%BF%DF%90%E6%27%7B%FB%87%A2%CEi%C2%E5%10%AE%0C%08%5B%BAc%12Y%1F%F69%CDF%9El%9Em%AC%DA%3D%AB%2B%03%E7%A6%8C%1Am%03%99T%FC%DF%25%84%8C%DES0%24%F4%08F%EB%B9%21Q%88%16%24%28A%26R%F6%7FW%E8%CE%E1%FF9t%D1%B1%B4%B1%F3%BF%B0%C9P7%5E%EE%AC%05%E7%0B%222%10F%9D%1A%07%EE%EDz%EE%84%9F%CB7%A6%07%0F%B7%AEt%11%DA%60%87%B1%28%8D%AC%21%1B%C2%15%D84K%29%7D%98%B5t%DB%D7H%A6%A4%89 L
+1552760189.931640 DEBUG: [nfd.ContentStore]   no-match
+1552760189.933373 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h7%07.%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06config%08%06nodeNNi%02%01%2Bj%01%00/%00%00%01i%87%B83%E4/L%1D%9D%85-%87%CD%84/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%04%DB%E6%CAf%94%FA%C6%B2z%B9%D3%10%E2%A7%5D%D9%14%F8%07%A9a%E0%84%25%15%85%D3.%132%E5%2AT6o%08%9F%5B%FA%F3%07%B9%AC%12%F3~%16%BB%CA3%89%D2%CFo%CF%AE%28%5C%2A%D7%AD%24%FF%16%3AL%D0%23%CC%BFD%E7p%1D%F5u%0Dc%90N%1B%E0%11c%BC%16%BDgk%00%82%AC%25%90%0B%01%7Fr%E4~%F8%01e%07%60%9D%DC%81%8D%1A%B1%7F%40%0Fj%BF%DF%90%E6%27%7B%FB%87%A2%CEi%C2%E5%10%AE%0C%08%5B%BAc%12Y%1F%F69%CDF%9El%9Em%AC%DA%3D%AB%2B%03%E7%A6%8C%1Am%03%99T%FC%DF%25%84%8C%DES0%24%F4%08F%EB%B9%21Q%88%16%24%28A%26R%F6%7FW%E8%CE%E1%FF9t%D1%B1%B4%B1%F3%BF%B0%C9P7%5E%EE%AC%05%E7%0B%222%10F%9D%1A%07%EE%EDz%EE%84%9F%CB7%A6%07%0F%B7%AEt%11%DA%60%87%B1%28%8D%AC%21%1B%C2%15%D84K%29%7D%98%B5t%DB%D7H%A6%A4%89
+1552760190.778565 INFO: [nfd.TcpTransport] [id=0,local=tcp4://127.0.0.1:6363,remote=tcp4://127.0.0.1:60030] Creating transport
+1552760190.778591 INFO: [nfd.FaceTable] Added face id=300 remote=tcp4://127.0.0.1:60030 local=tcp4://127.0.0.1:6363
+1552760190.780188 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FED
+1552760190.780374 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FEE L
+1552760190.780393 DEBUG: [nfd.ContentStore]   no-match
+1552760190.781124 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcast/%00%00%01i%87%B87%3A/f%21%28%E5%08%B5%29%96/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.781156 DEBUG: [nfd.ContentStore]   no-match
+1552760190.781458 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/00 L
+1552760190.781476 DEBUG: [nfd.ContentStore]   no-match
+1552760190.782533 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h3%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%06nodeNN/%00%00%01i%87%B87%3D/h%A6%F1%FB%CF%EB%97%5C/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.782562 DEBUG: [nfd.ContentStore]   no-match
+1552760190.782684 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/discovery/broadcast nexthop=300 origin=app cost=0
+1552760190.785901 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/discovery/nodeNN nexthop=300 origin=app cost=0
+1552760190.785996 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcast/%00%00%01i%87%B87%3A/f%21%28%E5%08%B5%29%96/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.787441 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcasti%02%01%2Cj%01%00/%00%00%01i%87%B87%3E/%E2a%E1%A9%CB%1D%BC%89/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%1B%F9%BF%D7%95%C8%DC%FD%91%A9%BC%9CUp%87%87k%A0%EB%3Ca%83j%CC%00%D0k%B1%84%88%27k%D3%A6%C3%DE%25%18%806.%0F%CB%C4%1AAt%BD%8DA%93%B2%80K%D6d%9Ap%EA%7B%00%BF9%25%11%FCA%AA%8Ex%9A%A9%8B7%3B%23%02%1C%82%29x%3F%40%BFIc%B8%BD%B0%08%E2%A9v%EBC%06%94%8DD%20%05%93%9C%8097%F0%A7n1%22%A7%FF%29X%9B%80%C5%FCZ%9B4T%0E%BD%DE%99%984%80%87%FCN%F7%E2w%5E%0C%AC%A8A%A9%D0%DD%97%8DC%21h%C8K%24%0C%BDfp%C1%9F%E5k%9E%15%E5%05%1E%A8%3E%F7%8B%12%F8%5D%ED%FD%B4%EFvNh%19%03%0A%0E%F3~%F0%D0%15%3C%BB%8C%E41%FD%AA%88%BE%12%83%C3%D3-%27%BE%A8%5E%F8%B4%CB%FC%ED%3F~%3C%E6%9AZ%EF%84%D5%E6%90%8B%A6%F6%A1%07%DA%05%F98%E04%BE%0Bx%02%17%3B%EB%88%13%F4%A1%15%A4%06%E9m%E0%05%E3-%10K%D2 L
+1552760190.787510 DEBUG: [nfd.ContentStore]   no-match
+1552760190.788523 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h3%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%06nodeNN/%00%00%01i%87%B87%3D/h%A6%F1%FB%CF%EB%97%5C/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.788625 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%09broadcasti%02%01%2Cj%01%00/%00%00%01i%87%B87%3E/%E2a%E1%A9%CB%1D%BC%89/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%1B%F9%BF%D7%95%C8%DC%FD%91%A9%BC%9CUp%87%87k%A0%EB%3Ca%83j%CC%00%D0k%B1%84%88%27k%D3%A6%C3%DE%25%18%806.%0F%CB%C4%1AAt%BD%8DA%93%B2%80K%D6d%9Ap%EA%7B%00%BF9%25%11%FCA%AA%8Ex%9A%A9%8B7%3B%23%02%1C%82%29x%3F%40%BFIc%B8%BD%B0%08%E2%A9v%EBC%06%94%8DD%20%05%93%9C%8097%F0%A7n1%22%A7%FF%29X%9B%80%C5%FCZ%9B4T%0E%BD%DE%99%984%80%87%FCN%F7%E2w%5E%0C%AC%A8A%A9%D0%DD%97%8DC%21h%C8K%24%0C%BDfp%C1%9F%E5k%9E%15%E5%05%1E%A8%3E%F7%8B%12%F8%5D%ED%FD%B4%EFvNh%19%03%0A%0E%F3~%F0%D0%15%3C%BB%8C%E41%FD%AA%88%BE%12%83%C3%D3-%27%BE%A8%5E%F8%B4%CB%FC%ED%3F~%3C%E6%9AZ%EF%84%D5%E6%90%8B%A6%F6%A1%07%DA%05%F98%E04%BE%0Bx%02%17%3B%EB%88%13%F4%A1%15%A4%06%E9m%E0%05%E3-%10K%D2
+1552760190.790801 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%3A%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%06nodeNNi%02%01%2Cj%01%00/%00%00%01i%87%B87D/K%C4%A3l%0D%A5%F3%40/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%3EoC%A0%F8%95%11TK%1C%DD%A4%1A%E5%9B%D1%E1_%E9G%A5f%D3%CDa%DD%AE%B9g%7F%D8%BCxuU%3C%83%EC%B9L%09%97%7F%80%99%9F%15%FD%14%B9%EFg%2B%D2a3%FCi%27%B9C%B9r%86%89%5D%AF%F9%AA7%CC%85%3Br%27l%B9c%408O%9C%E8%AA%0E%AD%DAQC%5C%5E%40%CB%D6%83P%AB%D2Q%C9m%D4%29%064%D3%F5%B5%EE%ED%85%AA%BC%0E%89G%C5%06j%2A%3B%A1%99q%91oW%98%EB%19%EB%D7%13X%D1%06Hi%1B%DFO%CB%B2%E1%2A%B8%AC%A4g%0F%15%A8%95I%22%C6%20%8DK%7B%7Bz%22%2Bn.%A9%9F%FB%FFT%B7%EB%A5%16%D1%DD%A2n_%3F%1C%963%9C%11%97%3Ah%EBw%0C%F7%AE%88%0EH.7i%D1d%FE%A6%5E_%C4%C7%FD%02%1D%0B%3E%0AW%99%24%8F%F9%E8%C1%B9%FB%970%B9%2B%0C%A1s%88%3D%B7X%7Bfuv%D2Mb%07%E5%D1%F3%E4%AD%0D%1B%C7mM%ABB%AE%86 L
+1552760190.790857 DEBUG: [nfd.ContentStore]   no-match
+1552760190.791802 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%3A%071%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%09discovery%08%06nodeNNi%02%01%2Cj%01%00/%00%00%01i%87%B87D/K%C4%A3l%0D%A5%F3%40/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%3EoC%A0%F8%95%11TK%1C%DD%A4%1A%E5%9B%D1%E1_%E9G%A5f%D3%CDa%DD%AE%B9g%7F%D8%BCxuU%3C%83%EC%B9L%09%97%7F%80%99%9F%15%FD%14%B9%EFg%2B%D2a3%FCi%27%B9C%B9r%86%89%5D%AF%F9%AA7%CC%85%3Br%27l%B9c%408O%9C%E8%AA%0E%AD%DAQC%5C%5E%40%CB%D6%83P%AB%D2Q%C9m%D4%29%064%D3%F5%B5%EE%ED%85%AA%BC%0E%89G%C5%06j%2A%3B%A1%99q%91oW%98%EB%19%EB%D7%13X%D1%06Hi%1B%DFO%CB%B2%E1%2A%B8%AC%A4g%0F%15%A8%95I%22%C6%20%8DK%7B%7Bz%22%2Bn.%A9%9F%FB%FFT%B7%EB%A5%16%D1%DD%A2n_%3F%1C%963%9C%11%97%3Ah%EBw%0C%F7%AE%88%0EH.7i%D1d%FE%A6%5E_%C4%C7%FD%02%1D%0B%3E%0AW%99%24%8F%F9%E8%C1%B9%FB%970%B9%2B%0C%A1s%88%3D%B7X%7Bfuv%D2Mb%07%E5%D1%F3%E4%AD%0D%1B%C7mM%ABB%AE%86
+1552760190.940303 INFO: [nfd.TcpTransport] [id=0,local=tcp4://127.0.0.1:6363,remote=tcp4://127.0.0.1:60032] Creating transport
+1552760190.940331 INFO: [nfd.FaceTable] Added face id=301 remote=tcp4://127.0.0.1:60032 local=tcp4://127.0.0.1:6363
+1552760190.943045 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FEE
+1552760190.948281 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FEF L
+1552760190.948312 DEBUG: [nfd.ContentStore]   no-match
+1552760190.953302 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%04sync/%00%00%01i%87%B87%C2/%82%CB%18%FE%09%3A%D3E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.953427 DEBUG: [nfd.ContentStore]   no-match
+1552760190.954089 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h%3A%078%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%08interact/%00%00%01i%87%B87%D3/%82%98b%23_%D6%A8m/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.954119 DEBUG: [nfd.ContentStore]   no-match
+1552760190.954660 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h%3B%079%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%04sync/%00%00%01i%87%B87%DE/%00%E7%F2%A8YaT%28/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.954686 DEBUG: [nfd.ContentStore]   no-match
+1552760190.954987 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/blocks/sync nexthop=301 origin=app cost=0
+1552760190.955293 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h%3F%07%3D%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%08interact/%00%00%01i%87%B87%E0/%3En%85%AD%09%9A%05%04/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.955319 DEBUG: [nfd.ContentStore]   no-match
+1552760190.955355 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04sync/%00%00%01i%87%B87%D1/I%C5%60%C5%1FX%82D/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760190.955381 DEBUG: [nfd.ContentStore]   no-match
+1552760190.956237 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%04sync/%00%00%01i%87%B87%C2/%82%CB%18%FE%09%3A%D3E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.959472 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/blocks/interact nexthop=301 origin=app cost=0
+1552760190.960782 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/projectiles/sync nexthop=301 origin=app cost=0
+1552760190.968752 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/projectiles/interact nexthop=301 origin=app cost=0
+1552760190.970517 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%04synci%02%01-j%01%00/%00%00%01i%87%B87%EB/%19%D1%BC%A3%11%C90%CC/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00PFW%89%3D7%1Au%83%BC%1A%16%A0K%C4%09%A7%C8vi%25%B2H%876%2Ax%81%05%CA%1B%FC%05%8A%B7c%A8%BB%8C%86r%ECl%C5%22%A0%9Ej%E7%D0%97%92%E0%1E%D1%C6%E8%CF%85%C0%8A%7D%D0%B0%91%F3%26%C2%B4%EB%EA%E1%F3%C5%80%E1%FDt%11t%93%E2%29G%08%E4%BA%FF%BAA%F4%D6%DC%B40%AC%5C%B1%B5%D9KB%97%B8%1D.6W%8F%FE%D1%16F%F5h-%3C%F3%93%B9%AC%8A%5DS%5B%DB%07%F3%0C%C1%3Do2%1D%02%E0pw%7D%CB%5D%E8A%E7%9B7%CD%0A%08%D2%CE%B8%F0%F3%10%86%AE%BDK%C7%5B%CD%95%80%93v%F2%833%17%0D%07%E9%C1O%C6%7F2%F0.%DF%27%AB%5E%C4%FEd%E6%2F%ED%17%A8%F5P%C3%7B%3EH%A8urqp%81%FF%91%81-%C2j%8C%1C%F0R%3B%F8%9ER%BE%F0%BE%F9RM%C8%D0%0F%94%82%C9%C4jv%2B%8B%8A%AA%CE%19W4%E7%5Ds%A9g%E5%07Gg%3D%BC%9D%23%8CT L
+1552760190.970580 DEBUG: [nfd.ContentStore]   no-match
+1552760190.972612 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h%3A%078%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%08interact/%00%00%01i%87%B87%D3/%82%98b%23_%D6%A8m/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.972740 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h%3B%079%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%04sync/%00%00%01i%87%B87%DE/%00%E7%F2%A8YaT%28/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.972794 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h%3F%07%3D%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%08interact/%00%00%01i%87%B87%E0/%3En%85%AD%09%9A%05%04/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.972841 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04sync/%00%00%01i%87%B87%D1/I%C5%60%C5%1FX%82D/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760190.972968 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%04synci%02%01-j%01%00/%00%00%01i%87%B87%EB/%19%D1%BC%A3%11%C90%CC/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00PFW%89%3D7%1Au%83%BC%1A%16%A0K%C4%09%A7%C8vi%25%B2H%876%2Ax%81%05%CA%1B%FC%05%8A%B7c%A8%BB%8C%86r%ECl%C5%22%A0%9Ej%E7%D0%97%92%E0%1E%D1%C6%E8%CF%85%C0%8A%7D%D0%B0%91%F3%26%C2%B4%EB%EA%E1%F3%C5%80%E1%FDt%11t%93%E2%29G%08%E4%BA%FF%BAA%F4%D6%DC%B40%AC%5C%B1%B5%D9KB%97%B8%1D.6W%8F%FE%D1%16F%F5h-%3C%F3%93%B9%AC%8A%5DS%5B%DB%07%F3%0C%C1%3Do2%1D%02%E0pw%7D%CB%5D%E8A%E7%9B7%CD%0A%08%D2%CE%B8%F0%F3%10%86%AE%BDK%C7%5B%CD%95%80%93v%F2%833%17%0D%07%E9%C1O%C6%7F2%F0.%DF%27%AB%5E%C4%FEd%E6%2F%ED%17%A8%F5P%C3%7B%3EH%A8urqp%81%FF%91%81-%C2j%8C%1C%F0R%3B%F8%9ER%BE%F0%BE%F9RM%C8%D0%0F%94%82%C9%C4jv%2B%8B%8A%AA%CE%19W4%E7%5Ds%A9g%E5%07Gg%3D%BC%9D%23%8CT
+1552760190.974892 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/hA%078%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%08interacti%02%01-j%01%00/%00%00%01i%87%B87%FD/%8B%90%DF%06%BC%BB%B3x/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00k%18u%EA%83i%CA%C7%3F%B4%EF%EFw0rU%F6%F2n%AFd%EC%ACO%10%3E%7C%D4%F7%E2Jp%BAY%D6%E5%F2%D2%B4h%CF%B7%D97%C3%80x%A3%3AU%FC%B8%CB%E9QBV%A7%D6%A4y%12H%F2%2B%D0%CE%83%24%2C%07%02%7D_%06jT%96%D3%F1c%D9%AF%5C%F7%AC%C1J%E8T%A3%2BB%1Br%F9p%E1%FF%1F%D2%C6N%14%1Fe%D1%C09%E3%9C%87%08%F95%8AZ%9A%AC%EE%F3r%A3%0D%22%C6C%DA%DA%AB%17%A8%7D%EC%B4H%B9%CBx%2F%2C%60MI%F2%FFDp%8B%17Y%0E%5E%5CC%0EV%26%8F%A6%1Axx%89A%11%0E8%26%1DSN%E4%B0%1D%FB%B3%B6v%CF%A0s%92%DF_J%00%EC%08%C34%3B%E6%14%E6a%17%C2EwH%04%B4%81%D8%3D%BE%D8%8E%17%11%EA%C3%14%A9%93%13%BD%0E%C4%BCJ%1A%E8%8CY%10%C1%18%D18V%C0%2F%EB%90%3F%95%A0%F3%B5%17g%9Aiu%89%8D%C2%FF%E6%F1%FF%3BZ%D7 L
+1552760190.974993 DEBUG: [nfd.ContentStore]   no-match
+1552760190.976096 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/hA%078%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06blocks%08%08interacti%02%01-j%01%00/%00%00%01i%87%B87%FD/%8B%90%DF%06%BC%BB%B3x/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00k%18u%EA%83i%CA%C7%3F%B4%EF%EFw0rU%F6%F2n%AFd%EC%ACO%10%3E%7C%D4%F7%E2Jp%BAY%D6%E5%F2%D2%B4h%CF%B7%D97%C3%80x%A3%3AU%FC%B8%CB%E9QBV%A7%D6%A4y%12H%F2%2B%D0%CE%83%24%2C%07%02%7D_%06jT%96%D3%F1c%D9%AF%5C%F7%AC%C1J%E8T%A3%2BB%1Br%F9p%E1%FF%1F%D2%C6N%14%1Fe%D1%C09%E3%9C%87%08%F95%8AZ%9A%AC%EE%F3r%A3%0D%22%C6C%DA%DA%AB%17%A8%7D%EC%B4H%B9%CBx%2F%2C%60MI%F2%FFDp%8B%17Y%0E%5E%5CC%0EV%26%8F%A6%1Axx%89A%11%0E8%26%1DSN%E4%B0%1D%FB%B3%B6v%CF%A0s%92%DF_J%00%EC%08%C34%3B%E6%14%E6a%17%C2EwH%04%B4%81%D8%3D%BE%D8%8E%17%11%EA%C3%14%A9%93%13%BD%0E%C4%BCJ%1A%E8%8CY%10%C1%18%D18V%C0%2F%EB%90%3F%95%A0%F3%B5%17g%9Aiu%89%8D%C2%FF%E6%F1%FF%3BZ%D7
+1552760190.978127 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/hB%079%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%04synci%02%01-j%01%00/%00%00%01i%87%B88%00/%AB%FEP%EFh%2A%D7e/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7Fk%B0y%3CKj%E5%8E%B7%B6%EF%3B%CBS7%09%FF%60%5B%A2%C3U%13%3D%B1%9Eh%EFp%9DX%F0%DF%BC%A0%2C%E8%FF%AF%EE%00%9F%EA%B9%A5%85%C7%81%FEX%5C%FD%E6u%CD%12%9FJe%F2%13%915%0F%C5cqL%1C%AF%D8%0E%3C%2F%2C%7B%E1%EA%AB%E3%CD%5C%84%C2O%0D%22%95%C6%24%94%13%06%14%8B%A6%21TW%CC%AE%AC%90%01%04%BC%8E3%21%9Aj%CA%BC%3B%19%E2%60%7D%20%1F%E8%DD%88%EBN%E9%8CR%7F1%9E46%91P%A5%88%40%E3%8D%BB%E1%B5%A2v%CD%9F%5D%23w%AA%EF2%B7-%F5H%D8%A9%7D%AE%3E%CC%5B.z%20%D4%A4%13%A2%B0f%89%7B%2Ao%0EZd%B43%25%0Cb%84Z%87%19%40%11%8Bka%00%07%F8%DA%04%1A%2AR%A1%9D%F3F%D7%E3%8F%BA%C4%E5l%ABjW%97%EA%91%CE%E6T%3C%CF%096%8F%AF%E9%5B%9F%5E%F7%00%AB%B1%15%7B%A23%26%BE%86%FD%EB%25%C5%F3%5B%AC%D3%40%F1D%20 L
+1552760190.978237 DEBUG: [nfd.ContentStore]   no-match
+1552760190.979736 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/hB%079%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%04synci%02%01-j%01%00/%00%00%01i%87%B88%00/%AB%FEP%EFh%2A%D7e/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7Fk%B0y%3CKj%E5%8E%B7%B6%EF%3B%CBS7%09%FF%60%5B%A2%C3U%13%3D%B1%9Eh%EFp%9DX%F0%DF%BC%A0%2C%E8%FF%AF%EE%00%9F%EA%B9%A5%85%C7%81%FEX%5C%FD%E6u%CD%12%9FJe%F2%13%915%0F%C5cqL%1C%AF%D8%0E%3C%2F%2C%7B%E1%EA%AB%E3%CD%5C%84%C2O%0D%22%95%C6%24%94%13%06%14%8B%A6%21TW%CC%AE%AC%90%01%04%BC%8E3%21%9Aj%CA%BC%3B%19%E2%60%7D%20%1F%E8%DD%88%EBN%E9%8CR%7F1%9E46%91P%A5%88%40%E3%8D%BB%E1%B5%A2v%CD%9F%5D%23w%AA%EF2%B7-%F5H%D8%A9%7D%AE%3E%CC%5B.z%20%D4%A4%13%A2%B0f%89%7B%2Ao%0EZd%B43%25%0Cb%84Z%87%19%40%11%8Bka%00%07%F8%DA%04%1A%2AR%A1%9D%F3F%D7%E3%8F%BA%C4%E5l%ABjW%97%EA%91%CE%E6T%3C%CF%096%8F%AF%E9%5B%9F%5E%F7%00%AB%B1%15%7B%A23%26%BE%86%FD%EB%25%C5%F3%5B%AC%D3%40%F1D%20
+1552760190.982551 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/hF%07%3D%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%08interacti%02%01-j%01%00/%00%00%01i%87%B88%04/f%28%84W%83%9A%2B%E6/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00x4%B9%DC%F9%2Fo%0C%CC%40%94%B7%AB%EF%A9%BD%BEo%15_i%A4h%FE%B89%03%C7%AB%DE%8Fyk%FF%205%7B%17%1AO%1A%0C2o6%0E%85%882M%7C%24%EFn%E37%19%F3%DA%C6%3F%84%05I%ED%AF%1AM%1EZ%9F%F4%BD%91%14%F87%7C5%C3%EE%A9%83v%3AR%60%9Cj%9C%CE%CF%82%2C%0Bw%96%27-%E6%CA%88%85%3AE%1D%C1%08%A7%86a%87%0E%E9%DCU%20_%99%BA0%A5%BC%DA%90%16%E0Ao%3A%23F%C4%24%86%B7V%24%D5%DA%3C%97%F3%EB%90%83s%3FJk%18%A1J%3Dc%B5%08%97%EC%F1%F0%FAi-I%0E%7F%99%1AXu%D4%1C%82%9D%BD%17%D9%7F%EB%7C9%0C%08Y%F8s%BE%D3%A3%8E%F3%CC%F4%06T%CFKB%F6%2A%C5%BCb%C8%02%27%3B%B0%C0%C4C%D9%15p%A5%F0%1D4%EF%D9%E4%9FQ%92%EE%F3%2FyJ%A2%09%3F%99%C4%E3%95e%04%88-%1C%AD%22%CDY%D3%B5g%ECA%40l%92Df L
+1552760190.982613 DEBUG: [nfd.ContentStore]   no-match
+1552760190.985003 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/hF%07%3D%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%0Bprojectiles%08%08interacti%02%01-j%01%00/%00%00%01i%87%B88%04/f%28%84W%83%9A%2B%E6/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00x4%B9%DC%F9%2Fo%0C%CC%40%94%B7%AB%EF%A9%BD%BEo%15_i%A4h%FE%B89%03%C7%AB%DE%8Fyk%FF%205%7B%17%1AO%1A%0C2o6%0E%85%882M%7C%24%EFn%E37%19%F3%DA%C6%3F%84%05I%ED%AF%1AM%1EZ%9F%F4%BD%91%14%F87%7C5%C3%EE%A9%83v%3AR%60%9Cj%9C%CE%CF%82%2C%0Bw%96%27-%E6%CA%88%85%3AE%1D%C1%08%A7%86a%87%0E%E9%DCU%20_%99%BA0%A5%BC%DA%90%16%E0Ao%3A%23F%C4%24%86%B7V%24%D5%DA%3C%97%F3%EB%90%83s%3FJk%18%A1J%3Dc%B5%08%97%EC%F1%F0%FAi-I%0E%7F%99%1AXu%D4%1C%82%9D%BD%17%D9%7F%EB%7C9%0C%08Y%F8s%BE%D3%A3%8E%F3%CC%F4%06T%CFKB%F6%2A%C5%BCb%C8%02%27%3B%B0%C0%C4C%D9%15p%A5%F0%1D4%EF%D9%E4%9FQ%92%EE%F3%2FyJ%A2%09%3F%99%C4%E3%95e%04%88-%1C%AD%22%CDY%D3%B5g%ECA%40l%92Df
+1552760191.055948 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04sync/%00%00%01i%87%B88L/%99U%E7H%DC%AFMO/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00 L
+1552760191.055993 DEBUG: [nfd.ContentStore]   no-match
+1552760191.058357 INFO: [nfd.RibManager] Adding route /com/stefanolupo/ndngame/0/nodeNN/status/sync nexthop=301 origin=app cost=0
+1552760191.060061 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h6%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04sync/%00%00%01i%87%B88L/%99U%E7H%DC%AFMO/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%00
+1552760191.060534 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04synci%02%01-j%01%00/%00%00%01i%87%B88R/%98%AC%C1%D6%1E%F21%8E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00-m%E8%B2O%09f%9Fm%C9%9F%CE%E04%F4%0E%A0Pt%C4%F5%7B%D9%0F8%17%04%3A%FA%04%E3%85%88X%83T%D1%20%B9%93%DFI%97%AB%D5%9F%FC%2A%A4%9Fc%FEZ%E3%8C%FE_%3E%D7M%E2%95n%BD%B8%CE%A6i%98%16%92%F6%D2%04%3C%5C%FE%13%E2%D8%BAKd%9D%0D%5CL%D3%92X%86J%DF%7D%DA%E8N%5B4%EB%07%EA%AA%3Fdj%89%A9pd%22%F1%CA%1F~P%A9%CF%FB%A3%9F%0Fs%EF%9E%2A%19%26c%B3%8F%B9Hi%A7%8A%1D3%86B%E99%19%8E%DF%ED%40%A1%EB%AF%F0Y%C4%FE%EF%10%7C%0A%40%5BP%AE%B0G%EE%135D%AC%C7%81h%D3W%0B%F8y%5BbD%86%40_%83Q%05%40%CB%00%DB%F9k%B2%2B%02%032%A5%93%D2%0A%CFN%3E%FC%80%3F%B8%F65%9Ez%BB%BAl%20%F3%9A%18%23q%E1g%0B%9A%BE%F3%86%85c~%D2%BC%0C%DC%60%E8%B7%40%2C%907%0EN%DC%C8%D9%BF%13%F3oi%29%94%20%5C L
+1552760191.060592 DEBUG: [nfd.ContentStore]   no-match
+1552760191.063873 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%3D%074%08%03com%08%0Bstefanolupo%08%07ndngame%08%010%08%06nodeNN%08%06status%08%04synci%02%01-j%01%00/%00%00%01i%87%B88R/%98%AC%C1%D6%1E%F21%8E/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00-m%E8%B2O%09f%9Fm%C9%9F%CE%E04%F4%0E%A0Pt%C4%F5%7B%D9%0F8%17%04%3A%FA%04%E3%85%88X%83T%D1%20%B9%93%DFI%97%AB%D5%9F%FC%2A%A4%9Fc%FEZ%E3%8C%FE_%3E%D7M%E2%95n%BD%B8%CE%A6i%98%16%92%F6%D2%04%3C%5C%FE%13%E2%D8%BAKd%9D%0D%5CL%D3%92X%86J%DF%7D%DA%E8N%5B4%EB%07%EA%AA%3Fdj%89%A9pd%22%F1%CA%1F~P%A9%CF%FB%A3%9F%0Fs%EF%9E%2A%19%26c%B3%8F%B9Hi%A7%8A%1D3%86B%E99%19%8E%DF%ED%40%A1%EB%AF%F0Y%C4%FE%EF%10%7C%0A%40%5BP%AE%B0G%EE%135D%AC%C7%81h%D3W%0B%F8y%5BbD%86%40_%83Q%05%40%CB%00%DB%F9k%B2%2B%02%032%A5%93%D2%0A%CFN%3E%FC%80%3F%B8%F65%9Ez%BB%BAl%20%F3%9A%18%23q%E1g%0B%9A%BE%F3%86%85c~%D2%BC%0C%DC%60%E8%B7%40%2C%907%0EN%DC%C8%D9%BF%13%F3oi%29%94%20%5C
+1552760194.911291 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760194.911328 DEBUG: [nfd.ContentStore]   no-match
+1552760195.836327 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760195.836360 DEBUG: [nfd.ContentStore]   no-match
+1552760195.836470 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760195.836482 DEBUG: [nfd.ContentStore]   no-match
+1552760225.889903 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760225.889962 DEBUG: [nfd.ContentStore]   no-match
+1552760226.783386 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760226.783423 DEBUG: [nfd.ContentStore]   no-match
+1552760226.783526 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760226.783546 DEBUG: [nfd.ContentStore]   no-match
+1552760250.946179 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760250.946209 DEBUG: [nfd.ContentStore]   no-match
+1552760255.889883 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760255.889915 DEBUG: [nfd.ContentStore]   no-match
+1552760256.783371 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760256.783407 DEBUG: [nfd.ContentStore]   no-match
+1552760256.783510 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760256.783529 DEBUG: [nfd.ContentStore]   no-match
+1552760285.890105 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760285.890140 DEBUG: [nfd.ContentStore]   no-match
+1552760286.783419 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760286.783453 DEBUG: [nfd.ContentStore]   no-match
+1552760286.783548 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760286.783561 DEBUG: [nfd.ContentStore]   no-match
+1552760310.946212 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760310.946241 DEBUG: [nfd.ContentStore]   no-match
+1552760315.889808 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760315.889842 DEBUG: [nfd.ContentStore]   no-match
+1552760316.783460 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760316.783496 DEBUG: [nfd.ContentStore]   no-match
+1552760316.783603 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760316.783619 DEBUG: [nfd.ContentStore]   no-match
+1552760345.889826 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760345.889861 DEBUG: [nfd.ContentStore]   no-match
+1552760346.783304 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760346.783343 DEBUG: [nfd.ContentStore]   no-match
+1552760346.783446 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760346.783462 DEBUG: [nfd.ContentStore]   no-match
+1552760368.216524 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/list L
+1552760368.216554 DEBUG: [nfd.ContentStore]   no-match
+1552760368.217720 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/list/%FD%00%00%01i%87%BA%ECX/%00%00
+1552760370.946289 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760370.946322 DEBUG: [nfd.ContentStore]   no-match
+1552760375.889774 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760375.889809 DEBUG: [nfd.ContentStore]   no-match
+1552760376.783290 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760376.783328 DEBUG: [nfd.ContentStore]   no-match
+1552760376.783434 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760376.783449 DEBUG: [nfd.ContentStore]   no-match
+1552760405.889762 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760405.889800 DEBUG: [nfd.ContentStore]   no-match
+1552760406.783325 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760406.783371 DEBUG: [nfd.ContentStore]   no-match
+1552760406.783488 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760406.783505 DEBUG: [nfd.ContentStore]   no-match
+1552760430.946330 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552760430.946364 DEBUG: [nfd.ContentStore]   no-match
+1552760435.889784 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760435.889820 DEBUG: [nfd.ContentStore]   no-match
+1552760436.783308 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760436.783357 DEBUG: [nfd.ContentStore]   no-match
+1552760436.783463 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760436.783480 DEBUG: [nfd.ContentStore]   no-match
+1552760465.889895 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/config/broadcast/f93f56d0ae1f8759c4560e2b593ab5a4f3026b28ceb1a30b0609cba5f67e00cf L
+1552760465.889950 DEBUG: [nfd.ContentStore]   no-match
+1552760466.783489 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760466.783525 DEBUG: [nfd.ContentStore]   no-match
+1552760466.783625 DEBUG: [nfd.ContentStore] find /com/stefanolupo/ndngame/0/discovery/broadcast/037ada77503356bb27f119ff635da70f68b2effc7cd8678d0ed160cc56525596 L
+1552760466.783640 DEBUG: [nfd.ContentStore]   no-match

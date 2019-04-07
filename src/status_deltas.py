@@ -29,8 +29,8 @@ class StatusDeltasHistograms:
     def plotStatusDeltas(self, ax):
         data = [statusDelta.values for statusDelta in self.statusDeltas]
         labels = [statusDelta.name for statusDelta in self.statusDeltas]
-        ax.set_title("Player Status Deltas for %s" % self.nodeName)
+        ax.set_title("%s" % self.nodeName)
         ax.hist(data, label=labels)
-        ax.set_xlabel("Distance (Game World Units)")
+        ax.set_xlabel("Distance (GWUs)")
         ax.set_ylabel("Frequency")
         ax.legend()

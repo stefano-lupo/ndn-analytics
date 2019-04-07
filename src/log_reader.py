@@ -1,10 +1,12 @@
-
+from typing import List
 from reading_utils import readFileSafe
 
 LOG_FILE = "java.log"
 ERROR_STRINGS = ["exception", "error [", "Assertion 'IsLocked()"]
 # ERROR_STRINGS = ["exception"]
 # ERROR_STRINGS = []
+
+IGNORE_STRINGS = ["Type component was null for collision with PROJECTILE"]
 
 class LogReader:
 
@@ -21,8 +23,23 @@ class LogReader:
                 input("\nPress any key to continue")
 
     def isErrorString(self, line: str):
-        for errorString in ERROR_STRINGS:
-            if errorString in line.lower():
+        errorStrings = self.toLower(ERROR_STRINGS)
+        ignoreStrings = self.toLower(IGNORE_STRINGS)
+        lower = line.lower()
+
+        if lower in errorStrings:
+            if lower not in ignoreStrings:
                 return True
 
+
         return False
+
+        # for errorString in ERROR_STRINGS:
+        #     if errorString in line.lower():
+        #         return True
+
+        # return False
+
+
+    def toLower(self, lst:List[str]):
+        return [s.lower() for s in lst]
