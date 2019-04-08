@@ -1,0 +1,2500 @@
+DEBUG [main] (ConfigManager.java:33) - Initialized with properties: {local.player.status.updates.per.sec=30, facemanager.num.sub.threads.per.face=10, linear.interest.zone.filter.inner.radius=7, projectile.cache.size=20, local.player.status.use.dead.reckoning=false, block.publisher.freshness.period.ms=0, player.status.publisher.freshness.period.ms=0, base.publisher.queue.process.per.sec=60, projectile.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.outer.radius=14, local.player.dead.reckoning.max.error=0.5, projectile.publisher.queue.process.multithread=true, statistics.logger.log.rate.sec=30, facemanager.max.num.pub.faces=1, facemanager.num.pub.threads.per.face=10, facemanager.max.num.sub.faces=1, block.sub.inter.interest.max.wait.time.ms=2000, projectile.publisher.queue.process.per.sec=60, base.publisher.queue.process.multithread=true, player.sub.inter.interest.max.wait.time.ms=30, linear.interest.zone.filter.enabled=false, projectile.publisher.freshness.period.ms=0}
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/NdnGame/NdnGameLibGdxDesktop-1.0-SNAPSHOT.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+DEBUG [main] (BackendModule.java:123) - Writing metrics to /metrics/nodeD
+ INFO [main] (DesktopLauncher.java:49) - Launching headless game
+ INFO [main] (DesktopLauncher.java:50) - LocalConfig{playerName='nodeD', isMasterView=false, isAutomated=true, automationType='wsp', isHeadless=true, gameId=0, screenWidth=600, screenHeight=600, targetFrameRate=60}
+DEBUG [main] (AutomatedInputController.java:52) - Starting with automation type: wsp
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeD/blocks/sync
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeD/status/sync
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/blocks/sync
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/projectiles/interact
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-1] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/projectiles/sync, retrying..
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-4] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/status/sync, retrying..
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-0-3] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeD/blocks/interact, retrying..
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/projectiles/sync
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/status/sync
+Apr 07, 2019 3:09:42 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeD/blocks/interact
+Apr 07, 2019 3:09:45 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/broadcast
+Apr 07, 2019 3:09:45 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/nodeD
+ INFO [cs-/com/stefanolupo/ndngame/0/config/nodeD-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/config/nodeD
+Apr 07, 2019 3:09:46 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/broadcast
+Apr 07, 2019 3:09:46 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/nodeD
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/discovery/nodeD
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+4/7/19, 3:10:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0
+pub-update-percentage-nodeD-status-sync
+             value = 0.4960091220068415
+
+
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+4/7/19, 3:10:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0011242270938729624
+pub-update-percentage-nodeD-status-sync
+             value = 0.498030388294879
+
+
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: No duplicate SN requests seen
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:96) - /com/stefanolupo/ndngame/0/nodeD/status/sync: No duplicate SN requests seen
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeC
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/projectiles/sync/0/0/0
+ INFO [fm-pub-0-0] (ProjectilePublisher.java:133) - Creating interest meter
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeA
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeB
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (BlockSubscriber.java:54) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeD-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/projectiles/sync/0/0/0
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 10=2, 11=2, 9=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [2210=2, 2242=2, 2338=2, 0=2, 2209=2, 2182=2, 2246=2, 2278=2, 2311=2, 2213=2, 2218=2, 2282=2, 2163=2, 2256=2, 2288=2, 2390=2, 2201=3, 2364=2, 2301=2]
+4/7/19, 3:11:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0029861888764464353
+pub-update-percentage-nodeD-status-sync
+             value = 0.4977586850952559
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 13
+sub-blocks-interestscounter-nodeB
+             count = 15
+sub-blocks-interestscounter-nodeC
+             count = 14
+sub-projectiles-interestscounter-nodeA
+             count = 22
+sub-projectiles-interestscounter-nodeB
+             count = 23
+sub-projectiles-interestscounter-nodeC
+             count = 24
+sub-status-interestscounter-nodeA
+             count = 352
+sub-status-interestscounter-nodeB
+             count = 379
+sub-status-interestscounter-nodeC
+             count = 414
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 347
+               min = 0
+               max = 249
+              mean = 13.93
+            stddev = 36.99
+            median = 0.00
+              75% <= 11.00
+              95% <= 117.00
+              98% <= 133.00
+              99% <= 189.00
+            99.9% <= 249.00
+eng-status-delta-nodeB
+             count = 373
+               min = 0
+               max = 125
+              mean = 5.63
+            stddev = 14.99
+            median = 0.00
+              75% <= 0.00
+              95% <= 33.00
+              98% <= 57.00
+              99% <= 79.00
+            99.9% <= 125.00
+eng-status-delta-nodeC
+             count = 406
+               min = 0
+               max = 89
+              mean = 4.20
+            stddev = 11.63
+            median = 0.00
+              75% <= 0.00
+              95% <= 25.00
+              98% <= 45.00
+              99% <= 62.00
+            99.9% <= 89.00
+sub-blocks-rtt-nodeA
+             count = 4
+               min = 98
+               max = 972
+              mean = 456.07
+            stddev = 376.57
+            median = 600.00
+              75% <= 972.00
+              95% <= 972.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 2
+               min = 35
+               max = 354
+              mean = 187.33
+            stddev = 159.34
+            median = 35.00
+              75% <= 354.00
+              95% <= 354.00
+              98% <= 354.00
+              99% <= 354.00
+            99.9% <= 354.00
+sub-blocks-rtt-nodeC
+             count = 5
+               min = 92
+               max = 996
+              mean = 531.29
+            stddev = 369.02
+            median = 383.00
+              75% <= 894.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 12
+               min = 15
+               max = 945
+              mean = 560.97
+            stddev = 270.90
+            median = 583.00
+              75% <= 799.00
+              95% <= 945.00
+              98% <= 945.00
+              99% <= 945.00
+            99.9% <= 945.00
+sub-projectiles-rtt-nodeB
+             count = 12
+               min = 21
+               max = 966
+              mean = 443.34
+            stddev = 323.05
+            median = 516.00
+              75% <= 666.00
+              95% <= 966.00
+              98% <= 966.00
+              99% <= 966.00
+            99.9% <= 966.00
+sub-projectiles-rtt-nodeC
+             count = 12
+               min = 26
+               max = 998
+              mean = 593.84
+            stddev = 294.28
+            median = 647.00
+              75% <= 801.00
+              95% <= 998.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-status-rtt-nodeA
+             count = 351
+               min = 6
+               max = 149
+              mean = 46.73
+            stddev = 19.48
+            median = 38.00
+              75% <= 66.00
+              95% <= 80.00
+              98% <= 84.00
+              99% <= 97.00
+            99.9% <= 149.00
+sub-status-rtt-nodeB
+             count = 378
+               min = 7
+               max = 166
+              mean = 43.48
+            stddev = 19.23
+            median = 34.00
+              75% <= 51.00
+              95% <= 82.00
+              98% <= 100.00
+              99% <= 100.00
+            99.9% <= 166.00
+sub-status-rtt-nodeC
+             count = 414
+               min = 3
+               max = 167
+              mean = 44.60
+            stddev = 20.67
+            median = 34.00
+              75% <= 66.00
+              95% <= 82.00
+              98% <= 90.00
+              99% <= 105.00
+            99.9% <= 167.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 23
+         mean rate = 1.25 events/second
+     1-minute rate = 0.89 events/second
+     5-minute rate = 0.82 events/second
+    15-minute rate = 0.81 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 23
+         mean rate = 1.25 events/second
+     1-minute rate = 1.37 events/second
+     5-minute rate = 1.39 events/second
+    15-minute rate = 1.40 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 569
+         mean rate = 30.87 events/second
+     1-minute rate = 31.92 events/second
+     5-minute rate = 32.14 events/second
+    15-minute rate = 32.18 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [17=3, 0=3, 6=2, 15=9, 16=7, 10=2, 11=2, 13=4, 9=2, 12=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 2182=2, 2822=2, 2311=2, 2951=2, 2447=2, 2575=2, 2702=3, 2707=2, 2963=2, 2961=2, 2964=2, 2201=3, 2841=2, 2969=2, 2210=2, 2338=2, 2209=2, 2598=2, 2599=2, 2724=2, 2213=2, 2218=2, 2602=2, 2730=2, 2478=2, 2608=2, 2868=2, 2746=2, 2616=2, 2364=2, 2877=2, 2242=2, 2246=2, 2756=2, 2632=2, 2764=2, 2256=2, 2640=2, 2390=2, 2901=2, 2778=2, 2654=2, 2397=2, 2525=2, 2785=2, 2278=2, 2405=2, 2661=2, 2282=2, 2536=2, 2924=2, 2541=2, 2797=2, 2163=2, 2931=2, 2288=2, 2422=2, 2678=2, 2683=2, 2552=2, 2936=2, 2425=2, 2812=2, 2301=2]
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+4/7/19, 3:11:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003213188041352333
+pub-update-percentage-nodeD-status-sync
+             value = 0.4977634889572267
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 41
+sub-blocks-interestscounter-nodeB
+             count = 44
+sub-blocks-interestscounter-nodeC
+             count = 43
+sub-projectiles-interestscounter-nodeA
+             count = 60
+sub-projectiles-interestscounter-nodeB
+             count = 62
+sub-projectiles-interestscounter-nodeC
+             count = 61
+sub-status-interestscounter-nodeA
+             count = 972
+sub-status-interestscounter-nodeB
+             count = 1050
+sub-status-interestscounter-nodeC
+             count = 1052
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 967
+               min = 0
+               max = 249
+              mean = 7.27
+            stddev = 22.33
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 83.00
+              99% <= 122.00
+            99.9% <= 247.00
+eng-status-delta-nodeB
+             count = 1039
+               min = 0
+               max = 156
+              mean = 6.95
+            stddev = 15.64
+            median = 0.00
+              75% <= 11.00
+              95% <= 44.00
+              98% <= 56.00
+              99% <= 67.00
+            99.9% <= 156.00
+eng-status-delta-nodeC
+             count = 1039
+               min = 0
+               max = 102
+              mean = 4.96
+            stddev = 13.10
+            median = 0.00
+              75% <= 0.00
+              95% <= 31.00
+              98% <= 56.00
+              99% <= 67.00
+            99.9% <= 102.00
+sub-blocks-rtt-nodeA
+             count = 6
+               min = 98
+               max = 972
+              mean = 340.67
+            stddev = 323.33
+            median = 240.00
+              75% <= 600.00
+              95% <= 972.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 3
+               min = 35
+               max = 354
+              mean = 137.18
+            stddev = 136.38
+            median = 65.00
+              75% <= 354.00
+              95% <= 354.00
+              98% <= 354.00
+              99% <= 354.00
+            99.9% <= 354.00
+sub-blocks-rtt-nodeC
+             count = 6
+               min = 25
+               max = 996
+              mean = 422.87
+            stddev = 387.50
+            median = 197.00
+              75% <= 894.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 27
+               min = 15
+               max = 999
+              mean = 498.57
+            stddev = 257.60
+            median = 533.00
+              75% <= 666.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 27
+               min = 16
+               max = 979
+              mean = 421.77
+            stddev = 310.07
+            median = 517.00
+              75% <= 605.00
+              95% <= 979.00
+              98% <= 979.00
+              99% <= 979.00
+            99.9% <= 979.00
+sub-projectiles-rtt-nodeC
+             count = 27
+               min = 0
+               max = 998
+              mean = 529.61
+            stddev = 302.12
+            median = 554.00
+              75% <= 666.00
+              95% <= 998.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-status-rtt-nodeA
+             count = 971
+               min = 6
+               max = 149
+              mean = 47.70
+            stddev = 19.29
+            median = 42.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 97.00
+              99% <= 100.00
+            99.9% <= 118.00
+sub-status-rtt-nodeB
+             count = 1050
+               min = 2
+               max = 184
+              mean = 44.33
+            stddev = 19.96
+            median = 34.00
+              75% <= 56.00
+              95% <= 82.00
+              98% <= 100.00
+              99% <= 101.00
+            99.9% <= 184.00
+sub-status-rtt-nodeC
+             count = 1051
+               min = 3
+               max = 167
+              mean = 46.13
+            stddev = 19.62
+            median = 34.00
+              75% <= 66.00
+              95% <= 75.00
+              98% <= 88.00
+              99% <= 99.00
+            99.9% <= 154.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 62
+         mean rate = 1.28 events/second
+     1-minute rate = 1.07 events/second
+     5-minute rate = 0.87 events/second
+    15-minute rate = 0.82 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 63
+         mean rate = 1.30 events/second
+     1-minute rate = 1.35 events/second
+     5-minute rate = 1.39 events/second
+    15-minute rate = 1.40 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 1498
+         mean rate = 30.94 events/second
+     1-minute rate = 31.49 events/second
+     5-minute rate = 32.02 events/second
+    15-minute rate = 32.14 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [17=3, 0=3, 6=2, 15=9, 16=7, 10=2, 11=2, 13=4, 22=12, 9=2, 18=14, 12=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [3331=2, 0=2, 2560=2, 2822=2, 2311=2, 3077=2, 3592=2, 2575=2, 3090=2, 3347=2, 2841=2, 3359=2, 3100=2, 2338=2, 2598=2, 2599=2, 2602=2, 3122=2, 2608=2, 2868=2, 2616=2, 3129=2, 2364=2, 2877=2, 3393=2, 3147=2, 2632=2, 2640=2, 2390=2, 2901=2, 3413=2, 3161=2, 2654=2, 2397=2, 3171=2, 2405=2, 2661=2, 3429=2, 2924=2, 2163=2, 2931=2, 3443=2, 3185=2, 2422=2, 2678=2, 3447=2, 2683=2, 2936=2, 2425=2, 3199=2, 2182=2, 2951=2, 3211=2, 2447=2, 2702=3, 3474=2, 2707=2, 2963=2, 2961=2, 2964=2, 2201=3, 2969=2, 2210=2, 2209=2, 3233=2, 2724=2, 2213=2, 3237=2, 2218=2, 2730=2, 2478=2, 3505=2, 3252=2, 2746=2, 3007=2, 3519=2, 2242=2, 3520=2, 2246=2, 2756=2, 3269=2, 3279=2, 3535=2, 2764=2, 2256=2, 3025=2, 3285=2, 2778=2, 3038=2, 3295=2, 2525=2, 3555=2, 2785=2, 3041=2, 2278=2, 3045=2, 2282=2, 2536=2, 2541=2, 2797=2, 3570=2, 2288=2, 3319=2, 2552=2, 2812=2, 2301=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 17=3, 23=2, 16=7, 22=12, 24=6, 25=7, 26=4]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [3331=2, 3843=2, 0=2, 2560=2, 2822=2, 2311=2, 3077=2, 3592=2, 2575=2, 4109=2, 3090=2, 4115=2, 3347=2, 3603=2, 3867=2, 3864=2, 2841=2, 3359=2, 3100=2, 2338=2, 2598=2, 2599=2, 2602=2, 3626=2, 3887=2, 4140=2, 3122=2, 2608=2, 2868=2, 3642=2, 2616=2, 3129=2, 3641=2, 2364=2, 3900=2, 2877=2, 3645=2, 3904=2, 3393=2, 3653=2, 3147=2, 3915=2, 4168=2, 2632=2, 2640=2, 3665=2, 2390=2, 4181=2, 2901=2, 3413=2, 3161=2, 2654=2, 2397=2, 3933=2, 4195=2, 3171=2, 4192=2, 3936=2, 3686=2, 2405=2, 2661=2, 3429=2, 3685=2, 3691=2, 2924=2, 3698=2, 3954=2, 2163=2, 2931=2, 3443=2, 3185=2, 3953=2, 2422=2, 2678=2, 3447=2, 2683=2, 2936=2, 2425=2, 3199=2, 3969=2, 2182=2, 2951=2, 3719=2, 3211=2, 2447=2, 2702=3, 3474=2, 2707=2, 2963=2, 3728=2, 2961=2, 2964=2, 2201=3, 2969=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 2724=2, 4004=2, 2213=2, 3237=2, 2218=2, 2730=2, 2478=2, 3759=2, 3505=2, 3252=2, 2746=2, 3007=2, 3519=2, 3772=2, 4028=2, 3773=2, 2242=2, 3778=2, 4035=2, 3520=2, 2246=2, 2756=2, 3269=2, 3279=2, 3535=2, 2764=2, 3788=2, 2256=2, 3025=2, 4049=2, 3285=2, 2778=2, 3038=2, 3295=2, 2525=2, 3805=2, 3555=2, 2785=2, 3041=2, 2278=2, 3815=2, 3045=2, 2282=2, 4074=2, 2536=2, 3822=2, 2541=2, 2797=2, 3570=2, 4083=2, 2288=2, 3319=2, 2552=2, 2812=2, 2301=2]
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+4/7/19, 3:12:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003348961821835231
+pub-update-percentage-nodeD-status-sync
+             value = 0.4978780433325888
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 71
+sub-blocks-interestscounter-nodeB
+             count = 73
+sub-blocks-interestscounter-nodeC
+             count = 73
+sub-projectiles-interestscounter-nodeA
+             count = 98
+sub-projectiles-interestscounter-nodeB
+             count = 100
+sub-projectiles-interestscounter-nodeC
+             count = 98
+sub-status-interestscounter-nodeA
+             count = 1588
+sub-status-interestscounter-nodeB
+             count = 1656
+sub-status-interestscounter-nodeC
+             count = 1677
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 1580
+               min = 0
+               max = 249
+              mean = 5.18
+            stddev = 15.28
+            median = 0.00
+              75% <= 0.00
+              95% <= 25.00
+              98% <= 47.00
+              99% <= 63.00
+            99.9% <= 247.00
+eng-status-delta-nodeB
+             count = 1644
+               min = 0
+               max = 234
+              mean = 6.24
+            stddev = 16.30
+            median = 0.00
+              75% <= 0.00
+              95% <= 44.00
+              98% <= 55.00
+              99% <= 66.00
+            99.9% <= 234.00
+eng-status-delta-nodeC
+             count = 1658
+               min = 0
+               max = 102
+              mean = 5.85
+            stddev = 14.33
+            median = 0.00
+              75% <= 0.00
+              95% <= 33.00
+              98% <= 63.00
+              99% <= 78.00
+            99.9% <= 100.00
+sub-blocks-rtt-nodeA
+             count = 6
+               min = 98
+               max = 972
+              mean = 340.67
+            stddev = 323.33
+            median = 240.00
+              75% <= 600.00
+              95% <= 972.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 4
+               min = 35
+               max = 930
+              mean = 493.74
+            stddev = 407.17
+            median = 354.00
+              75% <= 930.00
+              95% <= 930.00
+              98% <= 930.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 6
+               min = 25
+               max = 996
+              mean = 422.87
+            stddev = 387.50
+            median = 197.00
+              75% <= 894.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 42
+               min = 15
+               max = 999
+              mean = 500.16
+            stddev = 245.07
+            median = 517.00
+              75% <= 650.00
+              95% <= 933.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 41
+               min = 14
+               max = 979
+              mean = 443.95
+            stddev = 293.14
+            median = 517.00
+              75% <= 666.00
+              95% <= 833.00
+              98% <= 979.00
+              99% <= 979.00
+            99.9% <= 979.00
+sub-projectiles-rtt-nodeC
+             count = 41
+               min = 0
+               max = 998
+              mean = 534.28
+            stddev = 281.68
+            median = 533.00
+              75% <= 734.00
+              95% <= 995.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-status-rtt-nodeA
+             count = 1587
+               min = 8
+               max = 133
+              mean = 48.22
+            stddev = 19.26
+            median = 42.00
+              75% <= 66.00
+              95% <= 76.00
+              98% <= 100.00
+              99% <= 100.00
+            99.9% <= 133.00
+sub-status-rtt-nodeB
+             count = 1655
+               min = 2
+               max = 365
+              mean = 47.29
+            stddev = 22.08
+            median = 34.00
+              75% <= 66.00
+              95% <= 68.00
+              98% <= 97.00
+              99% <= 100.00
+            99.9% <= 365.00
+sub-status-rtt-nodeC
+             count = 1676
+               min = 2
+               max = 154
+              mean = 47.17
+            stddev = 19.92
+            median = 35.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 92.00
+              99% <= 100.00
+            99.9% <= 134.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 102
+         mean rate = 1.30 events/second
+     1-minute rate = 1.16 events/second
+     5-minute rate = 0.91 events/second
+    15-minute rate = 0.84 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 98
+         mean rate = 1.25 events/second
+     1-minute rate = 1.25 events/second
+     5-minute rate = 1.36 events/second
+    15-minute rate = 1.39 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 2411
+         mean rate = 30.75 events/second
+     1-minute rate = 31.03 events/second
+     5-minute rate = 31.87 events/second
+    15-minute rate = 32.08 events/second
+
+
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 17=3, 26=8, 23=2, 28=9, 16=7, 30=7, 22=12, 27=6, 24=6, 25=7]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 4612=2, 3077=2, 3592=2, 2575=2, 4109=2, 3090=2, 4115=2, 3603=2, 4634=2, 3100=2, 2598=2, 2599=2, 2602=2, 3626=2, 4648=2, 4140=2, 3122=2, 2608=2, 4660=2, 3642=2, 2616=2, 3129=2, 3641=2, 3645=2, 4672=2, 3653=2, 3147=2, 4168=2, 2632=2, 4691=2, 2640=2, 3665=2, 4695=2, 4181=2, 3161=2, 2654=2, 4700=2, 4701=2, 4195=2, 4707=2, 3171=2, 4192=2, 3686=2, 2661=2, 3685=2, 3691=2, 3698=2, 2163=2, 4720=2, 4209=2, 3185=2, 2678=2, 2683=2, 4222=2, 3199=2, 2182=2, 3719=2, 4741=2, 4747=2, 3211=2, 4750=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 4763=2, 4248=2, 2201=3, 4255=2, 4767=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 2724=2, 2213=2, 3237=2, 2218=2, 2730=2, 4776=2, 3759=2, 3252=2, 4794=2, 2746=2, 3772=2, 3773=2, 2242=2, 3778=2, 4289=2, 2246=2, 2756=2, 3269=2, 3279=2, 2764=2, 3788=2, 2256=2, 3285=2, 2778=2, 3295=2, 3805=2, 4323=2, 2785=2, 2278=2, 3815=2, 2282=2, 3822=2, 2797=2, 2288=2, 3319=2, 4341=2, 2812=2, 2301=2, 3331=2, 3843=2, 2822=2, 2311=2, 4360=2, 3347=2, 4372=2, 3867=2, 3864=2, 2841=2, 3359=2, 2338=2, 3887=2, 4403=2, 2868=2, 2364=2, 3900=2, 2877=2, 3904=2, 3393=2, 4421=2, 3915=2, 2390=2, 4436=2, 2901=2, 3413=2, 2397=2, 3933=2, 3936=2, 2405=2, 3429=2, 4458=2, 2924=2, 4466=2, 3954=2, 2931=2, 3443=2, 3953=2, 2422=2, 3447=2, 2936=2, 2425=2, 3969=2, 2951=2, 2447=2, 3474=2, 2963=2, 2961=2, 2964=2, 4501=2, 2969=2, 4004=2, 4517=2, 2478=2, 3505=2, 4533=2, 3007=2, 3519=2, 4028=2, 4035=2, 3520=2, 3535=2, 4557=2, 3025=2, 4049=2, 4570=2, 3038=2, 2525=2, 3555=2, 3041=2, 3045=2, 4074=2, 2536=2, 4590=2, 2541=2, 3570=2, 4083=2, 2552=2, 4604=2]
+4/7/19, 3:12:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003066059648796804
+pub-update-percentage-nodeD-status-sync
+             value = 0.4953992006692072
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 100
+sub-blocks-interestscounter-nodeB
+             count = 100
+sub-blocks-interestscounter-nodeC
+             count = 101
+sub-projectiles-interestscounter-nodeA
+             count = 137
+sub-projectiles-interestscounter-nodeB
+             count = 140
+sub-projectiles-interestscounter-nodeC
+             count = 138
+sub-status-interestscounter-nodeA
+             count = 2082
+sub-status-interestscounter-nodeB
+             count = 2038
+sub-status-interestscounter-nodeC
+             count = 2126
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 2073
+               min = 0
+               max = 249
+              mean = 8.58
+            stddev = 20.70
+            median = 0.00
+              75% <= 11.00
+              95% <= 44.00
+              98% <= 78.00
+              99% <= 111.00
+            99.9% <= 185.00
+eng-status-delta-nodeB
+             count = 2022
+               min = 0
+               max = 650
+              mean = 11.52
+            stddev = 35.80
+            median = 0.00
+              75% <= 11.00
+              95% <= 45.00
+              98% <= 89.00
+              99% <= 122.00
+            99.9% <= 650.00
+eng-status-delta-nodeC
+             count = 2100
+               min = 0
+               max = 171
+              mean = 12.20
+            stddev = 21.29
+            median = 0.00
+              75% <= 22.00
+              95% <= 47.00
+              98% <= 67.00
+              99% <= 90.00
+            99.9% <= 171.00
+sub-blocks-rtt-nodeA
+             count = 7
+               min = 98
+               max = 972
+              mean = 531.07
+            stddev = 377.80
+            median = 600.00
+              75% <= 914.00
+              95% <= 972.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 7
+               min = 35
+               max = 930
+              mean = 439.26
+            stddev = 361.97
+            median = 252.00
+              75% <= 900.00
+              95% <= 930.00
+              98% <= 930.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 8
+               min = 25
+               max = 996
+              mean = 538.81
+            stddev = 334.50
+            median = 383.00
+              75% <= 861.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 60
+               min = 15
+               max = 999
+              mean = 504.05
+            stddev = 249.74
+            median = 517.00
+              75% <= 650.00
+              95% <= 883.00
+              98% <= 933.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 57
+               min = 14
+               max = 979
+              mean = 412.46
+            stddev = 276.46
+            median = 493.00
+              75% <= 600.00
+              95% <= 829.00
+              98% <= 966.00
+              99% <= 979.00
+            99.9% <= 979.00
+sub-projectiles-rtt-nodeC
+             count = 58
+               min = 0
+               max = 998
+              mean = 479.22
+            stddev = 269.24
+            median = 516.00
+              75% <= 666.00
+              95% <= 932.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-status-rtt-nodeA
+             count = 2081
+               min = 5
+               max = 316
+              mean = 55.21
+            stddev = 31.73
+            median = 50.00
+              75% <= 67.00
+              95% <= 108.00
+              98% <= 149.00
+              99% <= 182.00
+            99.9% <= 316.00
+sub-status-rtt-nodeB
+             count = 2035
+               min = 2
+               max = 704
+              mean = 61.14
+            stddev = 52.02
+            median = 51.00
+              75% <= 67.00
+              95% <= 138.00
+              98% <= 190.00
+              99% <= 234.00
+            99.9% <= 704.00
+sub-status-rtt-nodeC
+             count = 2124
+               min = 3
+               max = 403
+              mean = 57.13
+            stddev = 40.26
+            median = 49.00
+              75% <= 67.00
+              95% <= 117.00
+              98% <= 148.00
+              99% <= 257.00
+            99.9% <= 403.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 143
+         mean rate = 1.32 events/second
+     1-minute rate = 1.24 events/second
+     5-minute rate = 0.95 events/second
+    15-minute rate = 0.86 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 141
+         mean rate = 1.30 events/second
+     1-minute rate = 1.33 events/second
+     5-minute rate = 1.37 events/second
+    15-minute rate = 1.39 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 3230
+         mean rate = 29.77 events/second
+     1-minute rate = 29.61 events/second
+     5-minute rate = 31.46 events/second
+    15-minute rate = 31.93 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 32=8, 33=9, 10=2, 11=2, 13=4, 9=2, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 5126=2, 4612=2, 3077=2, 3592=2, 2575=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 3603=2, 4634=2, 5144=2, 5145=2, 5150=2, 3100=2, 2598=2, 2599=2, 5156=2, 2602=2, 3626=2, 4648=2, 5166=2, 4140=2, 3122=2, 5171=2, 2608=2, 4660=2, 3642=2, 2616=2, 3129=2, 3641=2, 3645=2, 4672=2, 3653=2, 3147=2, 4168=2, 2632=2, 4691=2, 2640=2, 5201=2, 3665=2, 4695=2, 4181=2, 3161=2, 2654=2, 4700=2, 4701=2, 4195=2, 4707=2, 3171=2, 4192=2, 3686=2, 5220=2, 2661=2, 3685=2, 3691=2, 5234=2, 3698=2, 2163=2, 4720=2, 4209=2, 3185=2, 2678=2, 2683=2, 4222=2, 3199=2, 5249=2, 2182=2, 3719=2, 4741=2, 5258=2, 4747=2, 3211=2, 4750=2, 5262=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 4763=2, 4248=2, 2201=3, 4255=2, 4767=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 5284=2, 2724=2, 2213=2, 3237=2, 2218=2, 2730=2, 4776=2, 5295=2, 3759=2, 5292=2, 3252=2, 5306=2, 2746=2, 4794=3, 3772=2, 3773=2, 2242=2, 3778=2, 4289=2, 5313=2, 2246=2, 4807=2, 2756=2, 3269=2, 5326=2, 3279=2, 2764=2, 3788=2, 2256=2, 4820=2, 3285=2, 2778=2, 4830=2, 3295=2, 3805=2, 4323=2, 5347=2, 2785=2, 4839=3, 2278=2, 3815=2, 2282=2, 5355=2, 3822=2, 4847=2, 2797=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 2812=2, 4861=2, 2301=2, 3331=2, 3843=2, 2822=2, 2311=2, 5380=2, 4360=2, 3347=2, 5392=3, 4372=2, 3867=2, 3864=2, 2841=2, 3359=2, 2338=2, 4896=2, 4903=2, 3887=2, 4403=2, 2868=2, 4923=2, 4921=2, 2364=2, 3900=2, 2877=2, 3904=2, 3393=2, 4421=2, 3915=2, 2390=2, 4436=2, 2901=2, 3413=2, 2397=2, 3933=2, 3936=2, 4964=2, 2405=2, 3429=2, 4458=2, 4972=2, 2924=2, 4466=2, 4978=2, 3954=2, 2931=2, 3443=2, 3953=2, 2422=2, 3447=2, 4986=3, 2936=2, 2425=2, 3969=2, 2951=2, 5003=3, 5000=2, 2447=2, 3474=2, 2963=2, 5008=2, 2961=2, 2964=2, 4501=2, 5018=2, 2969=2, 5024=2, 5030=2, 4004=2, 4517=2, 5035=2, 5033=2, 2478=2, 5043=2, 3505=2, 4533=2, 5045=2, 5051=3, 3007=2, 3519=2, 4028=2, 4035=2, 3520=2, 5064=2, 5071=2, 3535=2, 4557=2, 3025=2, 4049=2, 4570=2, 3038=2, 5087=2, 2525=2, 3555=2, 3041=2, 3045=2, 4074=2, 2536=2, 4590=2, 2541=2, 3570=2, 4083=2, 5109=2, 2552=2, 4604=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 35=9, 9=2, 32=12, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 33=22, 22=12, 27=6, 24=6, 25=7]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 5633=2, 5126=2, 4612=2, 3077=2, 3592=2, 5641=2, 2575=2, 4109=2, 5133=2, 3090=2, 3603=2, 4115=2, 5139=2, 5652=2, 4634=2, 5144=2, 5145=2, 5150=2, 3100=2, 5666=2, 5667=2, 2598=2, 2599=2, 5156=2, 2602=2, 3626=2, 4648=2, 5166=2, 4140=2, 3122=2, 5171=2, 2608=2, 4660=2, 5684=2, 3642=2, 2616=2, 3129=2, 3641=2, 5692=2, 3645=2, 4672=2, 3653=2, 3147=2, 2632=2, 4168=2, 5709=2, 4691=2, 2640=2, 3665=2, 5201=2, 4695=2, 4181=2, 3161=2, 2654=2, 5726=2, 5727=2, 4700=2, 4701=2, 3171=2, 4195=2, 4707=2, 4192=2, 3686=2, 5220=2, 2661=2, 3685=2, 3691=2, 5740=2, 3698=2, 5234=2, 2163=2, 4720=2, 3185=2, 4209=2, 2678=2, 2683=2, 4222=2, 3199=2, 5759=2, 5249=2, 2182=2, 3719=2, 4741=2, 5258=2, 3211=2, 4747=2, 4750=2, 5262=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 5783=2, 4763=2, 2201=3, 4248=2, 4255=2, 4767=2, 5788=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 2724=2, 5284=2, 2213=2, 3237=2, 2218=2, 2730=2, 4776=2, 3759=2, 5295=2, 5292=2, 5814=2, 3252=2, 2746=2, 5306=2, 4794=3, 3772=2, 3773=2, 2242=2, 3778=2, 4289=2, 5313=2, 2246=2, 4807=2, 2756=2, 3269=2, 5326=2, 3279=2, 2764=2, 3788=2, 5843=2, 2256=2, 4820=2, 3285=2, 2778=2, 4830=2, 3295=2, 3805=2, 5858=2, 4323=2, 5347=2, 2785=2, 2278=2, 4839=3, 3815=2, 2282=2, 5355=2, 3822=2, 4847=2, 2797=2, 5875=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 2812=2, 2301=2, 4861=2, 3331=2, 3843=2, 2822=2, 2311=2, 5380=2, 5892=2, 4360=2, 5906=2, 3347=2, 5392=3, 4372=2, 3867=2, 3864=2, 5400=2, 2841=2, 5401=2, 3359=2, 5404=2, 5916=2, 2338=2, 4896=2, 5409=2, 5926=2, 4903=2, 3887=2, 5423=2, 4403=2, 2868=2, 5946=2, 4923=2, 4921=2, 5950=2, 2364=2, 3900=2, 2877=2, 5954=2, 3904=2, 3393=2, 4421=2, 3915=2, 5454=2, 5964=2, 2390=2, 5463=2, 4436=2, 5972=2, 2901=2, 3413=2, 2397=2, 3933=2, 3936=2, 5991=2, 4964=2, 2405=2, 3429=2, 4458=2, 2924=2, 4972=2, 3954=2, 4466=2, 4978=2, 2931=2, 3443=2, 3953=2, 5489=2, 2422=2, 3447=2, 4986=3, 2936=2, 2425=2, 5500=2, 3969=2, 2951=2, 5003=3, 5000=2, 5513=2, 2447=2, 3474=2, 2963=2, 5008=2, 2961=2, 5526=2, 5527=2, 2964=2, 4501=2, 5018=2, 5530=2, 2969=2, 5024=2, 5030=2, 5543=2, 4004=2, 4517=2, 5035=2, 5033=2, 2478=2, 5043=2, 3505=2, 4533=2, 5045=2, 5051=3, 5561=2, 3007=2, 3519=2, 5567=2, 4028=2, 4035=2, 3520=2, 5064=2, 5582=2, 3535=2, 5071=2, 4557=2, 3025=2, 4049=2, 5591=2, 4570=2, 3038=2, 5087=2, 2525=2, 3555=2, 3041=2, 5607=2, 3045=2, 4074=2, 2536=2, 4590=2, 5615=2, 2541=2, 3570=2, 4083=2, 5109=2, 5620=3, 2552=2, 4604=2]
+4/7/19, 3:13:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.002866698518872432
+pub-update-percentage-nodeD-status-sync
+             value = 0.4958980485862206
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 129
+sub-blocks-interestscounter-nodeB
+             count = 128
+sub-blocks-interestscounter-nodeC
+             count = 131
+sub-projectiles-interestscounter-nodeA
+             count = 174
+sub-projectiles-interestscounter-nodeB
+             count = 178
+sub-projectiles-interestscounter-nodeC
+             count = 176
+sub-status-interestscounter-nodeA
+             count = 2651
+sub-status-interestscounter-nodeB
+             count = 2584
+sub-status-interestscounter-nodeC
+             count = 2730
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 2638
+               min = 0
+               max = 249
+              mean = 6.13
+            stddev = 15.70
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 47.00
+              99% <= 67.00
+            99.9% <= 185.00
+eng-status-delta-nodeB
+             count = 2562
+               min = 0
+               max = 418
+              mean = 8.55
+            stddev = 22.82
+            median = 0.00
+              75% <= 11.00
+              95% <= 44.00
+              98% <= 76.00
+              99% <= 105.00
+            99.9% <= 234.00
+eng-status-delta-nodeC
+             count = 2700
+               min = 0
+               max = 171
+              mean = 4.49
+            stddev = 14.38
+            median = 0.00
+              75% <= 0.00
+              95% <= 43.00
+              98% <= 47.00
+              99% <= 63.00
+            99.9% <= 124.00
+sub-blocks-rtt-nodeA
+             count = 8
+               min = 98
+               max = 972
+              mean = 530.67
+            stddev = 299.88
+            median = 530.00
+              75% <= 914.00
+              95% <= 972.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 9
+               min = 35
+               max = 930
+              mean = 439.89
+            stddev = 288.06
+            median = 393.00
+              75% <= 495.00
+              95% <= 930.00
+              98% <= 930.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 8
+               min = 25
+               max = 996
+              mean = 538.81
+            stddev = 334.50
+            median = 383.00
+              75% <= 861.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 74
+               min = 15
+               max = 999
+              mean = 494.59
+            stddev = 278.63
+            median = 517.00
+              75% <= 733.00
+              95% <= 933.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 72
+               min = 14
+               max = 979
+              mean = 416.12
+            stddev = 283.96
+            median = 474.00
+              75% <= 667.00
+              95% <= 835.00
+              98% <= 929.00
+              99% <= 966.00
+            99.9% <= 979.00
+sub-projectiles-rtt-nodeC
+             count = 72
+               min = 0
+               max = 998
+              mean = 446.27
+            stddev = 299.10
+            median = 489.00
+              75% <= 677.00
+              95% <= 950.00
+              98% <= 995.00
+              99% <= 998.00
+            99.9% <= 998.00
+sub-status-rtt-nodeA
+             count = 2651
+               min = 2
+               max = 316
+              mean = 52.87
+            stddev = 27.57
+            median = 47.00
+              75% <= 67.00
+              95% <= 94.00
+              98% <= 142.00
+              99% <= 162.00
+            99.9% <= 230.00
+sub-status-rtt-nodeB
+             count = 2581
+               min = 2
+               max = 704
+              mean = 55.72
+            stddev = 35.31
+            median = 51.00
+              75% <= 67.00
+              95% <= 111.00
+              98% <= 150.00
+              99% <= 167.00
+            99.9% <= 268.00
+sub-status-rtt-nodeC
+             count = 2727
+               min = 3
+               max = 403
+              mean = 52.09
+            stddev = 30.69
+            median = 44.00
+              75% <= 67.00
+              95% <= 100.00
+              98% <= 120.00
+              99% <= 142.00
+            99.9% <= 349.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 182
+         mean rate = 1.32 events/second
+     1-minute rate = 1.28 events/second
+     5-minute rate = 0.99 events/second
+    15-minute rate = 0.87 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 178
+         mean rate = 1.29 events/second
+     1-minute rate = 1.29 events/second
+     5-minute rate = 1.36 events/second
+    15-minute rate = 1.38 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 4134
+         mean rate = 29.87 events/second
+     1-minute rate = 29.75 events/second
+     5-minute rate = 31.31 events/second
+    15-minute rate = 31.87 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 36=15, 32=12, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 35=21, 16=7, 33=22, 22=12, 27=6, 24=6, 25=7]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 5633=2, 5126=2, 4612=2, 3077=2, 6149=2, 3592=2, 5641=2, 2575=2, 4109=2, 5133=2, 3090=2, 3603=2, 4115=2, 5139=2, 6161=2, 5652=2, 4634=2, 5144=2, 5145=2, 5150=2, 6175=2, 3100=2, 5666=2, 5667=2, 2598=2, 2599=2, 5156=2, 2602=2, 3626=2, 6186=2, 4648=2, 5166=2, 4140=2, 3122=2, 5171=2, 2608=2, 4660=2, 5684=2, 3642=2, 2616=2, 3129=2, 3641=2, 5692=2, 3645=2, 4672=2, 6214=2, 3653=2, 3147=2, 2632=2, 4168=2, 5709=2, 4691=2, 2640=2, 3665=2, 5201=2, 4695=2, 6231=2, 4181=2, 3161=2, 2654=2, 5726=2, 5727=2, 4700=2, 4701=2, 3171=2, 4195=2, 4707=2, 4192=2, 3686=2, 5220=2, 2661=2, 3685=2, 3691=2, 6248=2, 5740=2, 3698=2, 5234=2, 2163=2, 6259=2, 4720=2, 3185=2, 4209=2, 2678=2, 2683=2, 4222=2, 3199=2, 5759=2, 5249=2, 2182=2, 3719=2, 6279=2, 4741=2, 5258=2, 3211=2, 4747=2, 4750=2, 5262=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 6288=3, 5783=2, 6295=2, 4763=2, 2201=3, 4248=2, 4255=2, 4767=2, 5788=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 2724=2, 5284=2, 2213=2, 3237=2, 2218=2, 2730=2, 4776=2, 3759=2, 5295=2, 5292=2, 5814=2, 3252=2, 6325=2, 2746=2, 5306=2, 4794=3, 6329=2, 3772=2, 3773=2, 2242=2, 3778=2, 4289=2, 5313=2, 2246=2, 4807=2, 2756=2, 3269=2, 6347=2, 5326=2, 3279=2, 6351=2, 2764=2, 3788=2, 5843=2, 2256=2, 4820=2, 3285=2, 2778=2, 4830=2, 3295=2, 3805=2, 5858=2, 4323=2, 5347=2, 2785=2, 2278=2, 4839=3, 3815=2, 6372=2, 2282=2, 5355=2, 6376=2, 3822=2, 4847=2, 2797=2, 5875=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 6395=2, 2812=2, 2301=2, 4861=2, 3331=2, 3843=2, 2822=2, 2311=2, 5380=2, 5892=2, 6405=2, 4360=2, 6413=2, 5906=2, 6418=2, 3347=2, 5392=3, 4372=2, 3867=2, 3864=2, 5400=2, 2841=2, 5401=2, 3359=2, 5404=2, 5916=2, 2338=2, 6435=2, 4896=2, 6432=2, 5409=2, 5926=2, 4903=2, 3887=2, 5423=2, 6445=2, 4403=2, 2868=2, 5946=2, 4923=2, 4921=2, 5950=2, 2364=2, 3900=2, 2877=2, 5954=2, 3904=2, 3393=2, 4421=2, 3915=2, 5454=2, 5964=2, 6481=2, 2390=2, 5463=2, 4436=2, 5972=2, 2901=2, 3413=2, 2397=2, 3933=2, 3936=2, 5991=2, 4964=2, 2405=2, 3429=2, 4458=2, 6511=2, 2924=2, 4972=2, 3954=2, 4466=2, 4978=2, 6514=2, 2931=2, 3443=2, 3953=2, 5489=2, 2422=2, 3447=2, 6522=2, 4986=3, 2936=2, 2425=2, 5500=2, 6012=2, 6013=2, 3969=2, 2951=2, 5003=3, 6027=2, 5000=2, 5513=2, 2447=2, 3474=2, 2963=2, 6035=2, 5008=2, 2961=2, 5526=2, 6550=2, 5527=2, 2964=2, 4501=2, 5018=2, 5530=2, 2969=2, 6562=2, 5024=2, 6049=2, 6561=2, 5030=2, 6566=2, 5543=2, 4004=2, 4517=2, 5035=2, 5033=2, 2478=2, 5043=2, 3505=2, 6065=2, 4533=2, 5045=2, 5051=3, 5561=2, 3007=2, 3519=2, 5567=2, 4028=2, 4035=2, 3520=2, 5064=2, 6089=2, 5582=2, 3535=2, 5071=2, 4557=2, 3025=2, 4049=2, 5591=2, 4570=2, 3038=2, 5087=2, 2525=2, 3555=2, 3041=2, 5607=2, 6116=2, 3045=2, 4074=2, 6122=2, 2536=2, 6120=2, 4590=2, 5615=2, 2541=2, 3570=2, 4083=2, 5109=2, 5620=3, 2552=2, 4604=2]
+4/7/19, 3:13:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0028555509123833404
+pub-update-percentage-nodeD-status-sync
+             value = 0.4964123998606757
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 156
+sub-blocks-interestscounter-nodeB
+             count = 157
+sub-blocks-interestscounter-nodeC
+             count = 161
+sub-projectiles-interestscounter-nodeA
+             count = 216
+sub-projectiles-interestscounter-nodeB
+             count = 221
+sub-projectiles-interestscounter-nodeC
+             count = 217
+sub-status-interestscounter-nodeA
+             count = 3285
+sub-status-interestscounter-nodeB
+             count = 3221
+sub-status-interestscounter-nodeC
+             count = 3379
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 3269
+               min = 0
+               max = 249
+              mean = 6.65
+            stddev = 15.80
+            median = 0.00
+              75% <= 11.00
+              95% <= 40.00
+              98% <= 52.00
+              99% <= 67.00
+            99.9% <= 126.00
+eng-status-delta-nodeB
+             count = 3193
+               min = 0
+               max = 418
+              mean = 5.16
+            stddev = 18.04
+            median = 0.00
+              75% <= 0.00
+              95% <= 31.00
+              98% <= 62.00
+              99% <= 71.00
+            99.9% <= 133.00
+eng-status-delta-nodeC
+             count = 3347
+               min = 0
+               max = 126
+              mean = 2.91
+            stddev = 11.46
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 45.00
+              99% <= 63.00
+            99.9% <= 126.00
+sub-blocks-rtt-nodeA
+             count = 11
+               min = 98
+               max = 972
+              mean = 563.24
+            stddev = 274.46
+            median = 530.00
+              75% <= 914.00
+              95% <= 961.00
+              98% <= 972.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 10
+               min = 35
+               max = 930
+              mean = 477.72
+            stddev = 262.26
+            median = 495.00
+              75% <= 605.00
+              95% <= 930.00
+              98% <= 930.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 8
+               min = 25
+               max = 996
+              mean = 538.81
+            stddev = 334.50
+            median = 383.00
+              75% <= 861.00
+              95% <= 996.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 93
+               min = 15
+               max = 999
+              mean = 442.30
+            stddev = 268.47
+            median = 516.00
+              75% <= 623.00
+              95% <= 857.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 93
+               min = 14
+               max = 979
+              mean = 404.84
+            stddev = 254.79
+            median = 467.00
+              75% <= 577.00
+              95% <= 829.00
+              98% <= 835.00
+              99% <= 929.00
+            99.9% <= 979.00
+sub-projectiles-rtt-nodeC
+             count = 91
+               min = 0
+               max = 1000
+              mean = 435.01
+            stddev = 281.11
+            median = 500.00
+              75% <= 647.00
+              95% <= 950.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 3284
+               min = 2
+               max = 178
+              mean = 49.54
+            stddev = 21.82
+            median = 41.00
+              75% <= 67.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 115.00
+            99.9% <= 172.00
+sub-status-rtt-nodeB
+             count = 3218
+               min = 5
+               max = 235
+              mean = 50.41
+            stddev = 23.70
+            median = 42.00
+              75% <= 67.00
+              95% <= 86.00
+              98% <= 110.00
+              99% <= 134.00
+            99.9% <= 201.00
+sub-status-rtt-nodeC
+             count = 3376
+               min = 3
+               max = 403
+              mean = 49.02
+            stddev = 24.99
+            median = 40.00
+              75% <= 67.00
+              95% <= 84.00
+              98% <= 100.00
+              99% <= 117.00
+            99.9% <= 349.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 222
+         mean rate = 1.32 events/second
+     1-minute rate = 1.29 events/second
+     5-minute rate = 1.02 events/second
+    15-minute rate = 0.89 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 224
+         mean rate = 1.33 events/second
+     1-minute rate = 1.37 events/second
+     5-minute rate = 1.37 events/second
+    15-minute rate = 1.39 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 5052
+         mean rate = 30.00 events/second
+     1-minute rate = 30.11 events/second
+     5-minute rate = 31.25 events/second
+    15-minute rate = 31.83 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 32=12, 12=2, 40=6, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 33=22, 35=27, 36=29, 22=12, 27=6, 24=6, 25=7]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 2560=2, 5633=2, 5126=2, 4612=2, 3077=2, 6149=2, 3592=2, 5641=2, 7182=2, 2575=2, 4109=2, 5133=2, 3090=2, 3603=2, 4115=2, 5139=2, 6161=2, 5652=2, 4634=2, 6683=2, 5144=2, 5145=2, 5150=2, 6175=2, 3100=2, 5666=2, 5667=2, 2598=2, 2599=2, 6695=2, 5156=2, 2602=2, 3626=2, 6186=2, 4648=2, 5166=2, 4140=2, 3122=2, 5171=2, 6707=2, 2608=2, 4660=2, 5684=2, 3642=2, 2616=2, 3129=2, 3641=2, 5692=2, 3645=2, 4672=2, 6720=2, 6214=2, 3653=2, 3147=2, 2632=2, 4168=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 5201=2, 4695=2, 6231=2, 6743=2, 4181=2, 3161=2, 2654=2, 5726=2, 5727=2, 4700=2, 4701=2, 3171=2, 4195=2, 4707=2, 6755=2, 4192=2, 3686=2, 5220=2, 2661=2, 3685=2, 3691=2, 6248=2, 5740=2, 3698=2, 5234=2, 2163=2, 6259=2, 4720=2, 3185=2, 4209=2, 2678=2, 2683=2, 6779=2, 4222=2, 3199=2, 5759=2, 5249=2, 2182=2, 3719=2, 6279=2, 4741=2, 5258=2, 3211=2, 4747=2, 4750=2, 5262=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 6288=3, 5783=2, 6295=2, 4763=2, 6811=2, 2201=3, 4248=2, 6814=2, 4255=2, 4767=2, 5788=2, 3741=2, 2210=2, 3747=2, 2209=2, 3233=2, 2724=2, 5284=2, 2213=2, 3237=2, 2218=2, 2730=2, 6826=2, 4776=2, 3759=2, 5295=2, 5292=2, 5814=2, 3252=2, 6325=2, 2746=2, 5306=2, 4794=3, 6329=2, 3772=2, 3773=2, 2242=2, 3778=2, 4289=2, 5313=2, 2246=2, 4807=2, 2756=2, 3269=2, 6347=2, 5326=2, 3279=2, 6351=2, 2764=2, 3788=2, 5843=2, 2256=2, 6871=2, 4820=2, 3285=2, 2778=2, 4830=2, 3295=2, 3805=2, 5858=2, 4323=2, 5347=2, 2785=2, 2278=2, 4839=3, 6886=2, 3815=2, 6372=2, 2282=2, 5355=2, 6376=2, 6889=2, 3822=2, 4847=2, 2797=2, 5875=2, 2288=2, 5361=2, 5367=3, 6902=2, 3319=2, 4341=2, 6389=2, 6395=2, 2812=2, 2301=2, 4861=2, 3331=2, 3843=2, 2822=2, 2311=2, 5380=2, 5892=2, 6405=2, 4360=2, 6924=2, 6413=2, 5906=2, 6418=2, 3347=2, 5392=3, 6929=2, 4372=2, 3867=2, 3864=2, 5400=2, 2841=2, 5401=2, 3359=2, 5404=2, 5916=2, 2338=2, 6435=2, 4896=2, 6432=2, 5409=2, 5926=2, 4903=2, 3887=2, 5423=2, 6956=2, 6445=2, 4403=2, 2868=2, 5946=2, 4923=2, 4921=2, 5950=2, 2364=2, 3900=2, 2877=2, 5954=2, 3904=2, 3393=2, 4421=2, 3915=2, 5454=2, 6990=2, 5964=2, 6994=2, 6481=2, 2390=2, 5463=2, 4436=2, 5972=2, 2901=2, 3413=2, 2397=2, 3933=2, 3936=2, 5991=2, 4964=2, 2405=2, 3429=2, 4458=2, 7019=2, 6511=2, 2924=2, 4972=2, 3954=2, 4466=2, 4978=2, 6514=2, 2931=2, 3443=2, 3953=2, 5489=2, 7025=2, 2422=2, 3447=2, 6522=2, 7034=2, 4986=3, 2936=2, 2425=2, 5500=2, 6012=2, 6013=2, 3969=2, 2951=2, 5003=3, 6027=2, 5000=2, 5513=2, 2447=2, 7052=2, 3474=2, 2963=2, 6035=2, 5008=2, 2961=2, 5526=2, 6550=2, 5527=2, 2964=2, 4501=2, 5018=2, 5530=2, 7066=2, 2969=2, 6562=2, 5024=2, 6049=2, 6561=2, 5030=2, 6566=2, 5543=2, 4004=2, 4517=2, 5035=2, 5033=2, 2478=2, 7087=2, 7084=2, 5043=2, 3505=2, 6065=2, 4533=2, 5045=2, 5051=3, 5561=2, 3007=2, 3519=2, 5567=2, 4028=2, 4035=2, 3520=2, 5064=2, 6089=2, 5582=2, 3535=2, 5071=2, 4557=2, 6605=2, 7117=2, 7122=2, 3025=2, 4049=2, 5591=2, 4570=2, 3038=2, 5087=2, 2525=2, 7138=2, 3555=2, 3041=2, 7142=2, 5607=2, 6116=2, 3045=2, 4074=2, 6122=2, 6634=2, 2536=2, 6120=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 4083=2, 7152=2, 5109=2, 5620=3, 2552=2, 7161=2, 4604=2, 6653=2]
+ERROR [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 43=12, 46=9, 41=2, 32=12, 33=22, 35=27, 36=29, 40=18]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 5126=2, 3077=2, 6149=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 5144=2, 5145=2, 5150=2, 6175=2, 3100=2, 7201=2, 5156=2, 6186=2, 5166=2, 4140=2, 3122=2, 5171=2, 3129=2, 7234=2, 6214=2, 3147=2, 4168=2, 7245=2, 5201=2, 6231=2, 4181=2, 3161=2, 3171=2, 4195=2, 4192=2, 7264=2, 5220=2, 7268=2, 6248=2, 7279=2, 5234=2, 2163=2, 6259=2, 3185=2, 4209=2, 7291=2, 4222=2, 3199=2, 5249=2, 2182=2, 6279=2, 5258=2, 3211=2, 5262=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 2210=2, 2209=2, 3233=2, 5284=2, 2213=2, 3237=2, 2218=2, 7338=2, 5295=2, 5292=2, 7344=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 2242=2, 4289=2, 5313=2, 2246=2, 3269=2, 7370=2, 6347=2, 5326=2, 3279=2, 6351=2, 2256=2, 7376=2, 3285=2, 3295=2, 4323=2, 5347=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 6395=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 7439=2, 6413=2, 6418=2, 3347=2, 5392=3, 4372=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 6435=2, 6432=2, 5409=2, 5423=2, 6445=2, 7474=2, 4403=2, 2364=2, 7491=2, 3393=2, 4421=2, 5454=2, 7500=2, 6481=2, 2390=2, 5463=2, 4436=2, 3413=2, 2397=2, 7524=2, 2405=2, 3429=2, 4458=2, 7531=2, 6511=2, 7535=2, 4466=2, 6514=2, 3443=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 5500=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 4501=2, 5530=2, 6562=2, 6561=2, 6566=2, 5543=2, 7588=2, 4517=2, 2478=2, 7599=2, 3505=2, 4533=2, 5561=2, 3519=2, 5567=2, 3520=2, 7622=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 5591=2, 4570=2, 2525=2, 7645=2, 3555=2, 7654=2, 5607=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 5620=3, 2552=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 4612=2, 3592=2, 5641=2, 2575=2, 3603=2, 5652=2, 4634=2, 6683=2, 7708=2, 5666=2, 5667=2, 2598=2, 2599=2, 6695=2, 2602=2, 3626=2, 4648=2, 6707=2, 2608=2, 4660=2, 5684=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 4672=2, 6720=2, 7750=2, 3653=2, 2632=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 2654=2, 5726=2, 7774=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 2661=2, 3685=2, 3691=2, 5740=2, 3698=2, 4720=2, 2678=2, 2683=2, 6779=2, 5759=2, 3719=2, 4741=2, 4747=2, 4750=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 5783=2, 4763=2, 6811=2, 6814=2, 4767=2, 5788=2, 3741=2, 3747=2, 2724=2, 2730=2, 6826=2, 4776=2, 3759=2, 5814=2, 2746=2, 4794=3, 3772=2, 3773=2, 3778=2, 4807=2, 2756=2, 2764=2, 3788=2, 5843=2, 6871=2, 4820=2, 2778=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 2797=2, 5875=2, 6902=2, 2812=2, 4861=2, 3843=2, 2822=2, 5892=2, 6924=2, 5906=2, 6929=2, 3867=2, 3864=2, 2841=2, 5916=2, 4896=2, 5926=2, 4903=2, 3887=2, 6956=2, 2868=2, 5946=2, 4923=2, 4921=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 3915=2, 6990=2, 5964=2, 6994=2, 5972=2, 2901=2, 3933=2, 3936=2, 5991=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 7034=2, 4986=3, 2936=2, 6012=2, 6013=2, 3969=2, 2951=2, 5003=3, 6027=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 5024=2, 6049=2, 5030=2, 4004=2, 5035=2, 5033=2, 7087=2, 7084=2, 5043=2, 6065=2, 5045=2, 5051=3, 3007=2, 4028=2, 4035=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 3038=2, 5087=2, 7138=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 5109=2, 7161=2]
+4/7/19, 3:14:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0031563312291125138
+pub-update-percentage-nodeD-status-sync
+             value = 0.49675023212627667
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 184
+sub-blocks-interestscounter-nodeB
+             count = 183
+sub-blocks-interestscounter-nodeC
+             count = 190
+sub-projectiles-interestscounter-nodeA
+             count = 254
+sub-projectiles-interestscounter-nodeB
+             count = 257
+sub-projectiles-interestscounter-nodeC
+             count = 254
+sub-status-interestscounter-nodeA
+             count = 3944
+sub-status-interestscounter-nodeB
+             count = 3888
+sub-status-interestscounter-nodeC
+             count = 4054
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 3924
+               min = 0
+               max = 249
+              mean = 5.98
+            stddev = 15.91
+            median = 0.00
+              75% <= 0.00
+              95% <= 34.00
+              98% <= 53.00
+              99% <= 89.00
+            99.9% <= 126.00
+eng-status-delta-nodeB
+             count = 3855
+               min = 0
+               max = 234
+              mean = 5.00
+            stddev = 16.89
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 63.00
+              99% <= 111.00
+            99.9% <= 149.00
+eng-status-delta-nodeC
+             count = 4019
+               min = 0
+               max = 122
+              mean = 4.36
+            stddev = 12.72
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 47.00
+              99% <= 63.00
+            99.9% <= 122.00
+sub-blocks-rtt-nodeA
+             count = 13
+               min = 98
+               max = 972
+              mean = 439.37
+            stddev = 270.40
+            median = 341.00
+              75% <= 544.00
+              95% <= 961.00
+              98% <= 961.00
+              99% <= 972.00
+            99.9% <= 972.00
+sub-blocks-rtt-nodeB
+             count = 15
+               min = 35
+               max = 930
+              mean = 366.73
+            stddev = 229.34
+            median = 298.00
+              75% <= 605.00
+              95% <= 900.00
+              98% <= 930.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 9
+               min = 25
+               max = 996
+              mean = 376.78
+            stddev = 301.84
+            median = 187.00
+              75% <= 383.00
+              95% <= 894.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 109
+               min = 15
+               max = 999
+              mean = 466.06
+            stddev = 279.86
+            median = 517.00
+              75% <= 683.00
+              95% <= 883.00
+              98% <= 884.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 109
+               min = 14
+               max = 1000
+              mean = 482.05
+            stddev = 272.34
+            median = 517.00
+              75% <= 683.00
+              95% <= 883.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 108
+               min = 0
+               max = 1000
+              mean = 498.38
+            stddev = 284.92
+            median = 533.00
+              75% <= 779.00
+              95% <= 950.00
+              98% <= 999.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 3943
+               min = 1
+               max = 178
+              mean = 47.31
+            stddev = 20.01
+            median = 34.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 100.00
+            99.9% <= 169.00
+sub-status-rtt-nodeB
+             count = 3885
+               min = 4
+               max = 235
+              mean = 47.40
+            stddev = 21.00
+            median = 34.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 106.00
+            99.9% <= 181.00
+sub-status-rtt-nodeC
+             count = 4051
+               min = 4
+               max = 403
+              mean = 45.76
+            stddev = 20.51
+            median = 34.00
+              75% <= 66.00
+              95% <= 70.00
+              98% <= 94.00
+              99% <= 100.00
+            99.9% <= 143.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 275
+         mean rate = 1.39 events/second
+     1-minute rate = 1.46 events/second
+     5-minute rate = 1.08 events/second
+    15-minute rate = 0.91 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 259
+         mean rate = 1.31 events/second
+     1-minute rate = 1.32 events/second
+     5-minute rate = 1.36 events/second
+    15-minute rate = 1.38 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 5969
+         mean rate = 30.08 events/second
+     1-minute rate = 30.24 events/second
+     5-minute rate = 31.18 events/second
+    15-minute rate = 31.78 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 46=12, 41=2, 32=12, 43=25, 54=4, 49=5, 33=22, 35=27, 36=29, 50=8, 40=22]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 5126=2, 3077=2, 6149=2, 8202=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 8213=2, 5144=2, 5145=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 8234=2, 6186=2, 5166=2, 4140=2, 3122=2, 5171=2, 8248=2, 3129=2, 8255=2, 7234=2, 6214=2, 8263=2, 3147=2, 4168=2, 7245=2, 5201=2, 8278=2, 6231=2, 4181=2, 3161=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 8295=2, 5220=2, 7268=2, 6248=2, 7279=2, 5234=2, 2163=2, 6259=2, 8304=2, 3185=2, 4209=2, 8308=2, 8315=2, 7291=2, 8318=2, 4222=2, 3199=2, 5249=2, 2182=2, 6279=2, 5258=2, 3211=2, 5262=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 2210=2, 2209=2, 3233=2, 5284=2, 2213=2, 3237=2, 2218=2, 7338=2, 5295=2, 5292=2, 7344=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 2242=2, 4289=2, 5313=2, 2246=2, 8388=2, 3269=2, 7370=2, 6347=2, 5326=2, 3279=2, 6351=2, 2256=2, 7376=2, 3285=2, 3295=2, 4323=2, 5347=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 6395=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 7439=2, 6413=2, 6418=2, 3347=2, 5392=3, 4372=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 6435=2, 6432=2, 5409=2, 5423=2, 6445=2, 7474=2, 4403=2, 2364=2, 7491=2, 3393=2, 4421=2, 5454=2, 7500=2, 6481=2, 2390=2, 5463=2, 4436=2, 3413=2, 2397=2, 7524=2, 2405=2, 3429=2, 4458=2, 7531=2, 6511=2, 7535=2, 4466=2, 6514=2, 3443=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 5500=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 4501=2, 5530=2, 6562=2, 6561=2, 6566=2, 5543=2, 7588=2, 4517=2, 2478=2, 7599=2, 3505=2, 4533=2, 5561=2, 3519=2, 5567=2, 3520=2, 7622=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 5591=2, 4570=2, 2525=2, 7645=2, 3555=2, 7654=2, 5607=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 5620=3, 2552=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 4612=2, 3592=2, 5641=2, 2575=2, 3603=2, 5652=2, 4634=2, 6683=2, 7708=2, 5666=2, 5667=2, 2598=2, 2599=2, 6695=2, 2602=2, 3626=2, 4648=2, 6707=2, 2608=2, 4660=2, 5684=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 4672=2, 6720=2, 7750=2, 3653=2, 2632=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 2654=2, 5726=2, 7774=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 2661=2, 3685=2, 3691=2, 5740=2, 3698=2, 4720=2, 2678=2, 2683=2, 6779=2, 5759=2, 3719=2, 4741=2, 7818=2, 4747=2, 4750=2, 2702=3, 4754=2, 2707=2, 3728=2, 4753=2, 5783=2, 4763=2, 6811=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 3747=2, 2724=2, 7845=2, 2730=2, 6826=2, 4776=2, 3759=2, 7853=2, 5814=2, 2746=2, 4794=3, 7870=2, 7871=2, 3772=2, 3773=2, 3778=2, 4807=2, 2756=2, 2764=2, 3788=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 2797=2, 5875=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 4861=2, 3843=2, 2822=2, 5892=2, 7950=2, 6924=2, 5906=2, 6929=2, 7957=2, 3867=2, 3864=2, 2841=2, 5916=2, 4896=2, 5926=2, 4903=2, 7979=2, 3887=2, 6956=2, 7980=2, 2868=2, 5946=2, 4923=2, 7995=2, 4921=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 3915=2, 8009=2, 6990=2, 5964=2, 6994=2, 5972=2, 2901=2, 8021=2, 3933=2, 3936=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 7034=2, 4986=3, 2936=2, 6012=2, 6013=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 5024=2, 6049=2, 5030=2, 4004=2, 8100=2, 5035=2, 5033=2, 7087=2, 7084=2, 8108=2, 5043=2, 6065=2, 5045=2, 5051=3, 8126=2, 3007=2, 4028=2, 4035=2, 8135=2, 8139=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 5109=2, 8186=2, 7161=2]
+4/7/19, 3:14:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0035638712551509075
+pub-update-percentage-nodeD-status-sync
+             value = 0.497020328599276
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 212
+sub-blocks-interestscounter-nodeB
+             count = 207
+sub-blocks-interestscounter-nodeC
+             count = 220
+sub-projectiles-interestscounter-nodeA
+             count = 294
+sub-projectiles-interestscounter-nodeB
+             count = 297
+sub-projectiles-interestscounter-nodeC
+             count = 293
+sub-status-interestscounter-nodeA
+             count = 4608
+sub-status-interestscounter-nodeB
+             count = 4513
+sub-status-interestscounter-nodeC
+             count = 4730
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 4574
+               min = 0
+               max = 185
+              mean = 6.20
+            stddev = 17.05
+            median = 0.00
+              75% <= 0.00
+              95% <= 35.00
+              98% <= 56.00
+              99% <= 89.00
+            99.9% <= 178.00
+eng-status-delta-nodeB
+             count = 4470
+               min = 0
+               max = 128
+              mean = 5.00
+            stddev = 14.81
+            median = 0.00
+              75% <= 0.00
+              95% <= 25.00
+              98% <= 62.00
+              99% <= 75.00
+            99.9% <= 126.00
+eng-status-delta-nodeC
+             count = 4681
+               min = 0
+               max = 182
+              mean = 5.17
+            stddev = 15.80
+            median = 0.00
+              75% <= 0.00
+              95% <= 31.00
+              98% <= 57.00
+              99% <= 80.00
+            99.9% <= 182.00
+sub-blocks-rtt-nodeA
+             count = 15
+               min = 98
+               max = 999
+              mean = 536.03
+            stddev = 336.00
+            median = 341.00
+              75% <= 961.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-blocks-rtt-nodeB
+             count = 20
+               min = 35
+               max = 930
+              mean = 502.76
+            stddev = 225.77
+            median = 541.00
+              75% <= 683.00
+              95% <= 809.00
+              98% <= 900.00
+              99% <= 930.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 9
+               min = 25
+               max = 996
+              mean = 376.78
+            stddev = 301.84
+            median = 187.00
+              75% <= 383.00
+              95% <= 894.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 124
+               min = 15
+               max = 999
+              mean = 403.83
+            stddev = 276.22
+            median = 484.00
+              75% <= 595.00
+              95% <= 855.00
+              98% <= 884.00
+              99% <= 945.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 124
+               min = 14
+               max = 1000
+              mean = 414.77
+            stddev = 274.77
+            median = 500.00
+              75% <= 600.00
+              95% <= 835.00
+              98% <= 929.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 124
+               min = 0
+               max = 1000
+              mean = 456.81
+            stddev = 284.95
+            median = 517.00
+              75% <= 666.00
+              95% <= 866.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 4607
+               min = 1
+               max = 178
+              mean = 46.39
+            stddev = 19.74
+            median = 35.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 91.00
+              99% <= 100.00
+            99.9% <= 138.00
+sub-status-rtt-nodeB
+             count = 4510
+               min = 2
+               max = 235
+              mean = 47.15
+            stddev = 21.36
+            median = 43.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 97.00
+              99% <= 100.00
+            99.9% <= 167.00
+sub-status-rtt-nodeC
+             count = 4727
+               min = 2
+               max = 403
+              mean = 45.50
+            stddev = 20.12
+            median = 34.00
+              75% <= 66.00
+              95% <= 68.00
+              98% <= 91.00
+              99% <= 100.00
+            99.9% <= 160.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 333
+         mean rate = 1.46 events/second
+     1-minute rate = 1.66 events/second
+     5-minute rate = 1.17 events/second
+    15-minute rate = 0.95 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 297
+         mean rate = 1.30 events/second
+     1-minute rate = 1.28 events/second
+     5-minute rate = 1.34 events/second
+    15-minute rate = 1.38 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 6901
+         mean rate = 30.21 events/second
+     1-minute rate = 30.52 events/second
+     5-minute rate = 31.15 events/second
+    15-minute rate = 31.76 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 43=37, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 61=5, 36=29, 54=13, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 5126=2, 3077=2, 6149=2, 8202=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 8213=2, 5144=2, 5145=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 5166=2, 4140=2, 3122=2, 5171=2, 8248=2, 3129=2, 8255=2, 7234=2, 6214=2, 8263=2, 3147=2, 4168=2, 7245=2, 5201=2, 8278=2, 6231=2, 4181=2, 3161=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 8295=2, 5220=2, 7268=2, 6248=2, 7279=2, 5234=2, 2163=2, 6259=2, 8304=2, 3185=2, 4209=2, 8308=2, 7291=2, 8315=2, 4222=2, 8318=2, 3199=2, 5249=2, 2182=2, 6279=2, 5258=2, 3211=2, 5262=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 2210=2, 2209=2, 3233=2, 5284=2, 2213=2, 3237=2, 2218=2, 7338=2, 5295=2, 5292=2, 7344=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 2242=2, 4289=2, 5313=2, 2246=2, 8388=2, 3269=2, 7370=2, 6347=2, 5326=2, 3279=2, 6351=2, 2256=2, 7376=2, 8406=2, 8404=2, 3285=2, 3295=2, 4323=2, 5347=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 8437=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 8457=2, 7439=2, 8460=2, 6413=2, 6418=2, 3347=2, 5392=3, 4372=2, 8469=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 6435=2, 6432=2, 5409=2, 8489=2, 5423=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 7491=2, 3393=2, 8513=2, 4421=2, 8523=2, 5454=2, 7500=2, 6481=2, 2390=2, 5463=2, 4436=2, 3413=2, 8533=2, 2397=2, 7524=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 6511=2, 7535=2, 8556=2, 4466=2, 6514=2, 3443=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 5500=2, 8586=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 4501=2, 5530=2, 8605=2, 6562=2, 6561=2, 8609=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 8619=2, 2478=2, 7599=2, 3505=2, 4533=2, 5561=2, 3519=2, 5567=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 5591=2, 4570=2, 8671=2, 2525=2, 7645=2, 3555=2, 8675=2, 7654=2, 5607=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 5620=3, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 4612=2, 3592=2, 5641=2, 2575=2, 3603=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 7708=2, 5666=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 4648=2, 8749=2, 6707=2, 2608=2, 8752=2, 4660=2, 5684=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 2632=2, 8780=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 2654=2, 5726=2, 7774=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 3691=2, 5740=2, 3698=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 5759=2, 3719=2, 8839=2, 4741=2, 7818=2, 4747=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 3728=2, 4753=2, 8849=2, 5783=2, 4763=2, 6811=2, 8857=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 2724=2, 7845=2, 2730=2, 6826=2, 4776=2, 3759=2, 7853=2, 5814=2, 8884=2, 2746=2, 8890=2, 4794=3, 8891=2, 7870=2, 7871=2, 3772=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 8904=2, 8910=2, 2764=2, 3788=2, 8914=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 8943=2, 2797=2, 5875=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 4861=2, 3843=2, 2822=2, 5892=2, 8968=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 5926=2, 4903=2, 7979=2, 3887=2, 6956=2, 7980=2, 2868=2, 5946=2, 4923=2, 7995=2, 4921=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 3915=2, 8009=2, 6990=2, 5964=2, 6994=2, 5972=2, 2901=2, 8021=2, 3933=2, 3936=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 7034=2, 4986=3, 2936=2, 6012=2, 6013=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 5024=2, 6049=2, 5030=2, 4004=2, 8100=2, 5035=2, 5033=2, 7087=2, 7084=2, 8108=2, 5043=2, 6065=2, 5045=2, 5051=3, 8126=2, 3007=2, 4028=2, 4035=2, 8135=2, 8139=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 5109=2, 8186=2, 7161=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [68=4, 0=3, 6=2, 67=6, 18=23, 43=46, 15=9, 10=2, 11=2, 13=4, 66=8, 9=2, 65=13, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 9216=2, 5126=2, 9220=2, 3077=2, 6149=2, 8202=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 8213=2, 5144=2, 9240=2, 5145=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 5166=2, 4140=2, 3122=2, 5171=2, 9267=2, 8248=2, 3129=2, 8255=2, 7234=2, 9280=2, 6214=2, 8263=2, 3147=2, 4168=2, 7245=2, 9296=2, 5201=2, 8278=2, 6231=2, 9300=2, 4181=2, 3161=2, 9305=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 8295=2, 5220=2, 7268=2, 6248=2, 7279=2, 5234=2, 2163=2, 6259=2, 8304=2, 9328=2, 3185=2, 4209=2, 8308=2, 7291=2, 8315=2, 9337=2, 4222=2, 8318=2, 3199=2, 5249=2, 2182=2, 6279=2, 9351=2, 5258=2, 3211=2, 5262=2, 9363=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 9373=2, 2210=2, 2209=2, 3233=2, 5284=2, 9380=2, 2213=2, 3237=2, 2218=2, 7338=2, 9387=2, 5295=2, 5292=2, 7344=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 9404=2, 2242=2, 4289=2, 5313=2, 2246=2, 9415=2, 8388=2, 3269=2, 7370=2, 6347=2, 5326=2, 3279=2, 6351=2, 9423=2, 2256=2, 7376=2, 8406=2, 9431=2, 8404=2, 3285=2, 3295=2, 4323=2, 5347=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 9453=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 8437=2, 9466=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 8457=2, 9481=2, 7439=2, 8460=2, 6413=2, 6418=2, 3347=2, 5392=3, 4372=2, 8469=2, 9498=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 6435=2, 6432=2, 5409=2, 9511=2, 9514=2, 8489=2, 5423=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 7491=2, 9536=2, 3393=2, 8513=2, 4421=2, 8523=2, 5454=2, 7500=2, 9549=2, 6481=2, 2390=2, 9558=2, 5463=2, 4436=2, 3413=2, 8533=2, 9567=2, 2397=2, 7524=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 9577=2, 6511=2, 7535=2, 9583=2, 8556=2, 4466=2, 6514=2, 3443=2, 9587=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 5500=2, 8586=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 4501=2, 5530=2, 8605=2, 6562=2, 6561=2, 8609=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 8619=2, 2478=2, 7599=2, 3505=2, 4533=2, 5561=2, 3519=2, 5567=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 5591=2, 4570=2, 8671=2, 2525=2, 7645=2, 3555=2, 8675=2, 7654=2, 5607=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 5620=3, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 4612=2, 3592=2, 5641=2, 2575=2, 3603=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 7708=2, 5666=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 4648=2, 8749=2, 6707=2, 2608=2, 8752=2, 4660=2, 5684=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 2632=2, 8780=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 2654=2, 5726=2, 7774=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 3691=2, 5740=2, 3698=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 5759=2, 3719=2, 8839=2, 4741=2, 7818=2, 4747=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 3728=2, 4753=2, 8849=2, 5783=2, 4763=2, 6811=2, 8857=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 2724=2, 7845=2, 2730=2, 6826=2, 4776=2, 3759=2, 7853=2, 5814=2, 8884=2, 2746=2, 8890=2, 4794=3, 8891=2, 7870=2, 7871=2, 3772=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 8904=2, 8910=2, 2764=2, 3788=2, 8914=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 8943=2, 2797=2, 5875=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 4861=2, 3843=2, 2822=2, 5892=2, 8968=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 5926=2, 8998=2, 4903=2, 7979=2, 3887=2, 6956=2, 7980=2, 9009=2, 2868=2, 5946=2, 4923=2, 7995=2, 9016=2, 4921=2, 9017=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 9028=2, 3915=2, 8009=2, 6990=2, 5964=2, 9037=2, 6994=2, 9041=2, 5972=2, 2901=2, 8021=2, 9055=2, 3933=2, 3936=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 9076=2, 7034=2, 4986=3, 2936=2, 9080=2, 6012=2, 6013=2, 9090=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 9099=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 9123=2, 5024=2, 6049=2, 5030=2, 4004=2, 8100=2, 5035=2, 5033=2, 7087=2, 7084=2, 8108=2, 5043=2, 6065=2, 5045=2, 5051=3, 8126=2, 3007=2, 4028=2, 9154=2, 4035=2, 8135=2, 8139=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 9174=2, 9176=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 9206=2, 5109=2, 8186=2, 7161=2]
+4/7/19, 3:15:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003745128802064882
+pub-update-percentage-nodeD-status-sync
+             value = 0.49719058466211086
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 241
+sub-blocks-interestscounter-nodeB
+             count = 234
+sub-blocks-interestscounter-nodeC
+             count = 250
+sub-projectiles-interestscounter-nodeA
+             count = 326
+sub-projectiles-interestscounter-nodeB
+             count = 333
+sub-projectiles-interestscounter-nodeC
+             count = 328
+sub-status-interestscounter-nodeA
+             count = 5280
+sub-status-interestscounter-nodeB
+             count = 5208
+sub-status-interestscounter-nodeC
+             count = 5396
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 5235
+               min = 0
+               max = 185
+              mean = 6.40
+            stddev = 16.18
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 56.00
+              99% <= 89.00
+            99.9% <= 178.00
+eng-status-delta-nodeB
+             count = 5156
+               min = 0
+               max = 174
+              mean = 9.11
+            stddev = 23.29
+            median = 0.00
+              75% <= 11.00
+              95% <= 59.00
+              98% <= 110.00
+              99% <= 122.00
+            99.9% <= 174.00
+eng-status-delta-nodeC
+             count = 5340
+               min = 0
+               max = 138
+              mean = 6.69
+            stddev = 17.70
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 71.00
+              99% <= 100.00
+            99.9% <= 134.00
+sub-blocks-rtt-nodeA
+             count = 16
+               min = 98
+               max = 999
+              mean = 592.12
+            stddev = 316.19
+            median = 544.00
+              75% <= 914.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-blocks-rtt-nodeB
+             count = 23
+               min = 35
+               max = 930
+              mean = 447.78
+            stddev = 216.69
+            median = 441.00
+              75% <= 659.00
+              95% <= 809.00
+              98% <= 809.00
+              99% <= 900.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 9
+               min = 25
+               max = 996
+              mean = 376.78
+            stddev = 301.84
+            median = 187.00
+              75% <= 383.00
+              95% <= 894.00
+              98% <= 996.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 131
+               min = 15
+               max = 999
+              mean = 469.24
+            stddev = 288.94
+            median = 516.00
+              75% <= 733.00
+              95% <= 883.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 132
+               min = 14
+               max = 1000
+              mean = 371.91
+            stddev = 280.13
+            median = 306.00
+              75% <= 550.00
+              95% <= 803.00
+              98% <= 883.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 132
+               min = 0
+               max = 1000
+              mean = 435.54
+            stddev = 305.08
+            median = 489.00
+              75% <= 666.00
+              95% <= 950.00
+              98% <= 998.00
+              99% <= 999.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 5279
+               min = 1
+               max = 178
+              mean = 45.56
+            stddev = 19.79
+            median = 40.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 85.00
+              99% <= 100.00
+            99.9% <= 122.00
+sub-status-rtt-nodeB
+             count = 5206
+               min = 2
+               max = 235
+              mean = 45.14
+            stddev = 20.70
+            median = 40.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 96.00
+              99% <= 101.00
+            99.9% <= 137.00
+sub-status-rtt-nodeC
+             count = 5393
+               min = 1
+               max = 141
+              mean = 45.05
+            stddev = 18.61
+            median = 41.00
+              75% <= 66.00
+              95% <= 70.00
+              98% <= 84.00
+              99% <= 91.00
+            99.9% <= 112.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 393
+         mean rate = 1.52 events/second
+     1-minute rate = 1.78 events/second
+     5-minute rate = 1.24 events/second
+    15-minute rate = 0.98 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 330
+         mean rate = 1.28 events/second
+     1-minute rate = 1.20 events/second
+     5-minute rate = 1.32 events/second
+    15-minute rate = 1.37 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 7825
+         mean rate = 30.28 events/second
+     1-minute rate = 30.66 events/second
+     5-minute rate = 31.13 events/second
+    15-minute rate = 31.73 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 75=8, 6=2, 18=23, 43=46, 15=9, 10=2, 11=2, 13=4, 66=8, 9=2, 68=8, 73=7, 12=2, 67=19, 28=12, 17=3, 26=8, 65=18, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 9216=2, 5126=2, 9220=2, 3077=2, 6149=2, 8202=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 8213=2, 5144=2, 9240=2, 5145=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 5166=2, 4140=2, 3122=2, 5171=2, 9267=2, 8248=2, 3129=2, 8255=2, 7234=2, 9280=2, 6214=2, 8263=2, 3147=2, 4168=2, 7245=2, 9296=2, 5201=2, 8278=2, 6231=2, 9300=2, 4181=2, 3161=2, 9305=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 8295=2, 5220=2, 7268=2, 6248=2, 7279=2, 5234=2, 2163=2, 6259=2, 8304=2, 9328=2, 3185=2, 4209=2, 8308=2, 7291=2, 8315=2, 9337=2, 4222=2, 8318=2, 3199=2, 5249=2, 2182=2, 6279=2, 9351=2, 5258=2, 3211=2, 5262=2, 9363=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 9373=2, 2210=2, 2209=2, 3233=2, 5284=2, 9380=2, 2213=2, 3237=2, 2218=2, 7338=2, 9387=2, 5295=2, 5292=2, 7344=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 9404=2, 2242=2, 4289=2, 5313=2, 2246=2, 9415=2, 8388=2, 3269=2, 7370=2, 6347=2, 5326=2, 3279=2, 6351=2, 9423=2, 2256=2, 7376=2, 8406=2, 9431=2, 8404=2, 3285=2, 3295=2, 4323=2, 5347=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 9453=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 8437=2, 9466=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 8457=2, 9481=2, 7439=2, 8460=2, 6413=2, 6418=2, 3347=2, 5392=3, 4372=2, 8469=2, 9498=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 6435=2, 6432=2, 5409=2, 9511=2, 9514=2, 8489=2, 5423=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 7491=2, 9536=2, 3393=2, 8513=2, 4421=2, 8523=2, 5454=2, 7500=2, 9549=2, 6481=2, 2390=2, 9558=2, 5463=2, 4436=2, 3413=2, 8533=2, 9567=2, 2397=2, 7524=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 9577=2, 6511=2, 7535=2, 9583=2, 8556=2, 4466=2, 6514=2, 3443=2, 9587=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 9598=2, 5500=2, 9601=2, 9606=2, 8586=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 9623=2, 4501=2, 5530=2, 8605=2, 6562=2, 6561=2, 8609=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 9642=2, 8619=2, 2478=2, 9646=2, 7599=2, 3505=2, 4533=2, 9653=2, 5561=2, 3519=2, 5567=2, 9663=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 5591=2, 4570=2, 8671=2, 2525=2, 7645=2, 9693=2, 9698=2, 3555=2, 8675=2, 7654=2, 5607=2, 9703=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 5620=3, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 9729=2, 4612=2, 3592=2, 5641=2, 2575=2, 9746=2, 3603=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 7708=2, 5666=2, 9762=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 9771=2, 4648=2, 9774=2, 8749=2, 6707=2, 2608=2, 8752=2, 4660=2, 5684=2, 9780=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 9795=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 9803=2, 2632=2, 8780=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 2654=2, 5726=2, 7774=2, 9822=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 3691=2, 5740=2, 9836=2, 3698=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 5759=2, 9852=2, 3719=2, 8839=2, 4741=2, 9861=2, 7818=2, 4747=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 3728=2, 4753=2, 8849=2, 5783=2, 9877=2, 4763=2, 6811=2, 9880=2, 8857=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 9895=2, 2724=2, 7845=2, 2730=2, 6826=2, 9899=2, 4776=2, 3759=2, 7853=2, 9904=2, 5814=2, 8884=2, 2746=2, 8890=2, 4794=3, 8891=2, 9915=2, 7870=2, 7871=2, 3772=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 9925=2, 8904=2, 8910=2, 2764=2, 3788=2, 9933=2, 8914=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 8943=2, 9964=2, 2797=2, 5875=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 9980=2, 4861=2, 3843=2, 2822=2, 9991=2, 5892=2, 9995=2, 8968=2, 9992=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 10010=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 5926=2, 8998=2, 4903=2, 10026=2, 7979=2, 3887=2, 6956=2, 7980=2, 9009=2, 2868=2, 10036=2, 5946=2, 10042=2, 4923=2, 7995=2, 9016=2, 4921=2, 9017=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 9028=2, 3915=2, 8009=2, 6990=2, 5964=2, 9037=2, 6994=2, 9041=2, 10071=2, 5972=2, 2901=2, 8021=2, 9055=2, 3933=2, 3936=2, 10081=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 9076=2, 10100=2, 7034=2, 4986=3, 2936=2, 9080=2, 6012=2, 6013=2, 9090=2, 10115=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 9099=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 10133=2, 5018=2, 7066=2, 2969=2, 9123=2, 5024=2, 6049=2, 5030=2, 10150=2, 4004=2, 8100=2, 5035=2, 5033=2, 7087=2, 7084=2, 8108=2, 5043=2, 10163=2, 6065=2, 5045=2, 10165=2, 5051=3, 8126=2, 10174=2, 3007=2, 4028=2, 9154=2, 4035=2, 8135=2, 10183=2, 10180=2, 8139=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 9174=2, 9176=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 9206=2, 5109=2, 8186=2, 7161=2]
+4/7/19, 3:15:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003757131592374414
+pub-update-percentage-nodeD-status-sync
+             value = 0.49626536766411505
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 270
+sub-blocks-interestscounter-nodeB
+             count = 261
+sub-blocks-interestscounter-nodeC
+             count = 279
+sub-projectiles-interestscounter-nodeA
+             count = 360
+sub-projectiles-interestscounter-nodeB
+             count = 369
+sub-projectiles-interestscounter-nodeC
+             count = 362
+sub-status-interestscounter-nodeA
+             count = 5954
+sub-status-interestscounter-nodeB
+             count = 5891
+sub-status-interestscounter-nodeC
+             count = 6009
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 5897
+               min = 0
+               max = 185
+              mean = 7.17
+            stddev = 17.09
+            median = 0.00
+              75% <= 11.00
+              95% <= 35.00
+              98% <= 56.00
+              99% <= 100.00
+            99.9% <= 126.00
+eng-status-delta-nodeB
+             count = 5825
+               min = 0
+               max = 253
+              mean = 8.21
+            stddev = 22.02
+            median = 0.00
+              75% <= 11.00
+              95% <= 35.00
+              98% <= 90.00
+              99% <= 122.00
+            99.9% <= 253.00
+eng-status-delta-nodeC
+             count = 5950
+               min = 0
+               max = 138
+              mean = 7.12
+            stddev = 17.33
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 63.00
+              99% <= 104.00
+            99.9% <= 126.00
+sub-blocks-rtt-nodeA
+             count = 17
+               min = 98
+               max = 999
+              mean = 591.55
+            stddev = 270.66
+            median = 590.00
+              75% <= 796.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-blocks-rtt-nodeB
+             count = 26
+               min = 35
+               max = 930
+              mean = 538.59
+            stddev = 232.74
+            median = 583.00
+              75% <= 714.00
+              95% <= 919.00
+              98% <= 919.00
+              99% <= 919.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 10
+               min = 25
+               max = 996
+              mean = 740.51
+            stddev = 296.17
+            median = 904.00
+              75% <= 904.00
+              95% <= 904.00
+              98% <= 904.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 138
+               min = 15
+               max = 999
+              mean = 461.33
+            stddev = 294.92
+            median = 516.00
+              75% <= 650.00
+              95% <= 990.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 139
+               min = 14
+               max = 1000
+              mean = 335.86
+            stddev = 272.26
+            median = 285.00
+              75% <= 517.00
+              95% <= 800.00
+              98% <= 883.00
+              99% <= 966.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 139
+               min = 0
+               max = 1000
+              mean = 441.24
+            stddev = 307.42
+            median = 399.00
+              75% <= 734.00
+              95% <= 968.00
+              98% <= 985.00
+              99% <= 999.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 5954
+               min = 1
+               max = 178
+              mean = 45.28
+            stddev = 20.88
+            median = 41.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 94.00
+              99% <= 101.00
+            99.9% <= 142.00
+sub-status-rtt-nodeB
+             count = 5888
+               min = 3
+               max = 167
+              mean = 44.97
+            stddev = 21.06
+            median = 41.00
+              75% <= 66.00
+              95% <= 83.00
+              98% <= 97.00
+              99% <= 101.00
+            99.9% <= 124.00
+sub-status-rtt-nodeC
+             count = 6006
+               min = 1
+               max = 139
+              mean = 46.63
+            stddev = 18.23
+            median = 44.00
+              75% <= 66.00
+              95% <= 68.00
+              98% <= 85.00
+              99% <= 92.00
+            99.9% <= 110.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 454
+         mean rate = 1.57 events/second
+     1-minute rate = 1.86 events/second
+     5-minute rate = 1.31 events/second
+    15-minute rate = 1.01 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 361
+         mean rate = 1.25 events/second
+     1-minute rate = 1.14 events/second
+     5-minute rate = 1.30 events/second
+    15-minute rate = 1.36 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 8742
+         mean rate = 30.31 events/second
+     1-minute rate = 30.64 events/second
+     5-minute rate = 31.09 events/second
+    15-minute rate = 31.69 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 73=10, 6=2, 18=23, 43=46, 75=13, 15=9, 77=10, 78=9, 10=2, 11=2, 13=4, 66=8, 9=2, 68=8, 12=2, 76=2, 28=12, 17=3, 26=8, 65=18, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 67=33, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 9216=2, 5126=2, 9220=2, 3077=2, 6149=2, 8202=2, 10251=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 8213=2, 5144=2, 9240=2, 5145=2, 10265=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 5166=2, 4140=2, 3122=2, 5171=2, 9267=2, 10291=2, 8248=2, 3129=2, 8255=2, 7234=2, 9280=2, 6214=2, 8263=2, 3147=2, 4168=2, 10312=2, 7245=2, 9296=2, 5201=2, 8278=2, 6231=2, 9300=2, 4181=2, 3161=2, 9305=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 10336=2, 8295=2, 5220=2, 7268=2, 6248=2, 10345=2, 7279=2, 5234=2, 2163=2, 6259=2, 8304=2, 9328=2, 3185=2, 4209=2, 10359=2, 8308=2, 7291=2, 8315=2, 9337=2, 4222=2, 8318=2, 3199=2, 10367=2, 10364=2, 5249=2, 2182=2, 6279=2, 9351=2, 5258=2, 3211=2, 5262=2, 10380=2, 9363=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 9373=2, 2210=2, 10400=2, 2209=2, 3233=2, 5284=2, 9380=2, 2213=2, 3237=2, 2218=2, 7338=2, 9387=2, 10409=2, 5295=2, 5292=2, 7344=2, 10417=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 9404=2, 2242=2, 4289=2, 5313=2, 2246=2, 9415=2, 8388=2, 10436=2, 3269=2, 7370=2, 10442=2, 6347=2, 5326=2, 3279=2, 6351=2, 9423=2, 2256=2, 7376=2, 8406=2, 9431=2, 8404=2, 3285=2, 3295=2, 10460=2, 4323=2, 5347=2, 10464=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 9453=2, 10477=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 8437=2, 9466=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 10504=2, 8457=2, 9481=2, 7439=2, 8460=2, 6413=2, 10509=2, 6418=2, 3347=2, 10515=2, 5392=3, 4372=2, 8469=2, 9498=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 10530=2, 6435=2, 6432=2, 5409=2, 9511=2, 9514=2, 8489=2, 5423=2, 10543=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 10562=2, 7491=2, 9536=2, 3393=2, 8513=2, 4421=2, 8523=2, 10569=2, 5454=2, 7500=2, 9549=2, 10578=2, 6481=2, 2390=2, 9558=2, 5463=2, 4436=2, 3413=2, 8533=2, 10585=2, 9567=2, 2397=2, 7524=2, 10596=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 9577=2, 6511=2, 7535=2, 9583=2, 8556=2, 4466=2, 6514=2, 3443=2, 9587=2, 10608=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 9598=2, 5500=2, 10621=2, 10624=2, 9601=2, 9606=2, 8586=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 9623=2, 10644=2, 4501=2, 5530=2, 8605=2, 6562=2, 6561=2, 8609=2, 10657=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 9642=2, 8619=2, 2478=2, 9646=2, 7599=2, 10675=2, 3505=2, 10676=2, 4533=2, 9653=2, 10680=2, 5561=2, 3519=2, 5567=2, 9663=2, 10691=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 10710=2, 5591=2, 4570=2, 10715=2, 8671=2, 2525=2, 7645=2, 9693=2, 9698=2, 3555=2, 8675=2, 7654=2, 5607=2, 9703=2, 10724=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 10737=2, 10743=2, 5620=3, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 9729=2, 4612=2, 3592=2, 5641=2, 2575=2, 10767=2, 9746=2, 10770=2, 3603=2, 10768=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 10776=2, 7708=2, 5666=2, 9762=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 9771=2, 4648=2, 9774=2, 8749=2, 6707=2, 2608=2, 8752=2, 4660=2, 5684=2, 9780=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 9795=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 9803=2, 2632=2, 8780=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 2654=2, 5726=2, 7774=2, 9822=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 3691=2, 5740=2, 9836=2, 3698=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 5759=2, 9852=2, 3719=2, 8839=2, 4741=2, 9861=2, 7818=2, 4747=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 3728=2, 4753=2, 8849=2, 5783=2, 9877=2, 4763=2, 6811=2, 9880=2, 8857=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 9895=2, 2724=2, 7845=2, 2730=2, 6826=2, 9899=2, 4776=2, 3759=2, 7853=2, 9904=2, 5814=2, 8884=2, 2746=2, 8890=2, 4794=3, 8891=2, 9915=2, 7870=2, 7871=2, 3772=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 9925=2, 8904=2, 8910=2, 2764=2, 3788=2, 9933=2, 8914=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 4839=3, 6886=2, 3815=2, 6889=2, 3822=2, 4847=2, 8943=2, 9964=2, 2797=2, 5875=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 9980=2, 4861=2, 3843=2, 2822=2, 9991=2, 5892=2, 9995=2, 8968=2, 9992=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 10010=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 5926=2, 8998=2, 4903=2, 10026=2, 7979=2, 3887=2, 6956=2, 7980=2, 9009=2, 2868=2, 10036=2, 5946=2, 10042=2, 4923=2, 7995=2, 9016=2, 4921=2, 9017=2, 5950=2, 3900=2, 2877=2, 5954=2, 3904=2, 9028=2, 3915=2, 8009=2, 6990=2, 5964=2, 9037=2, 6994=2, 9041=2, 10071=2, 5972=2, 2901=2, 8021=2, 9055=2, 3933=2, 3936=2, 10081=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 9076=2, 10100=2, 7034=2, 4986=3, 2936=2, 9080=2, 6012=2, 6013=2, 9090=2, 10115=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 9099=2, 5000=2, 7052=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 10133=2, 5018=2, 7066=2, 2969=2, 9123=2, 5024=2, 6049=2, 5030=2, 10150=2, 4004=2, 8100=2, 5035=2, 5033=2, 7087=2, 7084=2, 8108=2, 5043=2, 10163=2, 6065=2, 5045=2, 10165=2, 5051=3, 8126=2, 10174=2, 3007=2, 4028=2, 9154=2, 4035=2, 8135=2, 10183=2, 10180=2, 8139=2, 5064=2, 6089=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 9174=2, 10199=2, 9176=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 10224=2, 9206=2, 5109=2, 8186=2, 7161=2, 10236=2]
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 73=10, 6=2, 18=23, 43=46, 75=13, 15=9, 10=2, 11=2, 13=4, 66=8, 9=2, 68=8, 12=2, 76=2, 28=12, 17=3, 26=8, 65=18, 30=13, 23=2, 83=5, 16=7, 77=21, 22=12, 27=6, 24=6, 25=7, 78=17, 46=12, 41=2, 67=47, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 9216=2, 11265=2, 5126=2, 9220=2, 3077=2, 6149=2, 8202=2, 10251=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 11284=2, 8213=2, 5144=2, 9240=2, 5145=2, 10265=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 11304=2, 5166=2, 11310=2, 4140=2, 3122=2, 5171=2, 9267=2, 10291=2, 8248=2, 3129=2, 8255=2, 7234=2, 9280=2, 6214=2, 8263=2, 3147=2, 11339=2, 4168=2, 10312=2, 11343=2, 11340=2, 7245=2, 11346=2, 9296=2, 5201=2, 8278=2, 6231=2, 9300=2, 4181=2, 11355=2, 3161=2, 9305=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 10336=2, 8295=2, 5220=2, 7268=2, 11370=2, 6248=2, 10345=2, 7279=2, 5234=2, 2163=2, 6259=2, 11379=2, 8304=2, 9328=2, 3185=2, 4209=2, 10359=2, 8308=2, 7291=2, 8315=2, 9337=2, 4222=2, 8318=2, 3199=2, 10367=2, 11391=2, 10364=2, 5249=2, 2182=2, 6279=2, 9351=2, 5258=2, 3211=2, 5262=2, 10380=2, 9363=2, 6288=3, 6295=2, 7316=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 9373=2, 2210=2, 10400=2, 2209=2, 3233=2, 5284=2, 9380=2, 2213=2, 3237=2, 2218=2, 7338=2, 9387=2, 10409=2, 5295=2, 5292=2, 7344=2, 10417=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 9404=2, 2242=2, 4289=2, 5313=2, 2246=2, 9415=2, 8388=2, 10436=2, 3269=2, 7370=2, 10442=2, 6347=2, 5326=2, 3279=2, 6351=2, 9423=2, 2256=2, 7376=2, 8406=2, 9431=2, 8404=2, 3285=2, 3295=2, 10460=2, 4323=2, 5347=2, 10464=2, 2278=2, 6372=2, 2282=2, 5355=2, 6376=2, 9453=2, 10477=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 4341=2, 6389=2, 8437=2, 9466=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 10504=2, 8457=2, 9481=2, 7439=2, 8460=2, 6413=2, 10509=2, 6418=2, 3347=2, 10515=2, 5392=3, 4372=2, 8469=2, 9498=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 10530=2, 6435=2, 6432=2, 5409=2, 9511=2, 9514=2, 8489=2, 5423=2, 10543=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 10562=2, 7491=2, 9536=2, 3393=2, 8513=2, 4421=2, 8523=2, 10569=2, 5454=2, 7500=2, 9549=2, 10578=2, 6481=2, 2390=2, 9558=2, 5463=2, 4436=2, 3413=2, 8533=2, 10585=2, 9567=2, 2397=2, 7524=2, 10596=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 9577=2, 6511=2, 7535=2, 9583=2, 8556=2, 4466=2, 6514=2, 3443=2, 9587=2, 10608=2, 5489=2, 2422=2, 3447=2, 7543=2, 6522=2, 2425=2, 9598=2, 5500=2, 10621=2, 10624=2, 9601=2, 9606=2, 8586=2, 5513=2, 2447=2, 3474=2, 5526=2, 6550=2, 5527=2, 9623=2, 10644=2, 4501=2, 5530=2, 8605=2, 6562=2, 6561=2, 8609=2, 10657=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 9642=2, 8619=2, 2478=2, 9646=2, 7599=2, 10675=2, 3505=2, 10676=2, 4533=2, 9653=2, 10680=2, 5561=2, 3519=2, 5567=2, 9663=2, 10691=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 10710=2, 5591=2, 4570=2, 10715=2, 8671=2, 2525=2, 7645=2, 9693=2, 9698=2, 3555=2, 8675=2, 7654=2, 5607=2, 9703=2, 10724=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 10737=2, 10743=2, 5620=3, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 9729=2, 4612=2, 3592=2, 5641=2, 2575=2, 10767=2, 9746=2, 10770=2, 3603=2, 10768=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 10776=2, 7708=2, 5666=2, 9762=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 9771=2, 4648=2, 9774=2, 8749=2, 6707=2, 2608=2, 8752=2, 10807=2, 4660=2, 5684=2, 9780=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 9795=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 9803=2, 2632=2, 10831=2, 8780=2, 5709=2, 4691=2, 6739=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 10837=2, 10842=2, 2654=2, 5726=2, 7774=2, 9822=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 10858=2, 3691=2, 5740=2, 9836=2, 3698=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 10875=2, 5759=2, 9852=2, 3719=2, 8839=2, 4741=2, 9861=2, 7818=2, 4747=2, 10891=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 3728=2, 4753=2, 8849=2, 5783=2, 9877=2, 4763=2, 6811=2, 9880=2, 8857=2, 6814=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 9895=2, 2724=2, 7845=2, 2730=2, 6826=2, 9899=2, 4776=2, 10921=2, 3759=2, 7853=2, 9904=2, 5814=2, 8884=2, 10932=2, 2746=2, 8890=2, 4794=3, 8891=2, 9915=2, 7870=2, 7871=2, 3772=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 9925=2, 8904=2, 10953=2, 8910=2, 2764=2, 3788=2, 9933=2, 8914=2, 5843=2, 7894=2, 6871=2, 4820=2, 2778=2, 10971=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 10977=2, 4839=3, 6886=2, 3815=2, 10981=2, 6889=2, 3822=2, 4847=2, 8943=2, 9964=2, 2797=2, 5875=2, 10995=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 9980=2, 4861=2, 3843=2, 2822=2, 9991=2, 5892=2, 11012=2, 9995=2, 8968=2, 9992=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 10010=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 11041=2, 5926=2, 8998=2, 4903=2, 10026=2, 7979=2, 11051=2, 3887=2, 6956=2, 7980=2, 9009=2, 2868=2, 10036=2, 5946=2, 10042=2, 4923=2, 7995=2, 11067=2, 9016=2, 4921=2, 9017=2, 5950=2, 3900=2, 2877=2, 5954=2, 11074=2, 3904=2, 9028=2, 3915=2, 8009=2, 6990=2, 5964=2, 9037=2, 11085=2, 6994=2, 9041=2, 10071=2, 5972=2, 2901=2, 8021=2, 9055=2, 3933=2, 3936=2, 11104=2, 10081=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 9076=2, 10100=2, 11124=2, 7034=2, 4986=3, 11131=2, 2936=2, 9080=2, 6012=2, 6013=2, 9090=2, 10115=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 9099=2, 5000=2, 11145=2, 7052=2, 11154=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 10133=2, 5018=2, 7066=2, 2969=2, 11166=2, 9123=2, 5024=2, 6049=2, 5030=2, 10150=2, 4004=2, 8100=2, 5035=2, 11179=2, 5033=2, 7087=2, 7084=2, 8108=2, 11180=2, 5043=2, 10163=2, 11187=2, 6065=2, 5045=2, 10165=2, 5051=3, 8126=2, 10174=2, 3007=2, 4028=2, 9154=2, 4035=2, 8135=2, 10183=2, 10180=2, 11205=2, 8139=2, 5064=2, 6089=2, 11214=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 9174=2, 10199=2, 9176=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 11237=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 10224=2, 9206=2, 11252=2, 5109=2, 8186=2, 7161=2, 10236=2]
+4/7/19, 3:16:11 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.0035532342994135024
+pub-update-percentage-nodeD-status-sync
+             value = 0.49334189681010493
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 299
+sub-blocks-interestscounter-nodeB
+             count = 291
+sub-blocks-interestscounter-nodeC
+             count = 309
+sub-projectiles-interestscounter-nodeA
+             count = 395
+sub-projectiles-interestscounter-nodeB
+             count = 405
+sub-projectiles-interestscounter-nodeC
+             count = 397
+sub-status-interestscounter-nodeA
+             count = 6650
+sub-status-interestscounter-nodeB
+             count = 6577
+sub-status-interestscounter-nodeC
+             count = 6623
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 6582
+               min = 0
+               max = 185
+              mean = 5.75
+            stddev = 13.43
+            median = 0.00
+              75% <= 11.00
+              95% <= 23.00
+              98% <= 48.00
+              99% <= 67.00
+            99.9% <= 122.00
+eng-status-delta-nodeB
+             count = 6493
+               min = 0
+               max = 253
+              mean = 6.53
+            stddev = 16.61
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 46.00
+              99% <= 72.00
+            99.9% <= 253.00
+eng-status-delta-nodeC
+             count = 6564
+               min = 0
+               max = 138
+              mean = 5.87
+            stddev = 13.41
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 47.00
+              99% <= 63.00
+            99.9% <= 122.00
+sub-blocks-rtt-nodeA
+             count = 18
+               min = 98
+               max = 999
+              mean = 615.32
+            stddev = 222.82
+            median = 662.00
+              75% <= 662.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-blocks-rtt-nodeB
+             count = 26
+               min = 35
+               max = 930
+              mean = 538.59
+            stddev = 232.74
+            median = 583.00
+              75% <= 714.00
+              95% <= 919.00
+              98% <= 919.00
+              99% <= 919.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 10
+               min = 25
+               max = 996
+              mean = 740.51
+            stddev = 296.17
+            median = 904.00
+              75% <= 904.00
+              95% <= 904.00
+              98% <= 904.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 148
+               min = 15
+               max = 999
+              mean = 494.31
+            stddev = 300.97
+            median = 517.00
+              75% <= 733.00
+              95% <= 998.00
+              98% <= 998.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 149
+               min = 14
+               max = 1000
+              mean = 364.26
+            stddev = 294.84
+            median = 306.00
+              75% <= 600.00
+              95% <= 883.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 148
+               min = 0
+               max = 1000
+              mean = 453.71
+            stddev = 305.50
+            median = 483.00
+              75% <= 666.00
+              95% <= 985.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 6649
+               min = 1
+               max = 178
+              mean = 43.99
+            stddev = 20.66
+            median = 35.00
+              75% <= 52.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 102.00
+            99.9% <= 142.00
+sub-status-rtt-nodeB
+             count = 6574
+               min = 3
+               max = 167
+              mean = 43.79
+            stddev = 20.88
+            median = 41.00
+              75% <= 54.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 109.00
+            99.9% <= 125.00
+sub-status-rtt-nodeC
+             count = 6620
+               min = 1
+               max = 139
+              mean = 47.75
+            stddev = 17.89
+            median = 48.00
+              75% <= 66.00
+              95% <= 73.00
+              98% <= 85.00
+              99% <= 100.00
+            99.9% <= 116.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 514
+         mean rate = 1.61 events/second
+     1-minute rate = 1.94 events/second
+     5-minute rate = 1.39 events/second
+    15-minute rate = 1.05 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 395
+         mean rate = 1.24 events/second
+     1-minute rate = 1.15 events/second
+     5-minute rate = 1.28 events/second
+    15-minute rate = 1.35 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 9599
+         mean rate = 30.15 events/second
+     1-minute rate = 29.89 events/second
+     5-minute rate = 30.86 events/second
+    15-minute rate = 31.60 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 73=10, 83=16, 6=2, 18=23, 43=46, 15=9, 75=13, 10=2, 11=2, 13=4, 66=8, 9=2, 68=8, 12=2, 76=2, 28=12, 77=29, 84=5, 85=4, 17=3, 26=8, 30=13, 65=18, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 78=17, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8, 67=60]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 9216=2, 11265=2, 5126=2, 9220=2, 3077=2, 6149=2, 8202=2, 10251=2, 7182=2, 4109=2, 5133=2, 3090=2, 4115=2, 5139=2, 6161=2, 11284=2, 8213=2, 5144=2, 9240=2, 5145=2, 10265=2, 5150=2, 6175=2, 3100=2, 8221=2, 7201=2, 5156=2, 6186=2, 8234=2, 11304=2, 5166=2, 11310=2, 4140=2, 3122=2, 5171=2, 9267=2, 10291=2, 8248=2, 3129=2, 8255=2, 7234=2, 9280=2, 6214=2, 8263=2, 3147=2, 11339=2, 4168=2, 10312=2, 11343=2, 11340=2, 7245=2, 11346=2, 9296=2, 5201=2, 8278=2, 6231=2, 9300=2, 4181=2, 11355=2, 3161=2, 9305=2, 8285=2, 3171=2, 4195=2, 4192=2, 7264=2, 10336=2, 8295=2, 5220=2, 7268=2, 11370=2, 6248=2, 10345=2, 7279=2, 5234=2, 2163=2, 6259=2, 11379=2, 8304=2, 9328=2, 3185=2, 4209=2, 10359=2, 8308=2, 7291=2, 8315=2, 9337=2, 4222=2, 8318=2, 3199=2, 10367=2, 11391=2, 10364=2, 5249=2, 2182=2, 6279=2, 9351=2, 5258=2, 3211=2, 11400=2, 5262=2, 10380=2, 11410=2, 9363=2, 6288=3, 6295=2, 7316=2, 11418=2, 2201=3, 4248=2, 7321=2, 4255=2, 7327=2, 11420=2, 9373=2, 2210=2, 10400=2, 2209=2, 3233=2, 5284=2, 9380=2, 2213=2, 3237=2, 2218=2, 7338=2, 9387=2, 10409=2, 5295=2, 5292=2, 11436=2, 7344=2, 10417=2, 8374=2, 7351=2, 3252=2, 6325=2, 5306=2, 6329=2, 8383=2, 11455=2, 9404=2, 2242=2, 4289=2, 5313=2, 2246=2, 9415=2, 8388=2, 10436=2, 3269=2, 7370=2, 10442=2, 6347=2, 5326=2, 3279=2, 6351=2, 9423=2, 2256=2, 7376=2, 8406=2, 9431=2, 8404=2, 3285=2, 3295=2, 10460=2, 4323=2, 5347=2, 10464=2, 2278=2, 6372=2, 11493=2, 2282=2, 5355=2, 6376=2, 9453=2, 10477=2, 7411=2, 2288=2, 5361=2, 5367=3, 3319=2, 11511=2, 4341=2, 6389=2, 8437=2, 9466=2, 6395=2, 8443=2, 2301=2, 3331=2, 7424=2, 2311=2, 5380=2, 6405=2, 7429=2, 4360=2, 10504=2, 8457=2, 9481=2, 7439=2, 8460=2, 6413=2, 10509=2, 6418=2, 3347=2, 10515=2, 5392=3, 4372=2, 8469=2, 9498=2, 11547=2, 5400=2, 5401=2, 3359=2, 5404=2, 2338=2, 10530=2, 6435=2, 6432=2, 5409=2, 9511=2, 9514=2, 8489=2, 5423=2, 10543=2, 6445=2, 7474=2, 4403=2, 8510=2, 2364=2, 11581=2, 10562=2, 7491=2, 11587=2, 9536=2, 3393=2, 8513=2, 4421=2, 8523=2, 10569=2, 5454=2, 7500=2, 9549=2, 10578=2, 6481=2, 2390=2, 9558=2, 5463=2, 4436=2, 3413=2, 8533=2, 11610=2, 11611=2, 10585=2, 9567=2, 2397=2, 7524=2, 10596=2, 2405=2, 3429=2, 4458=2, 7531=2, 8553=2, 9577=2, 6511=2, 7535=2, 9583=2, 8556=2, 4466=2, 6514=2, 3443=2, 9587=2, 10608=2, 5489=2, 2422=2, 3447=2, 7543=2, 11636=2, 6522=2, 2425=2, 9598=2, 5500=2, 11644=2, 10621=2, 10624=2, 11648=2, 9601=2, 9606=2, 8586=2, 5513=2, 2447=2, 3474=2, 11667=2, 5526=2, 6550=2, 5527=2, 9623=2, 10644=2, 4501=2, 5530=2, 11674=2, 8605=2, 6562=2, 6561=2, 8609=2, 10657=2, 6566=2, 5543=2, 7588=2, 8612=2, 4517=2, 9642=2, 8619=2, 2478=2, 9646=2, 7599=2, 10675=2, 11696=2, 3505=2, 10676=2, 4533=2, 9653=2, 10680=2, 5561=2, 3519=2, 5567=2, 9663=2, 10691=2, 3520=2, 7622=2, 8644=2, 5582=2, 3535=2, 7631=2, 4557=2, 6605=2, 11730=2, 10710=2, 11734=2, 5591=2, 4570=2, 10715=2, 8671=2, 2525=2, 7645=2, 9693=2, 9698=2, 3555=2, 8675=2, 7654=2, 5607=2, 9703=2, 10724=2, 6634=2, 2536=2, 4590=2, 6638=2, 5615=2, 2541=2, 3570=2, 8689=2, 10737=2, 10743=2, 5620=3, 8693=2, 11765=2, 2552=2, 8702=2, 4604=2, 6653=2, 7683=2, 2560=2, 5633=2, 9729=2, 4612=2, 3592=2, 5641=2, 2575=2, 10767=2, 11791=2, 9746=2, 10770=2, 3603=2, 10768=2, 5652=2, 8724=2, 4634=2, 6683=2, 8731=2, 10776=2, 7708=2, 5666=2, 9762=2, 5667=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 3626=2, 9771=2, 4648=2, 9774=2, 11820=2, 8749=2, 6707=2, 2608=2, 8752=2, 10807=2, 4660=2, 5684=2, 9780=2, 3642=2, 2616=2, 3641=2, 5692=2, 3645=2, 9795=2, 4672=2, 6720=2, 7750=2, 3653=2, 8773=2, 9803=2, 11851=2, 2632=2, 10831=2, 8780=2, 11852=2, 5709=2, 4691=2, 6739=2, 11859=2, 2640=2, 3665=2, 4695=2, 6743=2, 8791=2, 10837=2, 10842=2, 2654=2, 5726=2, 7774=2, 9822=2, 5727=2, 4700=2, 4701=2, 4707=2, 6755=2, 3686=2, 8807=2, 2661=2, 3685=2, 8810=2, 10858=2, 11882=2, 3691=2, 5740=2, 9836=2, 3698=2, 11891=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 10875=2, 11899=2, 5759=2, 9852=2, 3719=2, 8839=2, 11908=2, 4741=2, 9861=2, 7818=2, 4747=2, 10891=2, 4750=2, 11918=2, 2702=3, 8845=2, 4754=2, 2707=2, 11923=2, 3728=2, 4753=2, 8849=2, 5783=2, 9877=2, 4763=2, 6811=2, 9880=2, 11928=2, 8857=2, 6814=2, 11934=2, 4767=2, 5788=2, 3741=2, 7837=2, 8861=2, 3747=2, 9895=2, 2724=2, 7845=2, 2730=2, 6826=2, 9899=2, 4776=2, 10921=2, 3759=2, 7853=2, 9904=2, 5814=2, 8884=2, 10932=2, 2746=2, 8890=2, 4794=3, 8891=2, 9915=2, 7870=2, 7871=2, 3772=2, 11964=2, 3773=2, 8893=2, 3778=2, 4807=2, 2756=2, 9925=2, 8904=2, 10953=2, 8910=2, 2764=2, 3788=2, 9933=2, 8914=2, 5843=2, 11984=2, 7894=2, 6871=2, 4820=2, 2778=2, 10971=2, 8920=2, 4830=2, 3805=2, 5858=2, 2785=2, 10977=2, 4839=3, 6886=2, 3815=2, 10981=2, 6889=2, 3822=2, 4847=2, 8943=2, 9964=2, 2797=2, 5875=2, 10995=2, 6902=2, 7924=2, 7925=2, 7930=2, 2812=2, 9980=2, 4861=2, 3843=2, 2822=2, 9991=2, 5892=2, 11012=2, 9995=2, 8968=2, 9992=2, 7950=2, 6924=2, 8972=2, 5906=2, 6929=2, 7957=2, 10010=2, 3867=2, 3864=2, 8984=2, 2841=2, 5916=2, 4896=2, 11041=2, 5926=2, 8998=2, 4903=2, 10026=2, 7979=2, 11051=2, 3887=2, 6956=2, 7980=2, 9009=2, 2868=2, 10036=2, 5946=2, 10042=2, 4923=2, 7995=2, 11067=2, 9016=2, 4921=2, 9017=2, 5950=2, 3900=2, 2877=2, 5954=2, 11074=2, 3904=2, 9028=2, 3915=2, 8009=2, 6990=2, 5964=2, 9037=2, 11085=2, 6994=2, 9041=2, 10071=2, 5972=2, 2901=2, 8021=2, 9055=2, 3933=2, 3936=2, 11104=2, 10081=2, 5991=2, 8039=2, 4964=2, 7019=2, 2924=2, 4972=2, 3954=2, 4978=2, 2931=2, 3953=2, 7025=2, 9076=2, 10100=2, 11124=2, 7034=2, 4986=3, 11131=2, 2936=2, 9080=2, 6012=2, 6013=2, 9090=2, 10115=2, 3969=2, 8070=2, 2951=2, 5003=3, 8074=2, 6027=2, 9099=2, 5000=2, 11145=2, 7052=2, 11154=2, 2963=2, 6035=2, 5008=2, 2961=2, 2964=2, 10133=2, 5018=2, 7066=2, 2969=2, 11166=2, 9123=2, 5024=2, 6049=2, 5030=2, 10150=2, 4004=2, 8100=2, 5035=2, 11179=2, 5033=2, 7087=2, 7084=2, 8108=2, 11180=2, 5043=2, 10163=2, 11187=2, 6065=2, 5045=2, 10165=2, 5051=3, 8126=2, 10174=2, 3007=2, 4028=2, 9154=2, 4035=2, 8135=2, 10183=2, 10180=2, 11205=2, 8139=2, 5064=2, 6089=2, 11214=2, 5071=2, 7117=2, 7122=2, 3025=2, 4049=2, 9174=2, 10199=2, 9176=2, 3038=2, 8158=2, 5087=2, 7138=2, 8160=2, 3041=2, 7142=2, 6116=2, 3045=2, 11237=2, 4074=2, 6122=2, 6120=2, 4083=2, 7152=2, 10224=2, 9206=2, 11252=2, 5109=2, 8186=2, 7161=2, 10236=2]
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-0] (BasePublisher.java:156) - Had Update but /com/stefanolupo/ndngame/0/nodeD/status/sync/12021/0/0 already had sn 12021
+4/7/19, 3:16:41 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeD-blocks-sync
+             value = 0.003537501490520291
+pub-update-percentage-nodeD-status-sync
+             value = 0.4909560723514212
+
+-- Counters --------------------------------------------------------------------
+sub-blocks-interestscounter-nodeA
+             count = 328
+sub-blocks-interestscounter-nodeB
+             count = 321
+sub-blocks-interestscounter-nodeC
+             count = 339
+sub-projectiles-interestscounter-nodeA
+             count = 429
+sub-projectiles-interestscounter-nodeB
+             count = 440
+sub-projectiles-interestscounter-nodeC
+             count = 433
+sub-status-interestscounter-nodeA
+             count = 7364
+sub-status-interestscounter-nodeB
+             count = 7315
+sub-status-interestscounter-nodeC
+             count = 7269
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 7278
+               min = 0
+               max = 185
+              mean = 5.37
+            stddev = 13.38
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 56.00
+            99.9% <= 126.00
+eng-status-delta-nodeB
+             count = 7213
+               min = 0
+               max = 253
+              mean = 5.99
+            stddev = 14.63
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 41.00
+              99% <= 67.00
+            99.9% <= 134.00
+eng-status-delta-nodeC
+             count = 7208
+               min = 0
+               max = 138
+              mean = 6.29
+            stddev = 14.33
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 56.00
+              99% <= 68.00
+            99.9% <= 126.00
+sub-blocks-rtt-nodeA
+             count = 19
+               min = 98
+               max = 999
+              mean = 540.42
+            stddev = 215.46
+            median = 590.00
+              75% <= 662.00
+              95% <= 999.00
+              98% <= 999.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-blocks-rtt-nodeB
+             count = 26
+               min = 35
+               max = 930
+              mean = 538.59
+            stddev = 232.74
+            median = 583.00
+              75% <= 714.00
+              95% <= 919.00
+              98% <= 919.00
+              99% <= 919.00
+            99.9% <= 930.00
+sub-blocks-rtt-nodeC
+             count = 10
+               min = 25
+               max = 996
+              mean = 740.51
+            stddev = 296.17
+            median = 904.00
+              75% <= 904.00
+              95% <= 904.00
+              98% <= 904.00
+              99% <= 996.00
+            99.9% <= 996.00
+sub-projectiles-rtt-nodeA
+             count = 156
+               min = 12
+               max = 999
+              mean = 477.04
+            stddev = 301.51
+            median = 485.00
+              75% <= 650.00
+              95% <= 996.00
+              98% <= 998.00
+              99% <= 999.00
+            99.9% <= 999.00
+sub-projectiles-rtt-nodeB
+             count = 157
+               min = 14
+               max = 1000
+              mean = 351.26
+            stddev = 277.38
+            median = 241.00
+              75% <= 550.00
+              95% <= 817.00
+              98% <= 1000.00
+              99% <= 1000.00
+            99.9% <= 1000.00
+sub-projectiles-rtt-nodeC
+             count = 155
+               min = 0
+               max = 1000
+              mean = 362.90
+            stddev = 302.64
+            median = 315.00
+              75% <= 584.00
+              95% <= 968.00
+              98% <= 998.00
+              99% <= 998.00
+            99.9% <= 1000.00
+sub-status-rtt-nodeA
+             count = 7363
+               min = 3
+               max = 178
+              mean = 43.52
+            stddev = 20.11
+            median = 35.00
+              75% <= 51.00
+              95% <= 83.00
+              98% <= 99.00
+              99% <= 100.00
+            99.9% <= 127.00
+sub-status-rtt-nodeB
+             count = 7312
+               min = 2
+               max = 167
+              mean = 41.40
+            stddev = 20.06
+            median = 34.00
+              75% <= 50.00
+              95% <= 83.00
+              98% <= 93.00
+              99% <= 100.00
+            99.9% <= 120.00
+sub-status-rtt-nodeC
+             count = 7266
+               min = 1
+               max = 139
+              mean = 47.11
+            stddev = 17.80
+            median = 45.00
+              75% <= 66.00
+              95% <= 71.00
+              98% <= 85.00
+              99% <= 100.00
+            99.9% <= 127.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeD-blocks-sync
+             count = 574
+         mean rate = 1.65 events/second
+     1-minute rate = 1.97 events/second
+     5-minute rate = 1.44 events/second
+    15-minute rate = 1.08 events/second
+pub-interest-rate-nodeD-projectiles-sync
+             count = 432
+         mean rate = 1.24 events/second
+     1-minute rate = 1.15 events/second
+     5-minute rate = 1.27 events/second
+    15-minute rate = 1.34 events/second
+pub-interest-rate-nodeD-status-sync
+             count = 10458
+         mean rate = 30.02 events/second
+     1-minute rate = 29.34 events/second
+     5-minute rate = 30.64 events/second
+    15-minute rate = 31.50 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 73=10, 83=16, 6=2, 18=23, 43=46, 15=9, 75=13, 10=2, 11=2, 13=4, 66=8, 9=2, 68=8, 12=2, 76=2, 28=12, 77=29, 88=9, 17=3, 26=8, 90=8, 30=13, 65=18, 86=2, 23=2, 16=7, 22=12, 85=9, 91=7, 27=6, 24=6, 25=7, 78=17, 84=11, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 67=63, 40=22, 55=8]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 6149=2, 8202=2, 10251=2, 4109=2, 12301=2, 4115=2, 6161=2, 8213=2, 10265=2, 6175=2, 8221=2, 6186=2, 8234=2, 12331=2, 4140=2, 10291=2, 12339=2, 8248=2, 8255=2, 6214=2, 8263=2, 4168=2, 10312=2, 12360=2, 12365=2, 8278=2, 6231=2, 4181=2, 8285=2, 4195=2, 4192=2, 10336=2, 8295=2, 12388=2, 6248=2, 10345=2, 12399=2, 2163=2, 6259=2, 8304=2, 4209=2, 10359=2, 8308=2, 8315=2, 4222=2, 8318=2, 12414=2, 10367=2, 10364=2, 2182=2, 6279=2, 12423=2, 12420=2, 10380=2, 6288=3, 6295=2, 2201=3, 4248=2, 4255=2, 2210=2, 10400=2, 2209=2, 12452=2, 2213=2, 2218=2, 10409=2, 10417=2, 8374=2, 12471=2, 6325=2, 12475=2, 12472=2, 6329=2, 8383=2, 2242=2, 4289=2, 2246=2, 8388=2, 10436=2, 10442=2, 12490=2, 6347=2, 6351=2, 2256=2, 8406=2, 8404=2, 12501=2, 12505=2, 10460=2, 4323=2, 10464=2, 2278=2, 6372=2, 2282=2, 6376=2, 10477=2, 2288=2, 12532=2, 4341=2, 6389=2, 8437=2, 6395=2, 8443=2, 2301=2, 2311=2, 6405=2, 4360=2, 10504=2, 8457=2, 8460=2, 12556=2, 6413=2, 10509=2, 6418=2, 10515=2, 4372=2, 12564=2, 8469=2, 12570=2, 2338=2, 10530=2, 6435=2, 6432=2, 8489=2, 10543=2, 6445=2, 4403=2, 12592=2, 8510=2, 2364=2, 10562=2, 8513=2, 4421=2, 8523=2, 10569=2, 10578=2, 6481=2, 2390=2, 4436=2, 8533=2, 10585=2, 2397=2, 10596=2, 2405=2, 4458=2, 8553=2, 6511=2, 8556=2, 4466=2, 6514=2, 10608=2, 2422=2, 6522=2, 2425=2, 10621=2, 10624=2, 8586=2, 2447=2, 6550=2, 10644=2, 4501=2, 8605=2, 6562=2, 6561=2, 8609=2, 10657=2, 6566=2, 8612=2, 4517=2, 8619=2, 2478=2, 10675=2, 10676=2, 4533=2, 10680=2, 10691=2, 8644=2, 4557=2, 6605=2, 10710=2, 4570=2, 10715=2, 8671=2, 2525=2, 8675=2, 10724=2, 6634=2, 2536=2, 4590=2, 6638=2, 2541=2, 8689=2, 10737=2, 10743=2, 8693=2, 2552=2, 8702=2, 4604=2, 6653=2, 2560=2, 4612=2, 2575=2, 10767=2, 10770=2, 10768=2, 8724=2, 4634=2, 6683=2, 8731=2, 10776=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 4648=2, 8749=2, 6707=2, 2608=2, 8752=2, 10807=2, 4660=2, 2616=2, 4672=2, 6720=2, 8773=2, 2632=2, 10831=2, 8780=2, 4691=2, 6739=2, 2640=2, 4695=2, 6743=2, 8791=2, 10837=2, 10842=2, 2654=2, 4700=2, 4701=2, 4707=2, 6755=2, 8807=2, 2661=2, 8810=2, 10858=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 10875=2, 8839=2, 4741=2, 4747=2, 10891=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 4753=2, 8849=2, 4763=2, 6811=2, 8857=2, 6814=2, 4767=2, 8861=2, 2724=2, 2730=2, 6826=2, 4776=2, 10921=2, 8884=2, 10932=2, 2746=2, 8890=2, 4794=3, 8891=2, 8893=2, 4807=2, 2756=2, 8904=2, 10953=2, 8910=2, 2764=2, 8914=2, 6871=2, 4820=2, 2778=2, 10971=2, 8920=2, 4830=2, 2785=2, 10977=2, 4839=3, 6886=2, 10981=2, 6889=2, 4847=2, 8943=2, 2797=2, 10995=2, 6902=2, 2812=2, 4861=2, 2822=2, 11012=2, 8968=2, 6924=2, 8972=2, 6929=2, 8984=2, 2841=2, 4896=2, 11041=2, 8998=2, 4903=2, 11051=2, 6956=2, 9009=2, 2868=2, 4923=2, 11067=2, 9016=2, 4921=2, 9017=2, 2877=2, 11074=2, 9028=2, 6990=2, 9037=2, 11085=2, 6994=2, 9041=2, 2901=2, 9055=2, 11104=2, 4964=2, 7019=2, 2924=2, 4972=2, 4978=2, 2931=2, 7025=2, 9076=2, 11124=2, 7034=2, 4986=3, 11131=2, 2936=2, 9080=2, 9090=2, 2951=2, 5003=3, 9099=2, 5000=2, 11145=2, 7052=2, 11154=2, 2963=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 11166=2, 9123=2, 5024=2, 5030=2, 5035=2, 11179=2, 5033=2, 7087=2, 7084=2, 11180=2, 5043=2, 11187=2, 5045=2, 5051=3, 3007=2, 9154=2, 11205=2, 5064=2, 11214=2, 5071=2, 7117=2, 7122=2, 3025=2, 9174=2, 9176=2, 3038=2, 5087=2, 7138=2, 3041=2, 7142=2, 3045=2, 11237=2, 7152=2, 9206=2, 11252=2, 5109=2, 7161=2, 9216=2, 11265=2, 5126=2, 9220=2, 3077=2, 7182=2, 5133=2, 3090=2, 5139=2, 11284=2, 5144=2, 9240=2, 5145=2, 5150=2, 3100=2, 7201=2, 5156=2, 11304=2, 5166=2, 11310=2, 3122=2, 5171=2, 9267=2, 3129=2, 7234=2, 9280=2, 3147=2, 11339=2, 11343=2, 11340=2, 7245=2, 11346=2, 9296=2, 5201=2, 9300=2, 11355=2, 3161=2, 9305=2, 3171=2, 7264=2, 5220=2, 7268=2, 11370=2, 7279=2, 5234=2, 11379=2, 9328=2, 3185=2, 7291=2, 9337=2, 3199=2, 11391=2, 5249=2, 9351=2, 5258=2, 3211=2, 11400=2, 5262=2, 11410=2, 9363=2, 7316=2, 11418=2, 7321=2, 7327=2, 11420=2, 9373=2, 3233=2, 5284=2, 9380=2, 3237=2, 7338=2, 9387=2, 5295=2, 5292=2, 11436=2, 7344=2, 7351=2, 3252=2, 5306=2, 11455=2, 9404=2, 5313=2, 9415=2, 3269=2, 7370=2, 5326=2, 3279=2, 9423=2, 7376=2, 9431=2, 3285=2, 3295=2, 5347=2, 11493=2, 5355=2, 9453=2, 7411=2, 5361=2, 5367=3, 3319=2, 11511=2, 9466=2, 3331=2, 7424=2, 5380=2, 7429=2, 9481=2, 7439=2, 3347=2, 5392=3, 9498=2, 11547=2, 5400=2, 5401=2, 3359=2, 5404=2, 5409=2, 9511=2, 9514=2, 5423=2, 7474=2, 11581=2, 7491=2, 11587=2, 9536=2, 3393=2, 5454=2, 7500=2, 9549=2, 9558=2, 5463=2, 3413=2, 11610=2, 11611=2, 9567=2, 7524=2, 3429=2, 7531=2, 9577=2, 7535=2, 9583=2, 3443=2, 9587=2, 5489=2, 3447=2, 7543=2, 11636=2, 9598=2, 5500=2, 11644=2, 11648=2, 9601=2, 9606=2, 5513=2, 3474=2, 11667=2, 5526=2, 5527=2, 9623=2, 5530=2, 11674=2, 5543=2, 7588=2, 9642=2, 9646=2, 7599=2, 11696=2, 3505=2, 9653=2, 5561=2, 3519=2, 5567=2, 9663=2, 3520=2, 7622=2, 5582=2, 3535=2, 7631=2, 11730=2, 11734=2, 5591=2, 7645=2, 9693=2, 9698=2, 3555=2, 7654=2, 5607=2, 9703=2, 5615=2, 3570=2, 5620=3, 11765=2, 7683=2, 5633=2, 9729=2, 3592=2, 5641=2, 11791=2, 9746=2, 3603=2, 5652=2, 7708=2, 5666=2, 9762=2, 5667=2, 3626=2, 9771=2, 9774=2, 11820=2, 5684=2, 9780=2, 3642=2, 3641=2, 5692=2, 3645=2, 9795=2, 7750=2, 3653=2, 9803=2, 11851=2, 11852=2, 5709=2, 11859=2, 3665=2, 5726=2, 7774=2, 9822=2, 5727=2, 3686=2, 3685=2, 11882=2, 3691=2, 5740=2, 9836=2, 3698=2, 11891=2, 11899=2, 5759=2, 9852=2, 3719=2, 11908=2, 9861=2, 7818=2, 11918=2, 11923=2, 3728=2, 5783=2, 9877=2, 9880=2, 11928=2, 11934=2, 5788=2, 3741=2, 7837=2, 3747=2, 9895=2, 7845=2, 9899=2, 3759=2, 7853=2, 9904=2, 5814=2, 9915=2, 7870=2, 7871=2, 3772=2, 11964=2, 3773=2, 3778=2, 9925=2, 3788=2, 9933=2, 5843=2, 11984=2, 7894=2, 3805=2, 5858=2, 12003=2, 3815=2, 3822=2, 9964=2, 12018=2, 5875=2, 7924=2, 7925=2, 7930=2, 12024=2, 9980=2, 3843=2, 9991=2, 5892=2, 9995=2, 9992=2, 7950=2, 5906=2, 7957=2, 10010=2, 3867=2, 3864=2, 5916=2, 12061=2, 5926=2, 10026=2, 7979=2, 3887=2, 7980=2, 10036=2, 12085=2, 5946=2, 10042=2, 7995=2, 5950=2, 3900=2, 12092=2, 5954=2, 3904=2, 3915=2, 8009=2, 5964=2, 10071=2, 5972=2, 8021=2, 12121=2, 3933=2, 3936=2, 10081=2, 5991=2, 8039=2, 12133=2, 3954=2, 3953=2, 10100=2, 12149=2, 6012=2, 6013=2, 10115=2, 3969=2, 12161=2, 8070=2, 8074=2, 6027=2, 12174=2, 6035=2, 12182=2, 10133=2, 6049=2, 10150=2, 4004=2, 8100=2, 12207=2, 8108=2, 10163=2, 12208=2, 6065=2, 10165=2, 8126=2, 10174=2, 4028=2, 12221=2, 4035=2, 8135=2, 10183=2, 10180=2, 8139=2, 6089=2, 4049=2, 10199=2, 8158=2, 8160=2, 6116=2, 4074=2, 6122=2, 6120=2, 12271=2, 4083=2, 10224=2, 12276=2, 8186=2, 12282=2, 10236=2]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/blocks/sync-1] (BasePublisher.java:99) - [0=3, 6=2, 18=23, 43=46, 15=9, 10=2, 11=2, 13=4, 9=2, 12=2, 28=12, 17=3, 26=8, 30=13, 23=2, 16=7, 22=12, 27=6, 24=6, 25=7, 46=12, 41=2, 32=12, 49=5, 33=22, 35=27, 50=10, 36=29, 61=7, 54=13, 40=22, 55=8, 73=10, 83=16, 75=13, 88=17, 66=8, 68=8, 90=22, 76=2, 77=29, 65=18, 86=2, 91=15, 92=5, 93=6, 85=9, 78=17, 84=11, 67=63]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeD/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeD/status/sync-1] (BasePublisher.java:99) - [0=2, 6149=2, 8202=2, 10251=2, 4109=2, 12301=2, 4115=2, 6161=2, 8213=2, 10265=2, 6175=2, 8221=2, 6186=2, 8234=2, 12331=2, 4140=2, 10291=2, 12339=2, 8248=2, 8255=2, 6214=2, 8263=2, 4168=2, 10312=2, 12360=2, 12365=2, 8278=2, 6231=2, 4181=2, 8285=2, 4195=2, 4192=2, 10336=2, 8295=2, 12388=2, 6248=2, 10345=2, 12399=2, 2163=2, 6259=2, 8304=2, 4209=2, 10359=2, 8308=2, 8315=2, 4222=2, 8318=2, 12414=2, 10367=2, 10364=2, 2182=2, 6279=2, 12423=2, 12420=2, 10380=2, 6288=3, 6295=2, 2201=3, 4248=2, 4255=2, 2210=2, 10400=2, 2209=2, 12452=2, 2213=2, 2218=2, 10409=2, 10417=2, 8374=2, 12471=2, 6325=2, 12475=2, 12472=2, 6329=2, 8383=2, 2242=2, 4289=2, 2246=2, 8388=2, 10436=2, 10442=2, 12490=2, 6347=2, 6351=2, 2256=2, 8406=2, 8404=2, 12501=2, 12505=2, 10460=2, 4323=2, 10464=2, 2278=2, 6372=2, 2282=2, 6376=2, 10477=2, 2288=2, 12532=2, 4341=2, 6389=2, 8437=2, 6395=2, 8443=2, 2301=2, 2311=2, 6405=2, 4360=2, 10504=2, 8457=2, 8460=2, 12556=2, 6413=2, 10509=2, 6418=2, 10515=2, 4372=2, 12564=2, 8469=2, 12570=2, 2338=2, 10530=2, 6435=2, 6432=2, 8489=2, 10543=2, 6445=2, 4403=2, 12592=2, 8510=2, 2364=2, 10562=2, 8513=2, 4421=2, 8523=2, 12616=2, 10569=2, 10578=2, 6481=2, 2390=2, 12630=2, 4436=2, 8533=2, 10585=2, 12636=2, 2397=2, 12637=2, 10596=2, 12644=2, 2405=2, 4458=2, 12651=2, 8553=2, 6511=2, 8556=2, 4466=2, 6514=2, 10608=2, 2422=2, 6522=2, 12667=2, 2425=2, 10621=2, 10624=2, 12672=2, 8586=2, 2447=2, 6550=2, 10644=2, 4501=2, 12693=2, 8605=2, 6562=2, 6561=2, 8609=2, 10657=2, 6566=2, 8612=2, 4517=2, 8619=2, 2478=2, 10675=2, 10676=2, 4533=2, 10680=2, 10691=2, 8644=2, 4557=2, 6605=2, 10710=2, 4570=2, 10715=2, 8671=2, 12767=2, 2525=2, 8675=2, 12771=2, 10724=2, 6634=2, 2536=2, 4590=2, 6638=2, 12780=2, 2541=2, 8689=2, 10737=2, 10743=2, 12788=2, 8693=2, 12794=2, 2552=2, 8702=2, 4604=2, 6653=2, 2560=2, 12801=2, 4612=2, 2575=2, 10767=2, 12813=2, 10770=2, 10768=2, 12817=2, 8724=2, 4634=2, 6683=2, 8731=2, 10776=2, 2598=2, 2599=2, 6695=2, 8741=2, 2602=2, 4648=2, 12841=2, 8749=2, 6707=2, 2608=2, 8752=2, 10807=2, 4660=2, 2616=2, 12856=2, 4672=2, 6720=2, 12864=2, 12870=2, 8773=2, 12874=2, 2632=2, 10831=2, 8780=2, 4691=2, 6739=2, 2640=2, 12887=3, 4695=2, 6743=2, 8791=2, 10837=2, 10842=2, 2654=2, 4700=2, 4701=2, 4707=2, 6755=2, 12896=2, 12897=2, 8807=2, 2661=2, 12901=2, 8810=2, 10858=2, 12915=2, 4720=2, 2678=2, 8821=2, 2683=2, 6779=2, 10875=2, 8839=2, 4741=2, 12933=2, 4747=2, 10891=2, 4750=2, 2702=3, 8845=2, 4754=2, 2707=2, 4753=2, 8849=2, 12950=2, 4763=2, 6811=2, 8857=2, 6814=2, 4767=2, 8861=2, 12962=2, 2724=2, 2730=2, 6826=2, 4776=2, 10921=2, 8884=2, 10932=2, 12981=2, 2746=2, 8890=2, 4794=3, 8891=2, 8893=2, 4807=2, 2756=2, 8904=2, 10953=2, 8910=2, 2764=2, 8914=2, 6871=2, 4820=2, 2778=2, 10971=2, 8920=2, 4830=2, 13024=2, 2785=2, 10977=2, 4839=3, 6886=2, 10981=2, 6889=2, 4847=2, 8943=2, 2797=2, 13037=2, 10995=2, 6902=2, 13046=2, 2812=2, 4861=2, 2822=2, 11012=2, 8968=2, 6924=2, 8972=2, 6929=2, 13082=2, 8984=2, 2841=2, 13087=2, 13091=2, 4896=2, 11041=2, 8998=2, 4903=2, 11051=2, 6956=2, 9009=2, 2868=2, 13109=2, 4923=2, 11067=2, 9016=2, 13112=2, 4921=2, 9017=2, 2877=2, 11074=2, 13123=2, 9028=2, 13129=2, 6990=2, 9037=2, 11085=2, 6994=2, 9041=2, 13140=2, 2901=2, 9055=2, 11104=2, 4964=2, 13157=2, 13162=2, 7019=2, 2924=2, 4972=2, 4978=2, 2931=2, 7025=2, 9076=2, 11124=2, 13172=2, 7034=2, 4986=3, 11131=2, 2936=2, 9080=2, 9090=2, 2951=2, 13191=2, 5003=3, 9099=2, 5000=2, 11145=2, 7052=2, 11154=2, 2963=2, 5008=2, 2961=2, 2964=2, 5018=2, 7066=2, 2969=2, 11166=2, 9123=2, 5024=2, 5030=2, 5035=2, 11179=2, 5033=2, 7087=2, 7084=2, 11180=2, 5043=2, 11187=2, 5045=2, 5051=3, 3007=2, 9154=2, 11205=2, 5064=2, 11214=2, 5071=2, 7117=2, 7122=2, 3025=2, 9174=2, 9176=2, 3038=2, 5087=2, 7138=2, 3041=2, 7142=2, 3045=2, 11237=2, 7152=2, 9206=2, 11252=2, 5109=2, 7161=2, 9216=2, 11265=2, 5126=2, 9220=2, 3077=2, 7182=2, 5133=2, 3090=2, 5139=2, 11284=2, 5144=2, 9240=2, 5145=2, 5150=2, 3100=2, 7201=2, 5156=2, 11304=2, 5166=2, 11310=2, 3122=2, 5171=2, 9267=2, 3129=2, 7234=2, 9280=2, 3147=2, 11339=2, 11343=2, 11340=2, 7245=2, 11346=2, 9296=2, 5201=2, 9300=2, 11355=2, 3161=2, 9305=2, 3171=2, 7264=2, 5220=2, 7268=2, 11370=2, 7279=2, 5234=2, 11379=2, 9328=2, 3185=2, 7291=2, 9337=2, 3199=2, 11391=2, 5249=2, 9351=2, 5258=2, 3211=2, 11400=2, 5262=2, 11410=2, 9363=2, 7316=2, 11418=2, 7321=2, 7327=2, 11420=2, 9373=2, 3233=2, 5284=2, 9380=2, 3237=2, 7338=2, 9387=2, 5295=2, 5292=2, 11436=2, 7344=2, 7351=2, 3252=2, 5306=2, 11455=2, 9404=2, 5313=2, 9415=2, 3269=2, 7370=2, 5326=2, 3279=2, 9423=2, 7376=2, 9431=2, 3285=2, 3295=2, 5347=2, 11493=2, 5355=2, 9453=2, 7411=2, 5361=2, 5367=3, 3319=2, 11511=2, 9466=2, 3331=2, 7424=2, 5380=2, 7429=2, 9481=2, 7439=2, 3347=2, 5392=3, 9498=2, 11547=2, 5400=2, 5401=2, 3359=2, 5404=2, 5409=2, 9511=2, 9514=2, 5423=2, 7474=2, 11581=2, 7491=2, 11587=2, 9536=2, 3393=2, 5454=2, 7500=2, 9549=2, 9558=2, 5463=2, 3413=2, 11610=2, 11611=2, 9567=2, 7524=2, 3429=2, 7531=2, 9577=2, 7535=2, 9583=2, 3443=2, 9587=2, 5489=2, 3447=2, 7543=2, 11636=2, 9598=2, 5500=2, 11644=2, 11648=2, 9601=2, 9606=2, 5513=2, 3474=2, 11667=2, 5526=2, 5527=2, 9623=2, 5530=2, 11674=2, 5543=2, 7588=2, 9642=2, 9646=2, 7599=2, 11696=2, 3505=2, 9653=2, 5561=2, 3519=2, 5567=2, 9663=2, 3520=2, 7622=2, 5582=2, 3535=2, 7631=2, 11730=2, 11734=2, 5591=2, 7645=2, 9693=2, 9698=2, 3555=2, 7654=2, 5607=2, 9703=2, 5615=2, 3570=2, 5620=3, 11765=2, 7683=2, 5633=2, 9729=2, 3592=2, 5641=2, 11791=2, 9746=2, 3603=2, 5652=2, 7708=2, 5666=2, 9762=2, 5667=2, 3626=2, 9771=2, 9774=2, 11820=2, 5684=2, 9780=2, 3642=2, 3641=2, 5692=2, 3645=2, 9795=2, 7750=2, 3653=2, 9803=2, 11851=2, 11852=2, 5709=2, 11859=2, 3665=2, 5726=2, 7774=2, 9822=2, 5727=2, 3686=2, 3685=2, 11882=2, 3691=2, 5740=2, 9836=2, 3698=2, 11891=2, 11899=2, 5759=2, 9852=2, 3719=2, 11908=2, 9861=2, 7818=2, 11918=2, 11923=2, 3728=2, 5783=2, 9877=2, 9880=2, 11928=2, 11934=2, 5788=2, 3741=2, 7837=2, 3747=2, 9895=2, 7845=2, 9899=2, 3759=2, 7853=2, 9904=2, 5814=2, 9915=2, 7870=2, 7871=2, 3772=2, 11964=2, 3773=2, 3778=2, 9925=2, 3788=2, 9933=2, 5843=2, 11984=2, 7894=2, 3805=2, 5858=2, 12003=2, 3815=2, 3822=2, 9964=2, 12018=2, 5875=2, 7924=2, 7925=2, 7930=2, 12024=2, 9980=2, 3843=2, 9991=2, 5892=2, 9995=2, 9992=2, 7950=2, 5906=2, 7957=2, 10010=2, 3867=2, 3864=2, 5916=2, 12061=2, 5926=2, 10026=2, 7979=2, 3887=2, 7980=2, 10036=2, 12085=2, 5946=2, 10042=2, 7995=2, 5950=2, 3900=2, 12092=2, 5954=2, 3904=2, 3915=2, 8009=2, 5964=2, 10071=2, 5972=2, 8021=2, 12121=2, 3933=2, 3936=2, 10081=2, 5991=2, 8039=2, 12133=2, 3954=2, 3953=2, 10100=2, 12149=2, 6012=2, 6013=2, 10115=2, 3969=2, 12161=2, 8070=2, 8074=2, 6027=2, 12174=2, 6035=2, 12182=2, 10133=2, 6049=2, 10150=2, 4004=2, 8100=2, 12207=2, 8108=2, 10163=2, 12208=2, 6065=2, 10165=2, 8126=2, 10174=2, 4028=2, 12221=2, 4035=2, 8135=2, 10183=2, 10180=2, 8139=2, 6089=2, 4049=2, 10199=2, 8158=2, 8160=2, 6116=2, 4074=2, 6122=2, 6120=2, 12271=2, 4083=2, 10224=2, 12276=2, 8186=2, 12282=2, 10236=2]
