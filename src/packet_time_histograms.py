@@ -51,9 +51,9 @@ class PacketTimeHistograms:
             metrics: Metrics = metricsByMetricType[metricType]
             values = [m.histogramValues for m in metrics]
             labels = [m.playerName for m in metrics]
-            ax.hist(values, label=labels, bins=np.linspace(0, 100, 6), density=True)
-            ax.set_ylabel("Frequency")
+            weights = [100 * np.ones_like(v) / len(v) for v in values]
+            ax.hist(values, weights=weights, label=labels, bins=np.linspace(0, 100, 6))
+            ax.set_ylabel("Frequency (%)")
             ax.set_xlabel("Time (ms)")
-            # ax.hist(values, label=labels)
             ax.legend(loc='upper right')
 

@@ -30,7 +30,8 @@ class StatusDeltasHistograms:
         data = [statusDelta.values for statusDelta in self.statusDeltas]
         labels = [statusDelta.name for statusDelta in self.statusDeltas]
         ax.set_title("%s" % self.nodeName)
-        ax.hist(data, label=labels)
+        weights = [100 * np.ones_like(v) / len(v) for v in data]
+        ax.hist(data, weights=weights, label=labels)
         ax.set_xlabel("Distance (GWUs)")
-        ax.set_ylabel("Frequency")
+        ax.set_ylabel("Frequency (%)")
         ax.legend()

@@ -45,7 +45,11 @@ class NfdLogParser:
 
     def getTotalCacheRate(self, playerName: str = None, objectType: str = None) -> float:
         if playerName is None and objectType is None:
-            return 0 if self.totalLookups is 0 else 100 * self.totalHits / self.totalLookups
+            if self.totalLookups is 0:
+                return 0
+            else:
+                print("%s cache rate: %d" % (self.nodeName, 100 * self.totalHits / self.totalLookups))
+                return 100 * self.totalHits / self.totalLookups
 
         lookups = 0
         hits = 0

@@ -15,6 +15,7 @@ from log_reader import LogReader
 from nfd_log_parser import NfdLogParser, CacheRate
 from packet_time_histograms import PacketTimeHistograms
 from status_deltas import StatusDeltasHistograms
+from dead_reckoning_analyzer import DeadReckoningAnalyzer
 
 matplotlib.rcParams['figure.figsize'] = (15.0, 10.0)
 matplotlib.rcParams['axes.labelsize'] = 20
@@ -50,7 +51,7 @@ def plotMulticategoryBar(ax, valuesDict: Dict[str, Dict[str, float]]):
         ax.bar(ind + width, values.values(), delWidth, label=legendCategory, align="edge")
         width = width + delWidth
 
-    ax.legend()
+    ax.legend(framealpha=0.5)
     ax.autoscale_view()
     ax.set_xticks(ind + width / 2)
     ax.set_xticklabels(xCategories)
@@ -125,7 +126,7 @@ class AnalysisByNode:
 
     def plotStatusDeltas(self, nodes=None):
         f = plt.figure()
-        f.suptitle("PlayerStatus deltas")
+        f.suptitle("Position Delta")
         gridSpecs = gridspec.GridSpec(nrows=2, ncols=2, figure=f)
         ax = [f.add_subplot(gs) for gs in gridSpecs]
 
@@ -150,13 +151,15 @@ class AnalysisByNode:
             for node in self.gameNodes:
                 nodeDir = self.getNodeDir(node, subDir)
                 interestRateForNode = InterestRatesForNode(nodeDir, node)
-                ratesByNode[node] = interestRateForNode.getInterestRateForType(objectType).finalMeanRate
+                rate = interestRateForNode.getInterestRateForType(objectType).finalMeanRate
+                ratesByNode[node] = rate
+                print("Interest Rates: %s %s: %d" % (subDir, node, rate))
             ratesByDir[subDir] = ratesByNode
 
         f, ax = plt.subplots()
         plotMulticategoryBar(ax, ratesByDir)
         ax.set_ylabel("Interests Received per Second")
-        ax.legend(loc='lower center')
+        ax.legend(loc='lower center', framealpha=0.5)
         f.suptitle("Impact on Interest rates")
         self.saveFig(f, "interest-rate-impacts")
 
@@ -176,11 +179,12 @@ class AnalysisByNode:
         for node in self.gameNodes:
             interestAgg = InterestAggregation(node, self.getNodeDir(node), self.nodes, self.getSubDir(), self.routerNodes, objectType)
             pubInterests, subInterests = interestAgg.getDifference()
-            interests["pub"][node] = pubInterests
-            interests["sub"][node] = subInterests
+            interests["Interests Seen"][node] = pubInterests
+            interests["Interests Expressed"][node] = subInterests
+            print("Node %s: IAF = %.2d" % (node, 100 * pubInterests / subInterests))
         plotMulticategoryBar(ax, interests)
         ax.set_ylabel("Number of Interests")
-        f.suptitle("Publisher Interests seen vs Subscriber Interests expressed")
+        f.suptitle("Interests seen by Publishers vs Interests expressed by Subscribers")
         self.saveFig(f, "interest-aggregations")
 
     def analyseCaches(self, objectType=STATUS):
@@ -190,6 +194,9 @@ class AnalysisByNode:
         self.getTotalCacheRateByNode(nfdParsers)
 
     def getTotalCacheRateByNode(self, nfdParsers):
+        # if self.topology in ROUTERS.keys():
+        #     routers = ROUTERS[self.topology]
+        #     nfdParsers = [n for n in nfdParsers if n.nodeName in routers]
         f, ax = plt.subplots()
         f.suptitle("Total cache hit rate by node")
         ax.set_ylabel("Hit Rate %")
@@ -210,6 +217,17 @@ class AnalysisByNode:
         f.suptitle("Router Cache Rates by Node")
         self.saveFig(f, "router-cache-rates")
 
+    def plotDeadReckoningPie(self, nodes: List[str] = None):
+        nodes = self.gameNodes if nodes is None else nodes
+        drAnalyzers = [DeadReckoningAnalyzer(n, self.getNodeDir(n)) for n in nodes]
+        f, ax = self.getAxis()
+        ax = ax.flatten()
+        for i, analyzer in enumerate(drAnalyzers):
+            analyzer.plotPieChart(ax[i])
+            # analyzer.plotDonut(ax[i])
+        f.suptitle("DR Publisher Throttling")
+        self.saveFig(f, "dr-pub-throt")
+
 
 def runAnalysisByNode(dataDir: str, topology: str, mainDir: str, subDirs: List[str]):
     analysisByNode = AnalysisByNode(dataDir, topology, mainDir, subDirs)
@@ -222,6 +240,7 @@ def runAnalysisByNode(dataDir: str, topology: str, mainDir: str, subDirs: List[s
     analysisByNode.plotInterestRatesOverTime(objectType=objectType)
     analysisByNode.plotInterestAggregations(objectType=objectType)
     analysisByNode.analyseCaches(objectType=objectType)
+    analysisByNode.plotDeadReckoningPie()
     # plt.show()
 
 
