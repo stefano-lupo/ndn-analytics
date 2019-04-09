@@ -8,7 +8,6 @@ ERROR_STRINGS = [s.lower() for s in ["exception", "error [", "Assertion 'IsLocke
 
 IGNORE_STRINGS = [s.lower() for s in ["ERROR [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE\n",
                                       "ERROR [cs-/com/stefanolupo/ndngame/0/discovery/nodeI-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery"]]
-IGNORE_STRINGS = []
 
 class LogReader:
 
@@ -30,11 +29,10 @@ class LogReader:
         lower = line.lower()
         for e in errorStrings:
             if e in lower:
+                for ignoreString in ignoreStrings:
+                    if lower in ignoreString:
+                        return False
                 return True
-                # for ignoreString in ignoreStrings:
-                #     if lower not in ignoreString:
-                #         return True
-
         return False
 
     def toLower(self, lst:List[str]):

@@ -1,0 +1,2776 @@
+DEBUG [main] (ConfigManager.java:33) - Initialized with properties: {local.player.status.updates.per.sec=30, facemanager.num.sub.threads.per.face=10, linear.interest.zone.filter.inner.radius=10, projectile.cache.size=20, local.player.status.use.dead.reckoning=false, block.publisher.freshness.period.ms=20, player.status.publisher.freshness.period.ms=20, base.publisher.queue.process.per.sec=60, projectile.sub.inter.interest.max.wait.time.ms=2000, linear.interest.zone.filter.outer.radius=20, local.player.dead.reckoning.max.error=0.5, projectile.publisher.queue.process.multithread=true, statistics.logger.log.rate.sec=30, facemanager.max.num.pub.faces=15, facemanager.num.pub.threads.per.face=10, facemanager.max.num.sub.faces=15, block.sub.inter.interest.max.wait.time.ms=2000, projectile.publisher.queue.process.per.sec=60, base.publisher.queue.process.multithread=true, player.sub.inter.interest.max.wait.time.ms=2000, linear.interest.zone.filter.enabled=false, projectile.publisher.freshness.period.ms=20}
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/NdnGame/NdnGameLibGdxDesktop-1.0-SNAPSHOT.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+DEBUG [main] (BackendModule.java:123) - Writing metrics to /metrics/nodeNN
+ INFO [main] (BodyFactory.java:30) - Using quadrant size of 80.0 and quadrant gap of 20.0
+ INFO [main] (DesktopLauncher.java:49) - Launching headless game
+ INFO [main] (DesktopLauncher.java:50) - LocalConfig{playerName='nodeNN', isMasterView=false, isAutomated=true, automationType='wsp', isHeadless=true, gameId=0, screenWidth=600, screenHeight=600, targetFrameRate=60}
+DEBUG [main] (AutomatedInputController.java:52) - Starting with automation type: wsp
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeNN/blocks/sync
+DEBUG [main] (BasePublisher.java:67) - Registering /com/stefanolupo/ndngame/0/nodeNN/status/sync
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeNN/blocks/sync
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeNN/projectiles/interact
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeNN/status/sync
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-3-3] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeNN/projectiles/sync, retrying..
+ WARN [fm-pub-1-0] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeNN/blocks/interact, retrying..
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeNN/blocks/interact
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix failed: Expected NFD status code 200, got: 403
+ WARN [fm-pub-3-3] (FaceManager.java:150) - Failed to register prefix: /com/stefanolupo/ndngame/0/nodeNN/projectiles/sync, retrying..
+Apr 09, 2019 9:54:51 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/nodeNN/projectiles/sync
+Apr 09, 2019 9:54:55 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/broadcast
+Apr 09, 2019 9:54:55 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/config/nodeNN
+ INFO [cs-/com/stefanolupo/ndngame/0/config/nodeNN-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/config/nodeNN
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ChronoSynced.java:93) - Initialized ChronoSyncedMap for /com/stefanolupo/ndngame/0/discovery/nodeNN
+Apr 09, 2019 9:54:56 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/broadcast
+Apr 09, 2019 9:54:56 PM net.named_data.jndn.Node$RegisterResponse onData
+INFO: Register prefix succeeded with the NFD forwarder for prefix /com/stefanolupo/ndngame/0/discovery/nodeNN
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeO
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeI
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeC
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeF
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeA
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeO/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeI/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeF/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeO/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeI/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeC/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeF/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeA/projectiles/sync/0/0/0
+ INFO [fm-pub-3-2] (ProjectilePublisher.java:139) - Creating interest meter
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeJ
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeE
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeM
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeJ/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeE/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeM/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeJ/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeE/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeM/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeG
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeG/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeG/projectiles/sync/0/0/0
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeH
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeH/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeH/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeK
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeK/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeK/projectiles/sync/0/0/0
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeB
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeB/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeD
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeD/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeD/projectiles/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeP
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeP/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeP/projectiles/sync/0/0/0
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:99) - [0=10]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:99) - [450=2, 392=2, 425=2, 0=12, 431=2, 588=2, 306=2, 432=2, 566=2, 533=2, 565=2, 569=2, 572=2]
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (PlayerStatusSubscriber.java:59) - Adding subscription for nodeL
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (BlockSubscriber.java:55) - Adding subscription for /com/stefanolupo/ndngame/0/nodeL/blocks/sync/0/0/0
+ INFO [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ProjectileSubscriber.java:53) - Adding subscription for /com/stefanolupo/ndngame/0/nodeL/projectiles/sync/0/0/0
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+DEBUG [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-0] (BasePublisher.java:156) - Had Update but /com/stefanolupo/ndngame/0/nodeNN/status/sync/793/0/0 already had sn 793
+4/9/19, 9:55:20 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeNN-blocks-sync
+             value = 0.0
+pub-update-percentage-nodeNN-status-sync
+             value = 0.49466591802358223
+
+-- Counters --------------------------------------------------------------------
+dr-counter-null
+             count = 0
+dr-counter-skip
+             count = 0
+dr-counter-threshold
+             count = 0
+dr-counter-velocity
+             count = 0
+sub-blocks-interestscounter-nodeA
+             count = 24
+sub-blocks-interestscounter-nodeB
+             count = 14
+sub-blocks-interestscounter-nodeC
+             count = 24
+sub-blocks-interestscounter-nodeD
+             count = 12
+sub-blocks-interestscounter-nodeE
+             count = 21
+sub-blocks-interestscounter-nodeF
+             count = 23
+sub-blocks-interestscounter-nodeG
+             count = 20
+sub-blocks-interestscounter-nodeH
+             count = 17
+sub-blocks-interestscounter-nodeI
+             count = 24
+sub-blocks-interestscounter-nodeJ
+             count = 20
+sub-blocks-interestscounter-nodeK
+             count = 15
+sub-blocks-interestscounter-nodeL
+             count = 9
+sub-blocks-interestscounter-nodeM
+             count = 21
+sub-blocks-interestscounter-nodeO
+             count = 24
+sub-blocks-interestscounter-nodeP
+             count = 10
+sub-projectiles-interestscounter-nodeA
+             count = 15
+sub-projectiles-interestscounter-nodeB
+             count = 8
+sub-projectiles-interestscounter-nodeC
+             count = 14
+sub-projectiles-interestscounter-nodeD
+             count = 9
+sub-projectiles-interestscounter-nodeE
+             count = 13
+sub-projectiles-interestscounter-nodeF
+             count = 14
+sub-projectiles-interestscounter-nodeG
+             count = 12
+sub-projectiles-interestscounter-nodeH
+             count = 10
+sub-projectiles-interestscounter-nodeI
+             count = 15
+sub-projectiles-interestscounter-nodeJ
+             count = 12
+sub-projectiles-interestscounter-nodeK
+             count = 11
+sub-projectiles-interestscounter-nodeL
+             count = 5
+sub-projectiles-interestscounter-nodeM
+             count = 12
+sub-projectiles-interestscounter-nodeO
+             count = 14
+sub-projectiles-interestscounter-nodeP
+             count = 6
+sub-status-interestscounter-nodeA
+             count = 635
+sub-status-interestscounter-nodeB
+             count = 358
+sub-status-interestscounter-nodeC
+             count = 600
+sub-status-interestscounter-nodeD
+             count = 281
+sub-status-interestscounter-nodeE
+             count = 505
+sub-status-interestscounter-nodeF
+             count = 594
+sub-status-interestscounter-nodeG
+             count = 505
+sub-status-interestscounter-nodeH
+             count = 388
+sub-status-interestscounter-nodeI
+             count = 623
+sub-status-interestscounter-nodeJ
+             count = 506
+sub-status-interestscounter-nodeK
+             count = 376
+sub-status-interestscounter-nodeL
+             count = 225
+sub-status-interestscounter-nodeM
+             count = 502
+sub-status-interestscounter-nodeO
+             count = 592
+sub-status-interestscounter-nodeP
+             count = 269
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 619
+               min = 0
+               max = 133
+              mean = 5.50
+            stddev = 14.89
+            median = 0.00
+              75% <= 4.00
+              95% <= 33.00
+              98% <= 52.00
+              99% <= 79.00
+            99.9% <= 133.00
+eng-status-delta-nodeB
+             count = 342
+               min = 0
+               max = 107
+              mean = 4.81
+            stddev = 10.01
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 31.00
+              99% <= 39.00
+            99.9% <= 107.00
+eng-status-delta-nodeC
+             count = 580
+               min = 0
+               max = 121
+              mean = 5.83
+            stddev = 12.74
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 47.00
+              99% <= 63.00
+            99.9% <= 121.00
+eng-status-delta-nodeD
+             count = 270
+               min = 0
+               max = 50
+              mean = 4.74
+            stddev = 8.61
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 33.00
+              99% <= 40.00
+            99.9% <= 50.00
+eng-status-delta-nodeE
+             count = 491
+               min = 0
+               max = 104
+              mean = 4.49
+            stddev = 11.10
+            median = 0.00
+              75% <= 3.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 67.00
+            99.9% <= 104.00
+eng-status-delta-nodeF
+             count = 579
+               min = 0
+               max = 122
+              mean = 5.88
+            stddev = 14.57
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 56.00
+              99% <= 63.00
+            99.9% <= 122.00
+eng-status-delta-nodeG
+             count = 491
+               min = 0
+               max = 75
+              mean = 4.69
+            stddev = 10.15
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 40.00
+              99% <= 44.00
+            99.9% <= 75.00
+eng-status-delta-nodeH
+             count = 375
+               min = 0
+               max = 73
+              mean = 6.59
+            stddev = 13.62
+            median = 0.00
+              75% <= 11.00
+              95% <= 39.00
+              98% <= 63.00
+              99% <= 67.00
+            99.9% <= 73.00
+eng-status-delta-nodeI
+             count = 607
+               min = 0
+               max = 126
+              mean = 5.65
+            stddev = 13.65
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 44.00
+              99% <= 63.00
+            99.9% <= 126.00
+eng-status-delta-nodeJ
+             count = 488
+               min = 0
+               max = 72
+              mean = 5.16
+            stddev = 10.41
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 40.00
+              99% <= 47.00
+            99.9% <= 72.00
+eng-status-delta-nodeK
+             count = 364
+               min = 0
+               max = 78
+              mean = 4.91
+            stddev = 9.08
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 31.00
+              99% <= 47.00
+            99.9% <= 78.00
+eng-status-delta-nodeL
+             count = 214
+               min = 0
+               max = 105
+              mean = 4.22
+            stddev = 11.84
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 39.00
+              99% <= 63.00
+            99.9% <= 105.00
+eng-status-delta-nodeM
+             count = 487
+               min = 0
+               max = 73
+              mean = 4.61
+            stddev = 10.07
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 40.00
+              99% <= 47.00
+            99.9% <= 73.00
+eng-status-delta-nodeO
+             count = 567
+               min = 0
+               max = 128
+              mean = 4.84
+            stddev = 12.16
+            median = 0.00
+              75% <= 0.00
+              95% <= 25.00
+              98% <= 40.00
+              99% <= 63.00
+            99.9% <= 128.00
+eng-status-delta-nodeP
+             count = 262
+               min = 0
+               max = 72
+              mean = 3.88
+            stddev = 8.66
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 33.00
+              99% <= 44.00
+            99.9% <= 72.00
+packet-size-block
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+packet-size-projectile
+             count = 67
+               min = 89
+               max = 1765
+              mean = 487.35
+            stddev = 569.47
+            median = 267.00
+              75% <= 440.00
+              95% <= 1760.00
+              98% <= 1765.00
+              99% <= 1765.00
+            99.9% <= 1765.00
+packet-size-status
+             count = 890
+               min = 42
+               max = 47
+              mean = 44.36
+            stddev = 2.50
+            median = 42.00
+              75% <= 47.00
+              95% <= 47.00
+              98% <= 47.00
+              99% <= 47.00
+            99.9% <= 47.00
+sub-blocks-rtt-nodeA
+             count = 1
+               min = 363
+               max = 363
+              mean = 363.00
+            stddev = 0.00
+            median = 363.00
+              75% <= 363.00
+              95% <= 363.00
+              98% <= 363.00
+              99% <= 363.00
+            99.9% <= 363.00
+sub-blocks-rtt-nodeB
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeC
+             count = 1
+               min = 488
+               max = 488
+              mean = 488.00
+            stddev = 0.00
+            median = 488.00
+              75% <= 488.00
+              95% <= 488.00
+              98% <= 488.00
+              99% <= 488.00
+            99.9% <= 488.00
+sub-blocks-rtt-nodeD
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeE
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeF
+             count = 2
+               min = 653
+               max = 764
+              mean = 713.07
+            stddev = 55.31
+            median = 764.00
+              75% <= 764.00
+              95% <= 764.00
+              98% <= 764.00
+              99% <= 764.00
+            99.9% <= 764.00
+sub-blocks-rtt-nodeG
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeH
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeI
+             count = 1
+               min = 921
+               max = 921
+              mean = 921.00
+            stddev = 0.00
+            median = 921.00
+              75% <= 921.00
+              95% <= 921.00
+              98% <= 921.00
+              99% <= 921.00
+            99.9% <= 921.00
+sub-blocks-rtt-nodeJ
+             count = 1
+               min = 642
+               max = 642
+              mean = 642.00
+            stddev = 0.00
+            median = 642.00
+              75% <= 642.00
+              95% <= 642.00
+              98% <= 642.00
+              99% <= 642.00
+            99.9% <= 642.00
+sub-blocks-rtt-nodeK
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeL
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeM
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-blocks-rtt-nodeO
+             count = 1
+               min = 322
+               max = 322
+              mean = 322.00
+            stddev = 0.00
+            median = 322.00
+              75% <= 322.00
+              95% <= 322.00
+              98% <= 322.00
+              99% <= 322.00
+            99.9% <= 322.00
+sub-blocks-rtt-nodeP
+             count = 0
+               min = 0
+               max = 0
+              mean = 0.00
+            stddev = 0.00
+            median = 0.00
+              75% <= 0.00
+              95% <= 0.00
+              98% <= 0.00
+              99% <= 0.00
+            99.9% <= 0.00
+sub-projectiles-rtt-nodeA
+             count = 11
+               min = 3
+               max = 955
+              mean = 131.92
+            stddev = 280.22
+            median = 17.00
+              75% <= 62.00
+              95% <= 955.00
+              98% <= 955.00
+              99% <= 955.00
+            99.9% <= 955.00
+sub-projectiles-rtt-nodeB
+             count = 6
+               min = 1
+               max = 23
+              mean = 13.44
+            stddev = 7.59
+            median = 11.00
+              75% <= 22.00
+              95% <= 23.00
+              98% <= 23.00
+              99% <= 23.00
+            99.9% <= 23.00
+sub-projectiles-rtt-nodeC
+             count = 11
+               min = 8
+               max = 415
+              mean = 98.03
+            stddev = 152.49
+            median = 23.00
+              75% <= 84.00
+              95% <= 415.00
+              98% <= 415.00
+              99% <= 415.00
+            99.9% <= 415.00
+sub-projectiles-rtt-nodeD
+             count = 3
+               min = 45
+               max = 82
+              mean = 61.43
+            stddev = 15.15
+            median = 59.00
+              75% <= 82.00
+              95% <= 82.00
+              98% <= 82.00
+              99% <= 82.00
+            99.9% <= 82.00
+sub-projectiles-rtt-nodeE
+             count = 8
+               min = 5
+               max = 27
+              mean = 19.27
+            stddev = 8.23
+            median = 23.00
+              75% <= 25.00
+              95% <= 27.00
+              98% <= 27.00
+              99% <= 27.00
+            99.9% <= 27.00
+sub-projectiles-rtt-nodeF
+             count = 11
+               min = 7
+               max = 234
+              mean = 43.21
+            stddev = 63.81
+            median = 19.00
+              75% <= 42.00
+              95% <= 234.00
+              98% <= 234.00
+              99% <= 234.00
+            99.9% <= 234.00
+sub-projectiles-rtt-nodeG
+             count = 8
+               min = 10
+               max = 549
+              mean = 115.22
+            stddev = 165.94
+            median = 29.00
+              75% <= 145.00
+              95% <= 549.00
+              98% <= 549.00
+              99% <= 549.00
+            99.9% <= 549.00
+sub-projectiles-rtt-nodeH
+             count = 8
+               min = 5
+               max = 934
+              mean = 341.26
+            stddev = 397.95
+            median = 65.00
+              75% <= 931.00
+              95% <= 934.00
+              98% <= 934.00
+              99% <= 934.00
+            99.9% <= 934.00
+sub-projectiles-rtt-nodeI
+             count = 10
+               min = 1
+               max = 909
+              mean = 109.88
+            stddev = 251.26
+            median = 21.00
+              75% <= 43.00
+              95% <= 909.00
+              98% <= 909.00
+              99% <= 909.00
+            99.9% <= 909.00
+sub-projectiles-rtt-nodeJ
+             count = 9
+               min = 23
+               max = 641
+              mean = 189.72
+            stddev = 249.48
+            median = 31.00
+              75% <= 226.00
+              95% <= 641.00
+              98% <= 641.00
+              99% <= 641.00
+            99.9% <= 641.00
+sub-projectiles-rtt-nodeK
+             count = 4
+               min = 8
+               max = 52
+              mean = 19.98
+            stddev = 18.17
+            median = 11.00
+              75% <= 11.00
+              95% <= 52.00
+              98% <= 52.00
+              99% <= 52.00
+            99.9% <= 52.00
+sub-projectiles-rtt-nodeL
+             count = 5
+               min = 17
+               max = 48
+              mean = 24.03
+            stddev = 11.57
+            median = 19.00
+              75% <= 19.00
+              95% <= 48.00
+              98% <= 48.00
+              99% <= 48.00
+            99.9% <= 48.00
+sub-projectiles-rtt-nodeM
+             count = 9
+               min = 9
+               max = 182
+              mean = 57.08
+            stddev = 68.62
+            median = 17.00
+              75% <= 43.00
+              95% <= 182.00
+              98% <= 182.00
+              99% <= 182.00
+            99.9% <= 182.00
+sub-projectiles-rtt-nodeO
+             count = 11
+               min = 14
+               max = 294
+              mean = 75.31
+            stddev = 100.90
+            median = 30.00
+              75% <= 48.00
+              95% <= 294.00
+              98% <= 294.00
+              99% <= 294.00
+            99.9% <= 294.00
+sub-projectiles-rtt-nodeP
+             count = 4
+               min = 37
+               max = 925
+              mean = 265.45
+            stddev = 377.10
+            median = 43.00
+              75% <= 72.00
+              95% <= 925.00
+              98% <= 925.00
+              99% <= 925.00
+            99.9% <= 925.00
+sub-status-rtt-nodeA
+             count = 636
+               min = 1
+               max = 121
+              mean = 38.80
+            stddev = 16.32
+            median = 34.00
+              75% <= 47.00
+              95% <= 67.00
+              98% <= 72.00
+              99% <= 86.00
+            99.9% <= 121.00
+sub-status-rtt-nodeB
+             count = 359
+               min = 1
+               max = 116
+              mean = 38.52
+            stddev = 17.16
+            median = 35.00
+              75% <= 45.00
+              95% <= 69.00
+              98% <= 83.00
+              99% <= 92.00
+            99.9% <= 116.00
+sub-status-rtt-nodeC
+             count = 601
+               min = 1
+               max = 112
+              mean = 41.31
+            stddev = 18.96
+            median = 35.00
+              75% <= 51.00
+              95% <= 73.00
+              98% <= 86.00
+              99% <= 93.00
+            99.9% <= 112.00
+sub-status-rtt-nodeD
+             count = 284
+               min = 2
+               max = 133
+              mean = 41.63
+            stddev = 19.01
+            median = 38.00
+              75% <= 51.00
+              95% <= 73.00
+              98% <= 83.00
+              99% <= 98.00
+            99.9% <= 133.00
+sub-status-rtt-nodeE
+             count = 507
+               min = 1
+               max = 146
+              mean = 40.79
+            stddev = 18.76
+            median = 35.00
+              75% <= 49.00
+              95% <= 70.00
+              98% <= 87.00
+              99% <= 98.00
+            99.9% <= 146.00
+sub-status-rtt-nodeF
+             count = 596
+               min = 1
+               max = 144
+              mean = 41.51
+            stddev = 19.63
+            median = 35.00
+              75% <= 50.00
+              95% <= 74.00
+              98% <= 90.00
+              99% <= 93.00
+            99.9% <= 144.00
+sub-status-rtt-nodeG
+             count = 507
+               min = 4
+               max = 137
+              mean = 39.04
+            stddev = 17.48
+            median = 34.00
+              75% <= 46.00
+              95% <= 67.00
+              98% <= 83.00
+              99% <= 96.00
+            99.9% <= 137.00
+sub-status-rtt-nodeH
+             count = 391
+               min = 2
+               max = 148
+              mean = 42.98
+            stddev = 20.25
+            median = 37.00
+              75% <= 55.00
+              95% <= 78.00
+              98% <= 90.00
+              99% <= 99.00
+            99.9% <= 148.00
+sub-status-rtt-nodeI
+             count = 624
+               min = 1
+               max = 151
+              mean = 39.41
+            stddev = 17.64
+            median = 34.00
+              75% <= 46.00
+              95% <= 68.00
+              98% <= 88.00
+              99% <= 93.00
+            99.9% <= 151.00
+sub-status-rtt-nodeJ
+             count = 507
+               min = 1
+               max = 152
+              mean = 40.75
+            stddev = 19.20
+            median = 34.00
+              75% <= 50.00
+              95% <= 69.00
+              98% <= 90.00
+              99% <= 104.00
+            99.9% <= 152.00
+sub-status-rtt-nodeK
+             count = 379
+               min = 1
+               max = 137
+              mean = 39.14
+            stddev = 18.89
+            median = 34.00
+              75% <= 47.00
+              95% <= 71.00
+              98% <= 95.00
+              99% <= 108.00
+            99.9% <= 137.00
+sub-status-rtt-nodeL
+             count = 226
+               min = 1
+               max = 140
+              mean = 39.32
+            stddev = 19.01
+            median = 34.00
+              75% <= 42.00
+              95% <= 83.00
+              98% <= 96.00
+              99% <= 116.00
+            99.9% <= 140.00
+sub-status-rtt-nodeM
+             count = 504
+               min = 1
+               max = 127
+              mean = 41.39
+            stddev = 18.20
+            median = 35.00
+              75% <= 50.00
+              95% <= 71.00
+              98% <= 87.00
+              99% <= 88.00
+            99.9% <= 127.00
+sub-status-rtt-nodeO
+             count = 594
+               min = 1
+               max = 101
+              mean = 41.41
+            stddev = 18.27
+            median = 36.00
+              75% <= 52.00
+              95% <= 69.00
+              98% <= 82.00
+              99% <= 92.00
+            99.9% <= 101.00
+sub-status-rtt-nodeP
+             count = 270
+               min = 2
+               max = 126
+              mean = 36.68
+            stddev = 16.37
+            median = 34.00
+              75% <= 42.00
+              95% <= 67.00
+              98% <= 84.00
+              99% <= 100.00
+            99.9% <= 126.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeNN-blocks-sync
+             count = 19
+         mean rate = 0.91 events/second
+     1-minute rate = 0.97 events/second
+     5-minute rate = 0.99 events/second
+    15-minute rate = 1.00 events/second
+pub-interest-rate-nodeNN-projectiles-sync
+             count = 71
+         mean rate = 3.40 events/second
+     1-minute rate = 4.11 events/second
+     5-minute rate = 4.34 events/second
+    15-minute rate = 4.38 events/second
+pub-interest-rate-nodeNN-status-sync
+             count = 651
+         mean rate = 31.17 events/second
+     1-minute rate = 31.18 events/second
+     5-minute rate = 31.20 events/second
+    15-minute rate = 31.20 events/second
+
+
+ WARN [cs-/com/stefanolupo/ndngame/0/discovery/nodeNN-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery/nodeNN/1?ndn.MustBeFresh=1&ndn.Nonce=Z8%A1%9B
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:99) - [2=4, 1=8, 0=27]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:99) - [450=2, 1091=2, 772=2, 392=2, 0=12, 588=2, 1168=2, 791=2, 533=2, 794=2, 1049=2, 670=2, 867=2, 1184=2, 938=2, 683=2, 425=2, 878=2, 431=2, 687=2, 621=2, 306=2, 432=2, 625=2, 566=2, 565=2, 890=2, 569=2, 572=2]
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+DEBUG [HeadlessApplication] (ProjectileCollisionSystem.java:108) - Bullet hit me, notifying owner and decreasing my health
+4/9/19, 9:55:50 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeNN-blocks-sync
+             value = 0.0011163829193413341
+pub-update-percentage-nodeNN-status-sync
+             value = 0.4875733035464954
+
+-- Counters --------------------------------------------------------------------
+dr-counter-null
+             count = 0
+dr-counter-skip
+             count = 0
+dr-counter-threshold
+             count = 0
+dr-counter-velocity
+             count = 0
+sub-blocks-interestscounter-nodeA
+             count = 52
+sub-blocks-interestscounter-nodeB
+             count = 43
+sub-blocks-interestscounter-nodeC
+             count = 52
+sub-blocks-interestscounter-nodeD
+             count = 40
+sub-blocks-interestscounter-nodeE
+             count = 49
+sub-blocks-interestscounter-nodeF
+             count = 53
+sub-blocks-interestscounter-nodeG
+             count = 48
+sub-blocks-interestscounter-nodeH
+             count = 45
+sub-blocks-interestscounter-nodeI
+             count = 53
+sub-blocks-interestscounter-nodeJ
+             count = 49
+sub-blocks-interestscounter-nodeK
+             count = 43
+sub-blocks-interestscounter-nodeL
+             count = 37
+sub-blocks-interestscounter-nodeM
+             count = 50
+sub-blocks-interestscounter-nodeO
+             count = 51
+sub-blocks-interestscounter-nodeP
+             count = 38
+sub-projectiles-interestscounter-nodeA
+             count = 31
+sub-projectiles-interestscounter-nodeB
+             count = 23
+sub-projectiles-interestscounter-nodeC
+             count = 31
+sub-projectiles-interestscounter-nodeD
+             count = 27
+sub-projectiles-interestscounter-nodeE
+             count = 29
+sub-projectiles-interestscounter-nodeF
+             count = 30
+sub-projectiles-interestscounter-nodeG
+             count = 29
+sub-projectiles-interestscounter-nodeH
+             count = 25
+sub-projectiles-interestscounter-nodeI
+             count = 30
+sub-projectiles-interestscounter-nodeJ
+             count = 29
+sub-projectiles-interestscounter-nodeK
+             count = 28
+sub-projectiles-interestscounter-nodeL
+             count = 22
+sub-projectiles-interestscounter-nodeM
+             count = 29
+sub-projectiles-interestscounter-nodeO
+             count = 31
+sub-projectiles-interestscounter-nodeP
+             count = 24
+sub-status-interestscounter-nodeA
+             count = 1450
+sub-status-interestscounter-nodeB
+             count = 1192
+sub-status-interestscounter-nodeC
+             count = 1418
+sub-status-interestscounter-nodeD
+             count = 1112
+sub-status-interestscounter-nodeE
+             count = 1348
+sub-status-interestscounter-nodeF
+             count = 1382
+sub-status-interestscounter-nodeG
+             count = 1345
+sub-status-interestscounter-nodeH
+             count = 1210
+sub-status-interestscounter-nodeI
+             count = 1438
+sub-status-interestscounter-nodeJ
+             count = 1329
+sub-status-interestscounter-nodeK
+             count = 1215
+sub-status-interestscounter-nodeL
+             count = 1038
+sub-status-interestscounter-nodeM
+             count = 1318
+sub-status-interestscounter-nodeO
+             count = 1388
+sub-status-interestscounter-nodeP
+             count = 1066
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 1410
+               min = 0
+               max = 200
+              mean = 5.16
+            stddev = 15.33
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 87.00
+            99.9% <= 200.00
+eng-status-delta-nodeB
+             count = 1144
+               min = 0
+               max = 200
+              mean = 5.47
+            stddev = 15.80
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 104.00
+            99.9% <= 200.00
+eng-status-delta-nodeC
+             count = 1364
+               min = 0
+               max = 211
+              mean = 5.83
+            stddev = 14.60
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 71.00
+            99.9% <= 211.00
+eng-status-delta-nodeD
+             count = 1076
+               min = 0
+               max = 200
+              mean = 5.16
+            stddev = 15.38
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 40.00
+              99% <= 104.00
+            99.9% <= 200.00
+eng-status-delta-nodeE
+             count = 1312
+               min = 0
+               max = 253
+              mean = 4.78
+            stddev = 15.26
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 40.00
+              99% <= 67.00
+            99.9% <= 253.00
+eng-status-delta-nodeF
+             count = 1350
+               min = 0
+               max = 133
+              mean = 6.34
+            stddev = 17.40
+            median = 0.00
+              75% <= 0.00
+              95% <= 33.00
+              98% <= 70.00
+              99% <= 106.00
+            99.9% <= 133.00
+eng-status-delta-nodeG
+             count = 1307
+               min = 0
+               max = 211
+              mean = 5.79
+            stddev = 15.78
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 44.00
+              99% <= 75.00
+            99.9% <= 211.00
+eng-status-delta-nodeH
+             count = 1167
+               min = 0
+               max = 211
+              mean = 5.80
+            stddev = 15.77
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 47.00
+              99% <= 71.00
+            99.9% <= 211.00
+eng-status-delta-nodeI
+             count = 1392
+               min = 0
+               max = 200
+              mean = 5.19
+            stddev = 14.34
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 67.00
+            99.9% <= 200.00
+eng-status-delta-nodeJ
+             count = 1290
+               min = 0
+               max = 128
+              mean = 5.55
+            stddev = 13.60
+            median = 0.00
+              75% <= 11.00
+              95% <= 29.00
+              98% <= 44.00
+              99% <= 72.00
+            99.9% <= 128.00
+eng-status-delta-nodeK
+             count = 1181
+               min = 0
+               max = 200
+              mean = 5.62
+            stddev = 15.69
+            median = 0.00
+              75% <= 11.00
+              95% <= 23.00
+              98% <= 56.00
+              99% <= 78.00
+            99.9% <= 200.00
+eng-status-delta-nodeL
+             count = 1008
+               min = 0
+               max = 105
+              mean = 4.49
+            stddev = 10.52
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 33.00
+              99% <= 47.00
+            99.9% <= 89.00
+eng-status-delta-nodeM
+             count = 1280
+               min = 0
+               max = 211
+              mean = 4.96
+            stddev = 14.84
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 33.00
+              99% <= 73.00
+            99.9% <= 211.00
+eng-status-delta-nodeO
+             count = 1338
+               min = 0
+               max = 122
+              mean = 5.22
+            stddev = 12.44
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 63.00
+            99.9% <= 122.00
+eng-status-delta-nodeP
+             count = 1038
+               min = 0
+               max = 126
+              mean = 4.95
+            stddev = 12.90
+            median = 0.00
+              75% <= 0.00
+              95% <= 22.00
+              98% <= 44.00
+              99% <= 61.00
+            99.9% <= 126.00
+packet-size-block
+             count = 4
+               min = 76
+               max = 304
+              mean = 199.44
+            stddev = 84.13
+            median = 228.00
+              75% <= 304.00
+              95% <= 304.00
+              98% <= 304.00
+              99% <= 304.00
+            99.9% <= 304.00
+packet-size-projectile
+             count = 164
+               min = 89
+               max = 1765
+              mean = 374.64
+            stddev = 377.76
+            median = 351.00
+              75% <= 440.00
+              95% <= 1320.00
+              98% <= 1671.00
+              99% <= 1765.00
+            99.9% <= 1765.00
+packet-size-status
+             count = 1787
+               min = 42
+               max = 47
+              mean = 44.34
+            stddev = 2.49
+            median = 42.00
+              75% <= 47.00
+              95% <= 47.00
+              98% <= 47.00
+              99% <= 47.00
+            99.9% <= 47.00
+sub-blocks-rtt-nodeA
+             count = 3
+               min = 151
+               max = 363
+              mean = 261.89
+            stddev = 81.99
+            median = 286.00
+              75% <= 286.00
+              95% <= 363.00
+              98% <= 363.00
+              99% <= 363.00
+            99.9% <= 363.00
+sub-blocks-rtt-nodeB
+             count = 1
+               min = 974
+               max = 974
+              mean = 974.00
+            stddev = 0.00
+            median = 974.00
+              75% <= 974.00
+              95% <= 974.00
+              98% <= 974.00
+              99% <= 974.00
+            99.9% <= 974.00
+sub-blocks-rtt-nodeC
+             count = 3
+               min = 214
+               max = 860
+              mean = 549.47
+            stddev = 279.14
+            median = 488.00
+              75% <= 860.00
+              95% <= 860.00
+              98% <= 860.00
+              99% <= 860.00
+            99.9% <= 860.00
+sub-blocks-rtt-nodeD
+             count = 2
+               min = 34
+               max = 652
+              mean = 299.26
+            stddev = 305.89
+            median = 34.00
+              75% <= 652.00
+              95% <= 652.00
+              98% <= 652.00
+              99% <= 652.00
+            99.9% <= 652.00
+sub-blocks-rtt-nodeE
+             count = 2
+               min = 593
+               max = 616
+              mean = 603.30
+            stddev = 11.44
+            median = 593.00
+              75% <= 616.00
+              95% <= 616.00
+              98% <= 616.00
+              99% <= 616.00
+            99.9% <= 616.00
+sub-blocks-rtt-nodeF
+             count = 2
+               min = 653
+               max = 764
+              mean = 713.07
+            stddev = 55.31
+            median = 764.00
+              75% <= 764.00
+              95% <= 764.00
+              98% <= 764.00
+              99% <= 764.00
+            99.9% <= 764.00
+sub-blocks-rtt-nodeG
+             count = 2
+               min = 108
+               max = 159
+              mean = 130.08
+            stddev = 25.27
+            median = 108.00
+              75% <= 159.00
+              95% <= 159.00
+              98% <= 159.00
+              99% <= 159.00
+            99.9% <= 159.00
+sub-blocks-rtt-nodeH
+             count = 2
+               min = 713
+               max = 945
+              mean = 814.29
+            stddev = 115.06
+            median = 713.00
+              75% <= 945.00
+              95% <= 945.00
+              98% <= 945.00
+              99% <= 945.00
+            99.9% <= 945.00
+sub-blocks-rtt-nodeI
+             count = 2
+               min = 315
+               max = 921
+              mean = 577.34
+            stddev = 300.26
+            median = 315.00
+              75% <= 921.00
+              95% <= 921.00
+              98% <= 921.00
+              99% <= 921.00
+            99.9% <= 921.00
+sub-blocks-rtt-nodeJ
+             count = 2
+               min = 553
+               max = 642
+              mean = 594.50
+            stddev = 44.40
+            median = 553.00
+              75% <= 642.00
+              95% <= 642.00
+              98% <= 642.00
+              99% <= 642.00
+            99.9% <= 642.00
+sub-blocks-rtt-nodeK
+             count = 2
+               min = 447
+               max = 665
+              mean = 542.18
+            stddev = 108.12
+            median = 447.00
+              75% <= 665.00
+              95% <= 665.00
+              98% <= 665.00
+              99% <= 665.00
+            99.9% <= 665.00
+sub-blocks-rtt-nodeL
+             count = 2
+               min = 21
+               max = 642
+              mean = 343.14
+            stddev = 310.28
+            median = 642.00
+              75% <= 642.00
+              95% <= 642.00
+              98% <= 642.00
+              99% <= 642.00
+            99.9% <= 642.00
+sub-blocks-rtt-nodeM
+             count = 1
+               min = 190
+               max = 190
+              mean = 190.00
+            stddev = 0.00
+            median = 190.00
+              75% <= 190.00
+              95% <= 190.00
+              98% <= 190.00
+              99% <= 190.00
+            99.9% <= 190.00
+sub-blocks-rtt-nodeO
+             count = 4
+               min = 3
+               max = 969
+              mean = 325.15
+            stddev = 404.44
+            median = 12.00
+              75% <= 969.00
+              95% <= 969.00
+              98% <= 969.00
+              99% <= 969.00
+            99.9% <= 969.00
+sub-blocks-rtt-nodeP
+             count = 2
+               min = 329
+               max = 540
+              mean = 421.12
+            stddev = 104.65
+            median = 329.00
+              75% <= 540.00
+              95% <= 540.00
+              98% <= 540.00
+              99% <= 540.00
+            99.9% <= 540.00
+sub-projectiles-rtt-nodeA
+             count = 24
+               min = 3
+               max = 955
+              mean = 111.30
+            stddev = 238.28
+            median = 22.00
+              75% <= 42.00
+              95% <= 767.00
+              98% <= 955.00
+              99% <= 955.00
+            99.9% <= 955.00
+sub-projectiles-rtt-nodeB
+             count = 21
+               min = 1
+               max = 974
+              mean = 254.87
+            stddev = 353.50
+            median = 26.00
+              75% <= 539.00
+              95% <= 972.00
+              98% <= 974.00
+              99% <= 974.00
+            99.9% <= 974.00
+sub-projectiles-rtt-nodeC
+             count = 24
+               min = 4
+               max = 415
+              mean = 66.93
+            stddev = 124.49
+            median = 23.00
+              75% <= 32.00
+              95% <= 412.00
+              98% <= 415.00
+              99% <= 415.00
+            99.9% <= 415.00
+sub-projectiles-rtt-nodeD
+             count = 16
+               min = 6
+               max = 231
+              mean = 48.67
+            stddev = 51.61
+            median = 32.00
+              75% <= 52.00
+              95% <= 231.00
+              98% <= 231.00
+              99% <= 231.00
+            99.9% <= 231.00
+sub-projectiles-rtt-nodeE
+             count = 22
+               min = 5
+               max = 786
+              mean = 142.62
+            stddev = 257.15
+            median = 25.00
+              75% <= 49.00
+              95% <= 784.00
+              98% <= 786.00
+              99% <= 786.00
+            99.9% <= 786.00
+sub-projectiles-rtt-nodeF
+             count = 25
+               min = 7
+               max = 829
+              mean = 110.99
+            stddev = 233.07
+            median = 25.00
+              75% <= 44.00
+              95% <= 829.00
+              98% <= 829.00
+              99% <= 829.00
+            99.9% <= 829.00
+sub-projectiles-rtt-nodeG
+             count = 22
+               min = 8
+               max = 774
+              mean = 106.11
+            stddev = 200.31
+            median = 27.00
+              75% <= 45.00
+              95% <= 774.00
+              98% <= 774.00
+              99% <= 774.00
+            99.9% <= 774.00
+sub-projectiles-rtt-nodeH
+             count = 23
+               min = 5
+               max = 934
+              mean = 210.01
+            stddev = 320.70
+            median = 25.00
+              75% <= 514.00
+              95% <= 931.00
+              98% <= 934.00
+              99% <= 934.00
+            99.9% <= 934.00
+sub-projectiles-rtt-nodeI
+             count = 25
+               min = 1
+               max = 948
+              mean = 169.83
+            stddev = 275.81
+            median = 42.00
+              75% <= 116.00
+              95% <= 909.00
+              98% <= 948.00
+              99% <= 948.00
+            99.9% <= 948.00
+sub-projectiles-rtt-nodeJ
+             count = 22
+               min = 1
+               max = 668
+              mean = 166.97
+            stddev = 240.93
+            median = 31.00
+              75% <= 222.00
+              95% <= 668.00
+              98% <= 668.00
+              99% <= 668.00
+            99.9% <= 668.00
+sub-projectiles-rtt-nodeK
+             count = 17
+               min = 8
+               max = 234
+              mean = 36.57
+            stddev = 51.67
+            median = 20.00
+              75% <= 31.00
+              95% <= 234.00
+              98% <= 234.00
+              99% <= 234.00
+            99.9% <= 234.00
+sub-projectiles-rtt-nodeL
+             count = 17
+               min = 9
+               max = 48
+              mean = 21.52
+            stddev = 8.30
+            median = 19.00
+              75% <= 23.00
+              95% <= 35.00
+              98% <= 48.00
+              99% <= 48.00
+            99.9% <= 48.00
+sub-projectiles-rtt-nodeM
+             count = 23
+               min = 4
+               max = 937
+              mean = 126.72
+            stddev = 247.50
+            median = 23.00
+              75% <= 43.00
+              95% <= 937.00
+              98% <= 937.00
+              99% <= 937.00
+            99.9% <= 937.00
+sub-projectiles-rtt-nodeO
+             count = 24
+               min = 12
+               max = 684
+              mean = 88.46
+            stddev = 161.46
+            median = 26.00
+              75% <= 48.00
+              95% <= 684.00
+              98% <= 684.00
+              99% <= 684.00
+            99.9% <= 684.00
+sub-projectiles-rtt-nodeP
+             count = 17
+               min = 17
+               max = 925
+              mean = 232.20
+            stddev = 285.36
+            median = 72.00
+              75% <= 538.00
+              95% <= 735.00
+              98% <= 925.00
+              99% <= 925.00
+            99.9% <= 925.00
+sub-status-rtt-nodeA
+             count = 1449
+               min = 1
+               max = 109
+              mean = 37.10
+            stddev = 15.25
+            median = 34.00
+              75% <= 43.00
+              95% <= 67.00
+              98% <= 77.00
+              99% <= 85.00
+            99.9% <= 109.00
+sub-status-rtt-nodeB
+             count = 1191
+               min = 1
+               max = 116
+              mean = 36.35
+            stddev = 15.08
+            median = 34.00
+              75% <= 43.00
+              95% <= 66.00
+              98% <= 78.00
+              99% <= 83.00
+            99.9% <= 100.00
+sub-status-rtt-nodeC
+             count = 1417
+               min = 1
+               max = 134
+              mean = 38.10
+            stddev = 17.39
+            median = 35.00
+              75% <= 45.00
+              95% <= 69.00
+              98% <= 83.00
+              99% <= 89.00
+            99.9% <= 134.00
+sub-status-rtt-nodeD
+             count = 1111
+               min = 1
+               max = 133
+              mean = 36.96
+            stddev = 15.91
+            median = 34.00
+              75% <= 44.00
+              95% <= 67.00
+              98% <= 79.00
+              99% <= 87.00
+            99.9% <= 116.00
+sub-status-rtt-nodeE
+             count = 1347
+               min = 1
+               max = 185
+              mean = 36.88
+            stddev = 15.93
+            median = 34.00
+              75% <= 42.00
+              95% <= 67.00
+              98% <= 78.00
+              99% <= 85.00
+            99.9% <= 146.00
+sub-status-rtt-nodeF
+             count = 1382
+               min = 1
+               max = 203
+              mean = 38.49
+            stddev = 17.66
+            median = 35.00
+              75% <= 45.00
+              95% <= 68.00
+              98% <= 83.00
+              99% <= 89.00
+            99.9% <= 161.00
+sub-status-rtt-nodeG
+             count = 1344
+               min = 1
+               max = 219
+              mean = 36.49
+            stddev = 16.29
+            median = 34.00
+              75% <= 42.00
+              95% <= 66.00
+              98% <= 81.00
+              99% <= 86.00
+            99.9% <= 173.00
+sub-status-rtt-nodeH
+             count = 1210
+               min = 1
+               max = 187
+              mean = 37.86
+            stddev = 16.80
+            median = 35.00
+              75% <= 43.00
+              95% <= 67.00
+              98% <= 82.00
+              99% <= 91.00
+            99.9% <= 144.00
+sub-status-rtt-nodeI
+             count = 1438
+               min = 1
+               max = 180
+              mean = 37.04
+            stddev = 16.24
+            median = 34.00
+              75% <= 42.00
+              95% <= 67.00
+              98% <= 77.00
+              99% <= 84.00
+            99.9% <= 169.00
+sub-status-rtt-nodeJ
+             count = 1329
+               min = 1
+               max = 217
+              mean = 37.57
+            stddev = 16.22
+            median = 34.00
+              75% <= 42.00
+              95% <= 67.00
+              98% <= 78.00
+              99% <= 87.00
+            99.9% <= 159.00
+sub-status-rtt-nodeK
+             count = 1214
+               min = 1
+               max = 224
+              mean = 36.58
+            stddev = 16.15
+            median = 34.00
+              75% <= 42.00
+              95% <= 65.00
+              98% <= 78.00
+              99% <= 90.00
+            99.9% <= 148.00
+sub-status-rtt-nodeL
+             count = 1038
+               min = 1
+               max = 180
+              mean = 37.25
+            stddev = 16.65
+            median = 34.00
+              75% <= 41.00
+              95% <= 67.00
+              98% <= 85.00
+              99% <= 96.00
+            99.9% <= 175.00
+sub-status-rtt-nodeM
+             count = 1318
+               min = 1
+               max = 162
+              mean = 38.26
+            stddev = 16.30
+            median = 35.00
+              75% <= 44.00
+              95% <= 67.00
+              98% <= 80.00
+              99% <= 87.00
+            99.9% <= 162.00
+sub-status-rtt-nodeO
+             count = 1389
+               min = 1
+               max = 117
+              mean = 38.52
+            stddev = 16.36
+            median = 34.00
+              75% <= 45.00
+              95% <= 68.00
+              98% <= 83.00
+              99% <= 87.00
+            99.9% <= 103.00
+sub-status-rtt-nodeP
+             count = 1066
+               min = 1
+               max = 179
+              mean = 37.14
+            stddev = 17.11
+            median = 34.00
+              75% <= 42.00
+              95% <= 67.00
+              98% <= 84.00
+              99% <= 92.00
+            99.9% <= 165.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeNN-blocks-sync
+             count = 92
+         mean rate = 1.81 events/second
+     1-minute rate = 1.56 events/second
+     5-minute rate = 1.13 events/second
+    15-minute rate = 1.04 events/second
+pub-interest-rate-nodeNN-projectiles-sync
+             count = 174
+         mean rate = 3.42 events/second
+     1-minute rate = 3.75 events/second
+     5-minute rate = 4.23 events/second
+    15-minute rate = 4.34 events/second
+pub-interest-rate-nodeNN-status-sync
+             count = 1526
+         mean rate = 30.03 events/second
+     1-minute rate = 30.45 events/second
+     5-minute rate = 31.03 events/second
+    15-minute rate = 31.14 events/second
+
+
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:99) - [2=19, 0=40, 1=24, 3=10]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:99) - [450=2, 1091=2, 1793=2, 1222=2, 1478=2, 772=2, 392=2, 1736=2, 0=12, 588=2, 1168=2, 1681=2, 791=2, 1495=2, 533=2, 794=2, 1754=2, 1496=2, 1049=2, 670=2, 867=2, 1184=2, 938=2, 683=2, 425=2, 878=2, 431=2, 687=2, 621=2, 306=2, 432=2, 625=2, 566=2, 565=2, 1525=2, 890=2, 1594=2, 569=2, 572=2, 1533=2]
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/blocks/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/blocks/sync-1] (BasePublisher.java:99) - [5=6, 6=3, 1=38, 0=45, 2=31, 3=28]
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:98) - /com/stefanolupo/ndngame/0/nodeNN/status/sync: Saw duplicate sn requests
+ WARN [bp-queue-proc-/com/stefanolupo/ndngame/0/nodeNN/status/sync-1] (BasePublisher.java:99) - [2306=2, 1793=2, 2310=2, 772=2, 1802=2, 2187=2, 392=2, 0=12, 1168=2, 1681=2, 2326=2, 791=2, 533=2, 794=2, 2072=2, 1049=2, 670=2, 1184=2, 2337=2, 938=2, 683=2, 425=2, 2094=2, 431=2, 687=2, 2349=2, 306=2, 432=2, 566=2, 1972=2, 565=2, 2101=2, 1594=2, 569=2, 2105=2, 572=2, 450=2, 2242=2, 1091=2, 1222=2, 1478=2, 2245=2, 2373=2, 1994=2, 1995=2, 1736=2, 1993=2, 588=2, 1872=2, 2384=2, 2390=2, 1495=2, 2007=2, 1754=2, 1496=2, 867=2, 2150=2, 2027=2, 878=2, 1902=2, 1903=2, 621=2, 625=2, 1525=2, 890=2, 2047=2, 2175=2, 2300=2, 1533=2]
+ WARN [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE
+4/9/19, 9:56:20 PM =============================================================
+
+-- Gauges ----------------------------------------------------------------------
+pub-update-percentage-nodeNN-blocks-sync
+             value = 0.0013003901170351106
+pub-update-percentage-nodeNN-status-sync
+             value = 0.4700854700854701
+
+-- Counters --------------------------------------------------------------------
+dr-counter-null
+             count = 0
+dr-counter-skip
+             count = 0
+dr-counter-threshold
+             count = 0
+dr-counter-velocity
+             count = 0
+sub-blocks-interestscounter-nodeA
+             count = 80
+sub-blocks-interestscounter-nodeB
+             count = 72
+sub-blocks-interestscounter-nodeC
+             count = 81
+sub-blocks-interestscounter-nodeD
+             count = 70
+sub-blocks-interestscounter-nodeE
+             count = 78
+sub-blocks-interestscounter-nodeF
+             count = 83
+sub-blocks-interestscounter-nodeG
+             count = 78
+sub-blocks-interestscounter-nodeH
+             count = 75
+sub-blocks-interestscounter-nodeI
+             count = 82
+sub-blocks-interestscounter-nodeJ
+             count = 79
+sub-blocks-interestscounter-nodeK
+             count = 72
+sub-blocks-interestscounter-nodeL
+             count = 66
+sub-blocks-interestscounter-nodeM
+             count = 78
+sub-blocks-interestscounter-nodeO
+             count = 80
+sub-blocks-interestscounter-nodeP
+             count = 67
+sub-projectiles-interestscounter-nodeA
+             count = 47
+sub-projectiles-interestscounter-nodeB
+             count = 39
+sub-projectiles-interestscounter-nodeC
+             count = 47
+sub-projectiles-interestscounter-nodeD
+             count = 43
+sub-projectiles-interestscounter-nodeE
+             count = 46
+sub-projectiles-interestscounter-nodeF
+             count = 47
+sub-projectiles-interestscounter-nodeG
+             count = 45
+sub-projectiles-interestscounter-nodeH
+             count = 41
+sub-projectiles-interestscounter-nodeI
+             count = 48
+sub-projectiles-interestscounter-nodeJ
+             count = 45
+sub-projectiles-interestscounter-nodeK
+             count = 45
+sub-projectiles-interestscounter-nodeL
+             count = 40
+sub-projectiles-interestscounter-nodeM
+             count = 45
+sub-projectiles-interestscounter-nodeO
+             count = 49
+sub-projectiles-interestscounter-nodeP
+             count = 40
+sub-status-interestscounter-nodeA
+             count = 2251
+sub-status-interestscounter-nodeB
+             count = 1973
+sub-status-interestscounter-nodeC
+             count = 2091
+sub-status-interestscounter-nodeD
+             count = 1778
+sub-status-interestscounter-nodeE
+             count = 2123
+sub-status-interestscounter-nodeF
+             count = 2190
+sub-status-interestscounter-nodeG
+             count = 2124
+sub-status-interestscounter-nodeH
+             count = 1975
+sub-status-interestscounter-nodeI
+             count = 2233
+sub-status-interestscounter-nodeJ
+             count = 2095
+sub-status-interestscounter-nodeK
+             count = 1997
+sub-status-interestscounter-nodeL
+             count = 1842
+sub-status-interestscounter-nodeM
+             count = 2136
+sub-status-interestscounter-nodeO
+             count = 2135
+sub-status-interestscounter-nodeP
+             count = 1850
+
+-- Histograms ------------------------------------------------------------------
+eng-status-delta-nodeA
+             count = 2168
+               min = 0
+               max = 200
+              mean = 5.85
+            stddev = 14.28
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 46.00
+              99% <= 71.00
+            99.9% <= 133.00
+eng-status-delta-nodeB
+             count = 1888
+               min = 0
+               max = 131
+              mean = 5.58
+            stddev = 14.34
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 71.00
+            99.9% <= 126.00
+eng-status-delta-nodeC
+             count = 1993
+               min = 0
+               max = 256
+              mean = 11.37
+            stddev = 25.69
+            median = 0.00
+              75% <= 11.00
+              95% <= 46.00
+              98% <= 94.00
+              99% <= 122.00
+            99.9% <= 256.00
+eng-status-delta-nodeD
+             count = 1698
+               min = 0
+               max = 144
+              mean = 7.00
+            stddev = 16.30
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 67.00
+              99% <= 89.00
+            99.9% <= 144.00
+eng-status-delta-nodeE
+             count = 2059
+               min = 0
+               max = 253
+              mean = 6.86
+            stddev = 17.67
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 67.00
+              99% <= 100.00
+            99.9% <= 133.00
+eng-status-delta-nodeF
+             count = 2105
+               min = 0
+               max = 208
+              mean = 13.37
+            stddev = 25.77
+            median = 0.00
+              75% <= 11.00
+              95% <= 62.00
+              98% <= 105.00
+              99% <= 125.00
+            99.9% <= 208.00
+eng-status-delta-nodeG
+             count = 2039
+               min = 0
+               max = 211
+              mean = 5.54
+            stddev = 14.60
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 45.00
+              99% <= 75.00
+            99.9% <= 144.00
+eng-status-delta-nodeH
+             count = 1891
+               min = 0
+               max = 208
+              mean = 6.04
+            stddev = 15.06
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 44.00
+              99% <= 56.00
+            99.9% <= 208.00
+eng-status-delta-nodeI
+             count = 2135
+               min = 0
+               max = 200
+              mean = 6.45
+            stddev = 15.76
+            median = 0.00
+              75% <= 11.00
+              95% <= 31.00
+              98% <= 44.00
+              99% <= 67.00
+            99.9% <= 200.00
+eng-status-delta-nodeJ
+             count = 2019
+               min = 0
+               max = 128
+              mean = 6.07
+            stddev = 14.96
+            median = 0.00
+              75% <= 11.00
+              95% <= 27.00
+              98% <= 47.00
+              99% <= 101.00
+            99.9% <= 122.00
+eng-status-delta-nodeK
+             count = 1922
+               min = 0
+               max = 200
+              mean = 5.33
+            stddev = 13.60
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 63.00
+            99.9% <= 134.00
+eng-status-delta-nodeL
+             count = 1777
+               min = 0
+               max = 126
+              mean = 5.20
+            stddev = 13.13
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 71.00
+            99.9% <= 126.00
+eng-status-delta-nodeM
+             count = 2046
+               min = 0
+               max = 211
+              mean = 5.88
+            stddev = 15.51
+            median = 0.00
+              75% <= 11.00
+              95% <= 22.00
+              98% <= 46.00
+              99% <= 78.00
+            99.9% <= 126.00
+eng-status-delta-nodeO
+             count = 2043
+               min = 0
+               max = 125
+              mean = 7.01
+            stddev = 15.39
+            median = 0.00
+              75% <= 11.00
+              95% <= 33.00
+              98% <= 51.00
+              99% <= 92.00
+            99.9% <= 125.00
+eng-status-delta-nodeP
+             count = 1778
+               min = 0
+               max = 126
+              mean = 5.40
+            stddev = 13.18
+            median = 0.00
+              75% <= 11.00
+              95% <= 25.00
+              98% <= 44.00
+              99% <= 61.00
+            99.9% <= 111.00
+packet-size-block
+             count = 7
+               min = 76
+               max = 532
+              mean = 347.84
+            stddev = 149.66
+            median = 380.00
+              75% <= 456.00
+              95% <= 532.00
+              98% <= 532.00
+              99% <= 532.00
+            99.9% <= 532.00
+packet-size-projectile
+             count = 301
+               min = 89
+               max = 1765
+              mean = 391.02
+            stddev = 323.70
+            median = 351.00
+              75% <= 440.00
+              95% <= 1053.00
+              98% <= 1320.00
+              99% <= 1671.00
+            99.9% <= 1765.00
+packet-size-status
+             count = 2687
+               min = 42
+               max = 47
+              mean = 44.24
+            stddev = 2.49
+            median = 42.00
+              75% <= 47.00
+              95% <= 47.00
+              98% <= 47.00
+              99% <= 47.00
+            99.9% <= 47.00
+sub-blocks-rtt-nodeA
+             count = 5
+               min = 151
+               max = 974
+              mean = 416.11
+            stddev = 334.41
+            median = 286.00
+              75% <= 974.00
+              95% <= 974.00
+              98% <= 974.00
+              99% <= 974.00
+            99.9% <= 974.00
+sub-blocks-rtt-nodeB
+             count = 2
+               min = 900
+               max = 974
+              mean = 927.25
+            stddev = 35.69
+            median = 900.00
+              75% <= 974.00
+              95% <= 974.00
+              98% <= 974.00
+              99% <= 974.00
+            99.9% <= 974.00
+sub-blocks-rtt-nodeC
+             count = 4
+               min = 207
+               max = 860
+              mean = 420.29
+            stddev = 275.83
+            median = 214.00
+              75% <= 860.00
+              95% <= 860.00
+              98% <= 860.00
+              99% <= 860.00
+            99.9% <= 860.00
+sub-blocks-rtt-nodeD
+             count = 2
+               min = 34
+               max = 652
+              mean = 299.26
+            stddev = 305.89
+            median = 34.00
+              75% <= 652.00
+              95% <= 652.00
+              98% <= 652.00
+              99% <= 652.00
+            99.9% <= 652.00
+sub-blocks-rtt-nodeE
+             count = 3
+               min = 118
+               max = 616
+              mean = 397.80
+            stddev = 239.94
+            median = 593.00
+              75% <= 616.00
+              95% <= 616.00
+              98% <= 616.00
+              99% <= 616.00
+            99.9% <= 616.00
+sub-blocks-rtt-nodeF
+             count = 2
+               min = 653
+               max = 764
+              mean = 713.07
+            stddev = 55.31
+            median = 764.00
+              75% <= 764.00
+              95% <= 764.00
+              98% <= 764.00
+              99% <= 764.00
+            99.9% <= 764.00
+sub-blocks-rtt-nodeG
+             count = 2
+               min = 108
+               max = 159
+              mean = 130.08
+            stddev = 25.27
+            median = 108.00
+              75% <= 159.00
+              95% <= 159.00
+              98% <= 159.00
+              99% <= 159.00
+            99.9% <= 159.00
+sub-blocks-rtt-nodeH
+             count = 2
+               min = 713
+               max = 945
+              mean = 814.29
+            stddev = 115.06
+            median = 713.00
+              75% <= 945.00
+              95% <= 945.00
+              98% <= 945.00
+              99% <= 945.00
+            99.9% <= 945.00
+sub-blocks-rtt-nodeI
+             count = 3
+               min = 76
+               max = 921
+              mean = 359.97
+            stddev = 335.85
+            median = 315.00
+              75% <= 315.00
+              95% <= 921.00
+              98% <= 921.00
+              99% <= 921.00
+            99.9% <= 921.00
+sub-blocks-rtt-nodeJ
+             count = 2
+               min = 553
+               max = 642
+              mean = 594.50
+            stddev = 44.40
+            median = 553.00
+              75% <= 642.00
+              95% <= 642.00
+              98% <= 642.00
+              99% <= 642.00
+            99.9% <= 642.00
+sub-blocks-rtt-nodeK
+             count = 3
+               min = 222
+               max = 665
+              mean = 395.56
+            stddev = 178.28
+            median = 447.00
+              75% <= 447.00
+              95% <= 665.00
+              98% <= 665.00
+              99% <= 665.00
+            99.9% <= 665.00
+sub-blocks-rtt-nodeL
+             count = 3
+               min = 21
+               max = 642
+              mean = 377.11
+            stddev = 246.74
+            median = 431.00
+              75% <= 642.00
+              95% <= 642.00
+              98% <= 642.00
+              99% <= 642.00
+            99.9% <= 642.00
+sub-blocks-rtt-nodeM
+             count = 3
+               min = 190
+               max = 967
+              mean = 499.89
+            stddev = 336.20
+            median = 295.00
+              75% <= 967.00
+              95% <= 967.00
+              98% <= 967.00
+              99% <= 967.00
+            99.9% <= 967.00
+sub-blocks-rtt-nodeO
+             count = 5
+               min = 3
+               max = 969
+              mean = 292.64
+            stddev = 338.88
+            median = 221.00
+              75% <= 322.00
+              95% <= 969.00
+              98% <= 969.00
+              99% <= 969.00
+            99.9% <= 969.00
+sub-blocks-rtt-nodeP
+             count = 3
+               min = 329
+               max = 897
+              mean = 595.92
+            stddev = 244.04
+            median = 540.00
+              75% <= 897.00
+              95% <= 897.00
+              98% <= 897.00
+              99% <= 897.00
+            99.9% <= 897.00
+sub-projectiles-rtt-nodeA
+             count = 39
+               min = 3
+               max = 955
+              mean = 131.12
+            stddev = 261.27
+            median = 26.00
+              75% <= 46.00
+              95% <= 954.00
+              98% <= 954.00
+              99% <= 955.00
+            99.9% <= 955.00
+sub-projectiles-rtt-nodeB
+             count = 35
+               min = 1
+               max = 974
+              mean = 153.48
+            stddev = 279.49
+            median = 23.00
+              75% <= 73.00
+              95% <= 972.00
+              98% <= 974.00
+              99% <= 974.00
+            99.9% <= 974.00
+sub-projectiles-rtt-nodeC
+             count = 39
+               min = 4
+               max = 989
+              mean = 118.20
+            stddev = 240.28
+            median = 29.00
+              75% <= 43.00
+              95% <= 728.00
+              98% <= 989.00
+              99% <= 989.00
+            99.9% <= 989.00
+sub-projectiles-rtt-nodeD
+             count = 30
+               min = 5
+               max = 835
+              mean = 80.57
+            stddev = 176.20
+            median = 32.00
+              75% <= 42.00
+              95% <= 235.00
+              98% <= 835.00
+              99% <= 835.00
+            99.9% <= 835.00
+sub-projectiles-rtt-nodeE
+             count = 35
+               min = 5
+               max = 796
+              mean = 178.97
+            stddev = 280.12
+            median = 25.00
+              75% <= 319.00
+              95% <= 786.00
+              98% <= 796.00
+              99% <= 796.00
+            99.9% <= 796.00
+sub-projectiles-rtt-nodeF
+             count = 39
+               min = 7
+               max = 829
+              mean = 106.56
+            stddev = 201.02
+            median = 23.00
+              75% <= 44.00
+              95% <= 731.00
+              98% <= 829.00
+              99% <= 829.00
+            99.9% <= 829.00
+sub-projectiles-rtt-nodeG
+             count = 36
+               min = 8
+               max = 774
+              mean = 118.39
+            stddev = 204.30
+            median = 27.00
+              75% <= 54.00
+              95% <= 724.00
+              98% <= 774.00
+              99% <= 774.00
+            99.9% <= 774.00
+sub-projectiles-rtt-nodeH
+             count = 36
+               min = 2
+               max = 934
+              mean = 127.83
+            stddev = 258.06
+            median = 18.00
+              75% <= 31.00
+              95% <= 929.00
+              98% <= 931.00
+              99% <= 934.00
+            99.9% <= 934.00
+sub-projectiles-rtt-nodeI
+             count = 38
+               min = 1
+               max = 948
+              mean = 126.45
+            stddev = 225.77
+            median = 36.00
+              75% <= 69.00
+              95% <= 632.00
+              98% <= 948.00
+              99% <= 948.00
+            99.9% <= 948.00
+sub-projectiles-rtt-nodeJ
+             count = 36
+               min = 1
+               max = 808
+              mean = 122.69
+            stddev = 224.69
+            median = 27.00
+              75% <= 59.00
+              95% <= 668.00
+              98% <= 808.00
+              99% <= 808.00
+            99.9% <= 808.00
+sub-projectiles-rtt-nodeK
+             count = 31
+               min = 5
+               max = 312
+              mean = 46.09
+            stddev = 73.22
+            median = 20.00
+              75% <= 28.00
+              95% <= 234.00
+              98% <= 312.00
+              99% <= 312.00
+            99.9% <= 312.00
+sub-projectiles-rtt-nodeL
+             count = 30
+               min = 4
+               max = 438
+              mean = 49.16
+            stddev = 92.48
+            median = 20.00
+              75% <= 26.00
+              95% <= 232.00
+              98% <= 438.00
+              99% <= 438.00
+            99.9% <= 438.00
+sub-projectiles-rtt-nodeM
+             count = 36
+               min = 4
+               max = 937
+              mean = 74.63
+            stddev = 181.72
+            median = 22.00
+              75% <= 30.00
+              95% <= 590.00
+              98% <= 937.00
+              99% <= 937.00
+            99.9% <= 937.00
+sub-projectiles-rtt-nodeO
+             count = 37
+               min = 5
+               max = 857
+              mean = 113.67
+            stddev = 212.44
+            median = 29.00
+              75% <= 53.00
+              95% <= 684.00
+              98% <= 857.00
+              99% <= 857.00
+            99.9% <= 857.00
+sub-projectiles-rtt-nodeP
+             count = 31
+               min = 4
+               max = 925
+              mean = 142.33
+            stddev = 246.80
+            median = 27.00
+              75% <= 107.00
+              95% <= 735.00
+              98% <= 735.00
+              99% <= 925.00
+            99.9% <= 925.00
+sub-status-rtt-nodeA
+             count = 2251
+               min = 1
+               max = 157
+              mean = 37.19
+            stddev = 18.82
+            median = 36.00
+              75% <= 46.00
+              95% <= 70.00
+              98% <= 85.00
+              99% <= 95.00
+            99.9% <= 157.00
+sub-status-rtt-nodeB
+             count = 1974
+               min = 1
+               max = 101
+              mean = 37.91
+            stddev = 16.79
+            median = 36.00
+              75% <= 45.00
+              95% <= 73.00
+              98% <= 83.00
+              99% <= 88.00
+            99.9% <= 101.00
+sub-status-rtt-nodeC
+             count = 2090
+               min = 1
+               max = 390
+              mean = 43.63
+            stddev = 36.57
+            median = 38.00
+              75% <= 49.00
+              95% <= 94.00
+              98% <= 152.00
+              99% <= 246.00
+            99.9% <= 390.00
+sub-status-rtt-nodeD
+             count = 1778
+               min = 1
+               max = 333
+              mean = 43.51
+            stddev = 33.80
+            median = 37.00
+              75% <= 50.00
+              95% <= 92.00
+              98% <= 132.00
+              99% <= 183.00
+            99.9% <= 333.00
+sub-status-rtt-nodeE
+             count = 2124
+               min = 1
+               max = 191
+              mean = 38.76
+            stddev = 17.74
+            median = 36.00
+              75% <= 46.00
+              95% <= 67.00
+              98% <= 81.00
+              99% <= 89.00
+            99.9% <= 191.00
+sub-status-rtt-nodeF
+             count = 2192
+               min = 1
+               max = 161
+              mean = 37.55
+            stddev = 18.58
+            median = 36.00
+              75% <= 47.00
+              95% <= 69.00
+              98% <= 83.00
+              99% <= 89.00
+            99.9% <= 141.00
+sub-status-rtt-nodeG
+             count = 2125
+               min = 1
+               max = 185
+              mean = 37.23
+            stddev = 17.84
+            median = 35.00
+              75% <= 46.00
+              95% <= 68.00
+              98% <= 83.00
+              99% <= 90.00
+            99.9% <= 185.00
+sub-status-rtt-nodeH
+             count = 1976
+               min = 1
+               max = 187
+              mean = 38.92
+            stddev = 18.31
+            median = 36.00
+              75% <= 47.00
+              95% <= 70.00
+              98% <= 83.00
+              99% <= 91.00
+            99.9% <= 152.00
+sub-status-rtt-nodeI
+             count = 2234
+               min = 1
+               max = 192
+              mean = 37.76
+            stddev = 18.79
+            median = 36.00
+              75% <= 45.00
+              95% <= 69.00
+              98% <= 83.00
+              99% <= 90.00
+            99.9% <= 192.00
+sub-status-rtt-nodeJ
+             count = 2097
+               min = 1
+               max = 199
+              mean = 38.92
+            stddev = 17.66
+            median = 36.00
+              75% <= 46.00
+              95% <= 68.00
+              98% <= 85.00
+              99% <= 91.00
+            99.9% <= 199.00
+sub-status-rtt-nodeK
+             count = 1999
+               min = 1
+               max = 224
+              mean = 37.70
+            stddev = 18.30
+            median = 36.00
+              75% <= 45.00
+              95% <= 70.00
+              98% <= 85.00
+              99% <= 93.00
+            99.9% <= 148.00
+sub-status-rtt-nodeL
+             count = 1843
+               min = 1
+               max = 175
+              mean = 37.04
+            stddev = 16.87
+            median = 34.00
+              75% <= 43.00
+              95% <= 67.00
+              98% <= 80.00
+              99% <= 90.00
+            99.9% <= 136.00
+sub-status-rtt-nodeM
+             count = 2138
+               min = 1
+               max = 162
+              mean = 37.74
+            stddev = 16.74
+            median = 37.00
+              75% <= 47.00
+              95% <= 67.00
+              98% <= 78.00
+              99% <= 83.00
+            99.9% <= 128.00
+sub-status-rtt-nodeO
+             count = 2135
+               min = 1
+               max = 117
+              mean = 39.45
+            stddev = 18.31
+            median = 37.00
+              75% <= 49.00
+              95% <= 71.00
+              98% <= 86.00
+              99% <= 90.00
+            99.9% <= 109.00
+sub-status-rtt-nodeP
+             count = 1852
+               min = 1
+               max = 179
+              mean = 38.09
+            stddev = 18.64
+            median = 36.00
+              75% <= 49.00
+              95% <= 72.00
+              98% <= 84.00
+              99% <= 90.00
+            99.9% <= 137.00
+
+-- Meters ----------------------------------------------------------------------
+pub-interest-rate-nodeNN-blocks-sync
+             count = 183
+         mean rate = 2.26 events/second
+     1-minute rate = 2.12 events/second
+     5-minute rate = 1.31 events/second
+    15-minute rate = 1.11 events/second
+pub-interest-rate-nodeNN-projectiles-sync
+             count = 314
+         mean rate = 3.88 events/second
+     1-minute rate = 4.14 events/second
+     5-minute rate = 4.29 events/second
+    15-minute rate = 4.36 events/second
+pub-interest-rate-nodeNN-status-sync
+             count = 2362
+         mean rate = 29.22 events/second
+     1-minute rate = 29.42 events/second
+     5-minute rate = 30.72 events/second
+    15-minute rate = 31.03 events/second
+
+

@@ -23,7 +23,7 @@ matplotlib.rcParams['savefig.dpi'] = 100
 matplotlib.rcParams['font.size'] = 16
 matplotlib.rcParams['legend.fontsize'] = 'large'
 matplotlib.rcParams['figure.titlesize'] = 'large'
-matplotlib.rcParams['legend.framealpha'] = None
+matplotlib.rcParams['legend.framealpha'] = 0.5
 # matplotlib.rcParams['axes.labelsize'] = 20
 
 
@@ -42,6 +42,14 @@ STATUS = "status"
 BLOCKS = "blocks"
 PROJECTILES = "projectiles"
 
+def cleanName(name: str):
+    if name == "nodeNN":
+        return "N"
+    else:
+        return name[4:]
+
+def cleanNames(names: List[str]):
+    return [cleanName(n) for n in names]
 
 def plotMulticategoryBar(ax, valuesDict: Dict[str, Dict[str, float]]):
     xCategories = next(iter(valuesDict.values())).keys()
@@ -79,6 +87,7 @@ class AnalysisByNode:
         os.makedirs(self.figureDir, exist_ok=True)
 
     def saveFig(self, fig, plotName: str):
+        # pass
         fig.savefig(os.path.join(self.figureDir, plotName) + ".png", bbox_inches='tight')
         plt.clf()
         plt.close('all')
@@ -113,33 +122,66 @@ class AnalysisByNode:
     def plotPacketTimes(self, nodes=None, objectType=STATUS, metricType="rtt"):
         nodes = self.gameNodes if nodes is None else nodes
         nodes.sort()
-        # f, ax = self.getAxis()
+
+        packetTimeHistograms = [PacketTimeHistograms(self.getNodeDir(node), node) for node in nodes]
+
+        # self.plotDetailedPacketTimes(packetTimeHistograms, objectType, metricType)
+        self.plotAggregatedPacketTimes(packetTimeHistograms)
+
+    def plotAggregatedPacketTimes(self, packetTimeHistograms: List[PacketTimeHistograms]):
+        f, ax = plt.subplots()
+        playerHists = [pth.getAllData() for pth in packetTimeHistograms]
+        weights = [100 * np.ones_like(v) / len(v) for v in playerHists]
+        ax.hist(playerHists, label=cleanNames([pth.nodeName for pth in packetTimeHistograms]), bins=np.linspace(0, 300, 11), weights=weights)
+        ax.set_xlabel("RTT (ms)")
+        ax.set_ylabel("%")
+        f.suptitle("RTT of status packets in the scalability test")
+        ax.legend()
+
+        self.saveFig(f, "aggregated-packet-times")
+        #
+        # allData = [val for sublist in playerHists for val in sublist]
+        # f, ax = plt.subplots()
+        # ax.boxplot(allData)
+
+
+    def plotDetailedPacketTimes(self, packetTimeHistograms: List[PacketTimeHistograms], objectType=STATUS, metricType="rtt"):
         f = plt.figure()
         f.suptitle("Round trip times for %s" % objectType)
-        gridSpecs = gridspec.GridSpec(nrows=2, ncols=2, figure=f)
+        gridSpecs = gridspec.GridSpec(nrows=self.plotDims[0], ncols=self.plotDims[1], figure=f)
         ax = [f.add_subplot(gs) for gs in gridSpecs]
         # ax = ax.flatten()
-
-        for i, node in enumerate(nodes):
-            packetTimeHistograms: PacketTimeHistograms = PacketTimeHistograms(self.getNodeDir(node), node)
-            packetTimeHistograms.showHistograms(ax[i], objectType=objectType, metricType=metricType)
+        for i, packetTimeHistogram in enumerate(packetTimeHistograms):
+            packetTimeHistograms[i].showHistograms(ax[i], objectType=objectType, metricType=metricType)
         gridSpecs.tight_layout(f)
         self.saveFig(f, "rtt")
 
     def plotStatusDeltas(self, nodes=None):
-        f = plt.figure()
-        f.suptitle("Position Delta")
-        gridSpecs = gridspec.GridSpec(nrows=2, ncols=2, figure=f)
-        ax = [f.add_subplot(gs) for gs in gridSpecs]
-
-        # f, ax = self.getAxis()
-        # f.suptitle("PlayerStatus deltas")
-        # ax = ax.flatten()
         nodes = self.gameNodes if nodes is None else nodes
-        for i, node in enumerate(nodes):
-            statusDeltaHistograms: StatusDeltasHistograms = StatusDeltasHistograms(node, self.getNodeDir(node))
-            statusDeltaHistograms.plotStatusDeltas(ax[i])
-        gridSpecs.tight_layout(f)
+        statusDeltaHistograms: List[StatusDeltasHistograms] = [StatusDeltasHistograms(n, self.getNodeDir(n)) for n in nodes]
+
+        # self.plotStatusDeltaDetailedHistograms(nodes, statusDeltaHistograms)
+        self.plotAggregatedStatusDeltas(nodes, statusDeltaHistograms)
+
+    def plotAggregatedStatusDeltas(self, nodes: List[str], sdHistograms: List[StatusDeltasHistograms]):
+        sdHists = [sdHist.getAllData() for sdHist in sdHistograms]
+        weights = [100 * np.ones_like(v) / len(v) for v in sdHists]
+
+        f, ax = plt.subplots()
+        ax.hist(sdHists, label=cleanNames([sdh.nodeName for sdh in sdHistograms]), weights=weights, bins=np.linspace(0,5,11))
+        ax.set_xlabel("Position Delta (GWU)")
+        ax.set_ylabel("%")
+        f.suptitle("Position Deltas of status packets in the scalability test")
+        ax.legend()
+
+        self.saveFig(f, "aggregated-position-deltas")
+
+    def plotStatusDeltaDetailedHistograms(self, nodes, statusDeltaHistograms: List[StatusDeltasHistograms]):
+        f, ax = self.getAxis()
+        ax = ax.flatten()
+        for i, sdh in enumerate(statusDeltaHistograms):
+            sdh.plotStatusDeltas(ax[i])
+        plt.show()
         self.saveFig(f, "status-deltas")
 
     def compareProducerRates(self, objectType=STATUS):
@@ -159,9 +201,11 @@ class AnalysisByNode:
             ratesByDir[subDir] = ratesByNode
 
         f, ax = plt.subplots()
+        ratesByDir = {k: {cleanName(p): val for p, val in v.items()} for k, v in ratesByDir.items()}
         plotMulticategoryBar(ax, ratesByDir)
         ax.set_ylabel("Interests Received per Second")
-        ax.legend(loc='lower center', framealpha=0.5)
+        ax.set_xlabel("Node")
+        ax.legend(loc='upper right', framealpha=0.5)
         f.suptitle("Impact on Interest rates")
         self.saveFig(f, "interest-rate-impacts")
 
@@ -181,11 +225,12 @@ class AnalysisByNode:
         for node in self.gameNodes:
             interestAgg = InterestAggregation(node, self.getNodeDir(node), self.nodes, self.getSubDir(), self.routerNodes, objectType)
             pubInterests, subInterests = interestAgg.getDifference()
-            interests["Interests Seen"][node] = pubInterests
-            interests["Interests Expressed"][node] = subInterests
+            interests["Interests Seen"][cleanName(node)] = pubInterests
+            interests["Interests Expressed"][cleanName(node)] = subInterests
             print("Node %s: IAF = %.2d" % (node, 100 * pubInterests / subInterests))
         plotMulticategoryBar(ax, interests)
         ax.set_ylabel("Number of Interests")
+        ax.set_xlabel("Node")
         f.suptitle("Interests seen by Publishers vs Interests expressed by Subscribers")
         self.saveFig(f, "interest-aggregations")
 
@@ -219,15 +264,48 @@ class AnalysisByNode:
         f.suptitle("Router Cache Rates by Node")
         self.saveFig(f, "router-cache-rates")
 
-    def plotDeadReckoningPie(self, nodes: List[str] = None):
+    def plotDeadReckoningStack(self, nodes: List[str] = None):
         nodes = self.gameNodes if nodes is None else nodes
         drAnalyzers = [DeadReckoningAnalyzer(n, self.getNodeDir(n)) for n in nodes]
-        f, ax = self.getAxis()
-        ax = ax.flatten()
+        byType: Dict[str, Dict[str, float]] = defaultdict(lambda : defaultdict(float))
+
+
         for i, analyzer in enumerate(drAnalyzers):
-            analyzer.plotPieChart(ax[i])
-            # analyzer.plotDonut(ax[i])
-        f.suptitle("DR Publisher Throttling")
+            byTypeForPlayer = analyzer.getPercentages()
+            for type, perc in byTypeForPlayer.items():
+                byType[type][analyzer.node] = perc
+
+        N = len(drAnalyzers)
+
+        keys = cleanNames(byType["velocity"].keys())
+        nulls = list(byType["null"].values())
+        velocity = list(byType["velocity"].values())
+        threshold = list(byType["threshold"].values())
+        skips = list(byType["skip"].values())
+
+        if len(velocity) == 0:
+            return
+
+        f, ax = plt.subplots()
+        bottom = np.zeros(N)
+
+        ax.bar(keys, velocity, bottom=bottom)
+        bottom = bottom + velocity
+
+        ax.bar(keys, skips, bottom=bottom)
+        bottom = bottom + skips
+
+        ax.bar(keys, threshold, bottom=bottom)
+        bottom = bottom + threshold
+
+        ax.bar(keys, nulls, bottom=bottom)
+        bottom = bottom + nulls
+
+        ax.set_ylabel('%')
+        f.suptitle('DR Publisher Throttling Update Results')
+        ax.set_yticks(np.arange(0, 101, 10))
+        ax.legend(["Velocity", "Skips", "Threshold", "Null"])
+        ax.set_xlabel("Node")
         self.saveFig(f, "dr-pub-throt")
 
 
@@ -236,13 +314,13 @@ def runAnalysisByNode(dataDir: str, topology: str, mainDir: str, subDirs: List[s
     analysisByNode.checkForExceptions()
     objectType = STATUS
     analysisByNode.plotInterestRates(objectType=objectType)
-    # analysisByNode.plotStatusDeltas()
-    # analysisByNode.plotPacketTimes(objectType=objectType)
+    analysisByNode.plotStatusDeltas()
+    analysisByNode.plotPacketTimes(objectType=objectType)
     analysisByNode.compareProducerRates(objectType=objectType)
     analysisByNode.plotInterestRatesOverTime(objectType=objectType)
     analysisByNode.plotInterestAggregations(objectType=objectType)
     analysisByNode.analyseCaches(objectType=objectType)
-    analysisByNode.plotDeadReckoningPie()
+    analysisByNode.plotDeadReckoningStack()
     # plt.show()
 
 

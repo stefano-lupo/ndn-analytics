@@ -30,7 +30,11 @@ class PacketTimeHistograms:
         histogramsFile = os.path.join(dir, HISTOGRAM_VALUES_FILE)
         with open(histogramsFile) as f:
             histograms = json.load(f)
-            metrics: Metrics = [PacketTimeMetric(name, values) for name, values in histograms.items()]
+            metrics = []
+            for name, val in histograms.items():
+                if "rtt" not in name:
+                    continue
+                metrics.append(PacketTimeMetric(name, val))
 
         self.metricsByObjectType: MetricsByObjectType = {"status": {}, "blocks": {}, "projectiles": {}}
         for playerMetric in metrics:
@@ -56,4 +60,10 @@ class PacketTimeHistograms:
             ax.set_ylabel("Frequency (%)")
             ax.set_xlabel("Time (ms)")
             ax.legend(loc='upper right')
+
+    def getAllData(self):
+        listByPlayer = [ptm.histogramValues for ptm in self.metricsByObjectType["status"]["rtt"]]
+        agg = [val for sublist in listByPlayer for val in sublist]
+        return agg
+
 

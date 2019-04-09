@@ -4,8 +4,8 @@ from typing import List, Dict
 
 FILE_FORMAT = "dr-counter-{}.csv"
 
-# counterNames: List[str] = ["null", "velocity", "threshold", "skip"]
-counterNames: List[str] = ["velocity", "threshold", "skip"]
+counterNames: List[str] = ["null", "velocity", "threshold", "skip"]
+# counterNames: List[str] = ["velocity", "threshold", "skip"]
 
 class DeadReckoningAnalyzer:
 
@@ -14,7 +14,7 @@ class DeadReckoningAnalyzer:
         self.node = node
         self.counters = {}
         try:
-            self.counters: Dict[str, int] = {name: self.getCounter(name) for name in counterNames}
+            self.counters: Dict[str, int] = {name: self.readCounter(name) for name in counterNames}
         except FileNotFoundError:
             return
         # self.nullCount = self.getCounter("null")
@@ -24,13 +24,22 @@ class DeadReckoningAnalyzer:
         self.total = sum(self.counters.values())
         self.actionable = 0 if self.total is 0 else (self.total - self.counters["skip"]) / self.total
 
-    def getCounter(self, counterName: str) -> int:
+    def readCounter(self, counterName: str) -> int:
         try:
             lines = reading_utils.readCsv(reading_utils.buildFileName(self.nodeDir, FILE_FORMAT.format(counterName)))
         except FileNotFoundError:
             raise FileNotFoundError()
 
         return int(lines[-1][1])
+
+    def getPercentage(self, name:str) -> float:
+        return self.counters[name]
+
+    def getPercentages(self) -> Dict[str, float]:
+        return {k: 0 if self.total == 0 else v * 100/self.total for k, v in self.counters.items()}
+    #
+    # def getPercentages(self) -> List[float]:
+    #     return list(self.counters.values())
 
     def plotPieChart(self, ax):
         if len(self.counters) == 0:
@@ -59,3 +68,4 @@ class DeadReckoningAnalyzer:
                         horizontalalignment=horizontalalignment, **kw)
 
         ax.set_title(self.node)
+

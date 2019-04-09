@@ -35,3 +35,13 @@ class StatusDeltasHistograms:
         ax.set_xlabel("Distance (GWUs)")
         ax.set_ylabel("Frequency (%)")
         ax.legend()
+
+    def get95th(self):
+        # item for sublist in l for item in sublist
+        allData = self.getAllData()
+        percentile = np.percentile(allData, 95)
+        print(percentile)
+
+    def getAllData(self):
+        # item for sublist in l for item in sublist
+        return [item for sublist in [sd.values for sd in self.statusDeltas] for item in sublist]
