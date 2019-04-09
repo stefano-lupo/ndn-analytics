@@ -34,6 +34,7 @@ ROUTERS = {
     "scalability": ["nodeQ", "nodeR", "nodeS", "nodeT"]
 }
 
+dirsToSkip = ["aws-1", "aws-1-again", "aws-1-again2"]
 nodesToSkip = []
 
 # TODO: Find out enums
@@ -71,6 +72,7 @@ class AnalysisByNode:
         self.routerNodes = [node for node in self.nodes if node not in self.gameNodes]
         self.topology = topology
         self.plotDims = (2, 2)
+        self.plotDims = (4, 4)
         self.figureDir = os.path.join(dataDir, FIGURE_DIR, self.mainDir)
         if os.path.exists(self.figureDir):
             shutil.rmtree(self.figureDir)
@@ -234,8 +236,8 @@ def runAnalysisByNode(dataDir: str, topology: str, mainDir: str, subDirs: List[s
     analysisByNode.checkForExceptions()
     objectType = STATUS
     analysisByNode.plotInterestRates(objectType=objectType)
-    analysisByNode.plotStatusDeltas()
-    analysisByNode.plotPacketTimes(objectType=objectType)
+    # analysisByNode.plotStatusDeltas()
+    # analysisByNode.plotPacketTimes(objectType=objectType)
     analysisByNode.compareProducerRates(objectType=objectType)
     analysisByNode.plotInterestRatesOverTime(objectType=objectType)
     analysisByNode.plotInterestAggregations(objectType=objectType)
@@ -247,7 +249,11 @@ def runAnalysisByNode(dataDir: str, topology: str, mainDir: str, subDirs: List[s
 if __name__ == "__main__":
     dataDir = sys.argv[1]
     topology = sys.argv[2]
-    subDirs = os.listdir(dataDir)
+    if len(sys.argv) > 3:
+        subDirs = sys.argv[3:]
+    else:
+        subDirs = os.listdir(dataDir)
+        subDirs = [sd for sd in subDirs if sd not in dirsToSkip]
     if FIGURE_DIR in subDirs:
         subDirs.remove(FIGURE_DIR)
     for mainDir in subDirs:

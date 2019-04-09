@@ -2,11 +2,13 @@ from typing import List
 from reading_utils import readFileSafe
 
 LOG_FILE = "java.log"
-ERROR_STRINGS = ["exception", "error [", "Assertion 'IsLocked()"]
+ERROR_STRINGS = [s.lower() for s in ["exception", "error [", "Assertion 'IsLocked()"]]
 # ERROR_STRINGS = ["exception"]
 # ERROR_STRINGS = []
 
-IGNORE_STRINGS = ["Type component was null for collision with PROJECTILE"]
+IGNORE_STRINGS = [s.lower() for s in ["ERROR [HeadlessApplication] (ProjectileCollisionSystem.java:62) - Type component was null for collision with PROJECTILE\n",
+                                      "ERROR [cs-/com/stefanolupo/ndngame/0/discovery/nodeI-0] (ChronoSynced.java:118) - Timeout for interest: /com/stefanolupo/ndngame/0/discovery"]]
+IGNORE_STRINGS = []
 
 class LogReader:
 
@@ -26,20 +28,14 @@ class LogReader:
         errorStrings = self.toLower(ERROR_STRINGS)
         ignoreStrings = self.toLower(IGNORE_STRINGS)
         lower = line.lower()
-
-        if lower in errorStrings:
-            if lower not in ignoreStrings:
+        for e in errorStrings:
+            if e in lower:
                 return True
-
+                # for ignoreString in ignoreStrings:
+                #     if lower not in ignoreString:
+                #         return True
 
         return False
-
-        # for errorString in ERROR_STRINGS:
-        #     if errorString in line.lower():
-        #         return True
-
-        # return False
-
 
     def toLower(self, lst:List[str]):
         return [s.lower() for s in lst]
