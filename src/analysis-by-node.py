@@ -132,7 +132,7 @@ class AnalysisByNode:
         f, ax = plt.subplots()
         playerHists = [pth.getAllData() for pth in packetTimeHistograms]
         weights = [100 * np.ones_like(v) / len(v) for v in playerHists]
-        ax.hist(playerHists, label=cleanNames([pth.nodeName for pth in packetTimeHistograms]), bins=np.linspace(0, 300, 11), weights=weights)
+        ax.hist(playerHists, label=cleanNames([pth.nodeName for pth in packetTimeHistograms]), bins=np.linspace(0, 200, 11), weights=weights)
         ax.set_xlabel("RTT (ms)")
         ax.set_ylabel("%")
         f.suptitle("RTT of status packets in the scalability test")
@@ -168,7 +168,7 @@ class AnalysisByNode:
         weights = [100 * np.ones_like(v) / len(v) for v in sdHists]
 
         f, ax = plt.subplots()
-        ax.hist(sdHists, label=cleanNames([sdh.nodeName for sdh in sdHistograms]), weights=weights, bins=np.linspace(0,5,11))
+        ax.hist(sdHists, label=cleanNames([sdh.nodeName for sdh in sdHistograms]), weights=weights, bins=np.linspace(0,2,11))
         ax.set_xlabel("Position Delta (GWU)")
         ax.set_ylabel("%")
         f.suptitle("Position Deltas of status packets in the scalability test")
